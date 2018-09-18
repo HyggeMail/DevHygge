@@ -1,0 +1,44 @@
+﻿@model PagingResult<TestimonialModel>
+
+
+@if (Model.List != null && Model.List.Count() > 0)
+{
+    foreach (var item in Model.List)
+    {
+        <tr class="odd gradeX">
+                @if (item.ImageName != null)
+                {
+                <td><img src="~/Uploads/Testimonial/Thumb/@item.ImageName" height="50" width="50" /> </td>
+                }
+                else
+                {
+                    <td> <img src="~/Content/images/thumb.png" height="50" width="50" /></td>
+                }
+            <td>@item.Name</td>
+            
+            <td>
+                @if (item.Description.Length > 120)
+                {
+                    <span>@Html.Raw(item.Description.Substring(0, 117) + " ...")<a class="readmore-btn" href="@Url.Action("DisplayTestimonial", "Testimonial", new { area = "Admin", testimonialID = @item.ID })" data-original-title="Edit" data-toggle="tooltip">See More</a></span>
+                }
+                else
+                {
+                    <span>@Html.Raw(item.Description)</span>
+                }
+            </td>
+            <td class="center">@Convert.ToDateTime(item.AddedOn).ToShortDateString()</td>
+            <td class="center"><a class="btn btn-primary btn-xs" href="@Url.Action("EditTestimonials", "Testimonial", new { area = "Admin", testimonialID = @item.ID })" data-original-title="Edit" data-toggle="tooltip"><i class="fa fa-pencil"></i></a> <a data-testimonialid="@item.ID" class="btn btn-danger btn-xs deletetestimonial" id="btndelete" href="javascript:void(0);" data-original-title="Remove" data-toggle="tooltip"><i class="fa fa-times"></i></a></td>
+        </tr>
+    }
+}
+else
+{
+    <tr class="odd gradeX">
+        <td colspan="4">No Record Found</td>
+    </tr>
+}
+
+
+
+
+

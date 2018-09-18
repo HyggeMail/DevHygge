@@ -1,0 +1,145 @@
+﻿@model BlogModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+@section Styles{
+
+}
+
+<section class="blog section text-center wb-blog-detail" style="background-image:url(/Uploads/Blog/Thumb/@Model.ImageName)">
+    <div class="container ">
+        <span class="featured-art" style="visibility:hidden;">Featured Article</span>
+        <h1>
+            @Model.Title
+        </h1>
+        <p><img src="~/content/images/icon-hygee.png">HyggeMail  |  @Convert.ToDateTime(Model.AddedOn).ToString("MMM dd,   yyyy")</p>
+
+    </div>
+</section>
+
+<section class="wb-single-blog section text-center">
+    <div class="container ">
+
+        @Html.Raw(Model.Description)
+
+
+
+        <div class="line">
+            <img src="~/content/images/line.png">
+        </div>
+
+        <div class="social-links">
+            <span> SHARE: </span>
+            <a class="si twt" target="_blank" href="https://twitter.com/HyggeMail"> </a>
+            <a class="si fcb" target="_blank" href="https://www.facebook.com/Hygge-Mail-156314855001434"> </a>
+            <a class="si gplus" target="_blank" href="https://plus.google.com/u/0/b/105411097878581760700/105411097878581760700"> </a>
+        </div>
+
+        @*<div class="comment-blog">
+                <h4>Comments</h4>
+                <div class="left-comment">
+                    <img src="~/content/images/icon-big-hygee.png">
+                </div>
+                <div class="right-comment">
+                    <form>
+                        <div class="form-group">
+                            <textarea placeholder="Add a comment..."></textarea>
+                        </div>
+
+                        <input type="submit" value="Post" class=" btn btn-primary">
+                    </form>
+                </div>
+            </div>
+
+            <div class="line">
+                <img src="~/content/images/line.png">
+            </div>
+
+            <div class="comment-blog all-comments">
+                <div class="comments">
+                    <div class="left-comment">
+                        <img src="~/content/images/client2.png">
+                    </div>
+                    <div class="right-comment">
+                        <h4>Andrew J.</h4>
+                        <p>
+                            Donec sodales amet sapien vitae elementum dui pulvinar sed at congue vel, laore
+                            et mauriserdum et malesuada fames ac ante ipsum primis!
+                        </p>
+
+                        <div class="rp">
+                            <button type="button">Reply</button>
+                            <span>.</span>
+                            <button type="button">Share</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="comments">
+                    <div class="left-comment">
+
+                    </div>
+                    <div class="right-comment">
+                        <div class="left-comment">
+                            <img src="~/content/images/client1.png">
+                        </div>
+                        <div class="right-comment">
+                            <h4>Jessica Black</h4>
+                            <p>
+                                Donec sodales amet sapien vitae elementum dui pulvinar sed at congue vel, laore
+                                et mauriserdum et malesuada fames ac ante ipsum primis!
+                            </p>
+
+                            <div class="rp">
+                                <button type="button">Reply</button>
+                                <span>.</span>
+                                <button type="button">Share</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="line">
+                <img src="~/content/images/line.png">
+                <button class="showmore">Show 5 more</button>
+            </div>*@
+
+
+
+        <div id="disqus_thread"></div>
+
+    </div>
+
+
+
+</section>
+
+
+
+@section Scripts{
+
+    <script id="dsq-count-scr" src="//hygge-mail.disqus.com/count.js" async></script>
+    <script>
+
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        /* */
+
+        var disqus_config = function () {
+            this.page.url = 'https://hyggemail.com/Blog/Description/id'+'@Model.EncodeId';  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = '@Model.EncodeId'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function () { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://hygge-mail.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+}

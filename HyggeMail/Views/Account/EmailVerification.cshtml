@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "EmailVerification";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+<style>
+    @@media (min-width :1500px) {
+        .footer {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+    }
+
+    h2.inspring-thought {
+        font-size: 38px;
+        line-height: 36px;
+        font-family: 'Cambay', sans-serif;
+        font-weight: 700;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+</style>
+<section class="sub-section wb-payments-plans custom-pages">
+    <div class="container">
+
+        <div class="plans-upper-description verfication ">
+            <h1 class="text-center verfication_mesg">Message</h1>
+            @if (ViewBag.Success != null)
+            {
+                <span class="success">
+                      Welcome to HyggeMail.  To start feeling a little hygge in your life,
+                    we're giving you the gift of 10 free cards that you can send to anyone, anywhere in the world!  Watch our Video and Create Your Card
+                </span><br /><br />
+                @*<span class="success">@ViewBag.Success</span><br /><br />*@
+                @*<span><a href="@Url.Action('Login','Account')">Click Here</a>To Login</span>*@
+                <a href="/" class="btn btn-danger" target="_blank">Create Your Card</a>
+                <a href="/#CreateYourCard" class="btn btn-primary" target="_blank">Watch Our Video</a>
+            }
+        </div>
+    </div>
+</section>
+
+
+<script>
+
+    $(document).ready(function () {
+        var height = $(window).height();
+        $('.verfication').css("height", height - 423);
+    });
+
+</script>

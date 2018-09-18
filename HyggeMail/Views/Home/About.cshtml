@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+@model EditCMSPageModel
+<section class="wb-about-page">
+    <div class="container">
+        <h1 class="text-center">@Model.PageTitle</h1>
+   
+		<div class="inner-about text-center">
+		   @Html.Raw(Model.PageContent)
+    </div>
+	    </div>
+
+    @*<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdDrRQgbJkVnWLI4BZHCjNuMScy9X0WE3mp3O7KRWXDFGhZuQ/viewform"
+             width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>*@
+</section>

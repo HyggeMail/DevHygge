@@ -1,0 +1,277 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+    ActionOutput<TestimonialModel> testimonials = ViewBag.TestiMonials as ActionOutput<TestimonialModel>;
+    //ActionOutput<UserPostCardViewModel> GetLatestUserPostCard = ViewBag.GetLatestUserPostCard as ActionOutput<UserPostCardViewModel>;
+    UserDetails LOGGEDIN_USER = (UserDetails)ViewBag.LOGGEDIN_USER;
+}
+@section Styles{
+    <link href="~/Content/jquery.fullPage.css" rel="stylesheet">
+}
+
+<section>
+    <div class="section-scroll">
+        <a class="slide-section active" id="firstLink" href="#HyggeMailBanner"></a>
+        <a class="slide-section" href="#CreateYourCard"></a>
+        <a class="slide-section" href="#HowItWork"></a>
+        <a class="slide-section" href="#CardsCreated"></a>
+        <a class="slide-section" href="#HyggeMailTestimonials"></a>
+    </div>
+</section>
+
+<section class="banner-content section" id="HyggeMailBanner">
+    <figure class="banner-img">
+        <img src="/Content/Images/home-banner.jpg" alt="" />
+        <img src="/Content/Images/devider.png" alt="" />
+    </figure>
+    <div class="mid-content">
+        <h2 class="pacifico inspring-thought">Inspiring thoughtfulness one card at a time.</h2>
+        <p>Hygge, pronounced Hue-guh, is a Danish practice centered on balance, love, and harmony. HyggeMail embraces those values, offering you an easy way to send small messages with a big impact to special people in your life or those you are simply thinking of.</p>
+        <p>To start feeling a little hygge in your life, we're giving you the gift of 10 free cards that you can send to anyone, anywhere in the world! Register for your account and get started.</p>
+        @if (LOGGEDIN_USER !=null && LOGGEDIN_USER.IsAuthenticated)
+        {
+            @*<a href="@Url.Action("Dashboard", "Home", new {area="user" })" class="btn blue-btn">Watch our Video</a>*@
+            <a type="button" class="btn blue-btn" href="#CreateYourCard">Watch our Video</a>
+        }
+        else
+        {
+            <a type="button" class="btn blue-btn" href="#CreateYourCard">Watch our Video</a>
+        }
+    </div>
+</section>
+
+<div class="hoggemail-wrappers">
+    <section class="create-card section" id="CreateYourCard">
+        <div class="container custom-container">
+            <div class="left-content">
+                <h3 class="short-heading pacifico"> Create your card </h3>
+                <i>Your great ideas. Our simple tool.</i>
+                <p>Show loved ones they are on your mind in a unique and unforgettable way. With Hygge Mail, you can use your own images and words or choose from options we’ve created that may be perfect for what you need. You decide. Then we’ll take over. We will print your postcard and mail it for you.</p>
+                @if (LOGGEDIN_USER != null && LOGGEDIN_USER.IsAuthenticated)
+                {
+                    <a href="@Url.Action("Dashboard", "Home", new {area="user" })" class="btn blue-btn"> Try Now </a>
+                }
+                else
+                {
+                    <button type="button" class="btn blue-btn" data-toggle="modal" data-target="#myModal-signin"> Try Now </button>
+                }
+
+            </div>
+            <div class="right-content">
+                <div class="hoggemail-frame">
+                    <iframe height="315" src="https://www.youtube.com/embed/Yv9Z5V25QLQ" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                </div>
+                @*<img src="/Content/Images/right-img.png" />*@
+            </div>
+        </div>
+    </section>
+    <section class="steps-home section text-center" id="HowItWork">
+        <div class="container custom-container">
+            <h3 class="short-heading pacifico"> How it Works</h3>
+            <div class="step col-xs-3 text-center first-step">
+                <div class="work-steps">
+                    <figure>
+                        <img src="~/content/images/step1.png" />
+                    </figure>
+                    <span>
+                        step 1
+                    </span>
+                    <h4>Design front face</h4>
+                    <p>Select images, write text or draw</p>
+                </div>
+            </div>
+
+            <div class="step-arrow"><img src="~/content/images/step-arrow.png" alt="" class="steparrowimg" /></div>
+
+            <div class="step col-xs-3 text-center">
+                <div class="work-steps">
+                    <figure>
+                        <img src="~/content/images/step2.png" />
+                    </figure>
+                    <span>
+                        step 2
+                    </span>
+                    <h4>Design Back Left</h4>
+                    <p>
+                        Add text, select images
+                        or draw
+                    </p>
+                </div>
+            </div>
+
+            <div class="step-arrow"><img src="~/content/images/step-arrow.png" alt="" class="steparrowimg" /></div>
+
+
+            <div class="step col-xs-3 text-center">
+                <div class="work-steps">
+                    <figure>
+                        <img src="~/content/images/step3.png" />
+                    </figure>
+                    <span>
+                        step 3
+                    </span>
+                    <h4>Add Recipient Address</h4>
+                    <p>	 Add or Select from Address Book</p>
+                </div>
+            </div>
+
+            <div class="step-arrow"><img src="~/content/images/step-arrow.png" alt="" class="steparrowimg" /></div>
+
+
+            <div class="step col-xs-3 last-step text-center lst-step">
+                <div class="work-steps">
+                    <figure>
+                        <img src="~/content/images/step4.png" />
+                    </figure>
+                    <span>
+                        step 4
+                    </span>
+                    <h4>Send Card</h4>
+                    <p>	Preview, Pick Date and Send</p>
+                </div>
+            </div>
+
+            @if (LOGGEDIN_USER != null && LOGGEDIN_USER.IsAuthenticated)
+            {
+                <a class="red-btn" href="@Url.Action("Dashboard", "Home", new {area="user" })">
+                    Create Your Card
+                </a>
+            }
+            else
+            {
+                <a class="red-btn" data-toggle="modal" data-target="#myModal-signin"> Create Your Card</a>
+            }
+        </div>
+    </section>
+
+
+    <section class="card-printed section" id="CardsCreated">
+        <div class="container custom-container">
+            <h2 class="red-heading"> @ViewBag.PostCardCount </h2>
+            <strong class="pacifico short-heading">HyggeMail Templates</strong>
+            <div class="gallery-sec clearfix" id="div_DemoPostCards">
+
+            </div>
+            @if (LOGGEDIN_USER != null && LOGGEDIN_USER.IsAuthenticated)
+            {
+                <a class="red-btn" href="@Url.Action("Dashboard", "Home", new {area="user" })">
+                    Create Your Card
+                </a>
+            }
+            else
+            {
+                <a class="red-btn" data-toggle="modal" data-target="#myModal-signin">Create Your Card</a>
+            }
+        </div>
+    </section>
+
+    <section class="testimonials section" id="HyggeMailTestimonials">
+        <div class="container custom-container">
+            <h3 class="short-heading pacifico"> Testimonials </h3>
+            <!-- <
+            tion id="demos">
+                <div class="loop owl-carousel owl-theme">
+                    @if (testimonials != null)
+                    {
+                        if (testimonials.List != null && testimonials.List.Count > 0)
+                        {
+                            foreach (var item in testimonials.List)
+                            {   <div class="item testmonials-sec">
+                                <figure>
+                                    <img src="~/Uploads/Testimonial/Thumb/@item.ImageName" />
+                                </figure>
+                                <div class="feedbacks">
+                                    <div id="content-2" class="content11 mCustomScrollbar light" data-mcs-theme="minimal-dark">
+                                        <span class="Cname"> @item.Name</span>
+                                        <span>@Html.Raw(item.Description)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            }
+                        }
+
+                    }
+                </div>
+            </section> -->
+
+            <ul class="hoggemail-testimonials">
+
+                @if (testimonials != null)
+                {
+                    if (testimonials.List != null && testimonials.List.Count > 0)
+                    {
+                        foreach (var item in testimonials.List)
+                        {
+                            <li>
+                                <div class="profile-pic">
+                                    <img src="~/Uploads/Testimonial/Thumb/@item.ImageName" alt="" />
+                                </div>
+                                <div class="testimonial-text">
+                                    <h5>@item.Name</h5>
+                                    <img src="~/content/images/shape.png" alt="" />
+                                    <p>@Html.Raw(item.Description)</p>
+                                </div>
+                            </li>
+                        }
+                    }
+                }
+
+            </ul>
+
+        </div>
+    </section>
+</div>
+
+@section Scripts{
+    <script src="~/Scripts/jquery.fullPage.js"></script>
+    <script src="~/Scripts/UserDashboardScripts/HomePage.js"></script>
+    <script type="text/javascript">
+
+
+        $(document).ready(function () {
+            $(document).on("scroll", onScroll);
+
+            //smoothscroll
+            $('.section-scroll a[href^="#"]').on('click', function (e) {
+                e.preventDefault();
+                $(document).off("scroll");
+
+                $('.section-scroll a').each(function () {
+                    $(this).removeClass('active');
+                })
+                $(this).addClass('active');
+
+                var target = this.hash,
+                    menu = target;
+                $target = $(target);
+                $('html, body').stop().animate({
+                    'scrollTop': $target.offset().top + 2
+                }, 500, 'swing', function () {
+                    window.location.hash = target;
+                    $(document).on("scroll", onScroll);
+                });
+            });
+        });
+
+        function onScroll(event) {
+            var scrollPos = $(document).scrollTop();
+            $('.section-scroll a').each(function () {
+                var currLink = $(this);
+                var refElement = $(currLink.attr("href"));
+                if (refElement.position().top <= scrollPos + refElement.height()) {
+                    $('.section-scroll a').removeClass("active");
+                    currLink.addClass("active");
+                }
+                else {
+                    currLink.removeClass("active");
+                }
+            });
+        }
+
+        var siteURL =
+     {
+         GetDemoPostCardListing: '@Url.Action("GetDemoPostCardListing", "Home")'
+     }
+
+    </script>
+}

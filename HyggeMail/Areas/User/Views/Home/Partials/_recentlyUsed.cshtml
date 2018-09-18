@@ -1,0 +1,37 @@
+﻿@model List<ImagesByCategoryViewModel>
+@if (Model.FirstOrDefault().Images.Count > 0 && Model.FirstOrDefault().Images != null)
+{
+    <div class="container">
+        <span class="left-heading">
+            Recently used:
+        </span>
+        <section id="recently-used">
+
+            @if (Model != null)
+            {
+
+                if (Model.Count() > 0)
+                {
+                    foreach (var item in Model)
+                    {
+                        <div id="content-6" class="content12 horizontal-images cust-content12">
+                            <div id="images" class="dimages rec-images">
+                                @foreach (var image in item.Images)
+                                {
+                                    if (image != null)
+                                    {
+                                        <div class="images-p">
+                                            <img draggable="true" data-id="@image.ImageID" data-org-img="@image.FilePath.Replace("~","../..")" src="@image.FilePath.Replace("~/Uploads/Attachments/", "/Uploads/Attachments/Thumb/")" width="200" class="img-p" alt="@image.FileName" />
+                                        </div>
+                                    }
+                                }
+                            </div>
+                        </div>
+                    }
+                }
+            }
+
+        </section>
+    </div>
+}
+

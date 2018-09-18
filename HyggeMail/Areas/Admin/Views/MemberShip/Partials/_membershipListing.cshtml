@@ -1,0 +1,31 @@
+﻿@model PagingResult<MembershipModel>
+
+
+@if (Model.List != null && Model.List.Count() > 0)
+{
+    foreach (var item in Model.List)
+    {
+        <tr class="odd gradeX">
+            <td>@item.Name</td>
+            <td>@item.Rate</td>
+            <td class="center">@item.Discount</td>
+            <td class="center">@item.CardsAllocated</td>
+            <td class="center">
+                <a class="btn btn-primary btn-xs" href="@Url.Action("AddEditPlan", "MemberShip", new { area = "Admin", id = @item.ID })" data-original-title="Edit" data-toggle="tooltip"><i class="fa fa-pencil"></i></a>
+                @if (item.ID != 1)
+                {
+                    <a data-id="@item.ID" class="btn btn-danger btn-xs deleteMembership" href="javascript:void(0);" data-original-title="Remove" data-toggle="tooltip"><i class="fa fa-times"></i></a>
+                }
+            </td>
+        </tr>
+    }
+}
+else
+{
+    <tr class="odd gradeX">
+        <td colspan="4">No Record Found</td>
+    </tr>
+}
+
+
+

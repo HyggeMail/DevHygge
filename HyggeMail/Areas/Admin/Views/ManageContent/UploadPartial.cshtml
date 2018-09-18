@@ -1,0 +1,31 @@
+﻿@model IEnumerable<ImageViewModel>
+@{
+    ViewBag.Title = "UploadPartial";
+}
+@foreach (var image in Model)
+{
+    <a href="#" class="returnImage" data-url="@Request.Url.GetLeftPart(UriPartial.Authority)@image.Url">
+        <img src="@image.Url" alt="Hejsan" id="#image" data-source="@image.Url" width="200" height="200" />
+    </a>
+}
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+    function getUrlParam(paramName) {
+        var reParam = new RegExp('(?:[\?&]|&amp;)' + paramName + '=([^&]+)', 'i');
+        var match = window.location.search.match(reParam);
+
+        return (match && match.length > 1) ? match[1] : '';
+    }
+
+    $(document).ready(function () {
+        $(".returnImage").click("click", function (e) {
+            ;
+            var funcNum = getUrlParam('CKEditorFuncNum');
+            var urlImage = $(this).attr("data-url");
+            window.opener.CKEDITOR.tools.callFunction(funcNum, urlImage);
+           window.close();
+        });
+
+    });
+</script>
+

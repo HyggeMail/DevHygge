@@ -1,0 +1,154 @@
+﻿@{
+    ViewBag.Title = "MyProfile";
+    Layout = "~/Areas/User/Views/Shared/_Layout.cshtml";
+    var MembershipModel = ViewBag.Membership as PayPalTransaction;
+}
+@Html.Partial("_secondheader", MembershipModel)
+@model UserModel
+
+<section class="sub-section wb-profile">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="pagetitle">Edit Your Profile</h2>
+            </div>
+            <div class="clearfix"></div>
+            <form class="profile-form" role="form" id="formProfile">
+                <div class="col-md-12 text-center">
+                    <span class="loginerroemsg"></span>
+                </div>
+                <div class="form-div modal-custom edit-profile">
+                    @Html.HiddenFor(x => x.UserId)
+                    <div class="changeprofile-pic">
+                        @if (!string.IsNullOrEmpty(Model.ImagePath))
+                        {
+                            @Html.TextBoxFor(m => m.Image, new { @data_val = "false", type = "file", @class = "dropmenu", id = "image", onchange = "readURL(this);" })
+                        }
+                        else
+                        {
+                            @Html.TextBoxFor(m => m.Image, new { type = "file", @class = "dropmenu", id = "image", onchange = "readURL(this);" })
+                        }
+                        @Html.ValidationMessageFor(x => x.Image)<br />
+                        @if (!string.IsNullOrEmpty(Model.ImagePath))
+                        {
+                            <div class="profile-user" style="background-image:url(@Model.ImagePath.Replace("~/","../../"))">
+                                <!--  <img id="image_Preview" width="150" src="@Model.ImagePath.Replace("~/","../../")" alt="@Model.ImageName" /> -->
+                                <div class="custom-file-upload">
+                                    <label for="image">Change</label>
+                                </div>
+                            </div>
+                        }
+                        else
+                        {
+                            <img id="image_Preview" src="~/Content/images/UserPlaceholder.png" />
+
+                            <div class="custom-file-upload">
+                                <label for="image" class="btn btn-primary"><i class="fa fa-upload" aria-hidden="true"></i>Upload Image</label>
+                            </div>
+                        }
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control", @placeholder = "Full name" })
+                            @Html.ValidationMessageFor(X => X.FirstName)
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            @if (Model.Email == null || Model.Email == "")
+                            {
+                                @Html.TextBoxFor(x => x.Email, new { @class = "form-control", @placeholder = "Email", @required = "required" })
+                            }
+                            else
+                            {
+                                @Html.TextBoxFor(x => x.Email, new { @class = "form-control", @placeholder = "Email", @readonly = "readonly" })
+                            }
+
+                            @Html.ValidationMessageFor(X => X.Email)
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            @Html.TextBoxFor(x => x.Address, new { @class = "form-control text-area-rounded", @placeholder = "Full Address", id = "Address", @required = "required" })
+                            @Html.ValidationMessageFor(X => X.Address)
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            @Html.TextBoxFor(X => X.CountryID, new { @class = "form-control", data_gfield = "country", @required = "required", @placeholder = "Country" })
+                            @Html.ValidationMessageFor(X => X.CountryID)
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            @Html.TextBoxFor(X => X.StateID, new { @class = "form-control", data_gfield = "administrative_area_level_1", @placeholder = "State", @required = "required" })
+                            @Html.ValidationMessageFor(X => X.StateID)
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            @Html.TextBoxFor(X => X.CityID, new { @class = "form-control", data_gfield = "locality", @placeholder = "Locality", @required = "required" })
+                            @Html.ValidationMessageFor(X => X.CityID)
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            @Html.TextBoxFor(x => x.Zip, new { @class = "form-control text-area-rounded", @placeholder = "Zip", data_gfield = "postal_code", @required = "required" })
+                            @Html.ValidationMessageFor(X => X.Zip)
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            @Html.TextBoxFor(x => x.Phone, new { @class = "form-control", @placeholder = "Phone" })
+                            @Html.ValidationMessageFor(X => X.Phone)
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="form-group btnns">
+                            <a href="#" class="next-div btn btn-primary" id="formProfileUpdate">Submit</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+    @Html.Partial("_partialPlans", MembershipModel)
+</section>
+@section scripts{
+    <script src="~/Scripts/UserDashboardScripts/Profile.js"></script>
+    <script type="text/javascript">
+
+        var siteURL = {
+            UpdateProfileDetails: '@Url.Action("UpdateProfileDetails", "Home", new { area = "user" })',
+            StateByCountry: '@Url.Action("StateByCountry", "Home", new { area = "" })',
+            CityByState: '@Url.Action("CityByState", "Home", new { area = "" })',
+        }
+        function GooglePlacesOnLoad() {
+            $("#Address").locify();
+        }
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('.profile-user')
+                        .css('background-image', 'url(' + e.target.result + ')')
+                        .width()
+                        .height();
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=@HyggeMail.BLL.Common.Config.GooglePlaceKey&libraries=places&callback=GooglePlacesOnLoad&language=en"
+        async defer></script>
+}

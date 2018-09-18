@@ -1,0 +1,31 @@
+﻿@model PagingResult<PayPalTransaction>
+@if (Model.List != null && Model.List.Count() > 0)
+{
+    foreach (var item in Model.List)
+    {
+        <tr class="odd gradeX">
+            <td>@item.TransactionID</td>
+          
+            <td class="center">@item.MembershipPlan</td>
+            <td class="center">@item.Amount</td>
+            <td class="center">
+                @item.Gateway
+            </td>
+            <td class="center">
+                @item.Status
+            </td>
+            <td class="center">
+                @item.TransactionDate
+            </td>
+        </tr>
+    }
+}
+else
+{
+    <tr class="odd gradeX">
+        <td colspan="6">No Record Found</td>
+    </tr>
+}
+
+
+

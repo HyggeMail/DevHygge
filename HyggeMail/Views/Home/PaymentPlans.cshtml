@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "PaymentPlans";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+@model PagingResult<MembershipModel>
+<section class="middle-content wb-latest">
+<section class="sub-section wb-payments-plans">
+    <div class="container1">
+        <h1 class="text-center">Payments & Plans</h1>
+        <div class="plans-upper-description">
+            <p style="text-align:center">Leave the mailing to us.</p>
+
+            <p>With HyggeMail, you enjoy the fun part of designing your postcards and we take on the pesky task of printing and mailing them. You don’t need to purchase a package in order to design and download your card. Packages are only necessary if you want us to mail your cards.</p>
+        </div>
+
+        <div class="pricing-grids">
+            @foreach (var item in Model.List)
+            {
+
+                <div class="pricing-grid1 pricing-table">
+                    <div class="price-value">
+                        <h4>@item.Name</h4>
+
+                        @if (item.Discount != null && item.Discount > 0)
+                        {
+                            <h2> <i>$</i><span>@Convert.ToDecimal((item.Rate - (item.Rate * item.Discount / 100))).ToString("#.##")</span></h2>
+                            <h5>Usual price : $@Convert.ToDecimal(item.Rate).ToString("#.##")</h5>
+                        }
+                        else
+                        {
+                            <h2> <i>$</i><span>@Convert.ToDecimal(item.Rate).ToString("#.##")</span></h2>
+                        }
+                    </div>
+                    <div class="price-bg">
+                        @Html.Raw(item.Description)
+                        <div class="cart1">
+                            <a class="popup-with-zoom-anim showchoose" href="javascript:void" data-toggle="modal" data-target="#choosepopup">Buy Now</a>
+                        </div>
+                    </div>
+                    @if (item.Discount != null && item.Discount > 0)
+                    {
+                        <div class="frame-price">
+                            @Convert.ToDecimal(item.Discount).ToString("#.##")%
+                        </div>
+                    }
+                </div>
+
+            }
+
+        </div>
+    </div>
+
+    <div class="modal modal-custom fade" id="choosepopup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel"><span class="bk-btn"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></span> Please choose option to continue</h4>
+                </div>
+                <div class="modal-body">
+                    <button type="button" class="btn btn-primary btnsignin" data-toggle="modal" data-target="#myModal-signin"> Sign in </button>
+                    <button type="button" class="btn btn-primary btnsignin" data-toggle="modal" data-target="#myModal"> Sign up </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</section>
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $(".btnsignin").click(function () {
+                $("#choosepopup").hide();
+            });
+
+            $(".showchoose").click(function () {
+                $("#choosepopup").show();
+            });
+        });
+    </script>
+}

@@ -1,0 +1,16 @@
+﻿@{
+    Layout = "~/Areas/User/Views/Shared/_MobileLoyout.cshtml";
+}
+@model EditCMSPageModel
+@*<section class="middle-content wb-latest">*@
+    <section class="sub-section wb-payments-plans custom-pages">
+        <div class="container">
+            <h1 class="text-center">@Model.PageTitle</h1>
+            <div class="plans-upper-description">
+                <div class="privacy-terms-view">
+                    @Html.Raw(Model.PageContent)
+                </div>
+            </div>
+        </div>
+    </section>
+@*</section>*@

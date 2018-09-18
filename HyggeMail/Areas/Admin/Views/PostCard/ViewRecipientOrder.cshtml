@@ -1,0 +1,105 @@
+﻿@model ReceiptentOrder
+@{
+    ViewBag.Title = "View Recipient Order";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayOut.cshtml";
+}
+@if (Model != null)
+{
+
+    <div class="container-fluid" id="pcont">
+        <div class="page-head">
+            <h2>User Order Details</h2>
+        </div>
+        <div class="cl-mcont">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block-flat">
+                        <div class="table-responsive">
+                            <div id="divResult">
+                                <div class="col-md-12">
+                                    <div class="col-md-7">
+                                        @{
+                                        var frontImage = !string.IsNullOrEmpty(Model.FrontImage) ? Model.FrontImage.Replace("~", "") : "";
+                                        var backImage = !string.IsNullOrEmpty(Model.BackImage) ? Model.BackImage.Replace("~", "") : "";
+                                             <div class="firstImage">
+                                            @if (!string.IsNullOrEmpty(frontImage))
+                                            {
+                                                <img src="@frontImage" class="img-responsive" />
+                                            }
+                                            else
+                                            {
+                                                <span>No Cover found</span>
+                                            }
+                                            </div>
+                                            <div class="secondimage" style="display:none">
+                                                @if (!string.IsNullOrEmpty(backImage))
+                                                {
+                                                    <img src="@backImage" class=" img-responsive" />
+                                                }
+                                                else
+                                                {
+                                                    <span> No Cover Found</span>
+                                                }
+                                            </div>
+                                        }
+                                        <span>
+                                            <button class="btn btn-success pull-right flipImage" style="margin-top: 10px;width: 90px;height: 25px; padding: 0;">Flip</button>
+                                        </span>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="row">
+                                            <div class="col-md-3"><strong>Placed:</strong></div>
+                                            <div class="col-md-9 pull-left">@Model.DatePlaced</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3"><strong>Due To:</strong></div>
+                                            <div class="col-md-9 pull-left">@Model.DueTo</div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3"><strong>Client:</strong></div>
+                                            <div class="col-md-9">@Model.UserName</div>
+                                        </div>
+                                      <div class="row">
+                                          <hr style="color: #ccc; border: .5px solid;" />
+                                      </div>
+                                        <div class="row">
+                                            <div class="col-md-12"><strong>@Model.ReceiptentName</strong></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12"><strong>@Model.ReceiptentAddress</strong></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <a href="/Admin/user/ManageUsers" class="btn btn-primary">Back to User Section</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+@section scripts{
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $(".flipImage").toggle(function () {
+                $(".firstImage").hide();
+                $(".secondimage").show();
+            }, function () {
+                $(".secondimage").hide();
+                $(".firstImage").show();
+                
+            });
+            //initialize the javascript
+            App.init();
+
+        });
+    </script>
+}
+

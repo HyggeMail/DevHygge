@@ -1,0 +1,100 @@
+﻿<div class="step-4-view">
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a id="userreceipient" href="#address-book" aria-controls="address-book" role="tab" data-toggle="tab">address book</a></li>
+        <li role="presentation"><a id="adminreceipient" href="#famous-people" aria-controls="famous-people" role="tab" data-toggle="tab">famous people</a></li>
+    </ul>
+
+    <div class="tab-content" id="addressdiv">
+        <div class="upload-sec">
+            <input type="file" class="hidden" />
+            <span class="upload-btn add-recipient" data-toggle="modal" data-target="#myModal-AddRecipient" style="cursor:pointer">
+                Add Recipient
+            </span>
+        </div>
+        <div role="tabpanel" class="tab-pane active" id="address-book">
+            <div class="view-class">
+                @*<div class="upload-sec">
+                        <input type="file" class="hidden" />
+                        <span class="upload-btn add-recipient" data-toggle="modal" data-target="#myModal-AddRecipient" style="cursor:pointer">
+                            Add Recipient
+                        </span>
+                    </div>*@
+                <input type="hidden" id="top-margin" value="0" />
+                <div class="contents">
+                    <input class="text search" type="text" id="searchRecipient" placeholder="Search.." />
+                    <div id="AddressBookListing">
+
+                    </div>
+                    <div id="Recipients">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="famous-people">
+            <div class="view-class">
+                @*<div class="upload-sec">
+                        <input type="file" class="hidden" />
+                        <span class="upload-btn" data-toggle="modal" data-target="#myModal-AddRecipient" style="cursor:pointer">
+                            Add Recipient
+                        </span>
+                    </div>*@
+                <input type="hidden" id="top-margin" value="0" />
+                <div class="contents">
+                    <input class="text search" type="text" id="searchAddressBook" placeholder="Search.." />
+
+                    <div id="FavouriteAddressBookListing">
+
+                    </div>
+                    <div id="FavouriteRecipients">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="modal fade modal-custom modal-view" id="fam-people" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="view-class">
+                    <ul>
+                        <li>
+                            <span>
+                                <figure id="img" style="background-image:url(/Uploads/Attachments/Thumb//c84152ba-d2dd-459f-a008-407d07b501fa.jpg);"></figure>
+                                <h5 id="name">Steven Spielberg <span>Film Maker, US</span> </h5>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                <p id="famousfor">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
+
+                <ul class="add">
+                    <li><strong>Agency : </strong> <span id="agency">The Film Foundation ,  Inc.</span></li>
+                    <li>
+                        <strong>Address : </strong> <span id="address">
+                            7921 W Sunset Blvd., 6th Floor Los Angles, CA, 90046-3334 USA
+                            <span class="verified"><sub><i class="fa fa-check" aria-hidden="true"></i></sub> Address verified</span>
+                        </span>
+                    </li>
+                </ul>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<div id="AddUpdateRecipients">
+    @Html.Partial("../Recipient/Partials/_AddRecipient", new AddUpdateRecipientModel())
+</div>

@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "ManagePostCard";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayOut.cshtml";
+}
+@model PagingResult<PostCardListingModel>
+<div class="container-fluid" id="pcont">
+    <div class="cl-mcont">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block-flat">
+                    <div class="content">
+                        <div class="table-responsive">
+                            @Html.Partial("_SearchFilter", new PagingModel { SortBy = "User.FirstName", SortOrder = "Asc" })
+                            <div class="rightSideBar">
+                                <button type="button" class="btn btn-default showByStatus " data-status="@HyggeMail.BLL.Models.eAdminPostOrderStatus.New" value="">All</button>
+                                <button type="button" class="btn btn-default showByStatus " data-status="@HyggeMail.BLL.Models.eAdminPostOrderStatus.Approved">Approved</button>
+                                <button type="button" class="btn btn-default showByStatus " data-status="@HyggeMail.BLL.Models.eAdminPostOrderStatus.Completed">Completed</button>
+                            </div>
+                            <div id="divResult">
+                                <table class="table table-bordered" id="datatable-icons">
+                                    <thead>
+                                        <tr>
+                                            <th class="sorting" data-sortby="User.FirstName">User </th>
+                                            <th class="sorting" data-sortby="ShippedOn">Shipment On</th>
+                                            <th class="sorting" data-sortby="AddedOn">Added On</th>
+                                            <th class="sorting" data-sortby="UserOrder.OrderStatus">Order Status</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @Html.Partial("Partials/_postcardListing", Model)
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                        @Html.Partial("_Paging")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+    <script src="~/Scripts/UserDefinedScripts/paging.js"></script>
+    <script src="~/Scripts/AdminScripts/Postcard.js"></script>
+    <script type="text/javascript">
+        var totalCount = "@Model.TotalCount";
+        $(document).ready(function () {
+            //initialize the javascript
+            App.init();
+            PostCards.ManagePostCards(totalCount);
+        });
+        var siteURL = {
+            UpdateOrderStatus: '@Url.Action("UpdateOrderStatus","PostCard",new{area="admin"})',
+        }
+
+    </script>
+}
+

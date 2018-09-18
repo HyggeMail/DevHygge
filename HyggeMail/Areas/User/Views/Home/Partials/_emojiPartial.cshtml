@@ -1,0 +1,60 @@
+﻿@model ActionOutput<ImagesByCategoryViewModel>
+<div class="emoji-partial demo">
+    <div id="content-2 " class="faltu-inner light scrollbar-inner">
+        <ul class="accordion_example1">
+            @if (Model != null)
+            {
+                if (Model.List.Count() > 0)
+                {
+                    foreach (var item in Model.List.Where(x => x.IsRecent != true))
+                    {
+                        <li class="accordion_in1" data-id="@item.CatName">
+                            <div class="listings">
+                                @item.CatName (@item.ImagesCount)
+                            </div>
+                            <div class="datas " style="margin-right:10px;">
+                                <div class=" scrollbar-inner">
+                                    @if (item.Images != null)
+                                    {
+                                        if (item.Images.Count > 0)
+                                        {
+                                            <div id="images" class="dimages custom-scroll">
+                                                <div id="content-2" class="content11  light">
+                                                    @foreach (var image in item.Images)
+                                                    {
+                                                        <div class="images-p">
+                                                            <span class="images-outerr">
+                                                                <img draggable="true" data-id="@image.ImageID" data-org-img="@image.FilePath" src="@image.FilePath" width="200" class="img-p" alt="@image.FileName" @*title="@image.Description"*@ />
+
+                                                            </span>
+
+                                                        </div>
+                                                    }
+
+                                                </div>
+                                            </div>
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </li>
+                    }
+                }
+                else
+                {
+                    <li class="no-record-found">No Record Found</li>
+                }
+            }
+        </ul>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+         $(".accordion_in1 .listings").click(function () {           
+             $(this).parent("li").siblings().removeClass("acc_active");
+             $(this).parent("li").toggleClass("acc_active");
+        });
+    });
+</script>
+
+

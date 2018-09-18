@@ -1,0 +1,95 @@
+﻿@model ActionOutput<RecipientGroupModel>
+<style>
+    [data-tooltip] {
+        position: relative;
+    }
+
+        [data-tooltip]:before,
+        [data-tooltip]:after {
+            display: none;
+            position: absolute;
+            top: 0;
+        }
+
+        [data-tooltip]:before {
+            border-bottom: .6em solid #09f;
+            border-bottom: .6em solid rgba(0,153,255,0.8);
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            content: "";
+            left: 50px;
+            margin-top: 1em;
+        }
+
+        [data-tooltip]:after {
+            background-color: #0099ff;
+            background-color: rgba(0,153,255,0.8);
+            border: 4px solid #0099ff;
+            border: 4px solid rgba(0,153,255,0.8);
+            border-radius: 7px;
+            color: #ffffff;
+            content: attr(data-tooltip-label) ":\A" attr(data-tooltip-message);
+            left: 0;
+            margin-top: 1.5em;
+            padding: 5px 15px;
+            white-space: pre-wrap;
+            width: 100px;
+        }
+
+        [data-tooltip]:hover:after,
+        [data-tooltip]:hover:before {
+            display: block;
+        }
+</style>
+<ul class="acc-Recipients">
+    @if (Model != null)
+    {
+        if (Model.List != null)
+        {
+            if (Model.List.Count() > 0)
+            {
+                foreach (var item in Model.List)
+                {
+                    if (item.List != null && item.List.Count > 0)
+                    {
+                        <li>
+                            <div class="listings">
+                                @item.Alphabet (@item.count)
+                            </div>
+                            <div class="datas">
+                                @if (item.List != null)
+                                {
+                                    if (item.List.Count > 0)
+                                    {
+                                        <div id="images">
+                                            @foreach (var name in item.List)
+                                            {
+                                                <div class="a">
+                                                    <a class="recipient-a" data-ct="@name.City" data-co="@name.Country" data-ad="@name.Address" data-st="@name.State" data-nm="@name.Name" data-zp="@name.Zip" data-tooltip data-tooltip-label="Tooltippery" data-tooltip-message=@string.Format("{0} {1} {2} {3}", name.Address, name.City, name.State, name.Country)>@name.Name</a>
+                                                    @*<span data-toggle="tooltip" title=>@name.Name</span>*@
+                                                </div>
+
+                                            }
+                                        </div>
+                                    }
+                                }
+                            </div>
+                        </li>
+                    }
+                }
+            }
+        }
+        else
+        {
+            <li>No Record Found</li>
+        }
+    }
+</ul>
+
+@section scripts{
+    <script type="text/javascript">
+        $(".acc-Recipients").smk_Accordion({
+            closeAble: true, //boolean
+        });
+    </script>
+}

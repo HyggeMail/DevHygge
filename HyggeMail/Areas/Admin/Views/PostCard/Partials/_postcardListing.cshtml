@@ -1,0 +1,63 @@
+﻿@model PagingResult<PostCardListingModel>
+
+
+@if (Model.List != null && Model.List.Count() > 0)
+{
+    foreach (var item in Model.List)
+    {
+        <tr class="odd gradeX">
+            <td>@item.Username</td>
+            <td>@item.ShipmentDate.ToShortDateString()</td>
+            <td class="center">@item.AddedOn.ToShortDateString()</td>
+            <td class="center">@item.orderStatus.ToString()</td>
+            <td class="center">
+                <a data-postcardid="@item.ID" class="btn btn-danger btn-xs deletePostCard" href="javascript:void(0);" data-original-title="Remove" data-toggle="tooltip"><i class="fa fa-times"></i></a>
+                <a data-postcardid="@item.ID" class="btn btn-success btn-xs ApprovePostCard" href="javascript:void(0);">
+                    @if (item.IsApproved == true)
+                    {<span>DisApprove</span>}
+                    else
+                    {<span>Approve</span>}
+                </a>
+                <a data-postcardid="@item.ID" class="btn btn-success btn-xs RejectPostCard" href="javascript:void(0);">
+                    @if (item.IsRejected == true)
+                    {<span>Accept</span>}
+                    else
+                    {<span>Reject</span>}
+                </a>
+                @if (item.IsCompleted == true)
+                {
+                    <span>Completed On : @Convert.ToDateTime(item.CompletedOn).ToString("MMM dd yyyy hh:mm tt")</span>
+                }
+                else
+                {<a data-postcardid="@item.ID" class="btn btn-success btn-xs CompletePostCard" href="javascript:void(0);">Complete Order</a>
+                }
+                <select class="order-status">
+                    @foreach (var status in HyggeMail.BLL.Common.Utilities.EnumToList(typeof(eOrderStatus)))
+                    {
+                        if ((int)item.orderStatus == Convert.ToInt32(status.Value))
+                        {
+                            <option data-id="@item.OrderID" value="@status.Value" selected="selected">
+                                @status.Text
+                            </option>
+                        }
+                        else
+                        {
+                            <option data-id="@item.OrderID" value="@status.Value">
+                                @status.Text
+                            </option>
+                        }
+                    }
+                </select>
+                <a href="@Url.Action("PostCardDetails", "PostCard", new { area = "Admin", id = @item.ID })">Details</a>
+            </td>
+        </tr>
+    }
+}
+else
+{
+    <tr class="odd gradeX">
+        <td colspan="4">No Record Found</td>
+    </tr>
+}
+
+

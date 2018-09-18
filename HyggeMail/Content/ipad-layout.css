@@ -1,0 +1,777 @@
+.right-sec {
+max-width: 100%;
+min-width: 100%;
+background: #fff ;
+}	
+.flex.container1 {
+flex-direction: column-reverse;
+width: 100%;
+}
+.right-header {
+  background: #097acf ;
+  padding: 20px;
+}
+
+.left-sec {
+background: #fff ;
+box-shadow: unset;
+clear: both;
+max-width: 100%;
+min-height: 200px;
+min-width: 100%;
+padding-top: 40px;
+position: relative;
+}
+span#save-postcard.pad-save {
+    position: absolute;
+    z-index: 999;
+    display: inline-block;
+    background-color: #1f98de;
+    width: 90px;
+    height: 90px;
+    right: 90px;
+    top: 0px;
+    border-radius: 100%;
+}
+span.save {
+    background: url(../Content/images/ipad-images/save.png) no-repeat center center;
+    background-size: 40px;
+}
+
+
+#recentlyUsed.bottom-sliders {
+  display: none;
+}
+.steps li.active a {
+  background: #8189a3 ;
+  color: #fff;
+  display: inline-block;
+  font-size: 24px;
+  height: 57px;
+  line-height: 60px;
+  width: 57px;
+}
+.steps li a {
+  background: #6e9ebc ;
+  border: 8px solid #8ac5eb;
+  font-size: 24px;
+  font-weight: normal;
+  height: 70px;
+  line-height: 49px;
+  width: 70px;
+    color: #fff;
+}
+.steps li.active a {
+  background: #53768d ;
+  color: #fff;
+  display: inline-block;
+  font-size: 24px;
+  height: 70px;
+  line-height: 49px;
+  width: 70px;
+}
+
+
+.steps li::after {
+  background: #8ac5eb ;
+  height: 8px;
+  left: 98%;
+  top: 45%;
+  width: 37px;
+}
+
+.prev.round-btn img {
+height: 60px;
+margin-top: 5px;
+}
+.prev.step-prev, .next.step-next {
+  background-color: #fff;
+  border: 0 none;
+  border-radius: 8px;
+  color: #f18840 !important;
+  font-family: "Quicksand-Medium";
+  font-weight: normal;
+  padding: 0;
+}
+.prev.round-btn {
+  background-color: transparent;
+  background-image: none;
+  cursor: default;
+  float: left;
+  margin: 0 auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.round-btn.next.step-next img {
+  height: 33px;
+}
+.round-btn.next.step-next {
+  background-image: none;
+  border-radius: 100%;
+  height: 70px;
+  margin: 0;
+  padding-top: 18px;
+  text-align: center;
+  width: 70px;
+}
+
+.top-section {
+  background-color: #52a2dc;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.top-section span {
+  height: 88px;
+  width: 88px;
+}
+span.cBack-icon-inactive {
+  background-image:  url("../Content/images/back.png") ;
+  background-repeat:no-repeat ;
+background-position:  center center;
+}
+
+span.cFront-icon-inactive ,span.obj-front.cFront-icon-active{
+  background-image:  url("../Content/images/front.png") ;
+  background-repeat:no-repeat ;
+background-position:  center center;
+}
+a.round-btn.next.step-next.blur-button {
+    background-image:none;
+
+}
+span.flip-left {
+  background-image:  url("../Content/images/flip-left.png") ;
+  background-repeat:no-repeat ;
+background-position:  center center;
+}
+span.flip-up {
+  background-image:  url("../Content/images/flip-down.png") ;
+  background-repeat:no-repeat ;
+background-position:  center center;
+}
+span.bin {
+   background-image:  url("../Content/images/delete-ipad.png") ;
+  background-repeat:no-repeat ;
+background-position:  center center;
+}
+
+.top-section .m-l-25 {
+  margin-left: 0;
+  margin-right: 15px;
+}
+
+.top-section button {
+  padding-left: 0;
+  padding-right: 15px;
+  padding-top: 0;
+}
+.top-section button#undo1 {
+  margin-left: 87px;
+}
+.top-section > button#redo1 {
+  margin-right: 87px;
+}
+.top-section span#delete-selected {
+  margin-left: 72px;
+  margin-right: 0;
+}
+
+.tabs-menu li img {
+  display: block;
+  margin: 0 auto 10px;
+  max-height: 130px;
+}
+.left-sec ul.tabs-menu {
+  display: inline-block;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}	
+.tabs-menu li.current a {
+  background: none ;
+  box-shadow: unset;
+  
+}
+.tabs-menu li a {
+  background: none ;
+  box-shadow: none;
+  padding: 17px 30px;
+}
+.tabs-menu li {
+  display: inline-block;
+  float: none;
+  padding: 0px;
+  text-align: center;
+  width: auto;
+}
+
+.tab {
+  background-color: #efefef;
+  display: inline-block;
+}
+.up-down {
+  margin-top: -40px;
+  text-align: center;
+}
+.up-down > span {
+  background-color: #fff;
+  border-radius: 100%;
+  box-shadow: 0 0 4px #ddd;
+  display: inline-block;
+  height: 80px;
+  width: 80px;
+}
+	.button-up {
+  padding-top: 18px;
+}
+.up-down button.button-down {
+  padding-bottom: 19px;
+}
+.up-down button {
+  background-color: transparent;
+border: 0 ;
+display: block;
+width: 100%;
+}
+.tab .text.search {
+  background-image: none;
+  border: 1px solid #ddd;
+  color: #444;
+  font-size: 18px;
+  font-weight: 400;
+  height: 60px;
+  padding-left: 30px;
+  width: 100%;
+}
+.faltu.demo #images {
+  display: inline-block;
+  float: left;
+  width: 100%;
+}
+.faltu.demo #images li.accordion_in {
+  border-radius: 6px;
+  height: 255px;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 255px;
+}
+.tab .listings {
+  background-image:  url("images/ipad-images/cover-image.jpg") ;
+background-size:  cover ;
+border-radius: 6px;
+    color: #fff;
+    cursor: pointer;
+  
+    font-size: 18px;
+    font-weight: 400;
+    height: 235px;
+    margin: 0;
+    padding: 110px 15px 9px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    z-index: 9; 
+}
+.tab .listings::before {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 8;
+}
+.tab .listings span {
+  position: relative;
+  z-index: 20;
+}
+
+.faltu.demo #images li.accordion_in:first-child {
+  margin-left: 255px;
+}
+#tab-1 .faltu .upload-sec {
+box-shadow: unset;
+float: left;
+height: 255px;
+padding: 10px;
+position: absolute;
+text-align: center;
+width: 255px;
+}
+#tab-1 .faltu .upload-sec .upload-btn {
+background-color: #7f7f7f;
+background-image: url("images/ipad-images/upload-bk.png");
+background-position: center 35px;
+background-repeat: no-repeat;
+background-size: 180px auto;
+border-radius: 6px;
+font-size: 0;
+height: 235px;
+position: relative;
+width: 100%;
+}
+
+#tab-1 .faltu .upload-sec .upload-btn > img {
+  display: none;
+}
+
+#tab-1 {
+  display: none;
+}
+.back-tabs,.cross-imagestab {
+background-color: #fff;
+border-radius: 100%;
+box-shadow: 0 0 4px #ddd;
+cursor: pointer;
+height: 50px;
+left: 30px;
+padding-top: 13px;
+position: absolute;
+text-align: center;
+top: -72px;
+width: 50px;
+}	
+
+.back-tabs > img ,.cross-imagestab img{
+  width: 26px;
+}
+#tab-1 #content-2 {
+  height: 265px !important;
+}
+.datas.acc_content {
+  background-color: #efefef;
+  color: #757d94;
+  font-size: 15px;
+  left: -10px;
+  line-height: normal;
+  padding-left: 0;
+  position: absolute;
+  top: 0;
+  z-index: 999;
+}
+.datas.acc_content div#images .images-p {
+float: left;
+height: 250px;
+margin-bottom: 20px;
+padding: 10px;
+width: 250px;
+}
+span.images-outerr {
+  border-radius: 6px;
+  display: inline-block;
+  height: 250px;
+  overflow: hidden;
+  padding: 0;
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+}
+#tab-1 .datas.acc_content div#images .images-p img {
+  border: 0 ;
+  min-height: 250px;
+  height:auto;
+  max-height: 300px;
+  max-width: 500px;
+  width: auto;
+}
+.datas.acc_content div#images {
+  display: inline-block;
+  padding: 0;
+  width: 100%;
+}
+
+
+#myModal-UploadImage .modal-header, #myModal-UploadImage .modal-content {
+  overflow: visible;
+}
+.modal-custom#myModal-UploadImage  .modal-dialog .modal-content::before, .modal-custom#myModal-UploadImage  .modal-dialog .modal-content::after {
+  background-image: none;
+}
+#myModal-UploadImage.modal-custom .modal-header {
+  border-bottom:0px;
+  padding: 10px 5px 15px;
+}
+#myModal-UploadImage .modal-body {
+  padding: 35px 15px;
+  position: relative;
+}
+#myModal-UploadImage.modal-custom .form-control {
+  float: none;	
+}
+#myModal-UploadImage .fileUpload.custom-input {
+  margin: 15px auto 20px;
+  width: 405px;
+}
+
+.images-p .del-img-dash {
+  display: none;
+}
+
+.left-sec.move-up {
+  margin-top: -270px;
+  z-index: 9;
+}
+
+.left-sec.move-up .button-up {
+  display: none;
+}
+.left-sec.move-up .up-down > span {
+  height: 50px;
+  padding-top: 16px;
+  width: 50px;
+}
+.left-sec.move-up .up-down {
+  margin-top: -28px;
+  text-align: center;
+}
+.move-up.left-sec .back-tabs, .move-up.left-sec .cross-imagestab {
+  top: -56px;
+}
+/*****tab-2************/
+#tab-2 .upload-sec {
+  border-bottom: 1px solid #ddd;
+  box-shadow: unset;
+}
+#tab-2 .upload-btn img {
+  display: none;
+  margin-top: -3px;
+}
+.upload-sec .upload-btn {
+  background-color: #249ee1;
+  font-size: 20px;
+  height: 60px;
+  padding: 17px 0;
+  text-transform: capitalize;
+  width: 340px;
+}
+#tab-2 .form-sec {
+  padding: 20px 30px;
+}
+
+.text-edit-wb .btn-group.bootstrap-select.select-box1.text button {
+  background-color: transparent;
+  border: 1px dashed #999;
+  border-radius: 2px;
+  color: #757d94;
+  font-size: 17px;
+  font-weight: normal;
+  height: 56px;
+  line-height: 50px;
+  padding: 0 0 0 22px;
+}
+.text-edit-wb .btn-group.bootstrap-select.select-box1.text button:hover {
+  background-color: transparent;
+}
+.form-group label {
+  font-size: 17px;
+  font-weight: normal;
+  padding-left: 0;
+  text-transform: capitalize;
+}
+.text-edit-wb .btn-group.bootstrap-select.select-box1.text button .bs-caret {
+  border-left: 1px dashed #999;
+}
+.form-group.fonts-families {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 25px;
+}
+.form-group.font-weight .btn.dropdown-toggle.btn-default {
+  display: none;
+}
+.form-group.font-weight .dropdown-menu {
+  background: transparent none repeat scroll 0 0;
+  border: 0 none;
+  box-shadow: unset;
+  display: block !important;
+  height: auto;
+  min-height: 40px !important;
+  position: relative !important;
+}
+.form-group.font-weight .dropdown-menu li a span {
+background-color: #8a8a8a;
+border: 2px solid #fff;
+border-radius: 30px;
+box-shadow: 0 0 2px #8a8a8a;
+color: #fff;
+display: inline-block;
+margin-right: 10px;
+padding: 10px 15px;
+text-align: center;
+}
+.form-group.font-weight {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+.color .color-outer {
+  border: 4px solid #fff;
+  border-radius: 50px;
+  display: inline-block;
+  float: left;
+  height: 65px;
+  margin: 0;
+  overflow: hidden;
+  width: 65px;
+}
+.form-group.half.color {
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  margin-top: 15px;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+.form-group.half.color > label {
+  float: left;
+  padding-top: 23px;
+  width: auto;
+}
+.aligns {
+  background: transparent;
+  border-radius: 0;
+  float: left;
+  height: auto;
+  margin: 10px 0 30px;
+  width: 100%;
+}
+.aligns button {
+  background-color: #cbc8c8;
+  border-radius: 100%;
+  color: #000;
+  height: 65px;
+  margin-right: 15px;
+  opacity: 1;
+  padding: 13px 12px;
+  width: 65px;
+}
+.font-weight .bootstrap-select.btn-group .dropdown-menu li {
+  display: inline-block;
+  position: relative;
+}
+
+.other-prpperties {
+  display: none;
+}
+
+li.paint-options {
+  clear: both;
+  list-style:  none;
+  padding: 10px 30px 90px;
+  position: relative;
+}
+#tab-3 .form-group.half.color-full.color {
+   border: 0 ;
+    bottom: 0;
+    left: 0;
+    margin-bottom: 0;
+    margin-top: 0;
+    position: absolute;
+    text-align: center;
+}
+.btnn-grps .btn.btn-info {
+    background: #fff none repeat scroll 0 0;
+    border: 0 none;
+    border-radius: 100%;
+    color: #8a8a8a;
+    font-size: 56px;
+    height: 85px;
+    margin-bottom: 4px;
+    margin-left: 1.5px;
+    margin-right: 20px;
+    width: 85px;
+}
+
+span.rectangle {
+    background-color: #8a8a8a;
+    border: 3px solid #8a8a8a;
+    display: inline-block;
+    height: 40px;
+    margin-top: -12px;
+    width: 45px;
+}
+span.triangle {
+    border-bottom: 33px solid #8a8a8a;
+    border-left: 33px solid transparent;
+    border-right: 30px solid transparent;
+    display: block;
+    margin-top: -5px;
+}
+span.line {
+  background: #8a8a8a ;
+  display: inline-block;
+  height: 4px;
+  margin-bottom: 19px;
+  width: 52px;
+}
+
+
+#drawing-mode.btn.btn-info {
+background-color: #fff;
+border: 0 none;
+border-radius: 100%;
+display: none;
+font-size: 0;
+height: 84px;
+width: 84px;
+}
+.tab-inside-paint {
+  display: inline-block;
+  float: left;
+  padding-top: 30px;
+  width: 100%;
+}
+.tab-inside-paint ul li {
+ background-color: #fff;
+background-position: center center;
+background-repeat: no-repeat;
+background-size: 50px auto;
+border-radius: 100%;
+display: inline-block;
+height: 85px;
+margin-right: 21px;
+width: 85px;
+}
+.tab-inside-paint ul li.paint-view {
+  background-image:url(images/ipad-images/pencil-edit-button-gray.png);
+}
+.tab-inside-paint ul li.paint-view.active {
+  background-image:url(images/ipad-images/pencil-edit-button.png);
+}
+.tab-inside-paint ul li.drawing-view {
+  background-image:url(images/ipad-images/artistic-brush.png);
+}
+.tab-inside-paint ul li.drawing-view.active {
+  background-image:url(images/ipad-images/artistic-brush-wh.png);
+}
+.tab-inside-paint ul li.emogi-view {
+  background-image:url(images/ipad-images/happiness.png);
+}
+.tab-inside-paint ul li.emogi-view.active {
+  background-image:url(images/ipad-images/happiness-wh.png);
+}
+
+.tab-inside-paint ul li.active {
+  background-color: #1f98de;
+}
+#tab-3 .form-group.half.color > label {
+  float: none;
+  min-width: 60px;
+  padding-right: 0;
+  padding-top: 10px;
+  width: auto;
+}
+#tab-3 .color .color-outer {
+  border: 4px solid #fff;
+  border-radius: 50px;
+  display: inline-block;
+  float: none;
+  height: 65px;
+  margin: 0;
+  overflow: hidden;
+  width: 65px;
+}
+
+#tab-3 .emoji-div {
+  display: none;
+}
+.tab {
+  width: 100%;
+}
+#tab-3 li.accordion_in1 {
+  float: left;
+  margin-bottom: 1%;
+  margin-left: 1%;
+  width: 24%;
+}
+
+#tab-3 .accordion_in1.acc_active .datas{
+  background-color: #efefef;
+  color: #757d94;
+  font-size: 15px;
+  left: -10px;
+  line-height: normal;
+  padding-left: 0;
+  position: absolute;
+  top: 0;
+  z-index: 999;
+}
+#tab-3 .accordion_in1.acc_active .datas .images-p {
+  float: left;
+  height: 248px;
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 248px;
+}
+#tab-3 .accordion_in1.acc_active .datas .images-p  span.images-outerr {
+   border-radius: 6px;
+    display: inline-block;
+    height: 248px;
+    overflow: hidden;
+    padding: 50px 0 0;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+}
+#tab-3 .accordion_in1.acc_active .datas .images-p img {
+border: 0 none;
+height: auto;
+max-height: 150px;
+max-width: 150px;
+min-height: 150px;
+width: auto;
+}
+#tab-3 .emoji-partial .faltu-inner {
+  max-height: 260px;
+}
+#tab-3 div#drawing-mode-options {
+  background:  none ;
+  border: 0 none;
+  display: inline-block;
+  float: left;
+  margin-top: 10px;
+  padding: 10px 30px;
+  text-align: left;
+  width: 100%;
+}
+span.draw-opt {
+  border-bottom: 1px solid #ddd;
+  display: inline-block;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+}
+.draw-opt > label {
+  color: #5d6376;
+  display: block;
+  font-size: 17px;
+  font-weight: normal;
+}
+.emoji-partial .accordion_in1.acc_active .datas {
+  display: block !important;
+}
+.bootstrap-select.btn-group .dropdown-menu {
+  box-sizing: border-box;
+  min-width: 100% !important;
+}
+#tab-3 span.draw-opt {
+  border-bottom: 1px solid #ddd;
+  display: inline-block;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+}
+#tab-3 span.draw-opt:last-child {
+border-bottom:1px solid #ddd;
+  margin-bottom: 20px;
+}
+.steps li.active::after {
+    left: 97%;
+}
+.form-group.fonts-families .dropdown-menu {
+    z-index: 9999;
+}
+
+
+

@@ -1,0 +1,67 @@
+﻿@model PagingResult<BlogModel>
+
+
+@if (Model.List != null && Model.List.Count() > 0)
+{
+    foreach (var item in Model.List)
+    {
+        <tr class="odd gradeX">
+            @if (item.ImageName != null)
+            {
+                <td><img src="~/Uploads/Blog/Thumb/@item.ImageName" height="50" width="50" /> </td>
+            }
+            else
+            {
+                <td> <img src="~/Content/images/thumb.png" height="50" width="50" /></td>
+            }
+            <td>@item.Title</td>
+            <td>
+                @if (item.Description.Length > 120)
+                {
+                    <span>@Html.Raw(item.Description.Substring(0, 117) + " ...")<a class="readmore-btn" href="@Url.Action("DisplayBlog", "Blog", new { area = "Admin", blogID = @item.ID })" data-original-title=data-original-title ="Edit" data-toggle="tooltip">See More</a></span>
+                }
+                else
+                {
+                    <span>@Html.Raw(item.Description)</span>
+                }
+            </td>
+            <td class="center">@Convert.ToDateTime(item.AddedOn).ToShortDateString()</td>
+            <td>
+                @{
+        if (item.IsFeaturedArticle)
+        {
+            <input type="checkbox" name="IsFeaturedArticle" checked class="FeaturedArticleStatus" data-url="@Url.Action("UpdateBlogFeaturedArticleStatus", "Blog", new { area = "Admin", blogID = @item.ID })" />
+        }
+        else
+        {
+            var status = string.Empty;
+            var message = string.Empty;
+            if (item.IsFeaturedArticle == false && ViewBag.IsFeaturedArticleExist == true)
+            {
+                status = "disabled";
+                message = "You already have set Blog as Featured Article. So Please unchecked first then choose other one.";
+                <span data-original-title="@message" data-toggle="tooltip"><i class="fa fa-ban"></i></span>
+            }
+            <input type="checkbox" name="IsFeaturedArticle" @status class="FeaturedArticleStatus" data-url="@Url.Action("UpdateBlogFeaturedArticleStatus", "Blog", new { area = "Admin", blogID = @item.ID })" />
+        }
+                }
+
+            </td>
+            <td class="center">
+                <a class="btn btn-primary btn-xs" href="@Url.Action("EditBlog", "Blog", new { area = "Admin", blogID = @item.ID })" data-original-title="edit" data-toggle="tooltip"><i class="fa fa-pencil"></i></a>
+                <a data-blogid="@item.ID" class="btn btn-danger btn-xs deleteBlogRecord" href="javascript:void(0);" data-original-title="Remove" data-toggle="tooltip"><i class="fa fa-times"></i></a>
+            </td>
+        </tr>
+    }
+}
+else
+{
+    <tr class="odd gradeX">
+        <td colspan="10" style="text-align:center">No Record Found</td>
+    </tr>
+}
+
+
+
+
+

@@ -1,0 +1,19 @@
+@font-face {
+  font-family: "arnhemtab-bold";
+  src: url("../fonts/arnhemtab-bold.eot?") format("eot"), url("../fonts/arnhemtab-bold.woff2") format("woff2"), url("../fonts/arnhemtab-bold.woff") format("woff"), url("../fonts/arnhemtab-bold.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "arnhemtab-normalitalic";
+  src: url("../fonts/arnhemtab-normalitalic.eot?") format("eot"), url("../fonts/arnhemtab-normalitalic.woff2") format("woff2"), url("../fonts/arnhemtab-normalitalic.woff") format("woff"), url("../fonts/arnhemtab-normalitalic.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Quicksand-Bold";
+  src: url("../fonts/Quicksand-Bold.eot?") format("eot"), url("../fonts/Quicksand-Bold.woff2") format("woff2"), url("../fonts/Quicksand-Bold.woff") format("woff"), url("../fonts/Quicksand-Bold.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Quicksand-Medium";
+  src: url("../fonts/Quicksand-Medium.eot?") format("eot"), url("../fonts/Quicksand-Medium.woff2") format("woff2"), url("../fonts/Quicksand-Medium.woff") format("woff"), url("../fonts/Quicksand-Medium.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Quicksand-Regular";
+  src: url("../fonts/Quicksand-Regular.eot?") format("eot"), url("../fonts/Quicksand-Regular.woff2") format("woff2"), url("../fonts/Quicksand-Regular.woff") format("woff"), url("../fonts/Quicksand-Regular.ttf") format("truetype"); }

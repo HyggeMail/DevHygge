@@ -1,0 +1,63 @@
+﻿@model PagingResult<PostCardListingModel>
+@*<h4>11 cards <span>(17mb of 20mb used)</span></h4>*@
+@if (Model.List.Count > 0 && Model.List != null)
+{
+    foreach (var item in Model.List)
+    {
+        <div class="col-sm-3 card-det">
+            <div class="card-out">
+                <figure>
+                    @if (item.CardFrontPath != null)
+                    {
+                        <img src="@item.CardFrontPath.Replace("~","../..")">
+                    }
+                </figure>
+                <div class="hover-option">
+                    <button type="button" class="view-card" data-id="@item.ID">
+                        <span class="" title="View Card"><i class="fa fa-eye" aria-hidden="true"></i></span>
+                    </button>
+                    @if (item.IsOrderPlaced != true)
+                    {
+                        <a href="@Url.Action("Dashboard", "Home", new { area = "user", cid = @item.ID })">
+                            <span class="edit-card" title="Edit Card">
+                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                            </span>
+                        </a>
+                    }
+                    <a href="@Url.Action("CopyPostCard", "PostCard", new { area = "user", id = @item.ID })">
+                        <span class="edit-card" title="Copy Card">
+                            <i class="fa fa-files-o" aria-hidden="true"></i>
+                        </span>
+                    </a>
+                    <a href="#" data-id="@item.ID" class="delete-card" title="Delete Card">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="card-details-lower">
+                <h4>Created on: <span>@Convert.ToDateTime(item.AddedOn).ToString("dd MMM yyyy")</span></h4>
+                <h4>Updated on: <span>@Convert.ToDateTime(item.UpdatedOn).ToString("dd MMM yyyy")</span></h4>
+
+                @if (item.CardFrontPath != null)
+                {
+
+                    @Html.Partial("Partials/_facebookShare", new PostCardFBModel { PostCardId = item.ID, UserId = item.UserID, Image = item.CardFrontPath.Replace("~", "") })
+                }
+            </div>
+        </div>
+    }
+
+}
+else
+{
+    <section class="sub-section wb-payments-plans custom-pages">
+        <div class="container">
+            <div class="plans-upper-description verfication">
+                <h1 class="text-center verfication_mesg">Message</h1>
+                <div class="success text-center" style="font-size:30px;">
+                    There are no HyggeMail cards created yet, Please <a href="@Url.Action("Dashboard", "Home", new { area ="User" })"> Click Here </a> to Create your Card.
+                </div><br /><br />
+            </div>
+        </div>
+    </section>
+}

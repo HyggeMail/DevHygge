@@ -1,0 +1,260 @@
+﻿<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+
+
+<div class="upload-sec">
+    <input type="file" class="hidden" />
+    <a onclick="Addtext()" title="Add text"><span class="upload-btn"> <img src="~/Content/images/add-text.png" alt="" /> <span class="mdi mdi-format-text"> Add text section  </span></a>
+    @*<a onclick="ReplicaContent()" title="Start fresh"><span class="mdi mdi-shredder btn btn-sm btn-primary"> Replica</span></a>&emsp;*@
+    @*<a href="javascript:" id="delete-selected">Delete Selected Object</a>&emsp;
+        <a href="javascript:" id="rotate-right">Rotate Right</a>&emsp;
+        <a href="javascript:" id="rotate-left">Rotate Left</a>&emsp;*@
+    @*<a id="lnkDownload" title="Save"><span class="mdi mdi-download btn btn-sm btn-success"> Save</span></a>*@
+
+</div>
+<div class="form-sec text-edit-wb">
+    <div class="form-group fonts-families">
+        <label> Typeface : </label>
+        <select class="select-box1 text selectpicker" id="font-family">
+            <option value="Adorable-Line">Adorable Line</option>
+            <option value="Adorable-Extras">Adorable Extras</option>
+            <option value="Adorable-Pressure">Adorable Pressure</option>
+            <option value="Conv_Allura-Regular">Allura-Regular</option>
+            <option value="Libre_Baskerville_Bold">Alice Regular</option>
+            <option value="Arial">Arial</option>
+            <option value="AngleciaProDisplay-Regular">Anglecia regular</option>
+            <option value="Bougenville">Bougenville</option>
+            <option value="BEBAS">Bebas</option>
+            <option value="Conv_BadScript-Regular">BadScript-Regular</option>
+            <option value="Courier">Courier</option>
+            <option value="Conv_Calligraffitti-Regular">    Calligraffitti-Regular</option>
+            <option value="Conv_Cedarville-Cursive">        Cedarville-Cursive</option>
+            <option value="Conv_ClickerScript-Regular">     ClickerScript-Regular</option>
+            <option value="Conv_Condiment-Regular">         Condiment-Regular</option>
+            <option value="Conv_CoveredByYourGrace">        Covered By Your Grace</option>
+            <option value="CinzelDecorative-Regular">CinzelDecorative-Regular</option>
+            <option value="comic-sans-ms">Comic Sans MS</option>
+            <option value="Conv_DancingScript-Bold">        DancingScript-Bold</option>
+            <option value="Dancing_Script">Dancing Script</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Conv_GiveYouGlory">              Give You Glory</option>
+            <option value="Conv_GreatVibes-Regular">        GreatVibes-Regular</option>
+            <option value="Conv_HerrVonMuellerhoff-Regular">HerrVonMuellerhoff-Regular</option>
+            <option value="Conv_HomemadeApple-Regular">     HomemadeApple-Regular</option>
+            <option value="Helvetica Neue">Helvetica Neue</option>
+            <option value="Intrique-Script-Personal-Use">Intrique</option>
+            <option value="Impact">Impact</option>
+            <option value="Conv_JustMeAgainDownHere">       Just Me Again Down Here</option>
+            <option value="Conv_LeagueScript">              League Script</option>
+            <option value="Libre_Baskerville_Bold">libre Baskerville Bold</option>
+            <option value="Conv_Meddon">                    Meddon</option>
+            <option value="Conv_MonsieurLaDoulaise-Regular">MonsieurLaDoulaise-Regular</option>
+            <option value="Conv_MrDafoe-Regular">           MrDafoe-Regular</option>
+            <option value="Conv_MrDeHaviland-Regular">      MrDeHaviland-Regular</option>
+            <option value="Conv_MrsSaintDelafield-Regular"> Mrs Saint Delafield-Regular</option>
+            <option value="Monaco">Monaco</option>
+            <option value="Northwell">Northwell</option>
+            <option value="Northwell Alt">Northwell Alt</option>
+            <option value="Conv_NothingYouCouldDo">         Nothing You Could Do</option>
+            <option value="Ondise" selected>Ondise</option>
+            <option value="Playball-Regular">Playball Regular</option>
+            <option value="Conv_Qwigley-Regular">           Qwigley-Regular</option>
+            <option value="Conv_ReenieBeanie">              ReenieBeanie</option>
+            <option value="Rambies">Rambies</option>
+            <option value="Serendipity Three">Serendipity Three</option>
+            <option value="Serendipity Wide Two">Serendipity Wide Two</option>
+            <option value="Serendipity Ligatures">Serendipity Ligatures </option>
+            <option value="Serendipity Two">Serendipity Two</option>
+            <option value="Serendipity One">Serendipity One</option>
+            <option value="Serendipity Wide Ligatures">Serendipity Wide Ligatures</option>
+            <option value="Serendipity Wide Three">Serendipity Wide Three</option>
+            <option value="Conv_Sacramento-Regular">        Sacramento-Regular</option>
+            <option value="Conv_Satisfy-Regular">           Satisfy-Regular</option>
+            <option value="SourceCodePro-Bold">SourceCodePro-Bold</option>
+            <option value="Serendipity Wide One">Serendipity Wide One</option>
+            <option value="Conv_Tangerine-Bold">            Tangerine-Bold</option>
+            <option value="Conv_Tangerine-Regular">         Tangerine-Regular</option>
+            <option value="Conv_TheGirlNextDoor">           The Girl Next Door</option>
+            <option value="Verdana">Verdana</option>
+            <option value="Conv_WaitingfortheSunrise">      Waiting for the Sunrise</option>
+            <option value="You Rock Extras">You Rock Extras</option>
+            <option value="You Rock">You Rock</option>
+            @*<option value="Conv_DawningofaNewDay">          Dawning of a New Day</option>*@
+        </select>
+    </div>
+
+    <div class="form-group font-weight ">
+        <label> Weight: </label>
+        <select class="select-box1 text selectpicker" id="text-font-weight">
+            <option data-t="f" value="">Normal</option>
+            <option data-t="f" value="bold">Bold</option>
+            <option data-t="f" value="italic">Italic</option>
+            <option data-t="t" value="underline">Underline</option>
+            <option data-t="t" value="line-through">Linethrough</option>
+            <option data-t="t" value="overline">Overline</option>
+        </select>
+
+    </div>
+
+
+    @*<button class="btn btn-primary txtDecobtnFormGroup text-font-weight txtDecobtn" value="underline" title="Underline"></button>*@
+
+    @*<button class="btn btn-primary txtDecobtnFormGroup text-font-weight txtDecobtn" value="underline" title="Underline">
+            <span class="mdi mdi-format-text">Underline</span>
+        </button>
+        <button class="btn btn-primary txtDecobtnFormGroup text-font-weight txtDecobtn" value="line-through" title="Linethrough">
+            <span class="mdi mdi-format-text">Linethrough</span>
+        </button>
+        <button class="btn btn-primary txtDecobtnFormGroup text-font-weight txtDecobtn" value="overline" title="Overline">
+            <span class="mdi mdi-format-text">Overline</span>
+
+        </button>*@
+
+
+
+
+    <div class="form-group half size">
+        <label> size: </label>
+        <select class="select-box1 text selectpicker" id="text-font-size" data-type="fontSize">
+            @{
+                for (int i = 10; i <= 120; i += 2)
+                {
+                    if (i == 24)
+                    {
+                        <option value="@i" selected="selected">@i</option>
+                    }
+                    else
+                    {
+                        <option value="@i">@i</option>
+                    }
+                }
+            }
+            @*<option value="10">10</option>
+                <option value="12">12</option>
+                <option value="14">14</option>
+                <option value="16">16</option>
+                <option value="18">18</option>
+                <option value="20">20</option>
+                <option value="24" selected="selected">24</option>
+                <option value="32">32</option>
+                <option value="36">36</option>
+                <option value="40">40</option>
+                <option value="44">44</option>
+                <option value="48">48</option>
+                <option value="52">52</option>
+                <option value="56">56</option>
+                <option value="60">60</option>*@
+        </select>
+    </div>
+
+    <div class="form-group half color">
+        <label> Color : </label>
+        <span class="color-outer">
+            @*<input type="color" id="text-color" >*@
+            <input class="jscolor {onFineChange:'ChangeTextColorFromColorPicker(this)',valueElement:null,value:'005e7a'} color-input" readonly="readonly" onfocus="this.blur()">
+        </span>
+    </div>
+
+    <div class="form-group aligment">
+        <label>Alignment:</label>
+        @*<select class="select-box text" id="text-align">
+                <option value="left">Align Left</option>
+                <option value="center">Align Center</option>
+                <option value="right">Align Right</option>
+                <option value="justify">Align Justify</option>
+            </select>*@
+        <div class="aligns">
+            <button class="text-align" value="left"> <img src="~/content/images/align-left.png"></button>
+            <button class="text-align" value="center"> <img src="~/content/images/align-center.png"></button>
+            <button class="text-align" value="right"><img src="~/content/images/align-right.png"></button>
+            <button class="text-align" value="justify"> <img src="~/content/images/align-justify.png"></button>
+        </div>
+    </div>
+
+
+
+
+    <div class="other-prpperties">
+        <span class="feature-inn">
+            <label for="text-stroke-color">Stroke Color:</label>
+            @*<input type="color" id="text-stroke-color">*@
+            <input class="jscolor {onFineChange:'ChangetxtStrokeColorFromColorPicker(this)',valueElement:null,value:'005e7a'} color-input" readonly="readonly">
+        </span>
+        @*<span class="feature-inn">
+                <label for="text-stroke-width">Stroke Width:</label>
+                <input type="number" value="1" min="0" max="5" id="text-stroke-width">
+            </span>
+            <span class="feature-inn">
+                <label for="text-line-height">Line Height:</label>
+                <input type="number" min="0" max="10" step="0.1" id="text-line-height">
+            </span>*@
+
+        <span class="feature-inn">
+            <label for="text-stroke-width">Stroke Width:</label>
+        </span>
+        <div class="input-group">
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-danger btn-number" data-type="minus" data-field="quant[1]">
+                    <span class="glyphicon glyphicon-minus"></span>
+                </button>
+            </span>
+            <input type="text" name="quant[1]" class="form-control input-number" value="1" min="0" max="5" id="text-stroke-width" style="cursor:context-menu">
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-success btn-number" data-type="plus" data-field="quant[1]">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </button>
+            </span>
+        </div>
+        <br />
+
+        <span class="feature-inn">
+            <label for="text-line-height">Line Height:</label>
+        </span>
+        <div class="input-group">
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-danger btn-number" data-type="minus" data-field="quant[2]">
+                    <span class="glyphicon glyphicon-minus"></span>
+                </button>
+            </span>
+            <input type="text" name="quant[2]" class="form-control input-number" min="0" max="10" step="0.1" value="0" id="text-line-height" style="cursor:context-menu">
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-success btn-number" data-type="plus" data-field="quant[2]">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </button>
+            </span>
+        </div>
+        <br />
+
+        @*<span class="feature-inn">
+            <label for="text-bg-color">BG Color:</label>
+            <input type="color" id="text-bg-color" size="10">
+                <input class="jscolor {onFineChange:'ChangeBGColorFromColorPicker(this)',valueElement:null,value:'005e7a'} color-input">
+            </span>*@
+        <span class="feature-inn">
+            <label for="text-lines-bg-color">BG Color:</label>
+            @*<input type="color" id="text-lines-bg-color" size="10">*@
+            <input class="jscolor {onFineChange:'ChangeTxtBGColorFromColorPicker(this)',valueElement:null,value:'005e7a'} color-input" readonly="readonly">
+
+            <button class="btn btn-primary  removeBGColor" title="Remove BG Color">
+                <span class="mdi mdi-format-text">Remove BG Color</span>
+            </button>
+        </span>
+
+
+
+        @*<input type='checkbox' name='fonttype' id="text-cmd-bold"> <b>Bold</b>
+            <input type='checkbox' name='fonttype' id="text-cmd-italic"> <em>Italic</em>
+            <input type='checkbox' name='fonttype' id="text-cmd-underline"> Underline
+            <input type='checkbox' name='fonttype' id="text-cmd-linethrough"> Linethrough
+            <input type='checkbox' name='fonttype' id="text-cmd-overline"> Overline*@
+    </div>
+</div>
+
+
+<script>
+    $(document).on('focus', 'input[readonly]', function () {
+        this.blur();
+    });
+</script>

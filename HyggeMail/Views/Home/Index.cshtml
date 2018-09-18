@@ -1,0 +1,686 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ActionOutput<TestimonialModel> testimonials = ViewBag.TestiMonials as ActionOutput<TestimonialModel>;
+    UserDetails LOGGEDIN_USER = (UserDetails)ViewBag.LOGGEDIN_USER;
+}
+<!-- <section id="guide">
+    <div class="container guide__content">
+        <div class="row">
+            <div class="col-lg-4 offset-lg-1">
+                <h3>Send 10 free cards</h3>
+                <p>by signing up to our newsletter and downloading our Hygge - Danish Guide to Happiness!</p>
+            </div>
+            <div class="col-lg-6">
+               
+
+                <div id="mc_embed_signup">
+                    <form action="https://hyggemail.us18.list-manage.com/subscribe/post?u=9d3ec567ee3ba335e68368dcb&amp;id=0dfa3ee37c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                        <div id="mc_embed_signup_scroll">
+
+                            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter Your Email" required>
+                         
+                            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_9d3ec567ee3ba335e68368dcb_0dfa3ee37c" tabindex="-1" value=""></div>
+                            <span class="input-shadow1">
+                                <a href="javascript:" name="subscribe" id="mc-embedded-subscribe" class="btn btn-white-pattern">Get the guide  <img src="../img/arrow.png"></a>
+                            </span>
+                            <div class="input-shadow"></div>
+                        </div>
+                    </form>
+                </div>
+
+              
+            </div>
+        </div>
+    </div>
+    <div class="container guide__footer">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+                <p>You'll get an email every now and then with some great ways to make the most of HyggeMail. <span class="colored">You can <a href="#">unsubscribe</a> at any time.</span></p>
+            </div>
+        </div>
+    </div>
+</section>
+ -->
+<section id="guide" class="guide-new-section">
+    <div class="container guide__content">
+        <div class="row">
+            <div class="col-xs-12 upper-div">
+                <h3>Live happier with a little help from Hygge </h3>
+               
+			   <div class="form-guide">
+                <!--Begin mc_embed_signup-->
+
+                <div id="mc_embed_signup">
+                    <form action="https://hyggemail.us18.list-manage.com/subscribe/post?u=9d3ec567ee3ba335e68368dcb&amp;id=0dfa3ee37c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                        <div id="mc_embed_signup_scroll">
+
+                            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter Your Email" required>
+                            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_9d3ec567ee3ba335e68368dcb_0dfa3ee37c" tabindex="-1" value=""></div>
+                            <span class="input-shadow1">
+                                <a href="javascript:" name="subscribe" id="mc-embedded-subscribe" class="btn btn-white-pattern">Download Now</a>
+                            </span>
+                            <div class="input-shadow"></div>
+                        </div>
+                    </form>
+                </div>
+
+                <!--End mc_embed_signup-->
+            </div>
+            </div>
+			<div class="lower-div">
+			Download The Danish Guide to Happiness now & start enjoy the little  things in life, the Danish way.
+			</div>
+            
+        </div>
+    </div>
+    <div class="container guide__footer">
+        <div class="row">
+            <div class="col-xs-12 ">
+			<h4>Send 10 free cards</h4>
+                <p>To start feeling a little hygge in your life, we're giving you the gift of 10 free cards that you can send to anyone, anywhere, in the world!</p>
+				
+				    @if (LOGGEDIN_USER != null && LOGGEDIN_USER.IsAuthenticated)
+        {
+            <a class="btn btn-peach-pattern" href="@Url.Action("Dashboard", "Home", new {area="user" })">
+              <!-- <img src="../img/send.png" srcset="../img/send@2x.png">  --> <span>Get started</span>
+            </a>
+        }
+        else
+        {
+            <a class="btn btn-peach-pattern" data-toggle="modal" data-target="#myModal-signin">
+                <span>Get started</span>
+            </a>
+        }
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="features">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <img class="blue" src="../img/features-yellow.png" srcset="../img/features-yellow@2x.png">
+                <span class="yellow">
+                    Send joy mail instead of junk mail
+                </span>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <img class="blue" src="../img/features-blue.png" srcset="../img/features-blue@2x.png">
+                <span class="blue">
+                    Access to free photography library
+                </span>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <img class="orange" src="../img/features-orange.png" srcset="../img/features-orange@2x.png">
+                <span class="orange">
+                    Writing prompts to inspire
+                </span>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <img class="green" src="../img/features-green.png" srcset="../img/features-green@2x.png">
+                <span class="green">
+                    Always personalise to your hearts content!
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="video">
+    <div class="container">
+        <div class="row">
+            <div class="video col-lg-12">
+                <iframe height="600" width="100%" src="https://www.youtube.com/embed/Yv9Z5V25QLQ" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="video__clouds">
+        <div id="cloud3">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="579px" height="457px">
+                <defs>
+                    <filter id="Filter_0">
+                        <feFlood flood-color="rgb(167, 214, 226)" flood-opacity="0.08" result="floodOut" />
+                        <feComposite operator="atop" in="floodOut" in2="SourceGraphic" result="compOut" />
+                        <feBlend mode="multiply" in="compOut" in2="SourceGraphic" />
+                    </filter>
+                </defs>
+                <g filter="url(#Filter_0)">
+                    <path fill-rule="evenodd" fill="rgba(167, 214, 226, .08)"
+                          d="M425.026,69.228 C401.638,14.673 411.557,7.569 345.563,0.436 C320.898,-2.230 287.897,7.888 267.279,21.782 C248.311,34.568 224.649,36.213 202.499,36.132 C157.648,35.964 105.502,16.289 92.039,77.824 C82.868,119.724 135.841,146.444 122.902,186.786 C118.865,199.387 106.311,208.708 96.003,216.572 C70.393,236.103 51.327,252.887 32.368,280.642 C-3.131,332.578 -5.650,356.773 6.761,389.476 C20.221,424.933 70.547,458.214 112.311,441.583 C162.412,421.642 157.669,379.078 213.413,357.042 C260.457,338.434 274.780,378.329 292.422,410.969 C325.697,472.537 390.340,470.187 434.360,416.754 C448.700,399.345 473.168,361.306 468.324,336.392 C464.414,316.283 438.059,304.152 425.291,290.533 C380.380,242.634 455.822,225.422 495.388,207.825 C533.202,191.013 594.166,156.433 574.028,94.051 C567.118,72.647 518.939,53.491 499.524,60.952 C472.060,71.515 436.690,96.449 425.026,69.228 Z" />
+                </g>
+            </svg>
+        </div>
+        <div id="cloud4">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="579px" height="457px">
+                <defs>
+                    <filter id="Filter_0">
+                        <feFlood flood-color="rgb(167, 214, 226)" flood-opacity="0.08" result="floodOut" />
+                        <feComposite operator="atop" in="floodOut" in2="SourceGraphic" result="compOut" />
+                        <feBlend mode="multiply" in="compOut" in2="SourceGraphic" />
+                    </filter>
+                </defs>
+                <g filter="url(#Filter_0)">
+                    <path fill-rule="evenodd" fill="rgba(167, 214, 226, .08)"
+                          d="M425.026,69.228 C401.638,14.673 411.557,7.569 345.563,0.436 C320.898,-2.230 287.897,7.888 267.279,21.781 C248.311,34.568 224.649,36.213 202.499,36.132 C157.648,35.964 105.502,16.289 92.039,77.824 C82.868,119.724 135.841,146.444 122.902,186.786 C118.865,199.387 106.311,208.708 96.003,216.571 C70.393,236.103 51.327,252.888 32.368,280.642 C-3.131,332.578 -5.650,356.773 6.761,389.476 C20.221,424.933 70.547,458.214 112.311,441.583 C162.412,421.642 157.669,379.078 213.413,357.042 C260.457,338.433 274.780,378.329 292.422,410.969 C325.697,472.537 390.340,470.187 434.360,416.754 C448.700,399.344 473.168,361.306 468.324,336.392 C464.414,316.283 438.059,304.152 425.291,290.533 C380.380,242.634 455.822,225.422 495.388,207.825 C533.202,191.013 594.166,156.433 574.028,94.051 C567.118,72.646 518.939,53.491 499.524,60.952 C472.060,71.515 436.690,96.449 425.026,69.228 Z" />
+                </g>
+            </svg>
+        </div>
+        <div id="cloud5">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="212px" height="187px">
+                <defs>
+                    <filter id="Filter_0">
+                        <feFlood flood-color="rgb(167, 214, 226)" flood-opacity="0.08" result="floodOut" />
+                        <feComposite operator="atop" in="floodOut" in2="SourceGraphic" result="compOut" />
+                        <feBlend mode="multiply" in="compOut" in2="SourceGraphic" />
+                    </filter>
+                </defs>
+                <g filter="url(#Filter_0)">
+                    <path fill-rule="evenodd" fill="rgba(167, 214, 226, .08)"
+                          d="M45.654,18.581 C88.417,-12.762 148.492,-3.503 179.834,39.261 C211.176,82.024 228.584,136.192 185.821,167.535 C143.058,198.877 80.961,188.504 24.974,152.761 C-19.715,124.231 2.890,49.923 45.654,18.581 Z" />
+                </g>
+            </svg>
+        </div>
+    </div>
+</section>
+<section id="how-it-works">
+    <div class="container">
+        <div class="row">
+            <div class="offset-lg-1 col-lg-5 col-md-6">
+                <span class="inner-view">
+                    <div class="number blue">1</div>
+                    <h4>Design front face</h4>
+                    <p class="blue">Select images,<br> write text or draw</p>
+                </span>
+                <span class="inner-view">
+                    <div class="number orange">2</div>
+                    <h4>Design back left</h4>
+                    <p class="orange">Select images,<br> write text or draw</p>
+                </span>
+            </div>
+
+            <div class=" col-lg-5 col-md-6">
+                <span class="inner-view">
+                    <div class="number yellow">3</div>
+                    <h4>Add recipient address</h4>
+                    <p class="yellow">You card can be delivered <br>to anyone, anywhere worldwide</p>
+                </span>
+                <span class="inner-view">
+                    <div class="number green">4</div>
+                    <h4>Send card</h4>
+                    <p class="green">Preview, pick date <br> and spread joy!</p>
+                </span>
+
+            </div>
+			<div class="col-lg-1 hidden-xs hidden-sm hidden-md">
+			</div>
+        </div>
+        @*<div class="row">
+                <div class="offset-lg-1 col-lg-4 col-md-6">
+                    <div class="number yellow">3</div>
+                    <h4>Add recipient address</h4>
+                    <p class="yellow">You card can be delivered <br>to anyone, anywhere worldwide</p>
+                </div>
+                <div class="offset-lg-2 col-lg-4 col-md-6">
+                    <div class="number green">4</div>
+                    <h4>Send card</h4>
+                    <p class="green">Preview, pick date <br> and spread joy!</p>
+                </div>
+            </div>*@
+        @if (LOGGEDIN_USER != null && LOGGEDIN_USER.IsAuthenticated)
+        {
+            <a href="@Url.Action("Dashboard", "Home", new {area="user" })" class="btn btn-peach-pattern">
+                <img src="../img/send.png" srcset="../img/send@2x.png">
+                <span>Send a card</span>
+            </a>
+        }
+        else
+        {
+            <a href="#" class="btn btn-peach-pattern" data-toggle="modal" data-target="#myModal-signin">
+                <img src="../img/send.png" srcset="../img/send@2x.png">
+                <span>Send a card</span>
+            </a>
+        }
+    </div>
+</section>
+
+<section class="card-printed section" id="CardsCreated">
+    <div class="container custom-container">
+        <!--   <h2 class="red-heading"> @ViewBag.PostCardCount </h2> -->
+
+        <h3>HyggeMail Templates</h3>
+        </h3>
+        <div class="gallery-sec clearfix" id="div_DemoPostCards">
+
+        </div>
+        @if (LOGGEDIN_USER != null && LOGGEDIN_USER.IsAuthenticated)
+        {
+            <a class="btn btn-peach-pattern" href="@Url.Action("Dashboard", "Home", new {area="user" })">
+              <img src="../img/send.png" srcset="../img/send@2x.png">  <span>Create  Card</span>
+            </a>
+        }
+        else
+        {
+            <a class="btn btn-peach-pattern" data-toggle="modal" data-target="#myModal-signin">
+                <img src="../img/send.png" srcset="../img/send@2x.png"> <span>Create  Card</span>
+            </a>
+        }
+    </div>
+</section>
+
+<section id="testimonials">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>Testimonials</h3>
+            </div>
+        </div>
+        <div class="row">
+
+            @if (testimonials != null)
+            {
+                if (testimonials.List != null && testimonials.List.Count > 0)
+                {
+                    foreach (var item in testimonials.List)
+                    {
+                        <div class="col-lg-4">
+                            <div class="testimonials__box blue">
+                                <div class="testimonials__header">
+                                    <img src="~/Uploads/Testimonial/Thumb/@item.ImageName">
+                                    <div class="header__title">
+                                        <div class="testimonials__title">@item.Name</div>
+                                        @*  <span>@item.Title</span>*@
+                                    </div>
+                                </div>
+                                <p>@Html.Raw(item.Description)</p>
+                            </div>
+                        </div>
+                    }
+                }
+            }
+        </div>
+    </div>
+    @if (LOGGEDIN_USER != null && LOGGEDIN_USER.IsAuthenticated)
+    {
+        <a href="@Url.Action("Dashboard", "Home", new {area="user" })" class="btn btn-peach-pattern">
+            <img src="../img/send.png" srcset="../img/send@2x.png">
+            <span>Send a card</span>
+        </a>
+    }
+    else
+    {
+        <a href="#" class="btn btn-peach-pattern" data-toggle="modal" data-target="#myModal-signin">
+            <img src="../img/send.png" srcset="../img/send@2x.png">
+            <span>Send a card</span>
+        </a>
+    }
+    <div class="testimonials__clouds">
+        <div id="cloud6">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="285px" height="252px">
+                <defs>
+                    <filter id="Filter_0">
+                        <feFlood flood-color="rgb(167, 214, 226)" flood-opacity="0.08" result="floodOut" />
+                        <feComposite operator="atop" in="floodOut" in2="SourceGraphic" result="compOut" />
+                        <feBlend mode="multiply" in="compOut" in2="SourceGraphic" />
+                    </filter>
+                </defs>
+                <g filter="url(#Filter_0)">
+                    <path fill-rule="evenodd" fill="rgba(167, 214, 226, .08)"
+                          d="M60.987,25.149 C118.825,-17.272 200.076,-4.741 242.467,53.138 C284.858,111.017 308.403,184.332 250.565,226.754 C192.727,269.175 108.740,255.136 33.017,206.758 C-27.425,168.143 3.149,67.569 60.987,25.149 Z" />
+                </g>
+            </svg>
+        </div>
+        <div id="cloud7">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512px" height="498px">
+                <defs>
+                    <filter id="Filter_0">
+                        <feFlood flood-color="rgb(167, 214, 226)" flood-opacity="0.08" result="floodOut" />
+                        <feComposite operator="atop" in="floodOut" in2="SourceGraphic" result="compOut" />
+                        <feBlend mode="multiply" in="compOut" in2="SourceGraphic" />
+                    </filter>
+                </defs>
+                <g filter="url(#Filter_0)">
+                    <path fill-rule="evenodd" fill="rgba(167, 214, 226, .08)"
+                          d="M161.977,445.655 C197.206,493.427 189.171,502.609 255.050,494.482 C279.673,491.445 309.490,474.058 326.391,455.822 C341.938,439.042 364.598,432.037 386.182,427.057 C429.885,416.977 485.147,424.224 484.201,361.240 C483.560,318.354 425.885,304.437 429.269,262.206 C430.322,249.016 440.415,237.075 448.656,227.064 C469.128,202.201 483.857,181.505 495.977,150.155 C518.676,91.484 515.604,67.353 496.051,38.349 C474.850,6.903 418.253,-14.005 381.391,11.724 C337.168,42.580 351.507,82.936 302.268,117.121 C260.717,145.981 237.661,110.411 213.031,82.662 C166.575,30.320 104.177,47.371 73.523,109.445 C63.538,129.669 48.404,172.291 58.809,195.440 C67.208,214.124 95.638,219.916 111.178,230.259 C165.842,266.636 96.324,300.622 61.822,326.790 C28.847,351.793 -22.608,399.382 11.244,455.517 C22.859,474.778 74.140,482.424 91.338,470.726 C115.664,454.170 144.404,421.818 161.977,445.655 Z" />
+                </g>
+            </svg>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<section id="why">
+    <h3>Why you should start <br>using HyggeMail</h3>
+    <div class="why-bg">
+        <div class="why-bg__penguin">
+            <svg version="1.1" id="Шар_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="930px" height="734px" viewBox="0 0 930 734" style="enable-background:new 0 0 930 734;" xml:space="preserve">
+<style type="text/css">
+    .st0 {
+        fill-rule: evenodd;
+        clip-rule: evenodd;
+        fill: #7BC8DB;
+    }
+
+    .st1 {
+        fill-rule: evenodd;
+        clip-rule: evenodd;
+        fill: #3B9DB5;
+    }
+
+    .st2 {
+        fill: none;
+    }
+
+    .st3 {
+        fill: #FFFFFF;
+    }
+
+    .st4 {
+        font-family: 'Quicksand-Bold';
+    }
+
+    .st5 {
+        font-size: 21.003px;
+    }
+</style>
+<path class="st0" d="M464.8,51.1c-3.2-5.3-9.2-8.4-15.4-7.9l-85.3,7.4c-14-14.1-30.3-26.1-48.9-35.4C274.6-5.4,224-5,169,15.9
+	C73.6,52.3-16.6,144.5-64.3,253.3c-0.5-0.1-1.1-0.1-1.6-0.1c-9.5-0.5-20,3.2-25.8,11.1c-0.2,0.2-0.3,0.4-0.5,0.7
+	c-0.8,1.2-1.6,2.4-2.2,3.7l-80.3,161.8c-7.1,14.3-0.1,31.9,13.9,38.9l9.1,4.5c0,0-0.2,0.1-0.2,0.1l0,0c-3.1,2-37.1,20.2-46.4,23.1
+	l-48.8,15.1l445.8,221.4l10.4-10.1c53.3-51.9,100.9-118.7,137.9-193.2c74.8-150.6,97.3-288.6,69.4-387.3l48.4-74.6
+	C467.9,63.2,468,56.5,464.8,51.1z M248.5,62.6c3.2-4,8.3-6.1,14.1-5.7c5.1,0.3,10.3,2.4,14.7,6c9.9,8,12.8,20.3,6.6,28.1
+	c-5.2,6.5-14.7,7.5-23.5,3.1c-1.8-0.9-3.6-2-5.3-3.4C245.2,82.7,242.3,70.4,248.5,62.6z M32.8,336.1c1.3,19.3,8.7,34.5,22,41.2l0,0
+	l0,0c13.4,6.6,30,3.3,46.1-7.4l78.8,39.1l-95.1,10.4c-5.7-14.7-16.6-27.4-31.8-34.9c-15.5-7.7-32.5-8.6-47.8-4l-49.8-83L32.8,336.1z
+	 M59.7,469c-1.7,2-3.7,3.8-5.7,5.4c-0.1,0.1-0.2,0.3-0.4,0.4c-13.6,10.7-32.5,13.3-48.9,5.1c-22.7-11.3-31.9-39-20.6-61.9
+	c4.6-9.3,19.1-13.5,15.9-12.3c12.9-5,24.8-5.2,34.3-0.3c4.4,2.2,8.2,5,11.4,8.3l20-1.9c1.5-0.1,2.9,0.6,3.6,1.8
+	c0.7,1.3,0.7,2.9-0.1,4.1L58,435.4C60.7,445.1,61.2,456.5,59.7,469z M-76.3,308.7l53.3,88.8c-4.6,4.7-8.6,10.2-11.7,16.5
+	c-16,32.3-2.9,71.4,29.4,87.5c32.3,16,71.4,2.9,87.4-29.4c3.2-6.5,5.2-13.3,6.2-20.1l101.4-11.1l-66.2,133.4l-266.1-132.1
+	L-76.3,308.7z M310.2,512.2c-32.5,65.6-73.7,124.7-119.6,171.9L119.9,649c0.8-8-0.1-15.2,7.6-40.4l-0.9-0.4c0.3,0,0.7,0,1,0
+	c4.9-0.4,9.7-2.1,13.8-4.9l7.1-7.8L230,431.3c0.7-1.3,1.2-2.7,1.7-4.1c0.1-0.2,0.2-0.4,0.2-0.6c2-6.4,1.8-12.8-0.4-18.4l1.9,0.6
+	c39.4-24.7,85.1-35.3,129.4-28.8C350,422.9,332.4,467.5,310.2,512.2z M401.9,105c-3.9-8.3-8.3-16.1-13.2-23.6l30.2-2.6L401.9,105z
+	 M29.2,413.8c-4-2-8.5-1.2-10,1.9c-1.5,3,0.5,7.1,4.6,9.1c4,2,8.5,1.2,10-1.9S33.3,415.8,29.2,413.8z" />
+<path class="st1" d="M747,87.9c-77.3-2.6-143.6,30.8-171.2,80.3C564.3,171,548,171,548,183.6c0,12.9,6.7,25.4,14.1,36.2
+	c0,38.9,21.6,74.8,56.5,100.8c1.3,2.3,3.6,3.9,6.3,4.5c32.1,22,74.2,36,120.3,37.6C846.7,366,929.5,307.3,930,231.4
+	C930.5,155.5,848.6,91.3,747,87.9z" />
+<rect x="623.1" y="172.5" class="st2" width="275.7" height="157.3" />
+<text id="With_HyggeMail_x2C__you_can_get_that_feeling_every_day_at_the_click" transform="matrix(1 0 0 1 623.1094 187.1787)"><tspan x="0" y="0" class="st3 st4 st5">With HyggeMail, you can </tspan><tspan x="0" y="41" class="st3 st4 st5">get that feeling every day </tspan><tspan x="0" y="82" class="st3 st4 st5">at the click of a button.</tspan></text>
+<ellipse transform="matrix(8.128753e-02 -0.9967 0.9967 8.128753e-02 303.8378 658.1917)" class="st1" cx="508.9" cy="164.3" rx="17.4" ry="28.1" />
+<path class="st1" d="M467.4,133.2c-7.3-3.7-15.3-3.2-17.8,1.3c-2.5,4.4,1.4,11.1,8.7,14.8c7.3,3.7,15.3,3.2,17.8-1.3
+	C478.7,143.6,474.8,137,467.4,133.2z" />
+</svg>
+        </div>
+        <div class="why-bg__text">
+            <img src="../img/why-text.svg" alt="HyggeMail text">
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="offset-lg-6 col-lg-4">
+                <p>There’s a reason why a lot of people enjoy giving gifts to their loved ones. That warm, fuzzy feeling you get from seeing their surprise and joy is amazing! That feeling is ‘hygge’ and we love it too, which is why we created HyggeMail.</p>
+                <p>By designing your own, personalised cards, you can make sure that you don’t miss out on that blissful hygge moment.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="cards">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-lg-32 blue">
+                <div class="card">
+                    <div class="card__title">
+                        <div class="card__title__number">
+                            10
+                        </div>
+                        <div class="card__title__text">
+                            Cards package
+                        </div>
+                    </div>
+                    <div class="card__count">
+                        $20
+                    </div>
+                    <ul>
+                        <li>Create and download unlimited personalised cards</li>
+                        <li>10 cards will be printed and posted worldwide by HyggeMail</li>
+                    </ul>
+                </div>
+                @if (LOGGEDIN_USER != null && LOGGEDIN_USER.IsAuthenticated)
+                {
+                    <button class="opensignin">
+                        <div class="button__content">
+                            <img src="../img/plane.svg">
+                            <span>Send a card</span>
+                        </div>
+                    </button>
+                }
+                else
+                {
+                    <button data-toggle="modal" data-target="#myModal-signin">
+                        <div class="button__content">
+                            <img src="../img/plane.svg">
+                            <span>Send a card</span>
+                        </div>
+                    </button>
+                }
+            </div>
+            <div class="col-lg-4 col-lg-36 orange">
+                <div class="card">
+                    <div class="card__title">
+                        <div class="card__title__number">
+                            25
+                        </div>
+                        <div class="card__title__text">
+                            Cards package
+                        </div>
+                    </div>
+                    <div class="card__count">
+                        $50
+                    </div>
+                    <ul>
+                        <li>Create and download unlimited personalised cards</li>
+                        <li>25 cards will be printed and posted worldwide by HyggeMail</li>
+                    </ul>
+                </div>
+                @if (LOGGEDIN_USER != null && LOGGEDIN_USER.IsAuthenticated)
+                {
+                    <button class="opensignin">
+                        <div class="button__content">
+                            <img src="../img/plane.svg">
+                            <span>Send a card</span>
+                        </div>
+                    </button>
+                }
+                else
+                {
+                    <button data-toggle="modal" data-target="#myModal-signin">
+                        <div class="button__content">
+                            <img src="../img/plane.svg">
+                            <span>Send a card</span>
+                        </div>
+                    </button>
+                }
+            </div>
+            <div class="col-lg-4 col-lg-32 green">
+                <div class="card">
+                    <div class="card__title">
+                        <div class="card__title__number">
+                            50
+                        </div>
+                        <div class="card__title__text">
+                            Cards package
+                        </div>
+                    </div>
+                    <div class="card__count">
+                        $100
+                    </div>
+                    <ul>
+                        <li>Create and download unlimited personalised cards</li>
+                        <li>50 cards will be printed and posted worldwide by HyggeMail</li>
+                    </ul>
+                </div>
+                @if (LOGGEDIN_USER != null && LOGGEDIN_USER.IsAuthenticated)
+                {
+                    <button class="opensignin">
+                        <div class="button__content">
+                            <img src="../img/plane.svg">
+                            <span>Send a card</span>
+                        </div>
+                    </button>
+                }
+                else
+                {
+                    <button data-toggle="modal" data-target="#myModal-signin">
+                        <div class="button__content">
+                            <img src="../img/plane.svg">
+                            <span>Send a card</span>
+                        </div>
+                    </button>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+<section id="what">
+    <div class="container">
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <h3>What would a card without letter writing look like</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <img class="what__img" src="../img/what-image.png">
+            </div>
+            <div class="col-lg-5 what__container">
+                <p>
+                    Even though we think we're more connected than ever before, the reality is we've never been so disconnected. We lack a sense of social belonging, engagement with others and our relationships never get the opportunity to be as fulfilled as they could be. We believe that a poke, nudge, like, favourite just doesn't cut it when you're wanting to make a difference in someones life.
+                </p>
+                <p>Which is why we created <a href="#">HyggeMail</a>. We help you spread joy and reclaim your right to turn connections into relationships whilst basking in the warm, fuzzy feeling you'll get by doing so. Experience a moment of hygge right now!</p>
+                @if (LOGGEDIN_USER != null && LOGGEDIN_USER.IsAuthenticated)
+                {
+                    <a href="@Url.Action("Dashboard", "Home", new {area="user" })" class="btn btn-green-pattern">
+                        <img src="../img/plane-green.svg">
+                        <span>Send a card</span>
+                    </a>
+                }
+                else
+                {
+                    <a href="#" class="btn btn-green-pattern" data-toggle="modal" data-target="#myModal-signin">
+                        <img src="../img/plane-green.svg">
+                        <span>Send a card</span>
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="what__clouds">
+        <div id="cloud8">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="499px" height="431px">
+                <defs>
+                    <filter id="Filter_0">
+                        <feFlood flood-color="rgb(167, 214, 226)" flood-opacity="0.08" result="floodOut" />
+                        <feComposite operator="atop" in="floodOut" in2="SourceGraphic" result="compOut" />
+                        <feBlend mode="multiply" in="compOut" in2="SourceGraphic" />
+                    </filter>
+                </defs>
+                <g filter="url(#Filter_0)">
+                    <path fill-rule="evenodd" fill="rgba(167, 214, 226, .08)"
+                          d="M37.001,108.320 C101.959,1.468 241.211,-32.034 348.027,33.492 C454.843,99.018 541.567,201.969 476.609,308.822 C411.650,415.674 266.989,448.548 112.791,420.438 C-10.289,398.001 -27.958,215.172 37.001,108.320 Z" />
+                </g>
+            </svg>
+        </div>
+        <div id="cloud9">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="274px" height="236px">
+                <defs>
+                    <filter id="Filter_0">
+                        <feFlood flood-color="rgb(167, 214, 226)" flood-opacity="0.08" result="floodOut" />
+                        <feComposite operator="atop" in="floodOut" in2="SourceGraphic" result="compOut" />
+                        <feBlend mode="multiply" in="compOut" in2="SourceGraphic" />
+                    </filter>
+                </defs>
+                <g filter="url(#Filter_0)">
+                    <path fill-rule="evenodd" fill="rgba(167, 214, 226, .08)"
+                          d="M20.317,59.450 C55.986,0.806 132.448,-17.581 191.101,18.382 C249.754,54.345 297.374,110.848 261.705,169.493 C226.036,228.137 146.603,246.180 61.933,230.752 C-5.650,218.438 -15.352,118.094 20.317,59.450 Z" />
+                </g>
+            </svg>
+        </div>
+        <div id="cloud10">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="498px" height="513px">
+                <defs>
+                    <filter id="Filter_0">
+                        <feFlood flood-color="rgb(167, 214, 226)" flood-opacity="0.08" result="floodOut" />
+                        <feComposite operator="atop" in="floodOut" in2="SourceGraphic" result="compOut" />
+                        <feBlend mode="multiply" in="compOut" in2="SourceGraphic" />
+                    </filter>
+                </defs>
+                <g filter="url(#Filter_0)">
+                    <path fill-rule="evenodd" fill="rgba(167, 214, 226, .08)"
+                          d="M445.879,350.994 C493.708,315.841 502.876,323.891 494.855,257.999 C491.857,233.372 474.518,203.526 456.309,186.597 C439.554,171.023 432.585,148.351 427.640,126.760 C417.630,83.040 424.965,27.790 361.980,28.635 C319.092,29.208 305.084,86.860 262.858,83.409 C249.670,82.335 237.744,72.223 227.748,63.966 C202.916,43.454 182.245,28.692 150.914,16.523 C92.280,-6.271 68.143,-3.237 39.108,16.269 C7.628,37.421 -13.370,93.984 12.299,130.887 C43.084,175.158 83.464,160.885 117.570,210.178 C146.363,251.775 110.756,274.774 82.969,299.359 C30.552,345.732 47.503,408.157 109.529,438.911 C129.737,448.928 172.334,464.130 195.500,453.762 C214.197,445.393 220.034,416.973 230.402,401.448 C266.867,346.843 300.742,416.415 326.855,450.959 C351.805,483.974 399.312,535.505 455.500,501.743 C474.779,490.158 482.507,438.890 470.838,421.673 C454.320,397.321 422.014,368.528 445.879,350.994 Z" />
+                </g>
+            </svg>
+        </div>
+    </div>
+</section>
+
+@section Scripts{
+    <script src="~/Scripts/jquery.fullPage.js"></script>
+    <script src="~/Scripts/UserDashboardScripts/HomePage.js"></script>
+    <script src="~/Scripts/jquery.ba-throttle-debounce.min.js"></script>
+    <script src="~/Scripts/TweenMax.min.js"></script>
+    <script type="text/javascript">
+
+
+        $(document).ready(function () {
+            $(document).on("scroll", onScroll);
+
+            $(".opensignin").click(function () {
+                window.location.href = "@Url.Action("Dashboard", "Home", new {area="user" })";
+            })
+
+            //smoothscroll
+            $('.section-scroll a[href^="#"]').on('click', function (e) {
+                e.preventDefault();
+                $(document).off("scroll");
+
+                $('.section-scroll a').each(function () {
+                    $(this).removeClass('active');
+                })
+                $(this).addClass('active');
+
+                var target = this.hash,
+                    menu = target;
+                $target = $(target);
+                $('html, body').stop().animate({
+                    'scrollTop': $target.offset().top + 2
+                }, 500, 'swing', function () {
+                    window.location.hash = target;
+                    $(document).on("scroll", onScroll);
+                });
+            });
+        });
+
+        function onScroll(event) {
+            var scrollPos = $(document).scrollTop();
+            $('.section-scroll a').each(function () {
+                var currLink = $(this);
+                var refElement = $(currLink.attr("href"));
+                if (refElement.position().top <= scrollPos + refElement.height()) {
+                    $('.section-scroll a').removeClass("active");
+                    currLink.addClass("active");
+                }
+                else {
+                    currLink.removeClass("active");
+                }
+            });
+        }
+
+        var siteURL =
+     {
+         GetDemoPostCardListing: '@Url.Action("GetDemoPostCardListing", "Home")'
+     }
+
+    </script>
+
+}

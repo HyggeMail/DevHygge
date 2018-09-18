@@ -1,0 +1,111 @@
+﻿@model AddUpdateAdminImageModel
+@{
+    ViewBag.Title = "Add Admin Image";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayOut.cshtml";
+}
+
+<div class="container-fluid" id="pcont">
+    <div class="page-head">
+        <h2>@ViewBag.Title</h2>
+    </div>
+    <div class="cl-mcont">
+        @Html.Partial("_FunctionCallMessage")
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block-flat">
+                    <div class="header">
+                        <h3>@ViewBag.Title</h3>
+                    </div>
+                    <div class="content people-form-cs">
+                        <form class="form-horizontal" role="form" id="AdminImageForm">
+                            @Html.HiddenFor(x => x.ID)
+                            <div class="form-group">
+
+                                <div class="row">
+                                    <div class=" col-md-12">
+                                        <label for="inputEmail3" class="col-md-2 control-label">Category<em>*</em></label>
+                                        <div class="col-md-8">
+                                            @Html.DropDownListFor(x => x.CategoryID, Model.Categories, "Select Image Category", new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(x => x.CategoryID)
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class=" col-md-12">
+                                        <label for="inputEmail3" class="col-md-2 control-label">Title<em>*</em></label>
+                                        <div class="col-md-8">
+                                            @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(x => x.Description)
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class=" col-md-12">
+                                        <label for="inputEmail3" class="col-md-2 control-label">Image<em>*</em></label>
+                                        <div class="col-md-8">
+                                            @if (Model.ID > 0)
+                                            {
+                                                @Html.TextBoxFor(x => x.Image, new
+                                     {
+                                         @class = "form-control col-md-7 col-xs-12",
+                                         @type = "file", 
+                                         @multiple = "multiple"
+
+                                     })
+                                            }
+                                            else
+                                            {
+                                                @Html.TextBoxFor(x => x.Image, new
+                                     {
+                                         @class = "form-control col-md-7 col-xs-12",
+                                         @type = "file",
+                                         @multiple = "multiple",
+                                         @required = "required"
+
+                                     })
+                                            }
+                                            @Html.ValidationMessageFor(x => x.Image)
+                                            <div class="clear"></div>
+                                            <br />
+                                            @if (Model.ID > 0)
+                                            {
+                                                <img src="@Model.FilePath.Replace("~/","../../../")" width="100px" />
+                                            }
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class=" col-md-6">
+                                    <div class="col-sm-offset-4 col-sm-8">
+                                        <input type="button" class="btn btn-primary" id="addImageBtn" value="Submit" />
+                                        <a href="@Url.Action("ManageImageCategory", "Image", new { area = "Admin" })" class="btn btn-default">Cancel</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            App.init();
+        });
+        var siteURL = {
+            AddUpdateAdminImage: '@Url.Action("AddUpdateAdminImage", "Image", new { area = "admin" })',
+            GetAdminImagePagingList: '@Url.Action("GetAdminImagePagingList", "Image", new { area = "admin" })',
+            DeleteAdminImage: '@Url.Action("DeleteAdminImage", "Image", new { area = "admin" })',
+            ManageAdminImage: '@Url.Action("ManageAdminImage", "Image", new { area = "admin" })',
+        };
+    </script>
+    <script src="~/Scripts/AdminScripts/AdminImage.js"></script>
+}

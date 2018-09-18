@@ -1,0 +1,36 @@
+﻿@model PagingResult<RecipientListingModel>
+
+
+@if (Model.List != null && Model.List.Count() > 0)
+{
+    foreach (var item in Model.List)
+    {
+        <tr class="odd gradeX profilepictd">
+            <td class="center">@item.Category</td>
+            <td class="center">@item.SubCategory</td>
+            <td class="center">@item.Name</td>
+            <td class="center">@item.KeywordFamousFor</td>
+            <td class="center">@item.Agency</td>
+            <td class="center">@item.Address</td>
+            <td class="center">@item.City</td>
+            <td class="center">@item.State</td>
+            <td class="center">@item.Zip</td>
+            <td class="center">@item.Country</td>
+            <td class="center">@item.AddressVerified</td>
+            <td class="center">@item.AddedOn.ToShortDateString()</td>
+            <td class="center">
+                <a class="btn btn-primary btn-xs" href="@Url.Action("EditAddress", "AddressBook", new { area = "Admin", addressId = @item.ID })" data-original-title="Edit" data-toggle="tooltip"><i class="fa fa-pencil"></i></a>
+                <a data-addressid="@item.ID" class="btn btn-danger btn-xs DeleteBookAddress" href="javascript:void(0);" data-original-title="Block" data-toggle="tooltip"><i class="fa fa-trash-o"></i></a>
+            </td>
+        </tr>
+    }
+}
+else
+{
+    <tr class="odd gradeX">
+        <td colspan="4">No Record Found</td>
+    </tr>
+}
+
+
+

@@ -1,0 +1,268 @@
+﻿@{
+    UserDetails LOGGEDIN_USER = (UserDetails)ViewBag.LOGGEDIN_USER;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HyggeMail - Dashboard</title>
+    @Styles.Render("~/Content/UserDashbordCSS")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="icon" href="/Content/images/favicon.png" type="image/x-icon" />
+    <link href="~/Content/CustomScrollBar.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    @RenderSection("styles", required: false)
+    <link href="~/css/bootstrap-grid.css" rel="stylesheet" />
+    <link href="~/css/fonts.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <div class="container1">
+                <div class="logo-sec">
+                    <a href="@Url.Action("Index", "Home", new {area="" })">
+                        <img class="logo" src="~/img/logo@2x.png" alt="HyggeMail logo" srcset="~/img/logo@2x.png">
+                    </a>
+                </div>
+                <nav>
+                    <div class="mob-nav">
+                        <span class="menu1"> </span>
+                        <span class="menu2"> </span>
+                        <span class="menu3"> </span>
+                    </div>
+                    <ul>
+                        <li> <a href="@Url.Action("Dashboard", "Home", new {area="user" })"> Create Card </a> </li>
+                        <li> <a href="@Url.Action("Index", "Home", new {area="" })"> Home </a> </li>
+                        <li> <a href="@Url.Action("Contact", "Home", new { area = "" })"> Contact Us </a> </li>
+                        <li> <a href="@Url.Action("Faq", "Home", new { area = "" })"> Faq </a> </li>
+                        <li> <a href="@Url.Action("PaymentPlans", "Payment", new { area = "user" })"> Shop </a> </li>
+                        @* <li> <a href="@Url.Action("index", "Blog", new { Area = "" })"> Blogs </a> </li>*@
+                        @*<li> <a href="@Url.Action("About", "Home", new { area = "" })"> About Us </a> </li>
+                            <li> <a href="@Url.Action("Privacy", "Home", new { area = "" })"> Privacy </a> </li>
+                                            <li> <a href="@Url.Action("MobileApp", "Home", new { area = "" })"> Mobile App </a> *@</li>
+
+                    </ul>
+                </nav>
+
+                <div class="header-profile">
+
+                    <div class="dropdown">
+                        <span class="name" id="dLabel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            @if (LOGGEDIN_USER.FirstName.Length > 20)
+                            {
+                                <span>@LOGGEDIN_USER.FirstName.Substring(0, 20)..     </span>
+                            }
+                            else
+                            {
+                                @LOGGEDIN_USER.FirstName
+                            }
+                        </span>
+                        <ul class="dropdown-menu" aria-labelledby="dLabel">
+                            <li> <a href="@Url.Action("MyProfile", "Home", new { area = "user" })"><i class="fa fa-user"></i> Profile </a> </li>
+                            <li> <a href="@Url.Action("MySetting", "Home", new { area = "user" })"><i class="fa fa-gear"></i> Setting </a> </li>
+                            <li> <a href="@Url.Action("ChangePassword", "Home", new { area = "user" })"><i class="fa fa-lock" aria-hidden="true"></i> Change Password </a> </li>
+                            <li> <a href="@Url.Action("Signout", "Base",new {area=""})"><i class="fa fa-sign-out"></i> Logout</a> </li>
+                        </ul>
+
+                    </div>
+
+                    <figure class="profile">
+                        @if (!string.IsNullOrEmpty(LOGGEDIN_USER.ImageLink))
+                        {
+                            <img src="@LOGGEDIN_USER.ImageLink.Replace("~/","../../")" alt="@LOGGEDIN_USER.ImageName" />
+                        }
+                        else
+                        {
+                            <img src="~/Content/images/avtar-profile-image.png" alt="User" />
+                        }
+                    </figure>
+
+
+                </div>
+            </div>
+        </header>
+        <section class="middle-content">
+            <div class="alert alert-success alert-dismissible" style="display:none" role="alert">
+                <span class="statusMessage"></span>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @RenderBody()
+        </section>
+        <footer id="footer">
+            <div class="container">
+                <div class="row footer-content">
+                    <div class="col-lg-3 col-md-12">
+                        <a href="@Url.Action("index", "home", new {area="" })">
+                            <img class="footer__logo" src="../../img/footer-logo.png" srcset="../../img/footer-logo@2x.png" alt="HyggeMail logo orange">
+                        </a>
+                        <div class="footer__social">
+                            <a href="https://twitter.com/HyggeMail"><img src="../../../img/twitter.svg" alt="twitter icon"></a>
+                            <a href="https://www.instagram.com/hyggemail"><img src="../../img/instagram.svg" alt="instagram icon"></a>
+                            <a href="https://www.facebook.com/Hygge-Mail-156314855001434"><img src="../../img/facebook.svg" alt="facebook icon"></a>
+                            <a href="https://plus.google.com/u/0/b/105411097878581760700/105411097878581760700"><img src="../../img/google.svg" alt="google plus icon"></a>
+                            <a href="https://www.pinterest.com/hyggemail"><img src="../../img/pinterest.svg" alt="pinterest icon"></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-12">
+
+                        <div class="row footer__ul">
+                            <div class="col-sm-4">
+                                @if (LOGGEDIN_USER != null && LOGGEDIN_USER.IsAuthenticated)
+                                {
+                                    <a href="@Url.Action("dashboard", "Home" , new {area="user" })">Create card</a>
+                                }
+                                else
+                                {
+                                    <a data-toggle="modal" data-target="#myModal-signin">
+                                        Create card
+                                    </a>
+                                }
+                                <a href="@Url.Action("Index", "Home", new { area = "" })">Home</a>
+                                <a href="@Url.Action("Contact", "Home", new { area = "" })">Contact us</a>
+                            </div>
+                            <div class="col-sm-4">
+                                <a href="@Url.Action("About", "Home", new { area = "" })">About us</a>
+                                <a href="@Url.Action("Faq", "Home", new { area = "" })">Faq</a>
+                                <a href="@Url.Action("PaymentPlans", "Home", new { area = "" })">Shop</a>
+                            </div>
+                            <div class="col-sm-4">
+                                <a href="@Url.Action("Privacy", "Home", new { area = "" })">Privacy</a>
+                                <a href="@Url.Action("MobileApp", "Home", new { area = "" })">Mobile app</a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-4">
+                        <h6>Join HyggeMail newsletter</h6>
+                        <!--Begin mc_embed_signup-->
+                        @Html.Partial("Partials/_subscriptionRequest", new SubscriberModel())
+                        <!--End mc_embed_signup-->
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="footer__copyright">
+            2018 Copyright HyggeMail
+        </div>
+    </div>
+
+    <div class="modalAjaxLoader" style="display: none">
+        <div class="center">
+            <img src="~/Content/images/bx_loader.gif" />
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/extendedjs")
+    @Scripts.Render("~/bundles/themeSpecific")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/custom")
+    @Scripts.Render("~/bundles/beforeLoginJquery")
+    @Scripts.Render("~/bundles/UserDashboard")
+    <script src="https://gromo.github.io/jquery.scrollbar/jquery.scrollbar.js"></script>
+    @RenderSection("scripts", required: false)
+    <script>
+        $(document).ready(function () {
+            $(".showtransmodel").click(function () {
+                $('.transactionModel').modal({
+                    show: true,
+                    keyboard: true,
+                    backdrop: 'static'
+                });
+            });
+            $(".tabs-menu a").click(function (event) {
+                event.preventDefault();
+                $(this).parent().addClass("current");
+                $(this).parent().siblings().removeClass("current");
+                var tab = $(this).attr("href");
+                $(".tab-content").not(tab).css("display", "none");
+                $(tab).fadeIn();
+            });
+
+            $(".accordion_example").smk_Accordion({
+                closeAble: true, //boolean
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $(".mob-nav").click(function () {
+                $("header nav ul").toggleClass("main");
+            });
+            $('.scrollbar-inner').scrollbar();
+
+            //$("#content-6").mCustomScrollbar({
+            //    axis: "x",
+            //    theme: "light-3",
+            //    advanced: { autoExpandHorizontalScroll: true }
+            //});
+            //$(".faltu-inner").mCustomScrollbar({
+            //    axis: "y",
+            //    theme: "minimal-dark",
+            //    advanced: { autoExpandHorizontalScroll: true }
+            //});
+            //$(".content11").mCustomScrollbar({
+            //    axis: "y",
+            //    theme: "minimal-dark",
+            //    advanced: { autoExpandHorizontalScroll: true }
+            //});
+        });
+
+        $(function () {
+            var pgurl = window.location.href.substr(window.location.href
+        .lastIndexOf("/") + 1);
+            $(".header-tab li a").each(function () {
+                var href = $(this).attr("href").substr($(this).attr("href")
+        .lastIndexOf("/") + 1);
+                if (href == pgurl)
+                    $(this).parent().addClass("active");
+            })
+        });
+
+    </script>
+
+    <script>
+        $(document).on('click', 'a#btnSubscripeSubmit', function () {
+            User.SubmitSubscriber($(this));
+        })
+
+        var User = {
+            SubmitSubscriber: function (sender) {
+                $.ajaxExt({
+                    url: '@Url.Action("SubmitSubscriber", "Home", new { area = "" })',
+                    type: 'POST',
+                    validate: true,
+                    showErrorMessage: true,
+                    messageControl: $('div.messageAlert'),
+                    formToValidate: $(sender).parents("form:first"),
+                    showThrobber: true,
+                    button: $(sender),
+                    throbberPosition: {
+                        my: "left center",
+                        at: "right center",
+                        of: $(sender)
+                    },
+                    data: $(sender).parents("form:first").serializeArray(),
+                    success: function (results, message, status, data) {
+                        $.ShowMessage($('div.messageAlert'), message, status);
+                        $("#EmailID").val('');
+                        //if (status == ActionStatus.Successfull) {
+                        //    setTimeout(function () {
+                        //        window.location.href = SiteURL.HomePage;
+                        //    }, 2000);
+                        //}
+                    }
+                });
+            }
+        }
+    </script>
+
+</body>
+</html>

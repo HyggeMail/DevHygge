@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Faq";
+    Layout = "~/Areas/User/Views/Shared/_MobileLoyout.cshtml";
+}
+@model List<FAQModel>
+<style>
+    body .faq-middle-content, .faq-middle-content .faq-page {
+        padding-top: 0;
+    }
+</style>
+<section class="middle-content faq-middle-content">
+    <div class="faq-page">
+        <!--         <div class="top-heading-bar">
+                    <h3 class="short-heading pacifico"> Frequently asked questions </h3>
+                </div> -->
+
+        <div class="content-sec">
+            <!--           <ul class="nav nav-tabs nav-tabs-cat">
+                          <li ><a data-toggle="tab" class="faq-cat active-tab" data-catid="@eFAQCategory.FAQ">@HyggeMail.BLL.Common.Utilities.EnumDescription(typeof(eFAQCategory), (int)eFAQCategory.FAQ)</a></li>
+                          @*<li><a data-toggle="tab" class="faq-cat" data-catid="@eFAQCategory.ForBusiness">@HyggeMail.BLL.Common.Utilities.EnumDescription(typeof(eFAQCategory), (int)eFAQCategory.ForBusiness)   </a></li>
+                          <li><a data-toggle="tab" class="faq-cat" data-catid="@eFAQCategory.Redactor"> @HyggeMail.BLL.Common.Utilities.EnumDescription(typeof(eFAQCategory), (int)eFAQCategory.Redactor) </a></li>
+                          <li><a data-toggle="tab" class="faq-cat" data-catid="@eFAQCategory.MobileApp"> @HyggeMail.BLL.Common.Utilities.EnumDescription(typeof(eFAQCategory), (int)eFAQCategory.MobileApp)   </a></li>
+                          <li><a data-toggle="tab" class="faq-cat" data-catid="@eFAQCategory.Rullers">@HyggeMail.BLL.Common.Utilities.EnumDescription(typeof(eFAQCategory), (int)eFAQCategory.Rullers)</a></li>*@
+                      </ul> -->
+
+            <div class="tab-content">
+                <div id="home" class="tab-pane fade in active">
+                    <h1 class="text-center">Frequently asked questions</h1>
+                    <!--    <input class="form-control text search" type="text" placeholder="Enter keyword and press enter" /> -->
+                    <!-- Accordion begin -->
+                    <div class="list-by-category">
+                        @Html.Partial("Partials/_faqListing", Model)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@section Scripts{
+    <script src="~/Scripts/FrontEndScripts/FAQ.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".accordion_example").smk_Accordion({
+                closeAble: true, //boolean
+            });
+        });
+    </script>
+}

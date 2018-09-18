@@ -1,0 +1,63 @@
+﻿@model PagingResult<PayPalTransaction>
+@{
+    ViewBag.Title = "Transaction Histroy";
+    Layout = "~/Areas/User/Views/Shared/_Layout.cshtml";
+    var model = Model.TotalCount > 0 ? Model.List.FirstOrDefault() : new PayPalTransaction();
+}
+@Html.Partial("_secondheader", model)
+<section class="sub-section wb-setting">
+    <div class="container1">
+        <div class="container-fluid" id="pcont">
+            <div class="cl-mcont">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="block-flat">
+                            <div class="content">
+                                <div class="table-responsive" style="overflow:hidden">
+                                    @Html.Partial("_SearchFilter", new PagingModel { SortBy = "TransactionDate", SortOrder = "Desc" })
+                                    <br/>
+                                    <div id="divResult">
+                                        <table class="table table-bordered" id="datatable-icons">
+                                            <thead>
+                                                <tr>
+                                                    <th>TransactionID</th>
+                                                    <th>Membership Plan</th>
+                                                    <th>Amount</th>
+                                                    <th>Gateway</th>
+                                                    <th>Status</th>
+                                                    <th>Transaction Date</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @Html.Partial("Partial/_transactionPartial", Model)
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                                @Html.Partial("_Paging")
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @Html.Partial("_partialPlans", model)
+</section>
+@section scripts{
+    <script src="~/Scripts/UserDefinedScripts/paging.js"></script>
+    <script type="text/javascript">
+        var totalCount = "@Model.TotalCount";
+    </script>
+    <script src="~/Scripts/UserDashboardScripts/TransactionHistory.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            //initialize the javascript
+            Transactions.ManageTransactions(totalCount);
+            App.init();
+        });
+    </script>
+}
+

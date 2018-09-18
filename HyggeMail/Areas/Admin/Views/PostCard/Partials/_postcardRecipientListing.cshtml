@@ -1,0 +1,70 @@
+﻿@model PagingResult<RecipientPostCardListingModel>
+
+@if (Model.List != null && Model.List.Count() > 0)
+{
+    foreach (var item in Model.List)
+    {
+        var CardBackPath = item.CardBackPathWithIFrame==null?item.CardBackPath:item.CardBackPathWithIFrame;
+
+            <tr class="odd gradeX">
+                <td>@item.ID</td>
+                <td>@Convert.ToDateTime(item.AddedOn).ToString("MMM dd yyyy hh:mm tt")</td>
+                <td>@Convert.ToDateTime(item.ShipmentDate).ToString("MMM dd yyyy")</td>
+                <td class="center"><a href="@Url.Action("ManageUserHistory", "user", new { area = "Admin", uid = @item.UserID })" data-original-title="History" data-toggle="tooltip">@item.Username</a></td>
+                <td class="center">
+                    <a href="javascript:" class="viewcard" data-recipientid="@item.ID" data-rname="@item.Name" data-isrejected="@item.IsRejected" data-isapproved="@item.IsApproved" data-iscompleted="@item.IsCompleted" data-raddress="@item.Address" data-rcity="@item.City" data-rstate="@item.State" data-rcountry="@item.Country" data-rzip="@item.Zip" data-cardfrontpath="@item.CardFrontPath.Replace("~","../..")" data-cardbackpath="@CardBackPath.Replace("~", "../..")">
+                        View
+                    </a>
+                </td>
+                <td class="center">
+                    @*<a data-postcardid="@item.ID"  class="btn btn-success btn-xs printPostCard" data-original-title="Print" data-toggle="tooltip" href="javascript:void(0);"><i class="fa fa-print" aria-hidden="true"></i></a>*@
+                    <button type="button" class="btn btn-success btn-sm approveReciptent" data-isrejected="@item.IsRejected" data-isapproved="@item.IsApproved" data-iscompleted="@item.IsCompleted" data-userid="@item.UserID" data-cardfrontpath="@item.CardFrontPath.Replace("~","../..")" data-cardbackpath="@CardBackPath.Replace("~", "../..")" data-rname="@item.Name" data-raddress="@item.Address" data-rcity="@item.City" data-rstate="@item.State" data-rcountry="@item.Country" data-rzip="@item.Zip" data-sender="@item.UserAddress" data-sendername="@item.Username" data-includeaddress="@item.IncludeAddress" data-name="approve" data-id="@item.ID">
+                        <i class="fa fa-print" aria-hidden="true"></i>
+                    </button>
+                    @if (item.IsCompleted == true)
+                {
+                        <span>Completed On : @Convert.ToDateTime(item.CompletedOn).ToString("MMM dd yyyy hh:mm tt")</span>
+                }
+                else
+                {
+                    if (item.IsApproved == true)
+                    {
+                        <a data-recipient="@item.ID" class="btn btn-success btn-xs CompleteRecipientPostCard" href="javascript:void(0);" data-original-title="Complete Order" data-toggle="tooltip">Complete Order</a>
+                    }
+                }
+
+                    @if (item.IsApproved != true)
+                {  <a data-recipient="@item.ID" class="btn btn-success btn-xs approveRecipientPostCard" href="javascript:void(0);"><span>Approve</span> </a>}
+                else
+                {
+                    if (item.IsCompleted == false)
+                    {  <a data-recipient="@item.ID" class="btn btn-success btn-xs approveRecipientPostCard" href="javascript:void(0);"><span>Disapprove</span> </a>}
+
+                }
+                    @if (item.IsRejected != true && item.IsCompleted != true)
+                {
+                        <a data-recipient="@item.ID" class="btn btn-success btn-xs RejectPostCard" data-toggle="modal" data-target="#myModal-RejectOrder" href="javascript:void(0);">
+                            <span>Reject</span>
+                        </a>
+                }
+                    @if (item.IsCompleted != true) {
+                        <a data-recipient="@item.ID" class="btn btn-success btn-xs errorPostCard" href="javascript:void(0);">
+                            @if (item.IsError == true)
+                    {<span>Remove Error</span>}
+                    else
+                    {<span>Sent to Error</span>}
+                        </a>
+                }
+                </td>
+            </tr>
+    }
+}
+else
+{
+    <tr class="odd gradeX">
+        <td colspan="6">No Record Found</td>
+    </tr>
+}
+
+
+

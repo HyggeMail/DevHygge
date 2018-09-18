@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "PostCardDemo";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayOut.cshtml";
+}
+<div class="container-fluid" id="pcont">
+    <div class="page-head">
+        <h2>@ViewBag.Title</h2>
+    </div>
+    <div class="cl-mcont">
+        @Html.Partial("_FunctionCallMessage")
+        <div class="row">
+            @Html.Partial("Partials/_pdfPostCard",new PostCardFrontBack())
+        </div>
+    </div>
+</div>
+

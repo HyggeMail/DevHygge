@@ -1,0 +1,75 @@
+﻿@model AddUpdateImageEditorModel
+@{
+    ViewBag.Title = "Card";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var ogImage = string.Format("https://hyggemail.com{0}", Model.CardFrontPath.Replace("~", ""));
+}
+<style>
+
+.carousel-inner > .item > a > img, .carousel-inner > .item > img, .img-responsive, .thumbnail a > img, .thumbnail > img {
+  display: inline-block;
+  height: 500px;
+  max-width: 100%;
+}
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto;
+}
+    h2.inspring-thought {
+        font-size: 38px;
+        line-height: 36px;
+        font-family: 'Cambay', sans-serif;
+        font-weight: 700;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+</style>
+
+<meta property="og:url" content="/" />
+<meta property="og:type" content="Artical" />
+<meta property="og:title" content="With HyggeMail, we offer a wonderful and simple way of letting others know they are in your thoughts. You design the card and we will print and mail it for you on the date you select. " />
+<meta property="og:description" content="With HyggeMail, we offer a wonderful and simple way of letting others know they are in your thoughts. You design the card and we will print and mail it for you on the date you select. " />
+<meta property="og:image" content="@ogImage" />
+
+<section class="sub-section wb-payments-plans custom-pages show-post-page">
+    <div class="container">
+
+        <div class="plans-upper-description verfication ">
+            <h1 class="text-center verfication_mesg">Post Card</h1>
+            <div class="modal-body">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner text-center" role="listbox">
+                        <div class="item active">
+                            @if (Model.CardFrontPath != null)
+                            {
+                                <img src="@Model.CardFrontPath.Replace("~", "../..")">
+                            }
+                        </div>
+                        <div class="item">
+                            @if (Model.CardBackPath != null)
+                            {
+                                <img src="@Model.CardBackPath.Replace("~", "../..")">
+                            }
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+

@@ -1,0 +1,117 @@
+﻿@model UserRegistrationModel
+
+<!-- Modal SignUp -->
+<div class="modal modal-custom fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel"><span class="bk-btn"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></span> Sign Up</h4>
+            </div>
+            <div class="modal-body">
+                <form id="firstStep">
+                    <div class="first-step">
+                        <ul class="steps">
+                            <li class="active">
+                                <a href="javascript:" class="step-num" data-step="1"> 1 </a>
+                            </li>
+                            <li class="">
+                                <a href="javascript:" class="step-num" data-step="2"> 2 </a>
+                            </li>
+                        </ul>
+                        <a href="@Url.Action("FbSignIn","Account")" class="btn btn-primary btn-fb"><span><img src="~/content/images/fb-icon.png"></span>Log in with Facebook</a>
+                        <span class="or">or</span>
+                        <div class="form-div">
+                            <div class="form-group">
+                                @Html.TextBoxFor(x => x.Step1.FullName, new { @class = "form-control", @placeholder = "Full name" })
+                                @Html.ValidationMessageFor(X => X.Step1.FullName)
+                            </div>
+                            <div class="form-group">
+                                @Html.TextBoxFor(x => x.Step1.Email, new { @class = "form-control", @placeholder = "Email" })
+                                @Html.ValidationMessageFor(X => X.Step1.Email)
+                            </div>
+                            <div class="form-group">
+                                @Html.PasswordFor(x => x.Step1.Password, new { @class = "form-control", @placeholder = "Password" })
+                                @Html.ValidationMessageFor(X => X.Step1.Password)
+
+                            </div>
+                            <div class="form-group">
+                                @Html.PasswordFor(x => x.Step1.ConfirmPassword, new { @class = "form-control", @placeholder = "Re-enter Password" })
+                                @Html.ValidationMessageFor(X => X.Step1.ConfirmPassword)
+                            </div>
+                            <a href="javascript:"><span class="next-div btn btn-primary">Continue <img src="~/content/images/next-arrow.png"></span></a>
+                        </div>
+                        <div class="bottom-sec">
+                            <div class="sigupbtn">
+                                <span class="donthaveaccount">Already a member?</span>
+                            </div>
+                            <button type="button" class="btns btn-signin terms-link signuphere" data-toggle="modal" data-target="#myModal-signin">
+                                Sign in
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <form id="stepTwo">
+                    <div class="alert alert-success alert-dismissible error-div1" style="display:none" role="alert">
+                        <span class="statusMessage"></span>
+                    </div>
+
+                    <div class="second-step">
+                        <ul class="steps">
+                            <li>
+                                <a href="javascript:" class="step-num" data-step="1"> 1 </a>
+                            </li>
+                            <li class="active">
+                                <a href="javascript:" class="step-num" data-step="2"> 2 </a>
+                            </li>
+                        </ul>
+                        <div class="form-div">
+
+                            <div class="form-group">
+                                @Html.TextBoxFor(x => x.Step2.Address, new { @class = "form-control", @placeholder = "Address", id = "Address" })
+                                @Html.ValidationMessageFor(X => X.Step2.Address)
+                            </div>
+                            <div class="form-group">
+                                @Html.TextBoxFor(X => X.Step2.CountryID, new { @class = "form-control", @placeholder = "Country", data_gfield = "country" })
+                                @Html.ValidationMessageFor(X => X.Step2.CountryID)
+                            </div>
+                            <div class="form-group">
+                                @Html.TextBoxFor(X => X.Step2.StateID, new { @class = "form-control", @placeholder = "State", data_gfield = "administrative_area_level_1" })
+                                @Html.ValidationMessageFor(X => X.Step2.StateID)
+                            </div>
+                            <div class="form-group">
+                                @Html.TextBoxFor(X => X.Step2.CityID, new { @class = "form-control", @placeholder = "City", data_gfield = "locality" })
+                                @Html.ValidationMessageFor(X => X.Step2.CityID)
+                            </div>
+
+                            <div class="form-group">
+                                @Html.TextBoxFor(x => x.Step2.Zip, new { @class = "form-control", @placeholder = "ZIP", data_gfield = "postal_code" })
+                                @Html.ValidationMessageFor(X => X.Step2.Zip)
+                            </div>
+                            <div class="terms-condition">
+                                <label>
+                                    @Html.CheckBoxFor(x => x.Step2.Terms, new { @class = "form-control" })
+                                    <div class="checkbox"></div>I accept <span class="terms-link" data-toggle="modal" data-target="#myModal-terms"> Terms &amp; Conditions </span>
+                                </label>
+                                <div class="form-group">
+                                    <span class="Termsloginerroemsg"></span>
+                                </div>
+                            </div>
+                            <div class="terms-condition descrpt-email">
+                                <label>
+                                    @Html.CheckBoxFor(x => x.Step2.ReceiveEmail, new { @class = "form-control" })
+                                    <div class="checkbox"></div>I want to receive an email every now and then with some great ways to make the most of HyggeMail, awesome exclusive offers, and tips on how to enjoy life’s special little moments more!
+                                </label>
+                            </div>
+                        </div>
+                        <div class="bottom-sec">
+                            <a href="javascript:" type="submit" class="submit btn btn-primary" id="formSubmit">Sign up</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

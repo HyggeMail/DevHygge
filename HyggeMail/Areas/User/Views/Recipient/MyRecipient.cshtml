@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "My Recipient";
+    Layout = "~/Areas/User/Views/Shared/_Layout.cshtml";
+    var model = ViewBag.Membership as PayPalTransaction;
+}
+@section Styles{
+    <style>
+        .pac-container {
+            z-index: 100000;
+        }
+    </style>
+    }
+@Html.Partial("_secondheader",model)
+@model ActionOutput<RecipientGroupModel>
+<section class="sub-section wb-addressbook">
+    <div class="container1 recipient-container">
+        <div class="search-area text-center">
+            <div class="search-box">
+                <input type="text" id="searchkeyword" /><a href="javascript:" id="btnSearch" class="btn btn-primary" type="submit"><i class="fa fa-search"></i></a>
+            </div>
+            <a href="javascript:" id="add-rec" data-toggle="modal" data-target="#myModal-AddRecipient" style="cursor:pointer"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add Recipient</a>
+        </div>
+        <div class="col-md-12 text-center">
+            <span class="loginerroemsg"></span>
+        </div>
+        <div id="Recipients">
+           
+            @Html.Partial("Partials/_addressbookList", Model)
+
+        </div>
+        <div id="AddUpdateRecipients">
+            @Html.Partial("../Recipient/Partials/_AddRecipient", new AddUpdateRecipientModel())
+        </div>
+        @Html.Partial("_partialPlans", model)
+    </div>
+</section>
+@section scripts{
+    <script src="~/Scripts/UserDashboardScripts/AddresBook.js"></script>
+    <script type="text/javascript">
+        function GooglePlacesOnLoad() {
+            $("#Address").locify();
+        }
+        $(document).ready(function () {
+            $('#AddToBookCheck').hide();
+        });
+        var siteURL = {
+            DeleteRecipientByID: '@Url.Action("DeleteRecipientByID", "Recipient", new { area = "user" })',
+            GetRecipientByID: '@Url.Action("GetRecipientByID", "Recipient", new { area = "user" })',
+            GetRecipientList: '@Url.Action("GetRecipientList", "Recipient", new { area = "User" })',
+            StateByCountry: '@Url.Action("StateByCountry", "Home", new { area = "" })',
+            CityByState: '@Url.Action("CityByState", "Home", new { area = "" })',
+            CountryList: '@Url.Action("CountryList", "Home", new { area = "" })',
+            AddEditRecipient: '@Url.Action("AddEditRecipient", "Recipient", new { area = "user" })',
+        }
+    </script>
+<script src="https://maps.googleapis.com/maps/api/js?key=@HyggeMail.BLL.Common.Config.GooglePlaceKey&libraries=places&callback=GooglePlacesOnLoad&language=en"
+        async defer></script>
+
+
+}

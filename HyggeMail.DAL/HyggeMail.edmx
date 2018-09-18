@@ -1,0 +1,1945 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="HyggeMailModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AdminImages">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryID" Type="int" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="FileName" Type="nvarchar" MaxLength="200" />
+          <Property Name="FilePath" Type="nvarchar(max)" />
+          <Property Name="AddedOn" Type="datetime" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="ActivatedOn" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="DeletedOn" Type="datetime" />
+          <Property Name="AddedBy" Type="int" />
+          <Property Name="ByAdmin" Type="bit" />
+        </EntityType>
+        <EntityType Name="BlogDetails">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="AddedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" />
+          <Property Name="Email" Type="nvarchar" MaxLength="200" />
+          <Property Name="Image" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="IsFeaturedArticle" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cities">
+          <Key>
+            <PropertyRef Name="cityID" />
+          </Key>
+          <Property Name="cityID" Type="int" Nullable="false" />
+          <Property Name="cityName" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="state_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CMSPages">
+          <Key>
+            <PropertyRef Name="PageId" />
+          </Key>
+          <Property Name="PageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PageName" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="PageTitle" Type="varchar" MaxLength="250" />
+          <Property Name="PageContent" Type="nvarchar(max)" />
+          <Property Name="MetaTitle" Type="varchar" MaxLength="500" />
+          <Property Name="MetaKeywords" Type="varchar(max)" />
+          <Property Name="MetaDescription" Type="nvarchar(max)" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="PageType" Type="int" />
+        </EntityType>
+        <EntityType Name="ContactUs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Question" Type="nvarchar" MaxLength="500" />
+          <Property Name="Message" Type="nvarchar(max)" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="200" />
+          <Property Name="AddedOn" Type="datetime" />
+          <Property Name="IsResolved" Type="bit" />
+          <Property Name="ResolvedOn" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="DeletedOn" Type="datetime" />
+          <Property Name="RequestType" Type="int" />
+          <Property Name="Phone" Type="varchar" MaxLength="200" />
+          <Property Name="IsSubscriber" Type="bit" />
+          <Property Name="IsFromWeb" Type="bit" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" />
+          <Property Name="IsSeenByAdmin" Type="bit" />
+        </EntityType>
+        <EntityType Name="countries">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="sortname" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmailTemplates">
+          <Key>
+            <PropertyRef Name="TemplateId" />
+          </Key>
+          <Property Name="TemplateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TemplateName" Type="varchar" MaxLength="50" />
+          <Property Name="EmailSubject" Type="nvarchar" MaxLength="500" />
+          <Property Name="TemplateContent" Type="nvarchar(max)" />
+          <Property Name="TemplateStatus" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="TemplateType" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ErrorLog">
+          <Key>
+            <PropertyRef Name="ErrorLogID" />
+          </Key>
+          <Property Name="ErrorLogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Message" Type="varchar" MaxLength="500" />
+          <Property Name="StackTrace" Type="varchar(max)" />
+          <Property Name="InnerException" Type="varchar(max)" />
+          <Property Name="LoggedInDetails" Type="varchar(max)" />
+          <Property Name="QueryData" Type="varchar(max)" />
+          <Property Name="FormData" Type="varchar(max)" />
+          <Property Name="RouteData" Type="varchar(max)" />
+          <Property Name="LoggedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="FAQ">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryID" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="400" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="AddedOn" Type="datetime2" Precision="7" />
+          <Property Name="UpdatedOn" Type="datetime2" Precision="7" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="DeletedOn" Type="datetime2" Precision="7" />
+        </EntityType>
+        <EntityType Name="ImageCategory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryName" Type="nvarchar" MaxLength="200" />
+          <Property Name="CategoryDescription" Type="nvarchar(max)" />
+          <Property Name="AddedOn" Type="datetime" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="ActivatedOn" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="DeletedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="MembershipPlans">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Rate" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Discount" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="CardsAllocated" Type="int" Nullable="false" />
+          <Property Name="Isactive" Type="bit" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="CreatedOn" Type="date" />
+          <Property Name="DeletedOn" Type="date" />
+        </EntityType>
+        <EntityType Name="NotificationStacks">
+          <Key>
+            <PropertyRef Name="NotificationId" />
+          </Key>
+          <Property Name="NotificationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="DeviceId" Type="varchar" MaxLength="250" />
+          <Property Name="Status" Type="int" />
+          <Property Name="Priority" Type="int" />
+          <Property Name="Message" Type="varchar(max)" />
+          <Property Name="CreatedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="PushNotification">
+          <Key>
+            <PropertyRef Name="PushNotificationId" />
+          </Key>
+          <Property Name="PushNotificationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DeviceId" Type="text" Nullable="false" />
+          <Property Name="Message" Type="varchar(max)" />
+          <Property Name="DeviceTypeId" Type="smallint" Nullable="false" />
+          <Property Name="TypeId" Type="smallint" />
+          <Property Name="StatusId" Type="smallint" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="ErrorMessage" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Sessions">
+          <Key>
+            <PropertyRef Name="SessionId" />
+          </Key>
+          <Property Name="SessionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Token" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="DeviceToken" Type="varchar" MaxLength="250" />
+          <Property Name="IsExpired" Type="bit" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="ExpiredOn" Type="datetime" />
+          <Property Name="DeviceType" Type="smallint" />
+        </EntityType>
+        <EntityType Name="states">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="country_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Subscribers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmailID" Type="nvarchar" MaxLength="300" />
+          <Property Name="AddedOn" Type="datetime" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="ActivatedOn" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="DeletedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblTestimonials">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="ActivatedOn" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="DeletedOn" Type="datetime" />
+          <Property Name="AddedOn" Type="datetime" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Image" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="UserAddressBook">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserIDFK" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="300" />
+          <Property Name="Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="Country" Type="nvarchar" MaxLength="300" />
+          <Property Name="State" Type="nvarchar" MaxLength="300" />
+          <Property Name="City" Type="nvarchar" MaxLength="300" />
+          <Property Name="Zip" Type="nvarchar" MaxLength="200" />
+          <Property Name="AddedOn" Type="datetime" />
+          <Property Name="IsActive" Type="bit" />
+          <Property Name="ActivatedOn" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="DeletedOn" Type="datetime" />
+          <Property Name="IsPermanent" Type="bit" Nullable="false" />
+          <Property Name="Category" Type="nvarchar" MaxLength="500" />
+          <Property Name="SubCategory" Type="nvarchar" MaxLength="500" />
+          <Property Name="KeywordFamousFor" Type="nvarchar(max)" />
+          <Property Name="Agency" Type="nvarchar" MaxLength="500" />
+          <Property Name="AddressVerified" Type="bit" />
+          <Property Name="ImageLink" Type="nvarchar" MaxLength="500" />
+          <Property Name="AddedByAdmin" Type="bit" />
+        </EntityType>
+        <EntityType Name="UserDetails">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="Country" Type="nvarchar" MaxLength="500" />
+          <Property Name="State" Type="nvarchar" MaxLength="500" />
+          <Property Name="City" Type="nvarchar" MaxLength="500" />
+          <Property Name="Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="Zip" Type="varchar" MaxLength="50" />
+          <Property Name="OrderPlacedNotification" Type="bit" />
+          <Property Name="OrderStatusNotification" Type="bit" />
+          <Property Name="Phone" Type="varchar" MaxLength="200" />
+          <Property Name="FacebookID" Type="nvarchar" MaxLength="300" />
+          <Property Name="DOB" Type="datetime2" Precision="7" />
+          <Property Name="ProfileImagePath" Type="nvarchar(max)" />
+          <Property Name="ProfileImageName" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="UserHistory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="100" />
+          <Property Name="Status" Type="nvarchar" MaxLength="100" />
+          <Property Name="TokenChange" Type="nvarchar" MaxLength="100" />
+          <Property Name="TokenAvailable" Type="int" />
+          <Property Name="AddedOn" Type="datetime" />
+          <Property Name="UserFK" Type="int" />
+          <Property Name="OrderIDFK" Type="int" />
+          <Property Name="TransactionIDFK" Type="int" />
+        </EntityType>
+        <EntityType Name="UserOrders">
+          <Key>
+            <PropertyRef Name="UserPostCardID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserPostCardID" Type="int" Nullable="false" />
+          <Property Name="OrderStatus" Type="smallint" />
+        </EntityType>
+        <EntityType Name="UserPostCard">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CardFront" Type="nvarchar(max)" />
+          <Property Name="CardBack" Type="nvarchar(max)" />
+          <Property Name="ShippedOn" Type="datetime" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="AddedOn" Type="datetime" />
+          <Property Name="UpdatedOn" Type="datetime" />
+          <Property Name="IsApproved" Type="bit" />
+          <Property Name="ApprovedOn" Type="datetime" />
+          <Property Name="IsRejected" Type="bit" />
+          <Property Name="RejectedOn" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" />
+          <Property Name="DeletedOn" Type="datetime" />
+          <Property Name="IncludeAddress" Type="bit" />
+          <Property Name="IsCancel" Type="bit" />
+          <Property Name="CancelledOn" Type="datetime" />
+          <Property Name="ShipmentDate" Type="datetime" />
+          <Property Name="CardFrontJson" Type="nvarchar(max)" />
+          <Property Name="CardBackJson" Type="nvarchar(max)" />
+          <Property Name="CardFrontPath" Type="nvarchar(max)" />
+          <Property Name="CardBackPath" Type="nvarchar(max)" />
+          <Property Name="IsCompleted" Type="bit" />
+          <Property Name="CompletedOn" Type="datetime" />
+          <Property Name="IsOrderPlaced" Type="bit" />
+          <Property Name="OrderPlacedOn" Type="datetime" />
+          <Property Name="CardBackJsonWithIFrame" Type="nvarchar(max)" />
+          <Property Name="CardBackPathWithIFrame" Type="nvarchar(max)" />
+          <Property Name="CardBackWithFrame" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="UserPostCardImages">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdminImageID" Type="int" />
+          <Property Name="UsedBy" Type="int" />
+          <Property Name="UsedOn" Type="datetime2" Precision="7" />
+          <Property Name="UserPostCardID" Type="int" />
+        </EntityType>
+        <EntityType Name="UserPostCardRecipient">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FKUserAddressBookId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" />
+          <Property Name="Address" Type="nvarchar" MaxLength="200" />
+          <Property Name="Country" Type="nvarchar" MaxLength="200" />
+          <Property Name="State" Type="nvarchar" MaxLength="200" />
+          <Property Name="City" Type="nvarchar" MaxLength="200" />
+          <Property Name="Zip" Type="nvarchar" MaxLength="100" />
+          <Property Name="AddedOn" Type="datetime" />
+          <Property Name="UserPostCardID" Type="int" />
+          <Property Name="IsApproved" Type="bit" />
+          <Property Name="IsCompleted" Type="bit" />
+          <Property Name="CompletedOn" Type="datetime" />
+          <Property Name="ApprovedOn" Type="datetime" />
+          <Property Name="IsError" Type="bit" />
+          <Property Name="IsRejected" Type="bit" />
+          <Property Name="RejectedOn" Type="datetime" />
+          <Property Name="RejectedReason" Type="nvarchar(max)" />
+          <Property Name="IsCancelled" Type="bit" />
+          <Property Name="CancelledOn" Type="datetime" />
+          <Property Name="CardStatus" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="100" />
+          <Property Name="LastName" Type="varchar" MaxLength="100" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="Password" Type="varchar" MaxLength="100" />
+          <Property Name="UserType" Type="int" />
+          <Property Name="MemberShipType" Type="int" />
+          <Property Name="ForgotUID" Type="nvarchar" MaxLength="300" />
+          <Property Name="ActivatedUID" Type="nvarchar" MaxLength="300" />
+          <Property Name="LastLogin" Type="datetime" />
+          <Property Name="LastLogout" Type="datetime" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="DeletedOn" Type="datetime" />
+          <Property Name="IsActivated" Type="bit" />
+          <Property Name="ActivatedOn" Type="datetime" />
+          <Property Name="AuthenticationType" Type="smallint" />
+          <Property Name="DeviceType" Type="smallint" />
+          <Property Name="DeviceToken" Type="varchar" MaxLength="500" />
+          <Property Name="Facebook_ID" Type="nvarchar" MaxLength="200" />
+          <Property Name="OrderPlacedNotification" Type="bit" />
+          <Property Name="OrderStatusNotification" Type="bit" />
+          <Property Name="CardsCount" Type="int" />
+          <Property Name="IsToolTipShow" Type="bit" />
+        </EntityType>
+        <EntityType Name="UserTransactions">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TransactionID" Type="nvarchar" MaxLength="100" />
+          <Property Name="Gateway" Type="nvarchar" MaxLength="100" />
+          <Property Name="Status" Type="nvarchar" MaxLength="100" />
+          <Property Name="TransactionAmount" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="PlanID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="TransactionDate" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_AdminImages_ImageCategory">
+          <End Role="ImageCategory" Type="Self.ImageCategory" Multiplicity="0..1" />
+          <End Role="AdminImages" Type="Self.AdminImages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ImageCategory">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AdminImages">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotificationStacks_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="NotificationStacks" Type="Self.NotificationStacks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="NotificationStacks">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sessions_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Sessions" Type="Self.Sessions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Sessions">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserAddressBook_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="UserAddressBook" Type="Self.UserAddressBook" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserAddressBook">
+              <PropertyRef Name="UserIDFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserDetails_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="UserDetails" Type="Self.UserDetails" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserDetails">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserHistory_UserPostCardRecipient">
+          <End Role="UserPostCardRecipient" Type="Self.UserPostCardRecipient" Multiplicity="0..1" />
+          <End Role="UserHistory" Type="Self.UserHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserPostCardRecipient">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserHistory">
+              <PropertyRef Name="OrderIDFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserHistory_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="UserHistory" Type="Self.UserHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserHistory">
+              <PropertyRef Name="UserFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserHistory_UserTransactions">
+          <End Role="UserTransactions" Type="Self.UserTransactions" Multiplicity="0..1" />
+          <End Role="UserHistory" Type="Self.UserHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserTransactions">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserHistory">
+              <PropertyRef Name="TransactionIDFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserOrders_UserPostCard">
+          <End Role="UserPostCard" Type="Self.UserPostCard" Multiplicity="1" />
+          <End Role="UserOrders" Type="Self.UserOrders" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="UserPostCard">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserOrders">
+              <PropertyRef Name="UserPostCardID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserPostCard_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="UserPostCard" Type="Self.UserPostCard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserPostCard">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserPostCardImages_AdminImages">
+          <End Role="AdminImages" Type="Self.AdminImages" Multiplicity="0..1" />
+          <End Role="UserPostCardImages" Type="Self.UserPostCardImages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AdminImages">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserPostCardImages">
+              <PropertyRef Name="AdminImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserPostCardImages_UserPostCard">
+          <End Role="UserPostCard" Type="Self.UserPostCard" Multiplicity="0..1" />
+          <End Role="UserPostCardImages" Type="Self.UserPostCardImages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserPostCard">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserPostCardImages">
+              <PropertyRef Name="UserPostCardID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserPostCardImages_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="UserPostCardImages" Type="Self.UserPostCardImages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserPostCardImages">
+              <PropertyRef Name="UsedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserPostCardRecipient_UserAddressBook">
+          <End Role="UserAddressBook" Type="Self.UserAddressBook" Multiplicity="1" />
+          <End Role="UserPostCardRecipient" Type="Self.UserPostCardRecipient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAddressBook">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserPostCardRecipient">
+              <PropertyRef Name="FKUserAddressBookId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserPostCardRecipient_UserPostCard">
+          <End Role="UserPostCard" Type="Self.UserPostCard" Multiplicity="0..1" />
+          <End Role="UserPostCardRecipient" Type="Self.UserPostCardRecipient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserPostCard">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserPostCardRecipient">
+              <PropertyRef Name="UserPostCardID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_MembershipPlans">
+          <End Role="MembershipPlans" Type="Self.MembershipPlans" Multiplicity="0..1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MembershipPlans">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="MemberShipType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserTransactions_MembershipPlans">
+          <End Role="MembershipPlans" Type="Self.MembershipPlans" Multiplicity="1" />
+          <End Role="UserTransactions" Type="Self.UserTransactions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MembershipPlans">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserTransactions">
+              <PropertyRef Name="PlanID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserTransactions_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="UserTransactions" Type="Self.UserTransactions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserTransactions">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HyggeMailModelStoreContainer">
+          <EntitySet Name="AdminImages" EntityType="Self.AdminImages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BlogDetails" EntityType="Self.BlogDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cities" EntityType="Self.cities" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CMSPages" EntityType="Self.CMSPages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ContactUs" EntityType="Self.ContactUs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="countries" EntityType="Self.countries" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmailTemplates" EntityType="Self.EmailTemplates" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ErrorLog" EntityType="Self.ErrorLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FAQ" EntityType="Self.FAQ" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ImageCategory" EntityType="Self.ImageCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MembershipPlans" EntityType="Self.MembershipPlans" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NotificationStacks" EntityType="Self.NotificationStacks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PushNotification" EntityType="Self.PushNotification" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sessions" EntityType="Self.Sessions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="states" EntityType="Self.states" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Subscribers" EntityType="Self.Subscribers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblTestimonials" EntityType="Self.tblTestimonials" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserAddressBook" EntityType="Self.UserAddressBook" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserDetails" EntityType="Self.UserDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserHistory" EntityType="Self.UserHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserOrders" EntityType="Self.UserOrders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserPostCard" EntityType="Self.UserPostCard" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserPostCardImages" EntityType="Self.UserPostCardImages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserPostCardRecipient" EntityType="Self.UserPostCardRecipient" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserTransactions" EntityType="Self.UserTransactions" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_AdminImages_ImageCategory" Association="Self.FK_AdminImages_ImageCategory">
+            <End Role="ImageCategory" EntitySet="ImageCategory" />
+            <End Role="AdminImages" EntitySet="AdminImages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotificationStacks_Users" Association="Self.FK_NotificationStacks_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="NotificationStacks" EntitySet="NotificationStacks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sessions_Users" Association="Self.FK_Sessions_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Sessions" EntitySet="Sessions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserAddressBook_Users" Association="Self.FK_UserAddressBook_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserAddressBook" EntitySet="UserAddressBook" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserDetails_Users" Association="Self.FK_UserDetails_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserDetails" EntitySet="UserDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserHistory_UserPostCardRecipient" Association="Self.FK_UserHistory_UserPostCardRecipient">
+            <End Role="UserPostCardRecipient" EntitySet="UserPostCardRecipient" />
+            <End Role="UserHistory" EntitySet="UserHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserHistory_Users" Association="Self.FK_UserHistory_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserHistory" EntitySet="UserHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserHistory_UserTransactions" Association="Self.FK_UserHistory_UserTransactions">
+            <End Role="UserTransactions" EntitySet="UserTransactions" />
+            <End Role="UserHistory" EntitySet="UserHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserOrders_UserPostCard" Association="Self.FK_UserOrders_UserPostCard">
+            <End Role="UserPostCard" EntitySet="UserPostCard" />
+            <End Role="UserOrders" EntitySet="UserOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserPostCard_Users" Association="Self.FK_UserPostCard_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserPostCard" EntitySet="UserPostCard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserPostCardImages_AdminImages" Association="Self.FK_UserPostCardImages_AdminImages">
+            <End Role="AdminImages" EntitySet="AdminImages" />
+            <End Role="UserPostCardImages" EntitySet="UserPostCardImages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserPostCardImages_UserPostCard" Association="Self.FK_UserPostCardImages_UserPostCard">
+            <End Role="UserPostCard" EntitySet="UserPostCard" />
+            <End Role="UserPostCardImages" EntitySet="UserPostCardImages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserPostCardImages_Users" Association="Self.FK_UserPostCardImages_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserPostCardImages" EntitySet="UserPostCardImages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserPostCardRecipient_UserAddressBook" Association="Self.FK_UserPostCardRecipient_UserAddressBook">
+            <End Role="UserAddressBook" EntitySet="UserAddressBook" />
+            <End Role="UserPostCardRecipient" EntitySet="UserPostCardRecipient" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserPostCardRecipient_UserPostCard" Association="Self.FK_UserPostCardRecipient_UserPostCard">
+            <End Role="UserPostCard" EntitySet="UserPostCard" />
+            <End Role="UserPostCardRecipient" EntitySet="UserPostCardRecipient" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_MembershipPlans" Association="Self.FK_Users_MembershipPlans">
+            <End Role="MembershipPlans" EntitySet="MembershipPlans" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserTransactions_MembershipPlans" Association="Self.FK_UserTransactions_MembershipPlans">
+            <End Role="MembershipPlans" EntitySet="MembershipPlans" />
+            <End Role="UserTransactions" EntitySet="UserTransactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserTransactions_Users" Association="Self.FK_UserTransactions_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserTransactions" EntitySet="UserTransactions" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HyggeMailModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AdminImage">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryID" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FileName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="FilePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AddedOn" Type="DateTime" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="ActivatedOn" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+          <Property Name="AddedBy" Type="Int32" />
+          <Property Name="ByAdmin" Type="Boolean" />
+          <NavigationProperty Name="ImageCategory" Relationship="Self.FK_AdminImages_ImageCategory" FromRole="AdminImages" ToRole="ImageCategory" />
+          <NavigationProperty Name="UserPostCardImages" Relationship="Self.FK_UserPostCardImages_AdminImages" FromRole="AdminImages" ToRole="UserPostCardImages" />
+        </EntityType>
+        <EntityType Name="BlogDetail">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="AddedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsFeaturedArticle" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="city">
+          <Key>
+            <PropertyRef Name="cityID" />
+          </Key>
+          <Property Name="cityID" Type="Int32" Nullable="false" />
+          <Property Name="cityName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="state_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CMSPage">
+          <Key>
+            <PropertyRef Name="PageId" />
+          </Key>
+          <Property Name="PageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PageName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PageTitle" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="PageContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MetaTitle" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="MetaKeywords" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MetaDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="PageType" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ContactU">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Question" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AddedOn" Type="DateTime" Precision="3" />
+          <Property Name="IsResolved" Type="Boolean" />
+          <Property Name="ResolvedOn" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+          <Property Name="RequestType" Type="Int32" />
+          <Property Name="Phone" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="IsSubscriber" Type="Boolean" />
+          <Property Name="IsFromWeb" Type="Boolean" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="IsSeenByAdmin" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="country">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="sortname" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmailTemplate">
+          <Key>
+            <PropertyRef Name="TemplateId" />
+          </Key>
+          <Property Name="TemplateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TemplateName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmailSubject" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TemplateContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TemplateStatus" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="TemplateType" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ErrorLog">
+          <Key>
+            <PropertyRef Name="ErrorLogID" />
+          </Key>
+          <Property Name="ErrorLogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Message" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="StackTrace" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="InnerException" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LoggedInDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="QueryData" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FormData" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RouteData" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LoggedAt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="FAQ">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryID" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AddedOn" Type="DateTime" Precision="7" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="7" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="7" />
+        </EntityType>
+        <EntityType Name="ImageCategory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CategoryDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AddedOn" Type="DateTime" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="ActivatedOn" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="AdminImages" Relationship="Self.FK_AdminImages_ImageCategory" FromRole="ImageCategory" ToRole="AdminImages" />
+        </EntityType>
+        <EntityType Name="MembershipPlan">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Rate" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Discount" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="CardsAllocated" Type="Int32" Nullable="false" />
+          <Property Name="Isactive" Type="Boolean" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="0" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_Users_MembershipPlans" FromRole="MembershipPlans" ToRole="Users" />
+          <NavigationProperty Name="UserTransactions" Relationship="Self.FK_UserTransactions_MembershipPlans" FromRole="MembershipPlans" ToRole="UserTransactions" />
+        </EntityType>
+        <EntityType Name="NotificationStack">
+          <Key>
+            <PropertyRef Name="NotificationId" />
+          </Key>
+          <Property Name="NotificationId" Type="Guid" Nullable="false" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="DeviceId" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="Priority" Type="Int32" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="User" Relationship="Self.FK_NotificationStacks_Users" FromRole="NotificationStacks" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="PushNotification">
+          <Key>
+            <PropertyRef Name="PushNotificationId" />
+          </Key>
+          <Property Name="PushNotificationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DeviceId" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DeviceTypeId" Type="Int16" Nullable="false" />
+          <Property Name="TypeId" Type="Int16" />
+          <Property Name="StatusId" Type="Int16" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ErrorMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Session">
+          <Key>
+            <PropertyRef Name="SessionId" />
+          </Key>
+          <Property Name="SessionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Token" Type="Guid" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="DeviceToken" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsExpired" Type="Boolean" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ExpiredOn" Type="DateTime" Precision="3" />
+          <Property Name="DeviceType" Type="Int16" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Sessions_Users" FromRole="Sessions" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="state">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="country_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Subscriber">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmailID" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="AddedOn" Type="DateTime" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="ActivatedOn" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tblTestimonial">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="ActivatedOn" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+          <Property Name="AddedOn" Type="DateTime" Precision="3" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="UserAddressBook">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserIDFK" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="Zip" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AddedOn" Type="DateTime" Precision="3" />
+          <Property Name="IsActive" Type="Boolean" />
+          <Property Name="ActivatedOn" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+          <Property Name="IsPermanent" Type="Boolean" Nullable="false" />
+          <Property Name="Category" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SubCategory" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="KeywordFamousFor" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Agency" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="AddressVerified" Type="Boolean" />
+          <Property Name="ImageLink" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="AddedByAdmin" Type="Boolean" />
+          <NavigationProperty Name="User" Relationship="Self.FK_UserAddressBook_Users" FromRole="UserAddressBook" ToRole="Users" />
+          <NavigationProperty Name="UserPostCardRecipients" Relationship="Self.FK_UserPostCardRecipient_UserAddressBook" FromRole="UserAddressBook" ToRole="UserPostCardRecipient" />
+        </EntityType>
+        <EntityType Name="UserDetail">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="Country" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Zip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OrderPlacedNotification" Type="Boolean" />
+          <Property Name="OrderStatusNotification" Type="Boolean" />
+          <Property Name="Phone" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="FacebookID" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="DOB" Type="DateTime" Precision="7" />
+          <Property Name="ProfileImagePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProfileImageName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="User" Relationship="Self.FK_UserDetails_Users" FromRole="UserDetails" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="UserHistory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TokenChange" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TokenAvailable" Type="Int32" />
+          <Property Name="AddedOn" Type="DateTime" Precision="3" />
+          <Property Name="UserFK" Type="Int32" />
+          <Property Name="OrderIDFK" Type="Int32" />
+          <Property Name="TransactionIDFK" Type="Int32" />
+          <NavigationProperty Name="UserPostCardRecipient" Relationship="Self.FK_UserHistory_UserPostCardRecipient" FromRole="UserHistory" ToRole="UserPostCardRecipient" />
+          <NavigationProperty Name="User" Relationship="Self.FK_UserHistory_Users" FromRole="UserHistory" ToRole="Users" />
+          <NavigationProperty Name="UserTransaction" Relationship="Self.FK_UserHistory_UserTransactions" FromRole="UserHistory" ToRole="UserTransactions" />
+        </EntityType>
+        <EntityType Name="UserOrder">
+          <Key>
+            <PropertyRef Name="UserPostCardID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserPostCardID" Type="Int32" Nullable="false" />
+          <Property Name="OrderStatus" Type="Int16" />
+          <NavigationProperty Name="UserPostCard" Relationship="Self.FK_UserOrders_UserPostCard" FromRole="UserOrders" ToRole="UserPostCard" />
+        </EntityType>
+        <EntityType Name="UserPostCard">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CardFront" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CardBack" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ShippedOn" Type="DateTime" Precision="3" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="AddedOn" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+          <Property Name="IsApproved" Type="Boolean" />
+          <Property Name="ApprovedOn" Type="DateTime" Precision="3" />
+          <Property Name="IsRejected" Type="Boolean" />
+          <Property Name="RejectedOn" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+          <Property Name="IncludeAddress" Type="Boolean" />
+          <Property Name="IsCancel" Type="Boolean" />
+          <Property Name="CancelledOn" Type="DateTime" Precision="3" />
+          <Property Name="ShipmentDate" Type="DateTime" Precision="3" />
+          <Property Name="CardFrontJson" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CardBackJson" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CardFrontPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CardBackPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsCompleted" Type="Boolean" />
+          <Property Name="CompletedOn" Type="DateTime" Precision="3" />
+          <Property Name="IsOrderPlaced" Type="Boolean" />
+          <Property Name="OrderPlacedOn" Type="DateTime" Precision="3" />
+          <Property Name="CardBackJsonWithIFrame" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CardBackPathWithIFrame" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CardBackWithFrame" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="UserOrder" Relationship="Self.FK_UserOrders_UserPostCard" FromRole="UserPostCard" ToRole="UserOrders" />
+          <NavigationProperty Name="User" Relationship="Self.FK_UserPostCard_Users" FromRole="UserPostCard" ToRole="Users" />
+          <NavigationProperty Name="UserPostCardImages" Relationship="Self.FK_UserPostCardImages_UserPostCard" FromRole="UserPostCard" ToRole="UserPostCardImages" />
+          <NavigationProperty Name="UserPostCardRecipients" Relationship="Self.FK_UserPostCardRecipient_UserPostCard" FromRole="UserPostCard" ToRole="UserPostCardRecipient" />
+        </EntityType>
+        <EntityType Name="UserPostCardImage">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdminImageID" Type="Int32" />
+          <Property Name="UsedBy" Type="Int32" />
+          <Property Name="UsedOn" Type="DateTime" Precision="7" />
+          <Property Name="UserPostCardID" Type="Int32" />
+          <NavigationProperty Name="AdminImage" Relationship="Self.FK_UserPostCardImages_AdminImages" FromRole="UserPostCardImages" ToRole="AdminImages" />
+          <NavigationProperty Name="UserPostCard" Relationship="Self.FK_UserPostCardImages_UserPostCard" FromRole="UserPostCardImages" ToRole="UserPostCard" />
+          <NavigationProperty Name="User" Relationship="Self.FK_UserPostCardImages_Users" FromRole="UserPostCardImages" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="UserPostCardRecipient">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FKUserAddressBookId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Zip" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="AddedOn" Type="DateTime" Precision="3" />
+          <Property Name="UserPostCardID" Type="Int32" />
+          <Property Name="IsApproved" Type="Boolean" />
+          <Property Name="IsCompleted" Type="Boolean" />
+          <Property Name="CompletedOn" Type="DateTime" Precision="3" />
+          <Property Name="ApprovedOn" Type="DateTime" Precision="3" />
+          <Property Name="IsError" Type="Boolean" />
+          <Property Name="IsRejected" Type="Boolean" />
+          <Property Name="RejectedOn" Type="DateTime" Precision="3" />
+          <Property Name="RejectedReason" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsCancelled" Type="Boolean" />
+          <Property Name="CancelledOn" Type="DateTime" Precision="3" />
+          <Property Name="CardStatus" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="UserAddressBook" Relationship="Self.FK_UserPostCardRecipient_UserAddressBook" FromRole="UserPostCardRecipient" ToRole="UserAddressBook" />
+          <NavigationProperty Name="UserHistories" Relationship="Self.FK_UserHistory_UserPostCardRecipient" FromRole="UserPostCardRecipient" ToRole="UserHistory" />
+          <NavigationProperty Name="UserPostCard" Relationship="Self.FK_UserPostCardRecipient_UserPostCard" FromRole="UserPostCardRecipient" ToRole="UserPostCard" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UserType" Type="Int32" />
+          <Property Name="MemberShipType" Type="Int32" />
+          <Property Name="ForgotUID" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="ActivatedUID" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="LastLogin" Type="DateTime" Precision="3" />
+          <Property Name="LastLogout" Type="DateTime" Precision="3" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="DeletedOn" Type="DateTime" Precision="3" />
+          <Property Name="IsActivated" Type="Boolean" />
+          <Property Name="ActivatedOn" Type="DateTime" Precision="3" />
+          <Property Name="AuthenticationType" Type="Int16" />
+          <Property Name="DeviceType" Type="Int16" />
+          <Property Name="DeviceToken" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Facebook_ID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="OrderPlacedNotification" Type="Boolean" />
+          <Property Name="OrderStatusNotification" Type="Boolean" />
+          <Property Name="CardsCount" Type="Int32" />
+          <Property Name="IsToolTipShow" Type="Boolean" />
+          <NavigationProperty Name="MembershipPlan" Relationship="Self.FK_Users_MembershipPlans" FromRole="Users" ToRole="MembershipPlans" />
+          <NavigationProperty Name="NotificationStacks" Relationship="Self.FK_NotificationStacks_Users" FromRole="Users" ToRole="NotificationStacks" />
+          <NavigationProperty Name="Sessions" Relationship="Self.FK_Sessions_Users" FromRole="Users" ToRole="Sessions" />
+          <NavigationProperty Name="UserAddressBooks" Relationship="Self.FK_UserAddressBook_Users" FromRole="Users" ToRole="UserAddressBook" />
+          <NavigationProperty Name="UserDetail" Relationship="Self.FK_UserDetails_Users" FromRole="Users" ToRole="UserDetails" />
+          <NavigationProperty Name="UserHistories" Relationship="Self.FK_UserHistory_Users" FromRole="Users" ToRole="UserHistory" />
+          <NavigationProperty Name="UserPostCards" Relationship="Self.FK_UserPostCard_Users" FromRole="Users" ToRole="UserPostCard" />
+          <NavigationProperty Name="UserPostCardImages" Relationship="Self.FK_UserPostCardImages_Users" FromRole="Users" ToRole="UserPostCardImages" />
+          <NavigationProperty Name="UserTransactions" Relationship="Self.FK_UserTransactions_Users" FromRole="Users" ToRole="UserTransactions" />
+        </EntityType>
+        <EntityType Name="UserTransaction">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TransactionID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Gateway" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TransactionAmount" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="PlanID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="TransactionDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="MembershipPlan" Relationship="Self.FK_UserTransactions_MembershipPlans" FromRole="UserTransactions" ToRole="MembershipPlans" />
+          <NavigationProperty Name="UserHistories" Relationship="Self.FK_UserHistory_UserTransactions" FromRole="UserTransactions" ToRole="UserHistory" />
+          <NavigationProperty Name="User" Relationship="Self.FK_UserTransactions_Users" FromRole="UserTransactions" ToRole="Users" />
+        </EntityType>
+        <Association Name="FK_AdminImages_ImageCategory">
+          <End Role="ImageCategory" Type="Self.ImageCategory" Multiplicity="0..1" />
+          <End Role="AdminImages" Type="Self.AdminImage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ImageCategory">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AdminImages">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserPostCardImages_AdminImages">
+          <End Role="AdminImages" Type="Self.AdminImage" Multiplicity="0..1" />
+          <End Role="UserPostCardImages" Type="Self.UserPostCardImage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AdminImages">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserPostCardImages">
+              <PropertyRef Name="AdminImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_MembershipPlans">
+          <End Role="MembershipPlans" Type="Self.MembershipPlan" Multiplicity="0..1" />
+          <End Role="Users" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MembershipPlans">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="MemberShipType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserTransactions_MembershipPlans">
+          <End Role="MembershipPlans" Type="Self.MembershipPlan" Multiplicity="1" />
+          <End Role="UserTransactions" Type="Self.UserTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MembershipPlans">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserTransactions">
+              <PropertyRef Name="PlanID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NotificationStacks_Users">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="NotificationStacks" Type="Self.NotificationStack" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="NotificationStacks">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sessions_Users">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="Sessions" Type="Self.Session" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Sessions">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserAddressBook_Users">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="UserAddressBook" Type="Self.UserAddressBook" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserAddressBook">
+              <PropertyRef Name="UserIDFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserPostCardRecipient_UserAddressBook">
+          <End Role="UserAddressBook" Type="Self.UserAddressBook" Multiplicity="1" />
+          <End Role="UserPostCardRecipient" Type="Self.UserPostCardRecipient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAddressBook">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserPostCardRecipient">
+              <PropertyRef Name="FKUserAddressBookId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserDetails_Users">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="UserDetails" Type="Self.UserDetail" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserDetails">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserHistory_UserPostCardRecipient">
+          <End Role="UserPostCardRecipient" Type="Self.UserPostCardRecipient" Multiplicity="0..1" />
+          <End Role="UserHistory" Type="Self.UserHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserPostCardRecipient">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserHistory">
+              <PropertyRef Name="OrderIDFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserHistory_Users">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="UserHistory" Type="Self.UserHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserHistory">
+              <PropertyRef Name="UserFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserHistory_UserTransactions">
+          <End Role="UserTransactions" Type="Self.UserTransaction" Multiplicity="0..1" />
+          <End Role="UserHistory" Type="Self.UserHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserTransactions">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserHistory">
+              <PropertyRef Name="TransactionIDFK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserOrders_UserPostCard">
+          <End Role="UserPostCard" Type="Self.UserPostCard" Multiplicity="1" />
+          <End Role="UserOrders" Type="Self.UserOrder" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="UserPostCard">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserOrders">
+              <PropertyRef Name="UserPostCardID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserPostCard_Users">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="UserPostCard" Type="Self.UserPostCard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserPostCard">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserPostCardImages_UserPostCard">
+          <End Role="UserPostCard" Type="Self.UserPostCard" Multiplicity="0..1" />
+          <End Role="UserPostCardImages" Type="Self.UserPostCardImage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserPostCard">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserPostCardImages">
+              <PropertyRef Name="UserPostCardID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserPostCardRecipient_UserPostCard">
+          <End Role="UserPostCard" Type="Self.UserPostCard" Multiplicity="0..1" />
+          <End Role="UserPostCardRecipient" Type="Self.UserPostCardRecipient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserPostCard">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserPostCardRecipient">
+              <PropertyRef Name="UserPostCardID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserPostCardImages_Users">
+          <End Role="Users" Type="Self.User" Multiplicity="0..1" />
+          <End Role="UserPostCardImages" Type="Self.UserPostCardImage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserPostCardImages">
+              <PropertyRef Name="UsedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserTransactions_Users">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="UserTransactions" Type="Self.UserTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserTransactions">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="HyggeMailEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AdminImages" EntityType="Self.AdminImage" />
+          <EntitySet Name="BlogDetails" EntityType="Self.BlogDetail" />
+          <EntitySet Name="cities" EntityType="Self.city" />
+          <EntitySet Name="CMSPages" EntityType="Self.CMSPage" />
+          <EntitySet Name="ContactUs" EntityType="Self.ContactU" />
+          <EntitySet Name="countries" EntityType="Self.country" />
+          <EntitySet Name="EmailTemplates" EntityType="Self.EmailTemplate" />
+          <EntitySet Name="ErrorLogs" EntityType="Self.ErrorLog" />
+          <EntitySet Name="FAQs" EntityType="Self.FAQ" />
+          <EntitySet Name="ImageCategories" EntityType="Self.ImageCategory" />
+          <EntitySet Name="MembershipPlans" EntityType="Self.MembershipPlan" />
+          <EntitySet Name="NotificationStacks" EntityType="Self.NotificationStack" />
+          <EntitySet Name="PushNotifications" EntityType="Self.PushNotification" />
+          <EntitySet Name="Sessions" EntityType="Self.Session" />
+          <EntitySet Name="states" EntityType="Self.state" />
+          <EntitySet Name="Subscribers" EntityType="Self.Subscriber" />
+          <EntitySet Name="tblTestimonials" EntityType="Self.tblTestimonial" />
+          <EntitySet Name="UserAddressBooks" EntityType="Self.UserAddressBook" />
+          <EntitySet Name="UserDetails" EntityType="Self.UserDetail" />
+          <EntitySet Name="UserHistories" EntityType="Self.UserHistory" />
+          <EntitySet Name="UserOrders" EntityType="Self.UserOrder" />
+          <EntitySet Name="UserPostCards" EntityType="Self.UserPostCard" />
+          <EntitySet Name="UserPostCardImages" EntityType="Self.UserPostCardImage" />
+          <EntitySet Name="UserPostCardRecipients" EntityType="Self.UserPostCardRecipient" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="UserTransactions" EntityType="Self.UserTransaction" />
+          <AssociationSet Name="FK_AdminImages_ImageCategory" Association="Self.FK_AdminImages_ImageCategory">
+            <End Role="ImageCategory" EntitySet="ImageCategories" />
+            <End Role="AdminImages" EntitySet="AdminImages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserPostCardImages_AdminImages" Association="Self.FK_UserPostCardImages_AdminImages">
+            <End Role="AdminImages" EntitySet="AdminImages" />
+            <End Role="UserPostCardImages" EntitySet="UserPostCardImages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_MembershipPlans" Association="Self.FK_Users_MembershipPlans">
+            <End Role="MembershipPlans" EntitySet="MembershipPlans" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserTransactions_MembershipPlans" Association="Self.FK_UserTransactions_MembershipPlans">
+            <End Role="MembershipPlans" EntitySet="MembershipPlans" />
+            <End Role="UserTransactions" EntitySet="UserTransactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NotificationStacks_Users" Association="Self.FK_NotificationStacks_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="NotificationStacks" EntitySet="NotificationStacks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sessions_Users" Association="Self.FK_Sessions_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Sessions" EntitySet="Sessions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserAddressBook_Users" Association="Self.FK_UserAddressBook_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserAddressBook" EntitySet="UserAddressBooks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserPostCardRecipient_UserAddressBook" Association="Self.FK_UserPostCardRecipient_UserAddressBook">
+            <End Role="UserAddressBook" EntitySet="UserAddressBooks" />
+            <End Role="UserPostCardRecipient" EntitySet="UserPostCardRecipients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserDetails_Users" Association="Self.FK_UserDetails_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserDetails" EntitySet="UserDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserHistory_UserPostCardRecipient" Association="Self.FK_UserHistory_UserPostCardRecipient">
+            <End Role="UserPostCardRecipient" EntitySet="UserPostCardRecipients" />
+            <End Role="UserHistory" EntitySet="UserHistories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserHistory_Users" Association="Self.FK_UserHistory_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserHistory" EntitySet="UserHistories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserHistory_UserTransactions" Association="Self.FK_UserHistory_UserTransactions">
+            <End Role="UserTransactions" EntitySet="UserTransactions" />
+            <End Role="UserHistory" EntitySet="UserHistories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserOrders_UserPostCard" Association="Self.FK_UserOrders_UserPostCard">
+            <End Role="UserPostCard" EntitySet="UserPostCards" />
+            <End Role="UserOrders" EntitySet="UserOrders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserPostCard_Users" Association="Self.FK_UserPostCard_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserPostCard" EntitySet="UserPostCards" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserPostCardImages_UserPostCard" Association="Self.FK_UserPostCardImages_UserPostCard">
+            <End Role="UserPostCard" EntitySet="UserPostCards" />
+            <End Role="UserPostCardImages" EntitySet="UserPostCardImages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserPostCardRecipient_UserPostCard" Association="Self.FK_UserPostCardRecipient_UserPostCard">
+            <End Role="UserPostCard" EntitySet="UserPostCards" />
+            <End Role="UserPostCardRecipient" EntitySet="UserPostCardRecipients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserPostCardImages_Users" Association="Self.FK_UserPostCardImages_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserPostCardImages" EntitySet="UserPostCardImages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserTransactions_Users" Association="Self.FK_UserTransactions_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserTransactions" EntitySet="UserTransactions" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HyggeMailModelStoreContainer" CdmEntityContainer="HyggeMailEntities">
+          <EntitySetMapping Name="AdminImages">
+            <EntityTypeMapping TypeName="HyggeMailModel.AdminImage">
+              <MappingFragment StoreEntitySet="AdminImages">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ActivatedOn" ColumnName="ActivatedOn" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="ByAdmin" ColumnName="ByAdmin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BlogDetails">
+            <EntityTypeMapping TypeName="HyggeMailModel.BlogDetail">
+              <MappingFragment StoreEntitySet="BlogDetails">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="IsFeaturedArticle" ColumnName="IsFeaturedArticle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cities">
+            <EntityTypeMapping TypeName="HyggeMailModel.city">
+              <MappingFragment StoreEntitySet="cities">
+                <ScalarProperty Name="cityID" ColumnName="cityID" />
+                <ScalarProperty Name="cityName" ColumnName="cityName" />
+                <ScalarProperty Name="state_id" ColumnName="state_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CMSPages">
+            <EntityTypeMapping TypeName="HyggeMailModel.CMSPage">
+              <MappingFragment StoreEntitySet="CMSPages">
+                <ScalarProperty Name="PageId" ColumnName="PageId" />
+                <ScalarProperty Name="PageName" ColumnName="PageName" />
+                <ScalarProperty Name="PageTitle" ColumnName="PageTitle" />
+                <ScalarProperty Name="PageContent" ColumnName="PageContent" />
+                <ScalarProperty Name="MetaTitle" ColumnName="MetaTitle" />
+                <ScalarProperty Name="MetaKeywords" ColumnName="MetaKeywords" />
+                <ScalarProperty Name="MetaDescription" ColumnName="MetaDescription" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="PageType" ColumnName="PageType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContactUs">
+            <EntityTypeMapping TypeName="HyggeMailModel.ContactU">
+              <MappingFragment StoreEntitySet="ContactUs">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+                <ScalarProperty Name="IsResolved" ColumnName="IsResolved" />
+                <ScalarProperty Name="ResolvedOn" ColumnName="ResolvedOn" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+                <ScalarProperty Name="RequestType" ColumnName="RequestType" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="IsSubscriber" ColumnName="IsSubscriber" />
+                <ScalarProperty Name="IsFromWeb" ColumnName="IsFromWeb" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IsSeenByAdmin" ColumnName="IsSeenByAdmin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="countries">
+            <EntityTypeMapping TypeName="HyggeMailModel.country">
+              <MappingFragment StoreEntitySet="countries">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="sortname" ColumnName="sortname" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmailTemplates">
+            <EntityTypeMapping TypeName="HyggeMailModel.EmailTemplate">
+              <MappingFragment StoreEntitySet="EmailTemplates">
+                <ScalarProperty Name="TemplateId" ColumnName="TemplateId" />
+                <ScalarProperty Name="TemplateName" ColumnName="TemplateName" />
+                <ScalarProperty Name="EmailSubject" ColumnName="EmailSubject" />
+                <ScalarProperty Name="TemplateContent" ColumnName="TemplateContent" />
+                <ScalarProperty Name="TemplateStatus" ColumnName="TemplateStatus" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="TemplateType" ColumnName="TemplateType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ErrorLogs">
+            <EntityTypeMapping TypeName="HyggeMailModel.ErrorLog">
+              <MappingFragment StoreEntitySet="ErrorLog">
+                <ScalarProperty Name="ErrorLogID" ColumnName="ErrorLogID" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="StackTrace" ColumnName="StackTrace" />
+                <ScalarProperty Name="InnerException" ColumnName="InnerException" />
+                <ScalarProperty Name="LoggedInDetails" ColumnName="LoggedInDetails" />
+                <ScalarProperty Name="QueryData" ColumnName="QueryData" />
+                <ScalarProperty Name="FormData" ColumnName="FormData" />
+                <ScalarProperty Name="RouteData" ColumnName="RouteData" />
+                <ScalarProperty Name="LoggedAt" ColumnName="LoggedAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FAQs">
+            <EntityTypeMapping TypeName="HyggeMailModel.FAQ">
+              <MappingFragment StoreEntitySet="FAQ">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ImageCategories">
+            <EntityTypeMapping TypeName="HyggeMailModel.ImageCategory">
+              <MappingFragment StoreEntitySet="ImageCategory">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="CategoryDescription" ColumnName="CategoryDescription" />
+                <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ActivatedOn" ColumnName="ActivatedOn" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MembershipPlans">
+            <EntityTypeMapping TypeName="HyggeMailModel.MembershipPlan">
+              <MappingFragment StoreEntitySet="MembershipPlans">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Rate" ColumnName="Rate" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="CardsAllocated" ColumnName="CardsAllocated" />
+                <ScalarProperty Name="Isactive" ColumnName="Isactive" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NotificationStacks">
+            <EntityTypeMapping TypeName="HyggeMailModel.NotificationStack">
+              <MappingFragment StoreEntitySet="NotificationStacks">
+                <ScalarProperty Name="NotificationId" ColumnName="NotificationId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PushNotifications">
+            <EntityTypeMapping TypeName="HyggeMailModel.PushNotification">
+              <MappingFragment StoreEntitySet="PushNotification">
+                <ScalarProperty Name="PushNotificationId" ColumnName="PushNotificationId" />
+                <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="DeviceTypeId" ColumnName="DeviceTypeId" />
+                <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+                <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sessions">
+            <EntityTypeMapping TypeName="HyggeMailModel.Session">
+              <MappingFragment StoreEntitySet="Sessions">
+                <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+                <ScalarProperty Name="Token" ColumnName="Token" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="DeviceToken" ColumnName="DeviceToken" />
+                <ScalarProperty Name="IsExpired" ColumnName="IsExpired" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ExpiredOn" ColumnName="ExpiredOn" />
+                <ScalarProperty Name="DeviceType" ColumnName="DeviceType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="states">
+            <EntityTypeMapping TypeName="HyggeMailModel.state">
+              <MappingFragment StoreEntitySet="states">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="country_id" ColumnName="country_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Subscribers">
+            <EntityTypeMapping TypeName="HyggeMailModel.Subscriber">
+              <MappingFragment StoreEntitySet="Subscribers">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ActivatedOn" ColumnName="ActivatedOn" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblTestimonials">
+            <EntityTypeMapping TypeName="HyggeMailModel.tblTestimonial">
+              <MappingFragment StoreEntitySet="tblTestimonials">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ActivatedOn" ColumnName="ActivatedOn" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+                <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserAddressBooks">
+            <EntityTypeMapping TypeName="HyggeMailModel.UserAddressBook">
+              <MappingFragment StoreEntitySet="UserAddressBook">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserIDFK" ColumnName="UserIDFK" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ActivatedOn" ColumnName="ActivatedOn" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+                <ScalarProperty Name="IsPermanent" ColumnName="IsPermanent" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="SubCategory" ColumnName="SubCategory" />
+                <ScalarProperty Name="KeywordFamousFor" ColumnName="KeywordFamousFor" />
+                <ScalarProperty Name="Agency" ColumnName="Agency" />
+                <ScalarProperty Name="AddressVerified" ColumnName="AddressVerified" />
+                <ScalarProperty Name="ImageLink" ColumnName="ImageLink" />
+                <ScalarProperty Name="AddedByAdmin" ColumnName="AddedByAdmin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserDetails">
+            <EntityTypeMapping TypeName="HyggeMailModel.UserDetail">
+              <MappingFragment StoreEntitySet="UserDetails">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="OrderPlacedNotification" ColumnName="OrderPlacedNotification" />
+                <ScalarProperty Name="OrderStatusNotification" ColumnName="OrderStatusNotification" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="FacebookID" ColumnName="FacebookID" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="ProfileImagePath" ColumnName="ProfileImagePath" />
+                <ScalarProperty Name="ProfileImageName" ColumnName="ProfileImageName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserHistories">
+            <EntityTypeMapping TypeName="HyggeMailModel.UserHistory">
+              <MappingFragment StoreEntitySet="UserHistory">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="TokenChange" ColumnName="TokenChange" />
+                <ScalarProperty Name="TokenAvailable" ColumnName="TokenAvailable" />
+                <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+                <ScalarProperty Name="UserFK" ColumnName="UserFK" />
+                <ScalarProperty Name="OrderIDFK" ColumnName="OrderIDFK" />
+                <ScalarProperty Name="TransactionIDFK" ColumnName="TransactionIDFK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserOrders">
+            <EntityTypeMapping TypeName="HyggeMailModel.UserOrder">
+              <MappingFragment StoreEntitySet="UserOrders">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserPostCardID" ColumnName="UserPostCardID" />
+                <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserPostCards">
+            <EntityTypeMapping TypeName="HyggeMailModel.UserPostCard">
+              <MappingFragment StoreEntitySet="UserPostCard">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CardFront" ColumnName="CardFront" />
+                <ScalarProperty Name="CardBack" ColumnName="CardBack" />
+                <ScalarProperty Name="ShippedOn" ColumnName="ShippedOn" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="ApprovedOn" ColumnName="ApprovedOn" />
+                <ScalarProperty Name="IsRejected" ColumnName="IsRejected" />
+                <ScalarProperty Name="RejectedOn" ColumnName="RejectedOn" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+                <ScalarProperty Name="IncludeAddress" ColumnName="IncludeAddress" />
+                <ScalarProperty Name="IsCancel" ColumnName="IsCancel" />
+                <ScalarProperty Name="CancelledOn" ColumnName="CancelledOn" />
+                <ScalarProperty Name="ShipmentDate" ColumnName="ShipmentDate" />
+                <ScalarProperty Name="CardFrontJson" ColumnName="CardFrontJson" />
+                <ScalarProperty Name="CardBackJson" ColumnName="CardBackJson" />
+                <ScalarProperty Name="CardFrontPath" ColumnName="CardFrontPath" />
+                <ScalarProperty Name="CardBackPath" ColumnName="CardBackPath" />
+                <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
+                <ScalarProperty Name="CompletedOn" ColumnName="CompletedOn" />
+                <ScalarProperty Name="IsOrderPlaced" ColumnName="IsOrderPlaced" />
+                <ScalarProperty Name="OrderPlacedOn" ColumnName="OrderPlacedOn" />
+                <ScalarProperty Name="CardBackJsonWithIFrame" ColumnName="CardBackJsonWithIFrame" />
+                <ScalarProperty Name="CardBackPathWithIFrame" ColumnName="CardBackPathWithIFrame" />
+                <ScalarProperty Name="CardBackWithFrame" ColumnName="CardBackWithFrame" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserPostCardImages">
+            <EntityTypeMapping TypeName="HyggeMailModel.UserPostCardImage">
+              <MappingFragment StoreEntitySet="UserPostCardImages">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AdminImageID" ColumnName="AdminImageID" />
+                <ScalarProperty Name="UsedBy" ColumnName="UsedBy" />
+                <ScalarProperty Name="UsedOn" ColumnName="UsedOn" />
+                <ScalarProperty Name="UserPostCardID" ColumnName="UserPostCardID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserPostCardRecipients">
+            <EntityTypeMapping TypeName="HyggeMailModel.UserPostCardRecipient">
+              <MappingFragment StoreEntitySet="UserPostCardRecipient">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FKUserAddressBookId" ColumnName="FKUserAddressBookId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+                <ScalarProperty Name="UserPostCardID" ColumnName="UserPostCardID" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
+                <ScalarProperty Name="CompletedOn" ColumnName="CompletedOn" />
+                <ScalarProperty Name="ApprovedOn" ColumnName="ApprovedOn" />
+                <ScalarProperty Name="IsError" ColumnName="IsError" />
+                <ScalarProperty Name="IsRejected" ColumnName="IsRejected" />
+                <ScalarProperty Name="RejectedOn" ColumnName="RejectedOn" />
+                <ScalarProperty Name="RejectedReason" ColumnName="RejectedReason" />
+                <ScalarProperty Name="IsCancelled" ColumnName="IsCancelled" />
+                <ScalarProperty Name="CancelledOn" ColumnName="CancelledOn" />
+                <ScalarProperty Name="CardStatus" ColumnName="CardStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="HyggeMailModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="MemberShipType" ColumnName="MemberShipType" />
+                <ScalarProperty Name="ForgotUID" ColumnName="ForgotUID" />
+                <ScalarProperty Name="ActivatedUID" ColumnName="ActivatedUID" />
+                <ScalarProperty Name="LastLogin" ColumnName="LastLogin" />
+                <ScalarProperty Name="LastLogout" ColumnName="LastLogout" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="DeletedOn" ColumnName="DeletedOn" />
+                <ScalarProperty Name="IsActivated" ColumnName="IsActivated" />
+                <ScalarProperty Name="ActivatedOn" ColumnName="ActivatedOn" />
+                <ScalarProperty Name="AuthenticationType" ColumnName="AuthenticationType" />
+                <ScalarProperty Name="DeviceType" ColumnName="DeviceType" />
+                <ScalarProperty Name="DeviceToken" ColumnName="DeviceToken" />
+                <ScalarProperty Name="Facebook_ID" ColumnName="Facebook_ID" />
+                <ScalarProperty Name="OrderPlacedNotification" ColumnName="OrderPlacedNotification" />
+                <ScalarProperty Name="OrderStatusNotification" ColumnName="OrderStatusNotification" />
+                <ScalarProperty Name="CardsCount" ColumnName="CardsCount" />
+                <ScalarProperty Name="IsToolTipShow" ColumnName="IsToolTipShow" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserTransactions">
+            <EntityTypeMapping TypeName="HyggeMailModel.UserTransaction">
+              <MappingFragment StoreEntitySet="UserTransactions">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+                <ScalarProperty Name="Gateway" ColumnName="Gateway" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="TransactionAmount" ColumnName="TransactionAmount" />
+                <ScalarProperty Name="PlanID" ColumnName="PlanID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

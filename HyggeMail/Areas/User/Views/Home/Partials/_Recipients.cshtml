@@ -1,0 +1,13 @@
+﻿<div class="upload-sec">
+    <input type="file" class="hidden" />
+    <span class="upload-btn" data-toggle="modal" data-target="#myModal-AddRecipient" style="cursor:pointer">
+        <img src="~/Content/images/upload.png" alt="" /> Add Recipient
+    </span>
+</div>
+<div class="contents">
+    <input class="text search" type="text" id="searchRecipient" placeholder="Search.." />
+    <div id="Recipients">
+        @*@Html.Partial("Partials/_RecipientListing", new ActionOutput<RecipientGroupModel>())*@
+    </div>
+</div>
+@Html.Partial("Partials/_AddRecipient", new AddUpdateRecipientModel())

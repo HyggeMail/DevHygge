@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "PostCards";
+    Layout = "~/Areas/User/Views/Shared/_Layout.cshtml";
+    var model = ViewBag.Membership as PayPalTransaction;
+}
+@model PagingResult<PostCardListingModel>
+@Html.Partial("_secondheader", model)
+<div>
+    <section class="sub-section wb-cards">
+        <input type="hidden" id="hfShowOrderBy" value="AddedOn" />
+        <input type="hidden" id="hfSortByOrder" value="Desc" />
+
+        <div class="container1">
+            @if (Model.List.Count > 0 && Model.List != null)
+            {
+                <div class="col-xs-12 sorttt">  @Html.Partial("_SearchFilter", new PagingModel { SortBy = "AddedOn", SortOrder = "Desc" })</div>
+            }
+            <div class="col-md-12 text-center">
+                <span class="loginerroemsg"></span>
+            </div>
+            <div id="postcardList" class="user-postcards-view">
+                @Html.Partial("Partials/_postcardListing", Model)
+            </div>
+            <div class="col-xs-12 paginationss"> @Html.Partial("_Paging")</div>
+        </div>
+
+    </section>
+    <div class="modal fade modal-custom card-popup" id="view-card" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    </div>
+    @Html.Partial("_partialPlans", model)
+</div>
+@section scripts{
+    <script src="~/Scripts/UserDefinedScripts/paging.js"></script>
+    <script src="~/Scripts/UserDashboardScripts/PostCard.js"></script>
+    <script>
+        var totalCount=@Model.TotalCount;
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            PostCard.ManagePostCards(totalCount);
+        });
+        var siteURL = {
+            DeletePostCard: '@Url.Action("DeletePostCard", "PostCard", new { area = "User" })',
+            GetPostCardForPopup: '@Url.Action("GetPostCardForPopup", "PostCard", new { area = "User" })',
+            GetPostCardsList: '@Url.Action("GetPostCardsList", "PostCard", new { area = "User" })',
+        }
+    </script>
+
+    <script>
+
+        $(document).ready(function () {
+            var height = $(window).height();
+            $('.user-postcards-view').css("height", height - 325);
+        });
+    </script>
+}
+
+

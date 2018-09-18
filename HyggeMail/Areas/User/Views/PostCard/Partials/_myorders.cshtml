@@ -1,0 +1,119 @@
+﻿@model PagingResult<RecipientPostCardListingModel>
+
+@{
+    var currentTime = DateTime.UtcNow;
+}
+
+@if (Model.List.Count > 0 && Model.List != null)
+{
+    foreach (var item in Model.List)
+    {
+        <div class="col-lg-4 col-md-6">
+            <div class="order-details ordercards">
+                <div class="order-out">
+                    <figure>
+                        <a href="javascript::">
+                            @if (item.CardFrontPath != null)
+                            {
+                                <img src="@item.CardFrontPath.Replace("~","../..")">
+                            }
+                        </a>
+                    </figure>
+                    <div class="order-details-low">
+                        <h4>Placed : <span>@Convert.ToDateTime(item.AddedOn).ToString("hh:mm tt, dd MMM yyyy")</span></h4>
+                        <h4>Recipient: <span>@item.Name</span></h4>
+                        <h4>Recipient Address:<span> @string.Format("{0}, {1}, {2}, {3}", item.Address, item.City, item.State, item.Country)</span></h4>
+                        <h4>
+                            Current Status :
+                            @*@if (item.IsRejected == true)
+                                {
+                                    <span>Order Rejected</span>
+                                }
+                                else if (item.IsCancel == true && item.IsApproved != true && item.IsCompleted != true)
+                                {
+                                    <span>Order Cancelled</span>
+                                }
+                                else if (item.IsApproved != true && item.IsCompleted != true)
+                                {
+                                    <span>Order Placed</span>
+                                }
+                                else if (item.IsApproved == true && item.IsCompleted != true)
+                                {
+                                    <span>In Progress</span>
+                                }
+                                else if (item.IsCompleted == true)
+                                {
+                                    <span>Completed</span>
+                                }*@
+
+                            @if (item.CardStatus == (int)CardStatusTypes.Rejected)
+                            {
+                                <span>Order Rejected</span>
+                            }
+                            else if (item.CardStatus == (int)CardStatusTypes.Cancelled)
+                            {
+                                <span>Order Cancelled</span>
+                            }
+                            else if (item.CardStatus == (int)CardStatusTypes.Approved)
+                            {
+                                <span>Order Placed</span>
+                            }
+                            else if (item.CardStatus == (int)CardStatusTypes.InProgress)
+                            {
+
+                                <span>Order In Progress</span>
+
+                                if (item.AddedOn.AddMinutes(15) > currentTime)
+                                {
+                                        <div>
+                                            <div class="timer timerHide"><div><span id="time-remaining@(item.ID)">00:00</span></div></div>
+                                            <script>
+                                                $(document).ready(function () {
+                                                    var hrs = '@((currentTime -  item.AddedOn).Hours)';
+                                                    var min = '@((currentTime -  item.AddedOn).Minutes)';
+                                                    var sec = '@((currentTime -  item.AddedOn).Seconds)';
+
+                                                    if (hrs < 1) {
+                                                        if (min < 15) {
+                                                            var totalMinutes = 60 * 15;
+                                                            var finalMinutes = (totalMinutes - (60 * min)) - sec;
+                                                            startTimer(finalMinutes, $('#time-remaining' + '@item.ID').attr("Id"));
+                                                        }
+                                                    }
+                                                });
+                                            </script>
+                                            <div class="place-order">
+                                                <input type="hidden" class="download-t1-card cancel-block"><a href="Javascript:" class="cncl-btn cancel-block cancel-order" data-order="@item.UserPostCardID"> Cancel Order </a>
+                                            </div>
+                                        </div>
+                                }
+                            }
+                            else if (item.CardStatus == (int)CardStatusTypes.Completed)
+                            {
+                                <span>Order Completed</span>
+                            }
+                            else if (item.CardStatus == (int)CardStatusTypes.Error)
+                            {
+                                <span>Hold</span>
+                            }
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <section class="sub-section wb-payments-plans custom-pages">
+        <div class="container">
+            <div class="plans-upper-description verfication">
+                <h1 class="text-center verfication_mesg">Message</h1>
+                <div class="success text-center" style="font-size:30px;">
+                    There are no HyggeMail cards created yet, Please <a href="@Url.Action("Dashboard", "Home", new { area ="User" })"> Click Here </a> to Create your Card.
+                </div><br /><br />
+            </div>
+        </div>
+    </section>
+}
+

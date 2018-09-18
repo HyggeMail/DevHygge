@@ -1,0 +1,126 @@
+@media screen and (max-width: 1599px){
+	body * { box-sizing:border-box;}
+	.orng-sec { padding: 0 0 20px;}	
+}
+@media screen and (max-width: 1365px){
+	
+}
+@media screen and (max-width: 1280px){
+	.heading { font-size: 60px;}
+	.container p, .footer-nav li a, .content-listing li { font-size: 22px;}
+	.read_more, a.read_more.orng, .read_more.pink { font-size: 30px; background-size: 30px auto;}
+	footer { height: 120px;}
+	.right-content h3 { font-size: 40px;}	
+ 	ul.pagination { padding: 0px 0 0px;}	
+}
+
+@media screen and (max-width: 1024px){
+	nav ul li a { padding: 15px 10px 22px 10px;}
+	.logo-sec { margin-top: 45px;}	
+	.flex-sec ul li:last-child { min-width: 161px;}
+	.td { font-size: 22px; min-width: 162px;}
+	.headings.td { font-size: 22px; width: calc(100% - 162px);}
+ 	.flex-sec ul li a { padding: 10px 12px; font-size: 20px; line-height: normal;}
+ 	.listings figure { width: 40%; float: left; margin-right: 10px;}
+ 	.right-content h3 { font-size: 30px;}
+ 	.container p, .footer-nav li a, .content-listing li { font-size: 18px;}
+ 	.heading { font-size: 40px;}
+ 	.container p { margin-bottom:0;}
+ 	.red-headings { font-size: 40px;}
+ 	ul li { font-size: 20px;}
+	.small-heading { font-size: 22px; margin: 20px auto 10px;}
+	.container p.mb50 { margin-bottom: 20px;}
+	.middle-content.search-results .container { margin-bottom: 30px;}
+	.result-sec h4 { margin: 30px auto 25px;}
+
+}
+
+@media screen and (max-width: 979px){
+	.td { display: none;}
+	.right-content h3 { font-size: 23px;}
+	.footer-nav li a { padding: 0 10px;}
+	.headings.td { text-align:left; padding: 0 12px; width: 100%; box-sizing:border-box; display: inline-block;}
+	.flex-sec ul { display: inline-block;}
+	.flex-sec ul li { float: none; width: 100%; text-align: left; border:0;}	
+	.flex-sec ul li a { padding: 5px 12px}
+	.flex-sec ul li:before { display: none;}
+	.flex-sec ul li:last-child:before { content: "creative zone"; display: inline-block; width: 100%; padding: 5px 12px; color: #fff; background: #e15c00; float: left; font-size: 22px; box-sizing: border-box; margin: 0 auto;}
+	.search-sec { padding-right: 20px;}
+	.gallery-sec figcaption { font-size: 24px;}	
+ 	.red-headings { font-size: 35px;}
+ 	.content-listing { margin: 10px auto;}
+ 	.leadership-links ul li { font-size: 20px;}
+ 	.logo-sec { margin-top: 36px;}
+
+}
+
+@media screen and (max-width: 767px){
+	.mob-nav { display: inline-block; float: right; position: absolute; top: 0; right: 0; margin: 30px 20px 0;}
+	.mob-nav span { display: block; width: 30px; height: 3px; background: #fff; margin: 5px auto; border-radius: 10px;}
+	.search-sec { padding-right: 15px;}
+	.middle-content .container { margin-bottom: 30px;}
+	.logo-sec { margin-top: 45px; margin: 10px auto; max-width: 200px;}
+	nav { margin: 0 auto; float: left; width: 100%;}
+	nav ul { display: none;}
+	nav ul.open { display: block;}
+	nav ul li { float: left; width: 100%; text-align: left;}
+	nav ul li a { padding: 5px; font-size: 20px; line-height: normal;}
+	footer { padding: 0 10px; height: auto;}
+	.resources .listings { margin: 0 auto 10px;}
+	.read_more, a.read_more.orng, .read_more.pink { padding: 0px 50px 0px 0; margin-bottom: 20px; display: inline-block;}
+	.footer-nav li { line-height: 1;}
+	.footer-nav li a { font-size: 16px;}
+	.footer-nav { float: left;width:100%;}
+	.upper-strip { height: 30px;}
+	.gallery-sec figcaption { font-size: 20px;}
+	a.read_more.orng, a.read_more.pink { margin: 15px auto 0;} 	
+	.full-columns figure { margin: 40px auto 0;}
+	.red-headings { font-size: 30px; margin: 20px auto 0;}
+	ul.content-listing li { font-size: 18px;}
+	.leadership-links ul li { font-size: 18px; padding: 5px 0;}
+	.leadership-links { padding: 10px 0 20px;}
+	.middle-content { padding-top: 20px;}
+	ul.pagination { padding: 0px 0 20px;}
+	.small-heading { font-size: 18px; margin: 20px auto 10px;}
+	.new-search label { display: inline-block; margin-bottom: 10px;}
+	ul.site-map-listings li { font-size: 16px;}
+	.site-map-listings a { padding-left: 20px;}
+	.inner-listing { padding-left: 20px;}
+}
+
+@media screen and (max-width: 735px){
+	.search-btn { opacity: 0.3; width: 26px;}
+	.search-btn.wht { opacity: 1;}
+	.search { background: #ffffff; padding: 7px 10px; border: 1px solid #d8d8d8; box-shadow: none; outline: 0;}
+	.heading { font-size: 28px; margin: 5px auto;}
+	.result-sec h4 { font-size: 25px; margin: 20px auto 20px;}
+	.container p, .footer-nav li a, .content-listing li { font-size: 16px;}
+	.middle-content .container { margin-bottom: 15px;}
+	.headings.td, .flex-sec ul li:last-child:before { font-size: 20px;}
+	.flex-sec ul li a { font-size: 18px;}
+	.listings li { width: 100%;}	
+	.right-content { padding-right: 0;}
+	.read_more, a.read_more.orng, .read_more.pink { font-size: 23px; background-size: 20px; background-position: 100% 3px; padding: 0 30px 2px 0;}
+	.footer-nav { float: right; padding: 10px 0;}
+	.footer-nav li a { padding: 5px 0;}
+	.footer-nav li { width: 100%;}
+	.footer-nav li:after { display: none;}
+	footer { text-align: left;}
+	.gallery-sec .columns, .gallery-sec .columns:nth-child(3n-1) { float: left; width: 45%; margin: 10px 2.5% 15px;}
+	.gallery-sec { margin: 15px auto;}
+	.pagination li { font-size: 18px;}
+	.mob-nav { margin: 30px 15px 0;}
+	.logo-sec { margin: 10px 5px;}
+	.search { width: 85%;}
+	.middle-content.search-results .container { margin-bottom: 10px;}
+	.new-search { padding: 0px 0 10px;}
+	.middle-content.search-results { padding-top: 5px;}
+	.result-sec ul.pagination { padding: 10px 0 0px;}
+	.search-bar { max-width: 85%;}
+
+
+}
+
+@media screen and (max-width: 374px){
+	
+}

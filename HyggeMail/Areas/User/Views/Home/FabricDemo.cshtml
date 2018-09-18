@@ -1,0 +1,553 @@
+﻿@{
+    ViewBag.Title = "Fabric Demo";
+    Layout = "~/Areas/User/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    body {
+        padding: 10px 10px 10px 10px;
+        font-family: "HelveticaNeue";
+    }
+
+    canvas {
+        border: 1px solid #bdc3c7;
+        margin: 10px 0px 0px 0px;
+        /*  background-image: url("images/bg.png"); */
+    }
+
+    .myFile {
+        position: relative;
+        overflow: hidden;
+        float: left;
+        clear: left;
+    }
+
+        .myFile input[type="file"] {
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            opacity: 0;
+            font-size: 30px;
+            filter: alpha(opacity=0);
+        }
+
+    .myFile2 input[type="file"] {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        opacity: 0;
+        font-size: 30px;
+        filter: alpha(opacity=0);
+    }
+
+    .title {
+        color: black;
+        text-decoration: none;
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    hr {
+        text-align: left;
+        margin: 30px auto 0 0;
+        width: 700px;
+    }
+
+    a:visited {
+        text-decoration: none;
+        color: #000;
+    }
+
+    a:active {
+        text-decoration: none;
+        color: #000;
+    }
+</style>
+@model ActionOutput<ImagesByCategoryViewModel>
+
+<ul class="accordion_example">
+    @if (Model != null)
+    {
+        if (Model.List.Count() > 0)
+        {
+            foreach (var item in Model.List)
+            {
+                <li>
+                    <div class="listings">
+                        @item.CatName (@item.ImagesCount)
+                    </div>
+                    <div class="datas">
+                        @if (item.Images != null)
+                        {
+                            if (item.Images.Count > 0)
+                            {
+                                foreach (var image in item.Images)
+                                {
+                                    <div class="images-p" id="images">
+                                        <img draggable="true" src="@image.FilePath.Replace("~","../..")" width="200"  class="img-p" alt="@image.FileName" />
+                                    </div>
+
+                                }
+                            }
+                        }
+                    </div>
+                </li>
+
+            }
+        }
+        else
+        {
+            <li>No Record Found</li>
+        }
+    }
+</ul>
+<label><a style="text-decoration: none;" href="#"><span class="mdi mdi-lightbulb-on-outline">Brand</span></a></label>
+<br>
+<br>
+<label title="Add an image" class="myFile">
+    <span class="mdi mdi-image"> Add Photo</span>&nbsp;
+    <input type="file" id="file" />
+</label>
+<label title="Add a background" class="myFile2">
+    <span class="mdi mdi-image"> Add Background</span>&nbsp;
+    <input type="file" id="file2" />
+</label>
+<a onclick="Addtext()" title="Add text"><span class="mdi mdi-format-text"> Add Text</span></a>&emsp;
+<a onclick="sendSelectedObjectToFront()" title="Bring selected to front"><span class="mdi mdi-arrange-bring-forward"> Front</span></a>
+<a onclick="sendSelectedObjectBack()" title="Send selected to back"><span class="mdi mdi-arrange-send-backward"> Back</span></a>
+<a onclick="deleteObject()" title="Delete Anything Selected"><span class="mdi mdi-delete"> Delete</span></a>&emsp;
+<a onclick="refresh()" title="Start fresh"><span class="mdi mdi-shredder"> Clear All</span></a>&emsp;
+<a onclick="ReplicaContent()" title="Start fresh"><span class="mdi mdi-shredder"> Replica</span></a>&emsp;
+<a href="javascript:" id="delete-selected">Delete Selected Object</a>&emsp;
+<a href="javascript:" id="rotate-right">Rotate Right</a>&emsp;
+<a href="javascript:" id="rotate-left">Rotate Left</a>&emsp;
+<a id="lnkDownload" title="Save"><span class="mdi mdi-download"> Save</span></a>
+<div id="textControls">
+    <div id="text-wrapper">
+        <div id="text-controls">
+            <select id="font-family">
+                <option value="arial">Arial</option>
+                <option value="HelveticaNeue" selected>Helvetica Neue</option>
+                <option value="myriad pro">Myriad Pro</option>
+                <option value="delicious">Delicious</option>
+                <option value="verdana">Verdana</option>
+                <option value="georgia">Georgia</option>
+                <option value="courier">Courier</option>
+                <option value="comic sans ms">Comic Sans MS</option>
+                <option value="impact">Impact</option>
+                <option value="monaco">Monaco</option>
+                <option value="optima">Optima</option>
+                <option value="hoefler text">Hoefler Text</option>
+                <option value="plaster">Plaster</option>
+                <option value="engagement">Engagement</option>
+            </select>
+            <input type="color" id="text-color" size="10">
+            <select id="text-align">
+                <option value="left">Align Left</option>
+                <option value="center">Align Center</option>
+                <option value="right">Align Right</option>
+                <option value="justify">Align Justify</option>
+            </select>
+            <label for="text-stroke-color">Stroke C:</label>
+            <input type="color" id="text-stroke-color">
+            <label for="text-stroke-width">Stroke W:</label>
+            <input type="range" value="1" min="1" max="5" id="text-stroke-width">
+            <label for="text-font-size">Font S:</label>
+            <input type="number" min="12" max="120" step="1" id="text-font-size">
+            <label for="text-line-height">Line H:</label>
+            <input type="range" min="0" max="10" step="0.1" id="text-line-height">
+            <label for="text-bg-color">BG Color:</label>
+            <input type="color" id="text-bg-color" size="10">
+            <label for="text-lines-bg-color">BG Text Color:</label>
+            <input type="color" id="text-lines-bg-color" size="10">
+            <input type='checkbox' name='fonttype' id="text-cmd-bold"> <b>B</b>
+            <input type='checkbox' name='fonttype' id="text-cmd-italic"> <em>I</em>
+            <input type='checkbox' name='fonttype' id="text-cmd-underline"> Underline
+            <input type='checkbox' name='fonttype' id="text-cmd-linethrough"> Linethrough
+            <input type='checkbox' name='fonttype' id="text-cmd-overline"> Overline
+        </div>
+    </div>
+</div>
+@*<canvas id="c" width="700" height="500"></canvas>
+    <canvas id="c1" width="700" height="500"></canvas>*@
+<!-- Based on the tutorial at http://www.html5rocks.com/en/tutorials/dnd/basics/ -->
+@*<div id="images">
+    <img draggable="true" src="http://i.imgur.com/8rmMZI3.jpg" width="100" height="100"></img>
+    <img draggable="true" src="http://i.imgur.com/q9aLMza.png" width="100" height="100"></img>
+    <img draggable="true" src="http://i.imgur.com/wMU4SFn.jpg" width="100" height="100"></img>
+</div>*@
+
+
+<div id="canvas-container">
+    <canvas id="canvs-Image-drag" width="800" height="600"></canvas>
+</div>
+
+@section scripts{
+    <script src="~/Content/themes/fabric.js-1.7.18/dist/fabric.js"></script>
+
+    <script type="text/javascript">
+        /* Drag and Drop code adapted from http://www.html5rocks.com/en/tutorials/dnd/basics/ */
+
+        var canvas = new fabric.Canvas('canvs-Image-drag');
+
+        /*
+        NOTE: the start and end handlers are events for the <img> elements; the rest are bound to
+        the canvas container.
+        */
+
+        function handleDragStart(e) {
+            [].forEach.call(images, function (img) {
+                img.classList.remove('img_dragging');
+            });
+            this.classList.add('img_dragging');
+        }
+
+        function handleDragOver(e) {
+            if (e.preventDefault) {
+                e.preventDefault(); // Necessary. Allows us to drop.
+            }
+
+            e.dataTransfer.dropEffect = 'copy'; // See the section on the DataTransfer object.
+            // NOTE: comment above refers to the article (see top) -natchiketa
+
+            return false;
+        }
+
+        function handleDragEnter(e) {
+            // this / e.target is the current hover target.
+            this.classList.add('over');
+        }
+
+        function handleDragLeave(e) {
+            this.classList.remove('over'); // this / e.target is previous target element.
+        }
+
+        function handleDrop(e) {
+            // this / e.target is current target element.
+
+            if (e.stopPropagation) {
+                e.stopPropagation(); // stops the browser from redirecting.
+            }
+
+            var img = document.querySelector('#images img.img_dragging');
+
+            console.log('event: ', e);
+
+            var newImage = new fabric.Image(img, {
+                width: img.width,
+                height: img.height,
+                // Set the center of the new object based on the event coordinates relative
+                // to the canvas container.
+                left: e.layerX,
+                top: e.layerY
+            });
+            canvas.add(newImage);
+
+            return false;
+        }
+
+        function handleDragEnd(e) {
+            // this/e.target is the source node.
+            [].forEach.call(images, function (img) {
+                img.classList.remove('img_dragging');
+            });
+        }
+
+
+        if (Modernizr.draganddrop) {
+            // Browser supports HTML5 DnD.
+
+            // Bind the event listeners for the image elements
+            var images = document.querySelectorAll('#images img');
+            [].forEach.call(images, function (img) {
+                img.addEventListener('dragstart', handleDragStart, false);
+                img.addEventListener('dragend', handleDragEnd, false);
+            });
+            // Bind the event listeners for the canvas
+            var canvasContainer = document.getElementById('canvas-container');
+            canvasContainer.addEventListener('dragenter', handleDragEnter, false);
+            canvasContainer.addEventListener('dragover', handleDragOver, false);
+            canvasContainer.addEventListener('dragleave', handleDragLeave, false);
+            canvasContainer.addEventListener('drop', handleDrop, false);
+        } else {
+            // Replace with a fallback to a library solution.
+            alert("This browser doesn't support the HTML5 Drag and Drop API.");
+        }
+
+
+
+        //canvas.on('object:selected', function (e) {
+        //    if (e.target.type === 'i-text') {
+        //        document.getElementById('textControls').hidden = false;
+        //    }
+        //});
+        //canvas.on('before:selection:cleared', function (e) {
+        //    if (e.target.type === 'i-text') {
+        //        document.getElementById('textControls').hidden = true;
+        //    }
+        //});
+        document.getElementById('file').addEventListener("change", function (e) {
+            var file = e.target.files[0];
+            var reader = new FileReader();
+            reader.onload = function (f) {
+                var data = f.target.result;
+                fabric.Image.fromURL(data, function (img) {
+                    var oImg = img.set({
+                        left: 0,
+                        top: 0,
+                        angle: 0,
+                        border: '#000',
+                        stroke: '#F0F0F0', //<-- set this
+                        strokeWidth: 40 //<-- set this
+                    }).scale(0.2);
+                    canvas.add(oImg).renderAll();
+                    //var a = canvas.setActiveObject(oImg);
+                    var dataURL = canvas.toDataURL({
+                        format: 'png',
+                        quality: 1
+                    });
+                });
+            };
+            reader.readAsDataURL(file);
+        });
+        $(document).on('click', '#delete-selected', function () {
+            ;
+            var getObject = canvas.getActiveObject();
+            if (getObject != null)
+                canvas.getActiveObject().remove();
+            else
+                $.ShowMessage($('div.messageAlert'), "We didn't recognize which section of the design you would like to remove. Try selecting an area first.", MessageType.Error);
+        });
+
+        $(document).on('click', '#rotate-right', function () {
+            
+            var getObject = canvas.getActiveObject();
+            if (getObject != null)
+                ImageEditor.rotateObject(90);
+            else
+                $.ShowMessage($('div.messageAlert'), "We didn't recognize which section of the design you would like to rotate. Try selecting an area first.", MessageType.Error);
+        });
+
+        $(document).on('click', '#rotate-left', function () {
+            
+            var getObject = canvas.getActiveObject();
+            if (getObject != null)
+                ImageEditor.rotateObject(-90);
+            else
+                $.ShowMessage($('div.messageAlert'), "We didn't recognize which section of the design you would like to rotate. Try selecting an area first.", MessageType.Error);
+        });
+        //add background
+        document.getElementById('file2').addEventListener("change", function (e) {
+            var file = e.target.files[0];
+            var reader = new FileReader();
+            reader.onload = function (f) {
+                var data = f.target.result;
+                fabric.Image.fromURL(data, function (img) {
+                    canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas), {
+                        width: canvas.getWidth(),
+                        height: canvas.getHeight()
+                    });
+                });
+            };
+            reader.readAsDataURL(file);
+        });
+
+        // Delete selected object
+        window.deleteObject = function () {
+            var activeGroup = canvas.getActiveGroup();
+            if (activeGroup) {
+                var activeObjects = activeGroup.getObjects();
+                for (let i in activeObjects) {
+                    canvas.remove(activeObjects[i]);
+                }
+                canvas.discardActiveGroup();
+                canvas.renderAll();
+            } else canvas.getActiveObject().remove();
+        }
+        // Refresh page
+        function refresh() {
+            setTimeout(function () {
+                location.reload()
+            }, 100);
+        }
+        // Add text
+        function Addtext() {
+            canvas.add(new fabric.IText('Tap and Type', {
+                left: 50,
+                top: 100,
+                fontFamily: 'helvetica neue',
+                fill: '#000',
+                stroke: '#fff',
+                strokeWidth: .1,
+                fontSize: 45
+            }));
+        }
+
+        function ReplicaContent() {
+            
+            var json = JSON.stringify(canvas.toDatalessJSON());
+            canvas1.loadFromJSON(json, canvas1.renderAll.bind(canvas1), function (o, object) {
+                fabric.log(o, object);
+            });
+        }
+
+        // Edit Text
+        document.getElementById('text-color').onchange = function () {
+            canvas.getActiveObject().setFill(this.value);
+            canvas.renderAll();
+        };
+        document.getElementById('text-color').onchange = function () {
+            canvas.getActiveObject().setFill(this.value);
+            canvas.renderAll();
+        };
+        document.getElementById('text-bg-color').onchange = function () {
+            canvas.getActiveObject().setBackgroundColor(this.value);
+            canvas.renderAll();
+        };
+        document.getElementById('text-lines-bg-color').onchange = function () {
+            canvas.getActiveObject().setTextBackgroundColor(this.value);
+            canvas.renderAll();
+        };
+        document.getElementById('text-stroke-color').onchange = function () {
+            canvas.getActiveObject().setStroke(this.value);
+            canvas.renderAll();
+        };
+        document.getElementById('text-stroke-width').onchange = function () {
+            canvas.getActiveObject().setStrokeWidth(this.value);
+            canvas.renderAll();
+        };
+        document.getElementById('font-family').onchange = function () {
+            canvas.getActiveObject().setFontFamily(this.value);
+            canvas.renderAll();
+        };
+        document.getElementById('text-font-size').onchange = function () {
+            canvas.getActiveObject().setFontSize(this.value);
+            canvas.renderAll();
+        };
+        document.getElementById('text-line-height').onchange = function () {
+            canvas.getActiveObject().setLineHeight(this.value);
+            canvas.renderAll();
+        };
+        document.getElementById('text-align').onchange = function () {
+            canvas.getActiveObject().setTextAlign(this.value);
+            canvas.renderAll();
+        };
+        radios5 = document.getElementsByName("fonttype"); // wijzig naar button
+        for (var i = 0, max = radios5.length; i < max; i++) {
+            radios5[i].onclick = function () {
+                if (document.getElementById(this.id).checked == true) {
+                    if (this.id == "text-cmd-bold") {
+                        canvas.getActiveObject().set("fontWeight", "bold");
+                    }
+                    if (this.id == "text-cmd-italic") {
+                        canvas.getActiveObject().set("fontStyle", "italic");
+                    }
+                    if (this.id == "text-cmd-underline") {
+                        canvas.getActiveObject().set("textDecoration", "underline");
+                    }
+                    if (this.id == "text-cmd-linethrough") {
+                        canvas.getActiveObject().set("textDecoration", "line-through");
+                    }
+                    if (this.id == "text-cmd-overline") {
+                        canvas.getActiveObject().set("textDecoration", "overline");
+                    }
+                } else {
+                    if (this.id == "text-cmd-bold") {
+                        canvas.getActiveObject().set("fontWeight", "");
+                    }
+                    if (this.id == "text-cmd-italic") {
+                        canvas.getActiveObject().set("fontStyle", "");
+                    }
+                    if (this.id == "text-cmd-underline") {
+                        canvas.getActiveObject().set("textDecoration", "");
+                    }
+                    if (this.id == "text-cmd-linethrough") {
+                        canvas.getActiveObject().set("textDecoration", "");
+                    }
+                    if (this.id == "text-cmd-overline") {
+                        canvas.getActiveObject().set("textDecoration", "");
+                    }
+                }
+                canvas.renderAll();
+            }
+        }
+        // Send selected object to front or back
+        var selectedObject;
+        canvas.on('object:selected', function (event) {
+            selectedObject = event.target;
+        });
+        var sendSelectedObjectBack = function () {
+            canvas.sendToBack(selectedObject);
+        }
+        var sendSelectedObjectToFront = function () {
+            canvas.bringToFront(selectedObject);
+        }
+        // Download
+        var imageSaver = document.getElementById('lnkDownload');
+        imageSaver.addEventListener('click', saveImage, false);
+
+        function saveImage(e) {
+            
+            this.href = canvas.toDataURL({
+                format: 'png',
+                quality: 0.8
+            });
+            this.download = 'custom.png'
+        }
+        // Do some initializing stuff
+        fabric.Object.prototype.set({
+            transparentCorners: true,
+            cornerColor: '#22A7F0',
+            borderColor: '#22A7F0',
+            cornerSize: 12,
+            padding: 5
+        });
+
+
+        var ImageEditor = {
+            InitilizeEditor: function () {
+                canvas = new fabric.Canvas('main-canvas', {
+                    preserveObjectStacking: true
+                });
+                canvas.uniScaleTransform = true;
+
+                app = appObject();
+
+            },
+            DragEvent: function (sender) {
+                alert(sender);
+
+            },
+            rotateObject: function (angleOffset) {
+                
+                var obj = canvas.getActiveObject(),
+                    resetOrigin = false;
+
+                if (!obj) return;
+
+                var angle = obj.getAngle() + angleOffset;
+
+                if ((obj.originX !== 'center' || obj.originY !== 'center') && obj.centeredRotation) {
+                    obj.setOriginToCenter && obj.setOriginToCenter();
+                    resetOrigin = true;
+                }
+
+                angle = angle > 360 ? 90 : angle < 0 ? 270 : angle;
+
+                obj.setAngle(angle).setCoords();
+
+                if (resetOrigin) {
+                    obj.setCenterToOrigin && obj.setCenterToOrigin();
+                }
+
+                canvas.renderAll();
+            },
+        };
+
+
+
+    </script>
+
+}

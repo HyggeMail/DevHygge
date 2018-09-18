@@ -1,0 +1,32 @@
+﻿@model PagingResult<BlogModel>
+
+
+@if (Model.List != null && Model.List.Count() > 0)
+{
+    foreach (var item in Model.List.Where(x => x.IsFeaturedArticle == false))
+    {
+        
+        <div class="col-xs-12 col-sm-6 col-md-4 blog-single">
+            <div class="inner-blog">
+                <a href="@Url.Action("Description", "Blog", new { id = @item.EncodeId })">
+                    <figure class="blog-image" style="background-image:url(/Uploads/Blog/Thumb/@item.ImageName)"></figure>
+                    <h2>@item.Title</h2>
+                    <p>HyggeMail  |  @Convert.ToDateTime(item.AddedOn).ToString("MMM dd,   yyyy")</p>
+
+                </a>
+            </div>
+        </div>
+
+
+
+    }
+}
+else
+{
+    <tr class="odd gradeX">
+        <td colspan="10" style="text-align:center">Soon .........................</td>
+    </tr>
+}
+
+
+

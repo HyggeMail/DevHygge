@@ -1,0 +1,98 @@
+﻿@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+@model WebContactUsModel
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+
+<section class="middle-content">
+    <div class="contact-page">
+        <div class="container">
+            <div class="left-contact">
+                <h3 class="short-heading pacifico">
+                    Contact Us
+                </h3>
+                <p> We are here to answer any questions you may have about our HyggeMail service. Reach out to us and we will respond as soon as possible.
+                 If there is anything we can do to enhance your experience, let us know and we will do our best to serve you. </p>
+                <img class="seperator" src="~/content/images/under-shadow.png" />
+
+                <div class="address">
+                    <ul>
+                        <li><div class="icons"><img src="~/content/images/mob-icon.png"></div> <span> +1 650 777 7190 </span></li>
+                        <li><div class="icons"><img src="~/content/images/mail-icon-red.png"></div> <span>Admin@HyggeMail.com </span></li>
+                        <li><div class="icons"><img src="~/content/images/location-icon.png"></div> <span>Hygge Mail: 60 State Street, Suite 700, <br/>Boston, 02109, USA</span></li>
+                    </ul>
+                </div>
+
+                <img class="seperator" src="~/content/images/under-shadow.png" />
+
+                <div class="social-links">
+                    <span> JOIN US: </span>
+                    <a href="https://twitter.com/HyggeMail" target="_blank" class="si twt"> </a>
+                    <a href="https://www.instagram.com/hyggemail" target="_blank" class="si ig"> </a>
+                    <a href="https://www.facebook.com/Hygge-Mail-156314855001434" target="_blank" class="si fcb"> </a>
+                    <a href="https://www.pinterest.com/hyggemail" target="_blank" class="si pint"> </a>
+                </div>
+
+            </div>
+
+            <div class="right-contact">
+                <div class="form-div modal-custom">
+                    <form id="formContactUs">
+                        <div class="form-group">
+                            <span class="loginerroemsg"></span>                            
+                        </div>
+                        <div class="form-group">
+                            @Html.TextBoxFor(X => X.Name, new { @class = "form-control", @placeholder = "Name" })
+                            @Html.ValidationMessageFor(X => X.Name)
+                        </div>
+                        <div class="form-group">
+                            @Html.TextBoxFor(X => X.Email, new { @class = "form-control", @placeholder = "E-mail",@type="email" })
+                            @Html.ValidationMessageFor(X => X.Email)
+                        </div>
+					
+						
+						
+                        <div class="form-group select-wb">
+                            @Html.DropDownListFor(x => x.RequestType, Model.RequestTypeList, "Select Request Type", new { @class = "form-control selectpicker" })
+                            @*@Html.ValidationMessageFor(x => x.RequestType)*@
+                        </div>
+                        <div class="form-group">
+                            @Html.TextBoxFor(X => X.Phone, new { @class = "form-control", @placeholder = "Phone" })
+                            @*@Html.ValidationMessageFor(X => X.Phone)*@
+                        </div>
+                        <div class="form-group">
+                            @Html.TextAreaFor(X => X.Message, new { @class = "form-control text-area-rounded", @placeholder = "Your message" })
+                            @*@Html.ValidationMessageFor(X => X.Message)*@
+                            </div>
+                        <div class="form-group subscribes">
+                            <div class="filters">
+                                @Html.CheckBoxFor(x => x.IsSubscriber, new { @class = "checkbox" })
+                                  @*<input class="checkbox" id="IsSubscriber" name="IsSubscriber" type="checkbox">*@
+                                <label for="IsSubscriber"> Subscribe me to a newsletter </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <a href="javascript:" type="submit" class="next-div btn btn-primary" id="formContactButton"><img src="~/content/images/next-arrow.png"> Submit</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@section scripts{
+<script src="~/Scripts/FrontEndScripts/ContactUs.js"></script>
+    <script type="text/javascript">
+        var siteURL = {
+            SubmitContactUs: '@Url.Action("SubmitContactUs", "Home")',
+        }
+        $(document).ready(function () {
+            $("#footer-outer").show();
+        });
+    </script>
+}

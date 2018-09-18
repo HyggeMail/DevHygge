@@ -1,0 +1,62 @@
+﻿@model PayPalTransaction
+@{
+    ViewBag.Title = "ViewTransactionDetails";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayOut.cshtml";
+}
+@if (Model != null)
+{
+
+    <div class="container-fluid" id="pcont">
+        <div class="page-head">
+            <h2>User Transaction Details</h2>
+        </div>
+        <div class="cl-mcont">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block-flat">
+                        <div class="table-responsive">
+                            <div id="divResult">
+                                <table class="table table-striped">
+                                    <tr>
+                                        <td>Transaction ID</td>
+                                        <td>@Model.TransactionID</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Payment Gateway</td>
+                                        <td>@Model.Gateway</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Plan Name</td>
+                                        <td>@Model.MembershipPlan</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Transaction Amount</td>
+                                        <td>@Model.Amount</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total Cards Left</td>
+                                        <td>@Model.PendingCardCount</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div>
+                                <a href="/Admin/user/ManageUsers" class="btn btn-primary">Back to User Section</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+@section scripts{
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            //initialize the javascript
+            App.init();
+        });
+    </script>
+}

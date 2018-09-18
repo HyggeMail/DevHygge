@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+<style>
+    .Reasondiv {
+        min-height: 237px;
+    }
+</style>
+<section class="wb-about-page">
+    <div class="container">
+        <h1 class="text-center">Reason For Rejection</h1>
+
+        <div class="inner-about text-center">
+            <div class="top-detail Reasondiv">
+                @ViewBag.Reason
+            </div>
+        </div>
+    </div>
+</section>

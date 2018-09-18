@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "My Setting";
+    Layout = "~/Areas/User/Views/Shared/_Layout.cshtml";
+    var model = ViewBag.Membership as PayPalTransaction;
+}
+@model UserNotificationSetting
+@Html.Partial("_secondheader", model)
+
+<section class="sub-section wb-setting">
+    <div class="container1">
+        <div class="col-md-12 text-center">
+            <span class="loginerroemsg"></span>
+        </div>
+        <h4 class="top-link-main">Notification Setting</h4>
+        <p>Please notify me through email when:</p>
+        <form id="formMySettings">
+            <div class="filters wb-filters custom-check">
+                @Html.CheckBoxFor(x => x.OrderPlaced, new { @class = "checkbox change-check" })
+                @*<input type="checkbox" class="checkbox" />*@
+                <label>
+                    My order is placed.
+                </label>
+            </div>
+            <div class="filters wb-filters custom-check">
+                @Html.CheckBoxFor(x => x.OrderStatus, new { @class = "checkbox change-check" })
+                <label>
+                    My order status is updated.
+                </label>
+            </div>
+            <div class="filters wb-filters custom-check">
+                @Html.CheckBoxFor(x => x.IsToolTipShow, new { @class = "checkbox change-check" })
+                <label>
+                  Show Card Popup Notification
+                </label>
+            </div>
+        </form>
+    </div>
+    @Html.Partial("_partialPlans", model)
+</section>
+
+@section scripts{
+    <script src="~/Scripts/UserDashboardScripts/Profile.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+        });
+        var siteURL = {
+            UpdateNotificationSettings: '@Url.Action("UpdateNotificationSettings", "Home", new { area = "user" })',
+        }
+    </script>
+
+}

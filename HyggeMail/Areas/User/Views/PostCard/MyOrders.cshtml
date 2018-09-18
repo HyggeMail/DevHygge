@@ -1,0 +1,138 @@
+﻿@{
+    ViewBag.Title = "MyOrders";
+    Layout = "~/Areas/User/Views/Shared/_Layout.cshtml";
+    var model = ViewBag.Membership as PayPalTransaction;
+}
+@model PagingResult<RecipientPostCardListingModel>
+@Html.Partial("_secondheader", model)
+<section class="sub-section wb-myorder">
+    <div class="container1">
+        <input type="hidden" id="hfShowOrderBy" value="AddedOn" />
+        <input type="hidden" id="hfSortByOrder" value="Desc" />
+        @*<div class="filter-area form-div modal-custom">
+                <span class="sort-by">
+                    <h4>Sort by: </h4>
+                    <select class="form-control" id="SortBy">
+                        <option value="AddedOn">Date Submitted</option>
+                        <option value="ShippedOn">Shipped</option>
+                    </select>
+
+                </span>
+                <span class="sort-by">
+                    <h4>Show orders: </h4>
+                    <select class="form-control" id="ShowOrderBy">
+                        <option value="@eShowOrderStatus.All">All</option>
+                        <option value="@eShowOrderStatus.Shipped">Shipped</option>
+                    </select>
+
+                </span>
+
+
+            </div>*@
+
+        @*<h4 class="top-link-main">
+                11 cards <span>(17mb of 20mb used)</span>
+
+                <span class="pagination pull-right">
+                    <ul>
+                        <li disabled><i class="fa fa-angle-left" aria-hidden="true"></i> Previous</li>
+                        <li class="active"><span>1</span></li>
+                        <li><a>2</a></li>
+                        <li><a>3</a></li>
+                        <li><a>4</a></li>
+                        <li>...</li>
+                        <li><a>120</a></li>
+                        <li><a>Next <i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                    </ul>
+                </span>
+            </h4>*@
+
+        <div class="container1">
+            @if (Model.List.Count > 0 && Model.List != null)
+            {
+                <div class="col-xs-12 sorttt">
+                    @Html.Partial("_SearchFilter", new PagingModel { SortBy = "AddedOn", SortOrder = "Desc" })
+                </div>
+            }
+            <div class="col-md-12 text-center">
+                <span class="loginerroemsg"></span>
+            </div>
+            <div id="postcardList">
+                @Html.Partial("Partials/_myorders", Model)
+            </div>
+            @Html.Partial("_Paging")
+            @*<nav aria-label="Page navigation" class="page-navigation">
+
+                <div id="postcardList">
+                    @Html.Partial("Partials/_myorders", Model)
+                </div>
+                @Html.Partial("_Paging")
+                @*<nav aria-label="Page navigation" class="page-navigation">
+
+                        <ul class="pagination">
+                            <li>
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a>...</a></li>
+                            <li>
+                                <a href="#" aria-label="Next">
+                                    Next <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>*@
+        </div>
+        @Html.Partial("_partialPlans", model)
+</section>
+
+@section scripts{
+    <script src="~/Scripts/UserDefinedScripts/paging.js"></script>
+    <script src="~/Scripts/UserDashboardScripts/MyOrders.js"></script>
+    <script type="text/javascript">
+        var totalCount = "@Model.TotalCount";
+
+        $(document).ready(function () {
+            PostCard.ManagePostCards(totalCount);
+
+        });
+        var siteURL = {
+            DeletePostCard: '@Url.Action("DeletePostCard", "PostCard", new { area = "User" })',
+            GetPostCardForPopup: '@Url.Action("GetPostCardForPopup", "PostCard", new { area = "User" })',
+            GetMyOrderList: '@Url.Action("GetMyOrderList", "PostCard", new { area = "User" })',
+            OrderCancel: '@Url.Action("OrderCancel", "Home", new { area = "user" })'
+        }
+
+
+
+        function startTimer(duration, display) {
+
+            display = document.querySelector('#' + display);
+            var timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10)
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    timer = duration;
+                }
+                if (timer == duration || timer >= duration) {
+                    $('.cancel-block').hide();
+                    $('.timerHide').hide();
+                }
+            }, 1000);
+        }
+
+    </script>
+}

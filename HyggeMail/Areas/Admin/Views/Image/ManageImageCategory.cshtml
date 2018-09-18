@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Manage Image Category";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayOut.cshtml";
+}
+@model PagingResult<AdminImageCategoryListingModel>
+
+<div class="container-fluid" id="pcont">
+  
+    <div class="cl-mcont">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block-flat">
+                    <div class="header">
+                        <h3>Image Category</h3>
+                    </div>
+                    <div class="content">
+                        <div class="table-responsive">
+                            <a href="@Url.Action("AddImageCategory", "Image", new {area="admin" })" class="">Add New</a>
+                            @Html.Partial("_SearchFilter", new PagingModel { SortBy = "AddedOn", SortOrder = "Desc" })
+                            <div id="divResult">
+                                <table class="table table-bordered" id="datatable-icons">
+                                    <thead>
+                                        <tr>
+                                            <th class="sorting" data-sortby="CategoryName">Name</th>
+                                            <th class="sorting" data-sortby="AddedOn">Created On</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @Html.Partial("Partials/_imageCategoryListing", Model)
+                                    </tbody>
+                                </table>
+
+
+                            </div>
+
+                        </div>
+                        @Html.Partial("_Paging")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+    <script src="~/Scripts/UserDefinedScripts/paging.js"></script>
+    <script type="text/javascript">
+        var totalCount = "@Model.TotalCount";
+    </script>
+    <script src="~/Scripts/AdminScripts/ImageCategory.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            //initialize the javascript
+            App.init();
+        });
+
+        var siteURL = {
+            AddUpdateImageCategory: '@Url.Action("AddUpdateImageCategory", "Image", new { area = "admin" })',
+            GetImageCategoryPagingList: '@Url.Action("GetImageCategoryPagingList", "Image", new { area = "admin" })',
+            ManageImageCategory: '@Url.Action("ManageImageCategory", "Image", new { area = "admin" })',
+            DeleteImageCategory: '@Url.Action("DeleteImageCategory", "Image", new { area = "admin" })',
+        };
+    </script>
+}
+

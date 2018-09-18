@@ -1,0 +1,88 @@
+﻿@model AddUpdateRecipientModel
+<div class="modal modal-custom fade" id="myModal-AddRecipient" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Add New Recipient</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form" id="RecipientForm">
+                    @Html.HiddenFor(x => x.ID)
+                    <div class="form-group">
+
+                        <div class="row">
+                            <div class=" col-md-12 cate">
+                                <div class="col-md-8">
+                                    @Html.TextBoxFor(x => x.Name, new { @class = "form-control",@placeholder="Name" })
+                                    @Html.ValidationMessageFor(x => x.Name)
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class=" col-md-12 cate">
+                                <div class="col-md-8">
+                                    @Html.TextBoxFor(x => x.Address, new { @class = "form-control", @placeholder = "Address" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class=" col-md-12 cate">
+                                <div class="col-md-8">
+                                    @Html.DropDownListFor(x => x.Country, Model.CountryList, "Select Country", new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class=" col-md-12 cate">
+                                <div class="col-md-8">
+                                    @Html.DropDownListFor(x => x.State, Model.StateList, "Select State", new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class=" col-md-12 cate">
+                                <div class="col-md-8">
+                                    @Html.DropDownListFor(x => x.City, Model.CityList, "Select City", new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class=" col-md-12 cate">
+                                <div class="col-md-8">
+                                    @Html.TextBoxFor(x => x.Zip, new { @class = "form-control" ,@placeholder="Zip"})
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class=" col-md-12 cate">
+                                <div class="col-md-8">
+                                    @Html.CheckBox("AddToBook", true) Also save to address book
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="row">
+                        <div class=" col-md-12">
+                            <div class=" col-sm-12 btn-grpp text-center">
+                                <input type="button" class="btn btn-primary" id="addRecipient" value="Submit" />
+                                <button class="btn btn-primary cancel rec-cancel" data-dismiss="modal" >Cancel</button>
+</div>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

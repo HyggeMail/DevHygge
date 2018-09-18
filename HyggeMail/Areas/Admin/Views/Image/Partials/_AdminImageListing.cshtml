@@ -1,0 +1,35 @@
+﻿@model PagingResult<AdminImageListingModel>
+
+@if (Model.List != null && Model.List.Count() > 0)
+{
+    foreach (var item in Model.List)
+    {
+        <tr class="odd gradeX">
+            <td>@item.FileName</td>
+            @if (item.CategoryName != null)
+            {
+                <td>@item.CategoryName</td>
+            }
+            else
+            {
+                <td>Added By User</td>
+            }
+            <td> <img src="@item.FilePath.Replace("~","../..")" width="50" /></td>
+            <td>@item.Description</td>
+            <td> @Convert.ToDateTime(item.AddedOn).ToString("MMM/dd/yyyy")</td>
+            <td class="center">
+                <a class="btn btn-primary btn-xs" href="@Url.Action("AddAdminImage", "Image", new { id = item.ID, area = "Admin" })" data-original-title="Edit" data-toggle="tooltip"><i class="fa fa-pencil"></i></a>
+                <a data-imagecat="@item.ID" class="btn btn-danger btn-xs deleteAdminImage" href="javascript:void(0);" data-original-title="Remove" data-toggle="tooltip"><i class="fa fa-times"></i></a>
+            </td>
+        </tr>
+    }
+}
+else
+{
+    <tr class="odd gradeX">
+        <td colspan="5">No Record Found</td>
+    </tr>
+}
+
+
+

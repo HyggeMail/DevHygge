@@ -1,0 +1,136 @@
+﻿@model AddUserModel
+@*@using reCAPTCHA.MVC*@
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var Terms = ViewBag.Terms as EditCMSPageModel;
+    var pageContent = ViewBag.PageContent as EditCMSPageModel;
+}
+
+<link href="~/Content/css/bootstrap-Custom-Model.css" rel="stylesheet" />
+@section Styles{
+    <style>
+    .signup-section {
+        background: url(@ViewBag.PageBanner) !Important;
+    }
+           div#loading {
+            display: block;
+            float: right;
+        }
+        form span {
+        color: white;
+        font-size: 13px;
+        cursor: pointer;
+        float: left;
+        margin-top: 1%;
+    }
+
+    .checkbox {
+        float: left;
+        margin-top: 1.5%;
+    }
+    </style>
+}
+<!--signup-->
+<section class="signup-section">
+    @Html.Partial("_FunctionCallMessage")
+<div class="container">
+    <div class="left-signup">
+        @Html.Raw(pageContent.PageContent)
+</div>
+<div class="right-signupform">
+    <form class="form-horizontal" role="form" id="RegisterForm">
+        @Html.HiddenFor(x => x.UserId)
+<div class="form-row">
+    <label>First Name	</label>
+    @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+@Html.ValidationMessageFor(x => x.FirstName)
+</div>
+<div class="form-row pull-right">
+    <label>Last Name</label>
+    @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+@Html.ValidationMessageFor(x => x.LastName)
+</div>
+<div class="form-row">
+    <label>Phone</label>
+    @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+@Html.ValidationMessageFor(x => x.Phone)
+<span id="PhoneError" class="span-error-Valid"></span>
+</div>
+<div class="form-row pull-right">
+    <label>Email</label>
+    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+@Html.ValidationMessageFor(x => x.Email)
+</div>
+<div class="form-row">
+    <label>Password	</label>
+    @Html.PasswordFor(x => x.Password, new { @class = "form-control" })
+@Html.ValidationMessageFor(x => x.Password)
+</div>
+<div class="form-row pull-right">
+    <label>Retype Password</label>
+    @Html.PasswordFor(x => x.ConfirmPassword, new { @class = "form-control" })
+@Html.ValidationMessageFor(x => x.ConfirmPassword)
+</div>
+<div class="form-row">
+    <label>State	</label>
+    @Html.DropDownListFor(x => x.StateFK, Model.StateList, "Select State", new { @class = "form-control" })
+@Html.ValidationMessageFor(x => x.StateFK)
+</div>
+<div class="form-row pull-right">
+    <label>Country</label>
+    @Html.DropDownListFor(x => x.CountryFK, Model.CountryList, new { @class = "form-control" })
+@Html.ValidationMessageFor(x => x.CountryFK)
+</div>
+@*<div class="form-row pull-right">
+        <label>Recaptcha</label>
+            @Html.Recaptcha()
+    </div>*@
+<div class="form-row">
+    @*<input id="Option" type="checkbox" />
+        <label class="checkbox" for="Option">I agree to Terms and Privacy Policy </label>*@
+
+@Html.CheckBoxFor(x => x.TermsAndConditions, new { @class = "form-control checkbox" })
+<span>I agree to <a href="@Url.Action("Terms","Home")" target="_blank">Terms</a>  and <a href="@Url.Action("Privacy","Home")" target="_blank"> Privacy Policy</a></span>
+@Html.ValidationMessageFor(x => x.TermsAndConditions)
+<span id="valTerms"></span>
+<input type="hidden" id="btnTerms" data-toggle="modal" data-target="#myModal"></a>
+</div>
+<div class="form-row pull-right">
+    @*<input type="submit" value="Create Account" />*@
+<button class="btn btn-primary" id="btnSingUp" data-dismiss="modal" type="button">Create Account</button>
+</div>
+</form>
+</div>
+
+</div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+    @if (Terms != null)
+{
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">@Terms.PageTitle</h4>
+</div>
+<div class="modal-body">
+    @Html.Raw(Terms.PageContent)
+</div>
+</div>
+<br />
+</div>
+}
+</div>
+
+
+@section scripts{
+    @Scripts.Render("~/bundles/InputMask")
+<script src="~/Scripts/FrontEndScripts/registrations.js"></script>
+
+}
+

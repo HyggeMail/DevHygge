@@ -1,0 +1,133 @@
+﻿@{
+    ViewBag.Title = "ManageOrders";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayOut.cshtml";
+}
+@model PagingResult<RecipientPostCardListingModel>
+<div id="pcont" class="container-fluid wb-manageorders">
+    <!--     <div class="page-head">
+            <h2>Manage Users</h2>
+
+        </div> -->
+    <div class="cl-mcont">
+        <input type="hidden" id="hfMainStatus" value="@eRecipientOrderStatus.New.ToString()" />
+        <input type="hidden" id="hfDays" value="@eShownRecipientOrdersByDays.Today.ToString()" />
+        <input type="hidden" id="hfIsApproved">
+        <input type="hidden" id="hfSelectedPostCardBack">
+        <input type="hidden" id="hfSelectedSenderAddress">
+        <input type="hidden" id="hfSelectedSenderName">
+        <input type="hidden" id="hfSelectedSenderInclude">
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="block-flat">
+                    <div class="content">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a class="shownByStatus" data-status="@eRecipientOrderStatus.New.ToString()" aria-controls="home" role="tab" data-toggle="tab">New<span></span></a></li>
+                            <li role="presentation"><a class="shownByStatus" data-status="@eRecipientOrderStatus.Approved.ToString()" aria-controls="profile" role="tab" data-toggle="tab">Approved</a></li>
+                            <li role="presentation"><a class="shownByStatus" data-status="@eRecipientOrderStatus.Completed.ToString()" aria-controls="messages" role="tab" data-toggle="tab">Completed</a></li>
+                            <li role="presentation"><a class="shownByStatus" data-status="@eRecipientOrderStatus.Rejected.ToString()" aria-controls="settings" role="tab" data-toggle="tab">Rejected<span></span></a></li>
+                            <li role="presentation"><a class="shownByStatus" data-status="@eRecipientOrderStatus.Errors.ToString()" aria-controls="settings" role="tab" data-toggle="tab">Errors<span></span></a></li>
+
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="home">
+                                <ul class="nav nav-tabs daystablist" style="display:none" role="tablist">
+                                    <li role="presentation"><a class="shownsBydays" data-shownby="@eShownRecipientOrdersByDays.Past.ToString()" aria-controls="today" role="tab" data-toggle="tab">Past</a></li>
+                                    <li role="presentation" class="active"><a class="shownsBydays" data-shownby="@eShownRecipientOrdersByDays.Today.ToString()" aria-controls="today" role="tab" data-toggle="tab">Today</a></li>
+                                    <li role="presentation"><a class="shownsBydays" data-shownby="@eShownRecipientOrdersByDays.Future.ToString()" aria-controls="future" role="tab" data-toggle="tab">Future</a></li>
+                                </ul>
+                                @Html.Partial("_SearchFilter", new PagingModel { SortBy = "AddedOn", SortOrder = "Desc" })
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active" id="today">
+                                        <div class="table-responsive">
+                                            <div id="divResult">
+                                                <table id="datatable-icons" class="table table-bordered">
+                                                    <thead>
+                                                        <tr>
+                                                            <th data-sortby="ID" class="sorting">#ID</th>
+                                                            <th data-sortby="AddedOn" class="sorting">Placed</th>
+                                                            <th data-sortby="UserPostCard.ShipmentDate" class="sorting">Due To</th>
+                                                            <th data-sortby="UserPostCard.User.FirstName" class="sorting">Client</th>
+                                                            <th>Image</th>
+                                                            <th>Actions</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="partialPortian">
+                                                        @Html.Partial("Partials/_postcardRecipientListing", Model)
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+                                        </div>
+                                        @Html.Partial("_Paging")
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <canvas id="cBack" width="840" height="528"></canvas>
+</div>
+@Html.Partial("Partials/_rejectOrderWithReason", new RejectWithReasonModel())
+@Html.Partial("Partials/_viewCards")
+<div class="modal fade bs-example-modal-lg previewModel" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title text-center">Card Preview</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <input type="hidden" id="hfSelectedUserID" />
+                    <div class="col-md-6">
+                        <img id="cardFrontForEachRecipient" style="width:100%;background-color:#fff;" />
+                    </div>
+                    <div class="col-md-6">
+                        <img class="cardBackForEachRecipient" style="width:415px;background-color:#fff;" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <a data-recipientid="" class="btn btn-default saveRequest">Approve</a>
+                <a data-recipientid="" class="btn btn-default disapproveRequest" style="display:none">Disapproved</a>
+                <button type="button" class="btn btn-default printAsPDF">Print as PDF</button>
+                <a href="javascript:" class="btn btn-default btnBindRecipientDetails">Bind Recipient Details</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section scripts{
+
+    <script src="~/Content/themes/fabric.js-1.7.18/dist/fabric.js"></script>
+    <script src="~/Scripts/UserDefinedScripts/paging.js"></script>
+    <script src="~/Scripts/AdminScripts/RecipientOrders.js"></script>
+    <script type="text/javascript">
+        var totalCount = "@Model.TotalCount";
+        $(document).ready(function () {
+            App.init();
+            PostCards.ManagePostCards(totalCount);
+        });
+        var siteURL = {
+            RejectWithReason: '@Url.Action("RejectWithReason", "PostCard", new { area = "admin" })',
+            SentToError: '@Url.Action("SentToError", "PostCard", new { area = "admin" })',
+            CompleteRecipientPostCard: '@Url.Action("CompleteRecipientPostCard", "PostCard", new { area = "admin" })',
+            ReceiptentID: '@Url.Action("ReceiptentID", "PostCard", new { area = "admin" })',
+            ApproveRecipientPostCard: '@Url.Action("ApproveRecipientPostCard", "PostCard", new { area = "admin" })',
+            PrintPostCard: '@Url.Action("PrintPostCard", "PostCard", new { area = "Admin" })',
+            GetPostCardBackSideJsonResult: '@Url.Action("GetPostCardBackSideJsonResult", "PostCard", new { area = "Admin" })'
+        }
+    </script>
+}

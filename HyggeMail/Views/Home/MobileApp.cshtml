@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = "MobileApp";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+@model EditCMSPageModel
+<section class="mobile-app">
+    <div class="container">
+        @Html.Raw(Model.PageContent)
+    </div>
+</section>

@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = "PaymentPlans";
+    Layout = "~/Areas/User/Views/Shared/_Layout.cshtml";
+}
+@model PagingResult<MembershipModel>
+<section class="sub-section wb-payments-plans">
+    <div class="container1">
+        <h1 class="text-center">Purchase a Package</h1>
+        <div class="plans-upper-description">
+            <p>With HyggeMail, you enjoy the fun part of designing your postcards and we take on the pesky task of printing and mailing them. You don’t need to purchase a package in order to design and download your card. Packages are only necessary if you want us to mail your cards.</p>
+        </div>
+
+        <div class="pricing-grids">
+            @foreach (var item in Model.List)
+            {
+
+                <div class="pricing-grid1 pricing-table">
+                    <div class="price-value">
+                        <h4>@item.Name</h4>
+
+                        @if (item.Discount != null && item.Discount > 0)
+                        {
+                            <h2> <i>$</i><span>@Convert.ToDecimal((item.Rate - (item.Rate * item.Discount / 100))).ToString("#.##")</span></h2>
+                            <h5>Usual price : $@Convert.ToDecimal(item.Rate).ToString("#.##")</h5>
+                        }
+                        else
+                        {
+                            <h2> <i>$</i><span>@Convert.ToDecimal(item.Rate).ToString("#.##")</span></h2>
+                        }
+                    </div>
+                    <div class="price-bg">
+                        @Html.Raw(item.Description)
+                        <div class="cart1">
+                            <a class="popup-with-zoom-anim showmessage" href="#" data-id="@item.ID">Buy Now</a>
+                        </div>
+                    </div>
+                    @if (item.Discount != null && item.Discount > 0)
+                    {
+                        <div class="frame-price">
+                            @Convert.ToDecimal(item.Discount).ToString("#.##")%
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+        @*<div class="payment-lower text-center">
+            <p>
+                If you have any questions,please contact our Service Centre at 1234567890<br>
+                or email to sample@gmail.com for further assistance.
+            </p>
+        </div>*@
+    </div>
+    <div class="modal modal-custom fade" id="modalmessage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel"><span class="bk-btn">
+                        <i class="fa fa-long-arrow-left" aria-hidden="true"></i></span>HyggeMail || PayPal : You are being redirected to PayPal</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Please be pateint while payment. Please don't refresh the page or hit back button</p>
+                    <img src="~/Content/images/bx_loader.gif" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@section scripts{
+    <script type="text/javascript">
+        var cardStatus = '@TempData["CardMessage"]';
+        var siteURL = {
+            PaymentPlans: '@Url.Action("PaymentPlans", "Payment", new { area = "User" })',
+            MySetting: '@Url.Action("MySetting", "Home", new { area = "User" })',
+        }
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $(".showmessage").click(function () {
+                var id = $(this).attr('data-id');
+                $('#modalmessage').modal({
+                    show: true,
+                    keyboard: false,
+                    showCancelButton: true,
+                    backdrop: 'static'
+                });
+                setTimeout(function () {
+                    window.location.href = "/user/Payment/PaymentWithPaypal/" + id;
+                }, 2000);
+            });
+
+            if (cardStatus) {
+                swal('', cardStatus, 'warning',
+function (isConfirm) {
+    if (isConfirm) {
+        window.location.href = siteURL.PaymentPlans;
+    } else {
+        window.location.href = siteURL.MySetting;
+    }
+});
+            }
+        });
+    </script>
+}
+
+

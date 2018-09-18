@@ -1,0 +1,20 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        @if (TempData["Msg"] != null)
+        {
+            <p> @TempData["Msg"] </p>
+        }
+    </div>
+</body>
+</html>

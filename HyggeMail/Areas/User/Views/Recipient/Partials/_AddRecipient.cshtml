@@ -1,0 +1,85 @@
+﻿@model AddUpdateRecipientModel
+<div class="modal modal-custom fade" id="myModal-AddRecipient" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Add New Recipient</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form" id="RecipientForm">
+                    @Html.HiddenFor(x => x.ID)
+                    <div class="form-group">
+                        <div class="row">
+                            <div class=" col-md-12 cate">
+                                <span class="loginerroemsg"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class=" col-md-12 cate">
+
+                                @Html.TextBoxFor(x => x.Name, new { @class = "form-control", @placeholder = "Full Name", @required = "required", @maxlength = "25" })
+                                @Html.ValidationMessageFor(x => x.Name)
+
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class=" col-md-12 cate">
+                                @Html.TextBoxFor(x => x.Address, new { @class = "form-control", @required = "required", @placeholder = "Street Address" })
+                                @Html.ValidationMessageFor(x => x.Address)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class=" col-md-12 cate">
+                                @Html.TextBoxFor(x => x.Country, new { @class = "form-control", @placeholder = "Country", data_gfield = "country", @required = "required" })
+                                @*@Html.DropDownListFor(x => x.Country, Model.CountryList, "Select Country", new { @class = "form-control" })*@
+                                @Html.ValidationMessageFor(x => x.Country)
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class=" col-md-12 cate">
+                                @Html.TextBoxFor(x => x.State, new { @class = "form-control", @placeholder = "State/Province", data_gfield = "administrative_area_level_1", @required = "required" })
+                                @*@Html.DropDownListFor(x => x.State, Model.StateList, "Select State", new { @class = "form-control" })*@
+                                @Html.ValidationMessageFor(x => x.State)
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class=" col-md-12 cate">
+                                @Html.TextBoxFor(x => x.City, new { @class = "form-control", @placeholder = "City", data_gfield = "locality", @required = "required" })
+                                @*@Html.DropDownListFor(x => x.City, Model.CityList, "Select City", new { @class = "form-control" })*@
+                                @Html.ValidationMessageFor(x => x.City)
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class=" col-md-12 cate">
+                                @Html.TextBoxFor(x => x.Zip, new { @class = "form-control", @placeholder = "Zip", data_gfield = "postal_code", @required = "required" })
+                                @Html.ValidationMessageFor(x => x.Zip)
+
+                            </div>
+                        </div>
+                        <div class="row check" id="AddToBookCheck">
+                            <div class=" col-md-12 cate">
+                                @Html.CheckBoxFor(x => x.IsPermanent, true) Also save to address book
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class=" col-md-12">
+                            <div class=" col-sm-12 btn-grpp text-center">
+                                <input type="reset" value="Cancel" class="btn btn-primary cancel rec-cancel" data-dismiss="modal" />
+                                <input type="button" class="btn btn-primary" id="addRecipient" value="Submit" />
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

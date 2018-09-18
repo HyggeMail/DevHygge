@@ -1,0 +1,112 @@
+﻿@{
+    var user = (UserDetails)ViewBag.LOGGEDIN_USER;
+}
+<div class="cl-sidebar" data-position="right" data-step="1" data-intro="">
+
+    <div class="cl-navblock">
+        <div class="menu-space">
+            <div class="content">
+
+                <ul class="cl-vnavigation">
+                    <li><a href="@Url.Action("Dashboard", "Home", new { area = "Admin" })"><i class="fa fa-home"></i><span>Dashboard</span></a></li>
+                    <li class="@(ViewBag.SelectedTab == SelectedAdminTab.Users ? "open" : "")">
+                        <a href="#"><i class="fa fa-users"></i><span>Users</span></a>
+                        <ul class="sub-menu" style="@(ViewBag.SelectedTab == SelectedAdminTab.Users ? "display:block;" : "display:none;")">
+                            <li><a href="@Url.Action("ManageUsers", "user", new { area = "Admin" })">Manage Users</a></li>
+                            <li><a href="@Url.Action("AddUser", "user", new { area = "Admin" })">Add User</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-file"></i><span>Membership Plans</span></a>
+                        <ul class="sub-menu" style="@(ViewBag.SelectedTab == SelectedAdminTab.Membership? "display:block;" : "display:none;")">
+                            <li><a href="@Url.Action("Managemembership", "MemberShip", new { area = "Admin" })">Manage Membership Plans</a></li>
+                            <li><a href="@Url.Action("AddEditPlan", "MemberShip", new { area = "Admin" })">Add Membership Plans</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-file"></i><span>Transactions</span></a>
+                        <ul class="sub-menu" style="@(ViewBag.SelectedTab == SelectedAdminTab.Transactions? "display:block;" : "display:none;")">
+                            <li><a href="@Url.Action("UserTransactions", "Home", new { area = "Admin" })">User Transactions</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-file"></i><span>Testimonials</span></a>
+                        <ul class="sub-menu" style="@(ViewBag.SelectedTab == SelectedAdminTab.Testimonials? "display:block;" : "display:none;")">
+                            <li><a href="@Url.Action("AddTestimonials", "Testimonial", new { area = "Admin" })">Add Testimonial</a></li>
+                            <li><a href="@Url.Action("ManageTestimonials", "Testimonial", new { area = "Admin" })">Manage Testimonials List</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-file"></i><span>Blog</span></a>
+                        <ul class="sub-menu" style="@(ViewBag.SelectedTab == SelectedAdminTab.Blog? "display:block;" : "display:none;")">
+                            <li><a href="@Url.Action("AddBlog", "Blog", new { area = "Admin" })">Add Blog</a></li>
+                            <li><a href="@Url.Action("ManageBlog", "Blog", new { area = "Admin" })">Manage Blog List</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-file"></i><span>CMS Manager</span></a>
+                        <ul class="sub-menu" style="@(ViewBag.SelectedTab == SelectedAdminTab.CMSManager ? "display:block;" : "display:none;")">
+                            <li><a href="@Url.Action("CMSManager", "cms", new { area = "Admin" })">CMS Manager</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-file"></i><span>Templates</span></a>
+                        <ul class="sub-menu" style="@(ViewBag.SelectedTab == SelectedAdminTab.Templates ? "display:block;" : "display:none;")">
+                            <li><a href="@Url.Action("ManageTemplates", "emailtemplate", new { area = "Admin" })">Manage Email Templates</a></li>
+                            <li><a href="@Url.Action("AddTemplate", "emailtemplate", new { area = "Admin" })">Add Email Template</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-file"></i><span>Images</span></a>
+                        <ul class="sub-menu" style="@(ViewBag.SelectedTab == SelectedAdminTab.Images? "display:block;" : "display:none;")">
+                            <li><a href="@Url.Action("ManageImageCategory", "Image", new { area = "Admin" })">Manage Images Category</a></li>
+                            <li><a href="@Url.Action("ManageAdminImage", "Image", new { area = "Admin" })">Manage Images</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-file"></i><span>Postcards</span></a>
+                        <ul class="sub-menu" style="@(ViewBag.SelectedTab == SelectedAdminTab.Postcard? "display:block;" : "display:none;")">
+                            @*<li><a href="@Url.Action("ManagePostCard", "PostCard", new { area = "Admin" })">Manage PostCard</a></li>*@
+                            <li><a href="@Url.Action("ManageOrders", "PostCard", new { area = "Admin" })">Manage Orders</a></li>
+                        </ul>
+                    </li>
+                    <li class="unseen-ul">
+                        <span class="unseen-count">
+                            @Html.Action("GetUnseenContacts", "ContactUs", new { area = "Admin" })
+                        </span>
+
+                        <a href="#"><i class="fa fa-file"></i><span>Contact Us</span></a>
+                        <ul class="sub-menu " style="@(ViewBag.SelectedTab == SelectedAdminTab.ContactUs? "display:block;" : "display:none;")">
+                            <li><a href="@Url.Action("ManageContactUs", "ContactUs", new { area = "Admin" })">Contact Us</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-file"></i><span>Manage Subscribers</span></a>
+                        <ul class="sub-menu" style="@(ViewBag.SelectedTab == SelectedAdminTab.Subscriber ? "display:block;" : "display:none;")">
+                            <li><a href="@Url.Action("ManageSubscriber", "Subscriber", new { area = "Admin" })">Manage Subscriber</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-file"></i><span>Manage Address Book</span></a>
+                        <ul class="sub-menu" style="@(ViewBag.SelectedTab == SelectedAdminTab.AddressBook ? "display:block;" : "display:none;")">
+                            <li><a href="@Url.Action("ImportAddresses", "AddressBook", new { area = "Admin" })">Import Excel</a></li>
+                            <li><a href="@Url.Action("ManageAddressBook", "AddressBook", new { area = "Admin" })">Manage Address Book</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-file"></i><span>FAQ</span></a>
+                        <ul class="sub-menu" style="@(ViewBag.SelectedTab == SelectedAdminTab.FAQ? "display:block;" : "display:none;")">
+                            <li><a href="@Url.Action("ManageFAQ", "FAQ", new { area = "Admin" })">Manage FAQ</a></li>
+                            <li><a href="@Url.Action("AddEditFAQ", "FAQ", new { area = "Admin" })">Add FAQ</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-right collapse-button" style="padding:7px 9px;">
+            <input type="text" class="form-control search" placeholder="Search..." />
+            <button id="sidebar-collapse" class="btn btn-default" style=""><i style="color:#fff;" class="fa fa-angle-left"></i></button>
+        </div>
+    </div>
+</div>

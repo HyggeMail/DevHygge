@@ -1,0 +1,119 @@
+﻿@{
+    ViewBag.Title = "Edit Blog";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayOut.cshtml";
+}
+@model AddBlogModel
+
+
+<div class="container-fluid" id="pcont">
+    <div class="page-head">
+        <h2>@ViewBag.Title</h2>
+    </div>
+    <div class="cl-mcont">
+        @Html.Partial("_FunctionCallMessage")
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block-flat">
+                    <div class="header">
+                        <h3>@ViewBag.Title</h3>
+                    </div>
+                    <div class="content people-form-cs">
+                        <form class="form-horizontal" role="form" id="UserForm">
+                            @Html.HiddenFor(x => x.ID)
+                            @Html.HiddenFor(x => x.ImageName)
+                            <div class="form-group">
+
+                                <div class="row">
+                                    <div class=" col-md-12">
+                                        <label for="inputEmail3" class="col-md-2 control-label">Title<em>*</em></label>
+                                        <div class="col-md-8">
+                                            @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(x => x.Title)
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class=" col-md-12">
+                                        <label for="inputEmail3" class="col-md-2 control-label">Name<em>*</em></label>
+                                        <div class="col-md-8">
+                                            @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(x => x.Name)
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label for="inputEmail3" class="col-md-2 control-label">Image<em>*</em></label>
+                                        <div class="col-md-10">
+                                            @if (Model.ID > 0)
+                                            {
+                                                @Html.TextBoxFor(m => m.Image, new { @data_val = "false", type = "file", @class = "dropmenu", id = "image" })
+                                            }
+                                            else
+                                            {
+                                                @Html.TextBoxFor(m => m.Image, new { type = "file", @class = "dropmenu", id = "image" })
+                                            }
+
+                                            @if (Model.ImageName != null)
+                                            {
+                                                <img id="UserImage" src="~/Uploads/Blog/Thumb/@Model.ImageName" style="width:100px;height:75px;" />
+                                            }
+                                            else
+                                            {
+                                                <img id="UserImage" style="width:100px;height:75px;" />
+                                            }
+                                            <br />
+                                            @Html.ValidationMessageFor(m => m.Image)
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label for="inputEmail3" class="col-md-2 control-label">Description<em>*</em></label>
+                                        <div class="col-md-10">
+                                            @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(m => m.Description)
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class=" col-md-6">
+                                        <div class="col-sm-offset-4 col-sm-8">
+                                            <input type="button" class="btn btn-primary" id="editblogBtn" value="Submit" />
+                                            <a href="@Url.Action("ManageBlog", "Blog", new { area = "Admin" })" class="btn btn-default">Cancel</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script src="~/Content/themes/ckeditor.new/ckeditor.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            App.init();
+            CKEDITOR.env.isCompatible = true;
+            CKEDITOR.replace('Description');
+
+        });
+    </script>
+    <script src="~/Scripts/AdminScripts/Blog.js"></script>
+    <script type="text/javascript">
+        var siteURL =
+        {
+            Blog: '@Url.Action("AddBlogDetails", "Blog", new { @area = "admin" })',
+            ManageBlog: '@Url.Action("ManageBlog", "Blog", new { @area = "admin" })',
+            DeleteBlog: '@Url.Action("DeleteBlog", "Blog", new { @area = "admin" })',
+            UpdateBlogDetails: '@Url.Action("UpdateBlogDetails", "Blog", new { @area = "admin" })'
+        }
+    </script>
+
+}

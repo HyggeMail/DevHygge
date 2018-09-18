@@ -1,0 +1,58 @@
+﻿@model PagingResult<BlogModel>
+
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Styles{
+}
+
+<input type="hidden" value="@ViewBag.SortBy" id="SortBy" />
+<input type="hidden" value="@ViewBag.SortOrder" id="SortOrder" />
+<input type="hidden" value="" id="Search" />
+
+<div id="featuredArticleDivResult">
+
+</div>
+
+<section class="blogs-list section ">
+    <div class="container ">
+        <h3 class="short-heading text-center"> Recent Blog Posts</h3>
+
+        <div class="blogs-area">
+            <div class="row" id="divResult">
+                @Html.Partial("Partials/_blogListing", Model)
+            </div>
+            @Html.Partial("Partials/_Paging")
+        </div>
+    </div>
+</section>
+
+
+
+@section Scripts{
+
+    <script src="~/Scripts/UserDefinedScripts/paging.js"></script>
+    <script type="text/javascript">
+        paging.pageSize = '@ViewBag.RecordsPerPage';
+        var totalCount = "@Model.TotalCount";
+    </script>
+
+    <script src="~/Scripts/FrontEndScripts/Blog.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            //initialize the javascript
+            App.init();
+            Blog.ManageBlog(totalCount);
+        });
+
+        var siteURL =
+       {
+           GetFeaturedArticleBlog: '@Url.Action("GetFeaturedArticleBlog", "Blog")',
+           GetBlogPagingList: '@Url.Action("GetBlogPagingList", "Blog")'
+       }
+
+    </script>
+}
+

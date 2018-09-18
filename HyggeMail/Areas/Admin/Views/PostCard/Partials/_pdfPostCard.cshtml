@@ -1,0 +1,65 @@
+﻿@model PostCardFrontBack
+<html>
+<head>
+    <style>
+        .inner-postcard-img-main {
+            max-width: 850px;
+            width: 100%;
+            margin: auto;
+            border: 2px dashed #afddbc;
+            padding: 10px;
+            text-align: center;
+            background: white;
+            margin-bottom: 5px;
+        }
+
+        .inner-postcard-img {
+            border: 2px solid #8e5d5d;
+            padding: 10px;
+        }
+
+        .pdfPostCard {
+            margin-top: 5px;
+        }
+
+            .pdfPostCard img {
+                width: 100%;
+                margin: auto;
+                text-align: center;
+            }
+
+        .inner-postcard-img img {
+            width: 100%;
+        }
+
+        .breakhere {
+            page-break-after: auto;
+            /*page-break-before:always;
+            page-break-inside:auto;*/
+        }
+    </style>
+</head>
+<body>
+    <div class="pdfPostCard">
+        <div class="inner-postcard-img-main breakhere">
+            <div class="inner-postcard-img">
+                @if (Model.cardFront != null)
+                {
+                    <img src="@Model.cardFront">
+                }
+            </div>
+        </div>
+        @*<div style="height:30px"></div>*@
+        <div class="inner-postcard-img-main ">
+
+            <div class="inner-postcard-img">
+                @if (Model.cardBack != null)
+                {
+                    <img src="@Model.cardBack">
+                }
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

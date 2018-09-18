@@ -1,0 +1,79 @@
+﻿@model WebContactUsModel
+@{
+    ViewBag.Title = "View Message";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayOut.cshtml";
+}
+
+<div class="container-fluid" id="pcont">
+    <div class="cl-mcont">
+        @Html.Partial("_FunctionCallMessage")
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block-flat">
+                    <div class="header">
+                        <h3>@ViewBag.Title</h3>
+                    </div>
+                    <div class="content people-form-cs">
+                        <div class="form-group">
+
+                            <div class="row">
+                                <div class=" col-md-12">
+                                    <label for="inputEmail3" class="col-md-2 control-label">Name</label>
+                                    <div class="col-md-8">
+                                        @Model.Name
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class=" col-md-12">
+                                    <label for="inputEmail3" class="col-md-2 control-label">	Email</label>
+                                    <div class="col-md-8">
+                                        @Model.Email
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class=" col-md-12">
+                                    <label for="inputEmail3" class="col-md-2 control-label">Phone</label>
+                                    <div class="col-md-8">
+                                        @Model.Phone
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class=" col-md-12">
+                                    <label for="inputEmail3" class="col-md-2 control-label">Request Type</label>
+                                    <div class="col-md-8">
+                                        @Model.RequestType
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class=" col-md-12">
+                                    <label for="inputEmail3" class="col-md-2 control-label">Message</label>
+                                    <div class="col-md-8">
+                                        @Model.Message
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            App.init();
+        });
+    </script>
+}   

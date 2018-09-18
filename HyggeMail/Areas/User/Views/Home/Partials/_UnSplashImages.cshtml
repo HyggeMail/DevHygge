@@ -1,0 +1,66 @@
+﻿@model UnSplashImagesListModel
+
+<div class="faltu demo">
+    <div class="light">
+        <ul class="accordion_scrolling" style="text-align:left">
+            @if (Model != null && Model.TotalRecords > 0)
+            {
+                if (Model.Results.Count() > 0)
+                {
+
+                    <li>
+                        <div class="listings">
+                            Search Result (@Model.TotalRecords)
+                        </div>
+                        <div class="datas " style="margin-right:10px;">
+                            <div class="">
+                                @if (Model != null)
+                                {
+                                    if (Model.Results.Count > 0)
+                                    {
+                                        <div id="images" class="dimages custom-scroll">
+                                            <div>
+                                                @foreach (var image in Model.Results)
+                                                {
+                                                    <div class="images-p">
+                                                        <span class="images-outerr">
+                                                            @*.Replace("/Attachments/", "/Attachments/Thumb/")*@
+                                                            <img draggable="true" data-id="@image.Id" data-org-img="@image.Urls.Small" src="@image.Urls.Thumb" width="200" class="img-p" alt="" title="@image.Description" />
+                                                        </span>
+                                                    </div>
+                                                }
+
+                                                <div class="pagination-sec">
+                                                    @if (Model.TotalPages > 0 && Model.TotalRecords > 10)
+                                                    {
+                                                        if (Model.PageNumber > 1)
+                                                        {
+                                                            <button id="pagingLeftKey" data-pagenumber="@Model.PageNumber"><i class="fa fa-arrow-left"></i></button>
+                                                        }
+                                                        else
+                                                        {
+                                                            <button id="pagingLeftKey" disabled style="display:none"><i class="fa fa-arrow-left"></i></button>
+                                                        }
+                                                        if (Model.PageNumber <= Model.TotalPages)
+                                                        {
+                                                            <button id="pagingRightKey" data-pagenumber="@Model.PageNumber"><i class="fa fa-arrow-right"></i></button>
+                                                        }
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </li>
+
+                }
+                else
+                {
+                    <li class="no-record-found">No Record Found</li>
+                }
+            }
+        </ul>
+    </div>
+</div>

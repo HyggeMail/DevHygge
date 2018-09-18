@@ -1,0 +1,26 @@
+﻿@model PagingResult<SubscriberModel>
+
+
+@if (Model.List != null && Model.List.Count() > 0)
+{
+    foreach (var item in Model.List)
+    {
+        <tr class="odd gradeX">
+            <td>@item.EmailID</td>
+            <td class="center">@Convert.ToDateTime(item.AddedOn).ToString("MMM dd yyyy hh:mm tt")</td>
+            <td class="center">
+                <a data-id="@item.ID" class="btn btn-danger btn-xs deleteSubscriber" href="javascript:void(0);" data-original-title="Remove" data-toggle="tooltip"><i class="fa fa-times"></i></a>
+            </td>
+        </tr>
+    }
+}
+else
+{
+    <tr class="odd gradeX">
+        <td colspan="3">No Record Found</td>
+    </tr>
+}
+
+
+
+

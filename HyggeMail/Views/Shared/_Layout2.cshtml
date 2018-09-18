@@ -1,0 +1,253 @@
+﻿@{
+    UserDetails LOGGEDIN_USER = (UserDetails)ViewBag.LOGGEDIN_USER;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HyggeMail</title>
+    @Styles.Render("~/Content/beforeLoginCss")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cambay:400,400i,700,700i" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    @RenderSection("styles", required: false)
+    <link href="~/css/bootstrap-grid.css" rel="stylesheet" />
+    <link href="~/css/fonts.css" rel="stylesheet" />
+    <link rel="icon" href="/Content/images/favicon.png" type="image/x-icon" />
+</head>
+<body>
+    <div id="app">
+        <header class="fixed">
+            <div class="container">
+                <div class="logo-sec">
+                    <a href="@Url.Action("Index", "Home")">
+                        <img class="logo" src="~/img/logo@2x.png" alt="HyggeMail logo" srcset="~/img/logo@2x.png">
+                    </a>
+                </div>
+                <nav>
+                    <div class="mob-nav">
+                        <span class="menu1"> </span>
+                        <span class="menu2"> </span>
+                        <span class="menu3"> </span>
+                    </div>
+                    <ul class="nav-main">
+                        <li>
+                            @if (LOGGEDIN_USER != null && LOGGEDIN_USER.IsAuthenticated)
+                            {
+                                <a class="menu-a" href="@Url.Action("Dashboard", "Home", new {area="user" })"> Create Card </a>
+                            }
+                            else
+                            {
+                                <a data-toggle="modal" data-target="#myModal-signin"> Create Card </a>
+                            }
+
+                        </li>
+                        <li> <a class="menu-a" href="@Url.Action("Index","Home")"> Home </a> </li>
+                        <li> <a class="menu-a" href="@Url.Action("Contact", "Home")"> Contact Us </a> </li>
+                        <li> <a class="menu-a" href="@Url.Action("Faq","Home")"> Faq </a> </li>
+                        <li> <a class="menu-a" href="@Url.Action("PaymentPlans", "Home")"> Shop </a> </li>
+                        <li> <a href="@Url.Action("Privacy", "Home")"> Privacy </a> </li>
+                        @*<li> <a href="@Url.Action("index", "Blog")"> Blogs </a> </li>*@
+
+                        @*   <li> <a href="@Url.Action("About", "Home")"> About Us </a> </li>
+                            <li> <a href="@Url.Action("MobileApp", "Home")"> Mobile App </a> </li>*@
+                    </ul>
+                </nav>
+
+                <div class="header-profile">
+                    @if (LOGGEDIN_USER != null && LOGGEDIN_USER.IsAuthenticated)
+                    {
+
+
+                        <div class="dropdown">
+                            <span class="name" id="dLabel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                @if (LOGGEDIN_USER.FirstName.Length > 20)
+                                {
+                                    <span>@LOGGEDIN_USER.FirstName.Substring(0, 20)..     </span>
+                                }
+                                else
+                                {
+                                    @LOGGEDIN_USER.FirstName
+                                }
+                            </span>
+                            <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                <li> <a href="@Url.Action("MyProfile", "Home", new { area = "user" })"><i class="fa fa-user"></i> Profile </a> </li>
+                                <li> <a href="@Url.Action("MySetting", "Home", new { area = "user" })"><i class="fa fa-gear"></i> Setting </a> </li>
+                                <li> <a href="@Url.Action("ChangePassword", "Home", new { area = "user" })"><i class="fa fa-lock" aria-hidden="true"></i> Change Password </a> </li>
+                                <li> <a href="@Url.Action("Signout", "Base",new {area=""})"><i class="fa fa-sign-out"></i> Logout</a> </li>
+                            </ul>
+                        </div>
+                        <figure class="profile">
+                            @if (!string.IsNullOrEmpty(LOGGEDIN_USER.ImageLink))
+                            {
+                                <img src="@LOGGEDIN_USER.ImageLink.Replace("~/","../../")" alt="@LOGGEDIN_USER.ImageName" />
+                            }
+                            else
+                            {
+                                <img src="~/Content/images/avtar-profile-image.png" alt="User" />
+                            }
+                        </figure>
+                    }
+                    else
+                    {
+                        <button type="button" class="btns login-btn" data-toggle="modal" data-target="#myModal-signin"> Sign in </button>
+                        <button type="button" class="btns active-btn" data-toggle="modal" data-target="#myModal"> Sign up </button>
+                    }
+                </div>
+
+            </div>
+        </header>
+
+        @Html.Partial("Partials/_SignUp", new UserRegistrationModel())
+        @Html.Partial("Partials/_SignIn", new LoginModal())
+        @Html.Partial("Partials/_terms", new EditCMSPageModel())
+        @Html.Partial("Partials/_ForgotPassword", new ForgetPasswordModel())
+
+        @RenderBody()
+
+        <footer id="footer">
+            <div class="container">
+                <div class="row footer-content">
+                    <div class="col-lg-3 col-md-12">
+                        <a href="@Url.Action("index","home")">
+                            <img class="footer__logo" src="../img/footer-logo.png" srcset="../img/footer-logo@2x.png" alt="HyggeMail logo orange">
+                        </a>
+                        <div class="footer__social">
+                            <a href="https://twitter.com/HyggeMail"><img src="../img/twitter.svg" alt="twitter icon"></a>
+                            <a href="https://www.instagram.com/hyggemail"><img src="../img/instagram.svg" alt="instagram icon"></a>
+                            <a href="https://www.facebook.com/Hygge-Mail-156314855001434"><img src="../img/facebook.svg" alt="facebook icon"></a>
+                            <a href="https://plus.google.com/u/0/b/105411097878581760700/105411097878581760700"><img src="../img/google.svg" alt="google plus icon"></a>
+                            <a href="https://www.pinterest.com/hyggemail"><img src="../img/pinterest.svg" alt="pinterest icon"></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-12">
+                        <div class="row footer__ul">
+                            <div class="col-sm-4">
+                                @if (LOGGEDIN_USER != null && LOGGEDIN_USER.IsAuthenticated)
+                                {
+                                    <a href="@Url.Action("dashboard", "Home" , new {area="user" })">Create card</a>
+                                }
+                                else
+                                {
+                                    <a data-toggle="modal" data-target="#myModal-signin">
+                                        Create card
+                                    </a>
+                                }
+                                <a href="@Url.Action("Index","Home")">Home</a>
+                                <a href="@Url.Action("Contact", "Home")">Contact us</a>
+                            </div>
+                            <div class="col-sm-4">
+                                <a href="@Url.Action("About", "Home")">About us</a>
+                                <a href="@Url.Action("Faq","Home")">Faq</a>
+                                <a href="@Url.Action("PaymentPlans", "Home")">Shop</a>
+                            </div>
+                            <div class="col-sm-4">
+                                <a href="@Url.Action("Privacy", "Home")">Privacy</a>
+                                <a href="@Url.Action("MobileApp", "Home")">Mobile app</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <h6>Subscribe to our newsletter:</h6>
+                        <!--Begin mc_embed_signup-->
+                        @Html.Partial("Partials/_subscriptionRequest", new SubscriberModel())
+                        <!--End mc_embed_signup-->
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="footer__copyright">
+            2018 Copyright HyggeMail
+        </div>
+
+    </div>
+    <div class="modalAjaxLoader" style="display: none">
+        <div class="center">
+            <img src="~/Content/images/bx_loader.gif" />
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/extendedjs")
+    @Scripts.Render("~/bundles/themeSpecific")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/custom")
+    @Scripts.Render("~/bundles/beforeLoginJquery")
+    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/FrontEndScripts/registrations.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".btn-signin").click(function () {
+                $("#myModal").modal('hide');
+                $(".modal-backdrop.fade.in").hide();
+            });
+            $(".bk-btn").click(function () {
+                $(".modal-custom").removeClass("step2");
+            });
+            $(".close").click(function () {
+                $(".modal-custom").removeClass("step2");
+            });
+            $(".header-profile .btns").click(function () {
+                $(".modal-custom").removeClass("step2");
+            });
+            if ($(window).width() < 1280) {
+                $(document.body).find('*').each(function () {
+                    if ($(this).hasClass('fp-section')) {
+                        $(this).removeClass('fp-section');
+                        $('body').addClass('responsive');
+                    }
+                });
+            }
+            $('.loop').owlCarousel({
+                center: true,
+                autoWidth: true,
+                items: 3,
+                loop: true,
+                nav: true,
+                margin: 40,
+                responsive: {
+                    600: {
+                        items: 4
+                    }
+                }
+            });
+        });
+
+        var SiteURL = {
+            StateByCountry: '@Url.Action("StateByCountry", "Home")',
+            CityByState: '@Url.Action("CityByState", "Home")',
+            CountryList: '@Url.Action("CountryList", "Home")',
+            UserLogin: '@Url.Action("UserLogin", "Account")',
+            UserDashboard: '@Url.Action("Dashboard", "Home", new { @area = "User" })',
+            ForgetPassword: '@Url.Action("ForgetPassword", "Account")',
+            HomePage: '@Url.Action("Index", "Home")',
+            SubmitSubscriber: '@Url.Action("SubmitSubscriber", "Home")',
+            SubmitResetPassword: '@Url.Action("SubmitResetPassword", "Account")',
+        }
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $(".mob-nav").click(function () {
+                $("header nav ul").toggleClass("main");
+            });
+            $(document).on('click', '#show-SignUp', function () {
+                $('#myModal').modal('show');
+                $('#myModal-signin').modal('hide');
+            })
+        });
+        function GooglePlacesOnLoad() {
+            $("#Address").locify();
+        }
+
+        $('.alert').on('closed.bs.alert', function () {
+            $(".alert").fadeOut();
+        });
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=@HyggeMail.BLL.Common.Config.GooglePlaceKey&libraries=places&callback=GooglePlacesOnLoad&language=en"
+            async defer></script>
+</body>
+</html>

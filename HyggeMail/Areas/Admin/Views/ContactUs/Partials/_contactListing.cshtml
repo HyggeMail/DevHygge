@@ -1,0 +1,64 @@
+﻿@model PagingResult<WebContactUsModel>
+
+
+@if (Model.List != null && Model.List.Count() > 0)
+{
+    foreach (var item in Model.List)
+    {
+        <tr class="odd gradeX">
+            <td>@item.Name</td>
+            <td>@item.Email</td>
+            <td>@item.Phone</td>
+            <td>@item.RequestType</td>
+            <td>
+                @if (!string.IsNullOrEmpty(item.Message))
+                {
+                    if (item.Message.Length > 120)
+                    {
+                        <span>@Html.Raw(item.Message.Substring(0, 117) + " ...")<a class="readmore-btn" href="@Url.Action("ViewMessage", "ContactUs", new { id = item.ID, area = "Admin" })" data-original-title="Edit" data-toggle="tooltip">See More</a></span>
+                    }
+                    else
+                    {
+                        <span>@Html.Raw(item.Message)</span>
+                    }
+                }
+                else
+                {
+                    <span></span>
+                }
+            </td>
+            <td>@item.IsSubscriber</td>
+            <td class="center">@item.AddedOn.ToShortDateString()</td>
+            <td class="center">
+                @if (item.ResolvedOn.ToString() != "1/1/0001 12:00:00 AM")
+                {
+                    <span>@Convert.ToDateTime(item.ResolvedOn).ToString("MMM dd yyyy hh:mm tt")</span>
+                }
+                else
+                {
+                    <span>Not yet resolved</span>
+                }
+            </td>
+            <td class="center">
+                <a class="btn btn-primary btn-xs" href="@Url.Action("ViewMessage", "ContactUs", new { id = item.ID, area = "Admin" })" data-original-title="View Message" data-toggle="tooltip"><i class="fa fa-pencil"></i></a>
+                <a data-contactusid="@item.ID" class="btn btn-danger btn-xs deleteContactUs" href="javascript:void(0);" data-original-title="Remove" data-toggle="tooltip">
+                    <i class="fa fa-times"></i>
+                </a>
+                @if (item.IsResolved != true)
+                {
+                    <a data-contactusid="@item.ID" class="btn btn-danger btn-xs ResolveContactUs" href="javascript:void(0);">
+                        <span>Resolve</span>
+                    </a>
+                }
+            </td>
+        </tr>
+    }
+}
+else
+{
+    <tr class="odd gradeX">
+        <td colspan="9">No Record Found</td>
+    </tr>
+}
+
+

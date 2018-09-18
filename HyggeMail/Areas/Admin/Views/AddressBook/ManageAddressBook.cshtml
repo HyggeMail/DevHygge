@@ -1,0 +1,72 @@
+﻿@model PagingResult<RecipientListingModel>
+@{
+    ViewBag.Title = "Manage Users";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayOut.cshtml";
+}
+
+<div class="container-fluid" id="pcont">
+    <div class="page-head">
+        <h2>Manage Users</h2>
+    </div>
+    <div class="cl-mcont">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block-flat">
+                    <div class="header">
+                        <h3>Manage Users</h3>
+                    </div>
+                    <div class="content">
+                        <div class="table-responsive">
+                            @Html.Partial("_SearchFilter", new PagingModel { SortBy = "Name", SortOrder = "Asc" })
+                            <div id="divResult">
+                                <table class="table table-bordered" id="datatable-icons">
+                                    <thead>
+                                        <tr>
+                                            <th class="sorting" data-sortby="Category">Category</th>
+                                            <th class="sorting" data-sortby="SubCategory">Sub-Category</th>
+                                            <th class="sorting" data-sortby="Name">Author</th>
+                                            <th class="sorting" data-sortby="CardsCount">Keyword</th>
+                                            <th class="sorting" data-sortby="CreatedAt">Agency</th>
+                                            <th class="sorting" data-sortby="CreatedAt">Address</th>
+                                            <th class="sorting" data-sortby="CreatedAt">City</th>
+                                            <th class="sorting" data-sortby="CreatedAt">State</th>
+                                            <th class="sorting" data-sortby="CreatedAt">Zip</th>
+                                            <th class="sorting" data-sortby="CreatedAt">Country</th>
+                                            <th class="sorting" data-sortby="CreatedAt">Address Verified</th>
+                                            <th class="sorting" data-sortby="CreatedAt">Address Verified</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @Html.Partial("Partials/_addressBookListing", Model)
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                        @Html.Partial("_Paging")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+    <script src="~/Scripts/UserDefinedScripts/paging.js"></script>
+    <script type="text/javascript">
+        var totalCount = "@Model.TotalCount";
+    </script>
+
+    <script src="~/Scripts/AdminScripts/AdmnAddressBook.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            //initialize the javascript
+            App.init();
+            AddressBook.ManageAddressBook(totalCount);
+        });
+    </script>
+}
+

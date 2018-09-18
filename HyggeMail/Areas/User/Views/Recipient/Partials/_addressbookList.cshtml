@@ -1,0 +1,60 @@
+﻿@model ActionOutput<RecipientGroupModel>
+@if (Model != null)
+{
+    if (Model.List != null)
+    {
+        if (Model.List.Count() > 0)
+        {
+            foreach (var item in Model.List)
+            {
+                if (item.List != null && item.List.Count > 0)
+                {
+                    <div class="datas">
+                        @if (item.List != null)
+                        {
+                            if (item.List.Count > 0)
+                            {
+                                <div class="address-full">
+
+                                    <h4>@item.Alphabet</h4>
+                                    <div class="inn-add">
+                                        @foreach (var name in item.List)
+                                        {
+                                            <div class="col-sm-4 address-block">
+                                                <div class="address-out">
+                                                    <h5>@name.Name</h5>
+                                                    <p>@name.Address</p>
+                                                    <p>@name.City</p>
+                                                    <p>@name.Country</p>
+                                                    <p>@name.Zip</p>
+                                                    <div class="hover">
+                                                        <a href="javascript:" class="rec-edit-a view-card" data-id="@name.ID" title="Edit"><span class="" title="Edit Recipient"><img src="~/content/images/edit-icon1.png" alt=""></span></a>
+                                                        <a href="javascript:" class="rec-delete-a del-card" data-id="@name.ID" title="Delete"> <span class="delete-card" title="Delete Recipient"><img src="~/content/images/delete-icon.png" alt=""></span></a>
+
+                                                        @*<button type="button" class="view-card" data-toggle="modal" data-target="#edit-card">
+                                                                <span class="" title="View Card"><img src="~/content/images/edit-icon1.png" alt=""></span>
+                                                            </button>
+
+                                                            <button type="button" class="del-card" data-toggle="modal" data-target="#del-address">
+                                                                <span class="delete-card" title="Delete Card"><img src="~/content/images/delete-icon.png" alt=""></span>
+                                                            </button>*@
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            }
+                        }
+                    </div>
+                }
+            }
+        }
+    }
+    else
+    {
+        <div>No Record Found</div>
+    }
+}
+
+

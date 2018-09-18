@@ -1,0 +1,39 @@
+﻿@model PostCardFBModel
+@{
+
+    var ogUrl = string.Format("https://hyggemail.com/User/PostCard/ShowPostCard?postCardID={0}&userid={1}", @Model.PostCardId, @Model.UserId);
+    var ogImage = string.Format("https://hyggemail.com/{0}", Model.Image);
+}
+<html>
+<head>
+    <title>hyggemail</title>
+    <meta property="og:url" content="@ogUrl" />
+    <meta property="og:type" content="Artical" />
+    <meta property="og:title" content="hyggemail" />
+    <meta property="og:description" content="hyggemail" />
+    <meta property="og:image" content="@ogImage" />
+</head>
+<body>
+
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.12&appId=137934603528888&autoLogAppEvents=1';
+            ////js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.12&appId=383617988775536&autoLogAppEvents=1';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+    <!-- Your share button code -->
+    <div class="fb-share-button"
+         data-href="@ogUrl"
+         data-layout="button_count">
+    </div>
+
+</body>
+</html>

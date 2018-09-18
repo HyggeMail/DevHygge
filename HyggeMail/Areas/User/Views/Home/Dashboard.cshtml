@@ -1,0 +1,616 @@
+﻿@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Areas/User/Views/Shared/_Layout.cshtml";
+    AddUpdateAdminImageModel uploadModel = ViewBag.UploadModel as AddUpdateAdminImageModel;
+    List<ImagesByCategoryViewModel> recentUsedImage = ViewBag.RecentlyUsedImageList as List<ImagesByCategoryViewModel>;
+    var id = Model.ID;
+    <style>
+        .customCursor {
+            cursor: url('/Content/images/cursor-pen.png'),auto;
+        }
+
+        .acc_active .listings {
+            background: url(/Content/images/right-angle2.png) no-repeat left center;
+        }
+
+        .datepicker::-ms-clear {
+            display: none;
+        }
+
+        .scroll-wrapper {
+            -ms-overflow-style: none;
+        }
+
+            .scroll-wrapper > .scroll-content {
+                -ms-overflow-style: none;
+            }
+
+
+        .emoji-partial span.images-outerr img {
+            object-fit: contain;
+            width: 100%;
+        }
+
+        .emoji-partial span.images-outerr {
+            padding: 0 12px;
+        }
+    </style>
+}
+@model AddUpdateImageEditorModel
+<style>
+    .blur-button {
+        background: #f1f1f1;
+        cursor: default;
+    }
+
+        .blur-button:hover {
+            text-decoration: none !important;
+        }
+
+    canvas {
+        border: 1px solid #bdc3c7;
+        margin: 10px 0px 0px 0px;
+        /*  background-image: url("images/bg.png"); */
+    }
+
+    .myFile {
+        position: relative;
+        overflow: hidden;
+        float: left;
+        clear: left;
+    }
+
+        .myFile input[type="file"] {
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            opacity: 0;
+            font-size: 30px;
+            filter: alpha(opacity=0);
+        }
+
+    .myFile2 input[type="file"] {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -99999px;
+        opacity: 0;
+        font-size: 30px;
+        filter: alpha(opacity=0);
+    }
+
+    .title {
+        color: black;
+        text-decoration: none;
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    hr {
+        text-align: left;
+        margin: 30px auto 0 0;
+        width: 700px;
+    }
+
+    a:visited {
+        text-decoration: none;
+        color: #000;
+    }
+
+    a:active {
+        text-decoration: none;
+        color: #000;
+    }
+
+    .rec-hoverd-details {
+        display: block;
+    }
+</style>
+
+<div class="container1 flex dashboard-container">
+    <div class="left-sec left-dashboard-section">
+        <input type="hidden" value="orderID" id="orderID" />
+        <input type="hidden" value="@ViewBag.OrderID" id="copyID" />
+        <input type="hidden" value="@ViewBag.StepGuidanceStatus" id="StepGuidanceStatus" />
+        <input type="hidden" value="@(ViewBag.IsCopyCard.ToString())" id="IsCopyCard" name="IsCopyCard" />
+        @Html.HiddenFor(x => x.ID)
+        @Html.HiddenFor(x => x.CardFront)
+        @Html.HiddenFor(x => x.CardBack)
+        @Html.HiddenFor(x => x.CardFrontJson)
+        @Html.HiddenFor(x => x.CardBackJson)
+        @Html.HiddenFor(x => x.IncludeAddress)
+        @Html.HiddenFor(x => x.ShippedOn)
+        <div id="tabs-container" class="tab-mod">
+            <ul class="tabs-menu">
+                <li class="current">
+                    <a href="#tab-1" data-type="Images">
+                        <img src="~/Content/images/image-icon-lgt.png" alt="" />
+                        <img src="~/Content/images/image-icon.png" alt="" class="act" /> Images
+                    </a>
+                </li>
+                <li>
+                    <a href="#tab-2" data-type="Text">
+                        <img src="~/Content/images/text-icon-lgt.png" alt="" />
+                        <img src="~/Content/images/text-icon.png" alt="" class="act" />
+                        Text
+                    </a>
+                </li>
+                <li>
+                    <a href="#tab-3" data-type="Paint">
+                        <img src="~/Content/images/paint-icon.png" alt="" />
+                        <img src="~/Content/images/paint-icon-drk.png" alt="" class="act" />
+
+                        Paint
+                    </a>
+                </li>
+                @*<li><a href="#tab-4"> <img src="~/Content/images/paint-icon.png" alt="" /> Recipients</a></li>*@
+            </ul>
+            <div class="tab ">
+                <div id="tab-1" class="tab-content">
+
+                    <div class="upload-sec">
+                        <input type="file" class="hidden" />
+                        <span class="upload-btn" data-toggle="modal" data-target="#myModal-UploadImage" style="cursor:pointer">
+                            <img src="~/Content/images/upload.png" alt="" /> Upload
+                        </span>
+                        @*<span class="upload-btn custom-input" style="cursor:pointer">
+                                <i class="fa fa-plus" aria-hidden="true"></i> Choose File <input type="file" id="local-uploader" />
+                            </span>*@
+                    </div>
+                    <div class="contents guide-step">
+                        @*<div class="guide-step-1">
+                                <p>Step 1 of 4</p>
+                                <p>Select image and place it on card</p>
+                                <input type="checkbox" /> Don't show this again.
+                            </div>*@
+                        <input class="text search" type="text" id="searchImage" placeholder="Search free photos" />
+
+                        <div class="faltu demo">
+                            <div id="content-2" class="faltu-inner light scrollbar-inner">
+                                <div id="unSplashimages">
+                                </div>
+                                <div id="images">
+                                    @*@Html.Partial("Partials/_Images", Model)*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="tab-2" class="tab-content">
+                    @Html.Partial("Partials/_textEditor")
+                </div>
+                <div id="tab-3" class="tab-content">
+                    <div id="content-2 " class="tab3-scrollbar faltu-inner tab3-scrollbar light scrollbar-inner">
+                        @Html.Partial("Partials/_paintEditor")
+                        <div class="emoji-div"></div>
+                    </div>
+                </div>
+                @*<div class="guide-step-3">
+                        <p>Step 3 of 4</p>
+                        <p>Click to add text section.</p>
+                        <input type="checkbox" /> Don't show this again.
+                    </div>*@
+            </div>
+
+
+        </div>
+        <div class="recipient-div" style="display:none">
+            <span class="loginerroemsg"></span>
+            @Html.Partial("../Recipient/Partials/_Recipients")
+        </div>
+        <div class="step-4-left" style="display:none">
+            <div id="tabs-container" class="step4">
+                <div class="tab">
+                    <div>
+                        <div class="contents">
+                            <h4 class="small-heading">
+                                You are one step from sending your card.  Select Shipping Date, Preview and Send.
+                            </h4>
+                            <p class="top-content">To proceed with mailing, simply select your shipping date and place your order. Your postcard will be shipped on the date you selected. Shipping time is dependent on your destination and U.S. Postal Service.  HyggeMail also provides you with an option to download the card you created and View/Copy recently created cards in your Profile.</p>
+                            <div class="filters">
+                                <input class="checkbox" type="checkbox" id="includeAddress">
+                                <label for="check1"> Include my address </label>
+                            </div>
+                            <div class="dates">
+                                <label> SELECT SHIPPING DATE: </label>
+                                <input class="datepicker" id="shippingDate" data-date-format="mm/dd/yyyy">
+                            </div>
+                            @*<div class='input-group date datetimepicker'>
+                                    <input type='text' class="form-control" id='datetimepicker' />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>*@
+                        </div>
+                        <div class="place-order">
+                            <a href="Javascript:" class="red-link download-t-card"> <img src="../../content/images/download-icon.png"> Download card to print </a>
+                            <input type="hidden" class="download-t1-card"><a href="Javascript:" class="upload-btn order" id="place-order"> Place order </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div id="Thank-you-left" style="display:none">
+            <div id="tabs-container" class="step4">
+                <div class="tab">
+                    <div>
+                        <div class="contents">
+
+                            <h4 class="small-heading">
+                                Thank you for your order
+                            </h4>
+                            <h5 class="small-heading">  <span class="loginerroemsg"></span> </h5>
+                            <p class="top-content timerHide"> You have 15 minutes to cancel the PostCard once the order is placed.   You can view your card and its status in your Profile. </p>
+                        </div>
+                        <div class="timer timerHide"><div><span id="time-remaining">15:00</span></div></div>
+                        <div class="place-order">
+                            <input type="hidden" class="download-t1-card cancel-block"><a href="Javascript:" class="upload-btn order cancel-block" id="cancel-order"> Cancel Order </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="right-sec right-dashboard-section">
+        <div class="right-header">
+            <a href="javascript:" class="round-btn prev step-prev"> Previous step </a>
+            <ul class="steps">
+                <li class="active" data-toggle="tooltip" data-original-title="Design Front Face">
+                    <a href="javascript:" class="step-num" data-step="1"> 1 </a>
+
+                    <div class="popup-steps" id="step1-popup" style="display:none">
+                        <h3>Step 1: Design the front of your postcard. </h3>
+                        <ul>
+                            <li>Select an image from our gallery. To place it on your postcard, either drag and drop it or double click the image.</li>
+                            <li>	Alternatively, you can upload your own image and drag it to your card.</li>
+                            <li>Resize and rotate your image by clicking on any small blue square. Click the center of the image to move it into your desired position.</li>
+                            <li>Click to add a text section or additional elements.</li>
+                            <li>You can save your progress any time you wish.</li>
+                            <li>Click to proceed to the next step.</li>
+                        </ul>
+
+                        <div class="custom-checkbox">
+                            <input class="checkbox checkbox-dontshow" type="checkbox">
+                            <label> Don't show this message again </label>
+                        </div>
+                        <span class="cross">X</span>
+                    </div>
+
+                </li>
+                <li data-toggle="tooltip" data-original-title="Card Back Face">
+                    <a href="javascript:" class="step-num" data-step="2"> 2 </a>
+                    <div class="popup-steps" id="step2-popup">
+                        <h3>Step 2: Design the left-side back of your postcard. </h3>
+                        <ul>
+                            <li>Use the tools to add an image, color and/or text to the left side of your postcard. The right side must adhere to postal standards and cannot be customized.</li>
+                            <li>Click to proceed to the next step</li>
+
+                        </ul>
+
+                        <div class="custom-checkbox">
+                            <input class="checkbox checkbox-dontshow" type="checkbox">
+                            <label> Don't show this message again </label>
+                        </div>
+                        <span class="cross">X</span>
+                    </div>
+                </li>
+                <li data-toggle="tooltip" data-original-title="Recipient Details">
+                    <a href="javascript:" id="stepthird" class="step-num" data-step="3"> 3 </a>
+
+                    <div class="popup-steps" id="step3-popup">
+                        <h3>Step 3: Add you recipient(s).</h3>
+                        <ul>
+                            <li> Click to add an address. You can input multiple recipients if you wish.</li>
+                            <li>Click to proceed to the next step</li>
+
+                        </ul>
+
+                        <div class="custom-checkbox">
+                            <input class="checkbox checkbox-dontshow" type="checkbox">
+                            <label> Don't show this message again </label>
+                        </div>
+                        <span class="cross">X</span>
+                    </div>
+                </li>
+                <li id="last-step" data-toggle="tooltip" data-original-title="Save and Order">
+                    <a href="javascript:" class="step-num" data-step="4"> 4 </a>
+
+                    <div class="popup-steps" id="step4-popup">
+                        <h3>Step 4: </h3>
+                        <ul>
+                            <li>Click to select shipping date.</li>
+                            <li>Click to place order.</li>
+
+                        </ul>
+                        <div class="custom-checkbox">
+                            <input class="checkbox checkbox-dontshow" type="checkbox">
+                            <label> Don't show this message again </label>
+                        </div>
+                        <span class="cross">X</span>
+                    </div>
+                </li>
+            </ul>
+            <span class="save" id="save-postcard" title="Save Postcard"> </span>
+            <a href="javascript:" class="round-btn next step-next"> Next step </a>
+        </div>
+        <div class="content-section" id="canvas-container">
+            <div class="top-section">
+
+                @*<label title="Add an image" data-toggle="tooltip" class="myFile">
+                        <span class="mdi mdi-image"> Add Photo</span>&nbsp;
+                        <input type="file" id="file" />
+                    </label>*@
+                <label title="Add a background" data-toggle="tooltip" class="myFile2">
+                    <span class="mdi mdi-image">+</span>
+                    <input type="file" id="file2" />
+                </label>
+                @*<a onclick="Addtext()" title="Add text"><span class="mdi mdi-format-text"> Add Text</span></a>&emsp;*@
+                <a class="m-l-25" onclick="sendSelectedObjectBack()" data-toggle="tooltip" title="Send selected to back"><span class="obj-back cBack-icon-inactive"> </span></a>
+                <a onclick="sendSelectedObjectToFront()" data-toggle="tooltip" title="Bring selected to front"><span class="obj-front cFront-icon-inactive"> </span></a>
+                @*<a class="m-l-25" href="javascript:" onclick="undo()"><span class="undo undo-record" title="Undo"> </span></a>
+                    <a href="javascript:" onclick="redo()"><span class="redu redu-record" title="Redo" data-toggle="tooltip"> </span></a>*@
+                <button type="button" data-toggle="tooltip" title="Undo" id="undo1"><img src="../../Content/images/undo.png"></button>
+                <button type="button" data-toggle="tooltip" title="Redo" id="redo1" disabled><img src="../../Content/images/redu.png"></button>
+
+                @*<input type="button" value="undo" onclick="undo()">
+                    <input type="button" value="redo" onclick="redo()">*@
+                @*<a onclick="deleteObject()" title="Delete Anything Selected"><span class="mdi mdi-delete"> Delete</span></a>&emsp;*@
+
+                @*<a onclick="refresh()" title="Start fresh"><span class="mdi mdi-shredder" data-toggle="tooltip"> Clear All</span></a>&emsp;*@
+
+                @*<a onclick="ReplicaContent()" title="Start fresh"><span class="mdi mdi-shredder"> Replica</span></a>&emsp;*@
+
+                @*<a id="lnkDownload" title="Save" ><span class="mdi mdi-download"> Save</span></a>*@
+
+                <a class="m-l-25" href="javascript:" id="rotate-left" data-toggle="tooltip" title="Rotate left">    <span class="left-rotate"> </span></a>
+                <a href="javascript:" id="rotate-right" data-toggle="tooltip" title="Rotate Right">
+                    <span class="right-rotate"> </span>
+                </a>
+                <a class="m-l-25" href="javascript:" id="flip-left" data-toggle="tooltip" title="Flip left right">
+                    <span class="flip-left"> </span>
+                </a>
+                @*<a class="m-l-25" href="javascript:" id="flip-right" title="Flip right">
+                        <span class="flip-right"> </span>
+                    </a>*@
+                <a class="m-l-25" href="javascript:" id="flip-up" data-toggle="tooltip" title="Flip up down">
+                    <span class="flip-up"> </span>
+                </a>
+                @*<a class="m-l-25" href="javascript:" id="flip-down" title="Flip down" data-toggle="tooltip">
+                        <span class="flip-down"> </span>
+                    </a>*@
+
+
+                <span class="bin m-l-25" id="delete-selected" data-toggle="tooltip" title="Trash"> </span>
+            </div>
+            <textarea name="myTextArea"  id="myTextArea" cols="30" rows="4" style='max-width:500px;width:100%;height:200px;margin-bottom:20px;display:none'></textarea>
+            <div class="canvas-outer-div">
+                <div id="step-1" data-step="1" class="canvas-div" style="border:1.5px solid #f2eee7;    height: 532px;">
+                    <div id="canvas-container" style="border:0px;">
+                        <canvas id="canvas-step-1" width="840" height="528" style="margin-top:0"></canvas>
+                        @*<canvas id="canvas" width="840" height="528" style="border:2px solid #808080;margin-top:0"></canvas>*@
+                    </div>
+                    @*<canvas id="canvas-step-1-replica" width="900" height="500" style="border:2px solid #808080"></canvas>
+                        <canvas id="c" width="900" height="500" style="border:2px solid #808080"></canvas>*@
+                </div>
+                <div id="step-2" data-step="2" class="canvas-div" style="display:none;border:1.5px solid #f2eee7;    height: 532px;">
+                    <div id="canvas-container">
+                        <canvas id="canvas-step-2" width="840" height="528" style=" margin-top: 0"></canvas>
+                    </div>
+                </div>
+                @*<div class="guide-step-2">
+                        <p>Step 2 of 4</p>
+                        <p>Drag to modify image or change its position.</p>
+                        <input type="checkbox" /> Don't show this again.
+                    </div>
+                    <div class="guide-step-4">
+                        <p>Step 4 of 4</p>
+                        <p>Select recipients from address book on the left.</p>
+                        <input type="checkbox" /> Don't show this again.
+                    </div>*@
+                <div class="rec-hoverd-details">
+
+                </div>
+                <div id="step-4" data-step="4" class="canvas-div step-4-left" style="display:none">
+                    <div class="">
+                        <div class="content-box item flip-postcard show-card">
+                            <div class="inner-box">
+                                <img src="" class="img-front" />
+                            </div>
+                        </div>
+                        <div class="content-box item flip-postcard hide-card">
+                            <div class="inner-box">
+                                <img src="" class="img-back" />
+                            </div>
+                        </div>
+                        <div class="flip-btn">
+                            <button class="btnflip-postcard upload-btn" value="Flip">Flip</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+            <div class="clear"></div>
+            <div class="bottom-sliders" id="recentlyUsed">
+                @Html.Partial("Partials/_recentlyUsed", recentUsedImage)
+            </div>
+        </div>
+        <div id="thank-you-right" style="display:none">
+            <img src="" id="thank-you-img-front" alt="Front" />
+            <img src="" id="thank-you-img-back" alt="Back" />
+        </div>
+    </div>
+
+</div>
+@Html.Partial("Partials/_uploadImage", uploadModel)
+@section scripts{
+    <script src="~/Content/themes/fabric.js-1.7.18/dist/fabric.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.popup-steps .cross').click(function () {
+                if ($(this).parent().is('.popup-steps')) {
+                    return $(this).parent().addClass('open');
+                } else {
+                    return $(this).parent().removeClass('open');
+                }
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $(function () {
+                var newDate = new Date();
+
+                var date = new Date();
+                date.setDate(date.getDate() + 1);
+
+
+                $('#shippingDate').datepicker({ minDate: 0 });
+                $('#shippingDate').datepicker('setDate', date);
+
+            });
+            UserDashboard.GetImages('');
+            $(document).on('click', ".tabs-menu a", function (event) {
+                event.preventDefault();
+                $(this).parent().addClass("current");
+                $(this).parent().siblings().removeClass("current");
+                var tab = $(this).attr("href");
+                $(".tab-content").not(tab).css("display", "none");
+                $(tab).fadeIn();
+            });
+            var canvas = null;
+            $('.loop').owlCarousel({
+                center: true,
+                autoWidth: true,
+                items: 3,
+                loop: true,
+                nav: true,
+                margin: 10,
+                responsive: {
+                    600: {
+                        items: 4
+                    }
+                }
+            });
+
+            $('.main-slider').owlCarousel({
+                autoWidth: true,
+                loop: false,
+                items: 2,
+            });
+        });
+
+        var siteURL = {
+
+            ImagesByCategoryModel: '@Url.Action("ImagesByCategoryModel", "Home", new { area = "User" })',
+
+            AddEditImage: '@Url.Action("AddEditImage", "Home", new { area = "User" })',
+
+            StateByCountry: '@Url.Action("StateByCountry", "Home", new { area = "" })',
+
+            CityByState: '@Url.Action("CityByState", "Home", new { area = "" })',
+
+            CountryList: '@Url.Action("CountryList", "Home", new { area = "" })',
+
+            AddEditRecipient: '@Url.Action("AddEditRecipient", "Recipient", new { area = "user" })',
+
+            GetUserRecipients: '@Url.Action("GetUserRecipients", "Recipient", new { area = "user"})',
+
+            GetPostCardUserRecipients: '@Url.Action("GetPostCardUserRecipients", "Recipient", new { area = "user", cid = Model.ID })',
+
+            DeleteRecipientByID: '@Url.Action("DeleteRecipientByID", "Recipient", new { area = "user" })',
+
+            GetRecipientByID: '@Url.Action("GetRecipientByID", "Recipient", new { area = "user" })',
+
+            PostCardSubmit: '@Url.Action("PostCardSubmit", "Home", new { area = "user" })',
+
+            Thankyou: '@Url.Action("Thankyou", "Home", new { area = "user" })',
+
+            OrderCancel: '@Url.Action("OrderCancel", "Home", new { area = "user" })',
+
+            PrintPostCard: '@Url.Action("PrintPostCard", "Home", new { area = "user" })',
+
+            DeleteImage: '@Url.Action("DeleteImage", "Home", new { area = "user" })',
+
+            DontShowAgain: '@Url.Action("DontShowAgain", "Home", new { area = "user" })',
+
+            GetUnSplashImages: '@Url.Action("GetUnSplashImages", "Home", new { area = "User" })',
+
+            GetAdminAddressBook: '@Url.Action("GetAdminAddressBook", "Recipient", new { area = "user", cid = Model.ID })'
+        };
+
+    </script>
+    <script src="~/Content/themes/fontfaceobserver-master/fontfaceobserver.js"></script>
+    <script src="~/Scripts/UserDashboardScripts/ImageEditor.js"></script>
+    <script src="~/Scripts/UserDashboardScripts/Recipient.js"></script>
+    <script src="~/Scripts/UserDashboardScripts/Main-Dashboard.js"></script>
+    <script src="~/Scripts/UserDashboardScripts/Dashboard.js"></script>
+    <script src="~/Scripts/UserDashboardScripts/CustomFields.js"></script>
+    <script src="~/JavaScriptSpellCheck/include.js"></script>
+    <script type="text/javascript">
+        $(document).on('ready', function () {
+            if ('@Model.ID' > 0 && '@ViewBag.IsCopyCard' == 'False') {
+                Recipient.GetAddressBook('');
+            }
+            $(".regular").slick({
+                dots: false,
+                infinite: true,
+                autoplay: false,
+                slidesToShow: 2,
+                slidearrow: true,
+                slidesToScroll: 1,
+                swipe: false,
+                responsive: [
+              {
+                  breakpoint: 1024,
+                  settings: {
+                      slidesToShow: 3,
+                      slidesToScroll: 3,
+                      infinite: true,
+                      dots: true
+                  }
+              },
+              {
+                  breakpoint: 600,
+                  settings: {
+                      slidesToShow: 2,
+                      slidesToScroll: 2
+                  }
+              },
+              {
+                  breakpoint: 480,
+                  settings: {
+                      slidesToShow: 1,
+                      slidesToScroll: 1
+                  }
+              }
+              // You can unslick at a given breakpoint now by adding:
+              // settings: "unslick"
+              // instead of a settings object
+                ]
+            });
+        });
+        function GooglePlacesOnLoad() {
+            $("#Address").locify();
+        }
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=@HyggeMail.BLL.Common.Config.GooglePlaceKey&libraries=places&callback=GooglePlacesOnLoad&language=en"
+            async defer></script>
+}

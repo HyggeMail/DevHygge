@@ -1,0 +1,49 @@
+﻿@model PagingResult<UserHistoryModel>
+
+
+@if (Model.List != null && Model.List.Count() > 0)
+{
+    foreach (var item in Model.List)
+    {
+        <tr class="odd gradeX profilepictd">
+    <td>
+                @Convert.ToDateTime(item.AddedOn).ToString("MMM dd yyyy hh:mm tt")
+            </td>
+            <td>
+                @item.Type
+            </td>
+            <td>
+                @item.Status
+            </td>
+
+            <td>
+                @item.TokenChange
+            </td>
+
+            <td>
+                @item.TokenAvailable
+            </td>
+
+            <td>
+                @if (item.Type == "Order")
+{
+    <a class="btn btn-primary btn-xs" href="@Url.Action("ViewRecipientOrder", "PostCard", new { area = "Admin", oid = @item.OrderIDFK })" data-original-title="View Order" data-toggle="tooltip">View Order</a>
+}
+                else
+                {
+                    <a class="btn btn-primary btn-xs" href="@Url.Action("ViewTransactionDetails", "Home", new { area = "Admin", tid = @item.TransactionIDFK })" data-original-title="View Transaction" data-toggle="tooltip">View Transaction</a>
+                }
+            </td>
+
+        </tr>
+    }
+}
+else
+{
+    <tr class="odd gradeX">
+        <td colspan="4">No Record Found</td>
+    </tr>
+}
+
+
+

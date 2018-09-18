@@ -1,0 +1,71 @@
+﻿@model List<RecipientGroupModel>
+<ul class="acc-Recipients useradd">
+    @if (Model != null && Model.Count() > 0 && Model.Any(p => p.List.Count > 0))
+    {
+        foreach (var item in Model)
+        {
+            if (item.List != null && item.List.Count > 0)
+            {
+                <li>
+                    <div class="listings">
+                        @item.Alphabet (@item.count)
+                    </div>
+                    <div class="datas">
+                        @if (item.List != null)
+                        {
+                            if (item.List.Count > 0)
+                            {
+                                <div id="images">
+                                    @foreach (var name in item.List)
+                                    {
+                                        <div class="a">
+                                            <span class="filters wb-filters">
+                                                <input type="checkbox" class="recipient-a-select checkbox" style="cursor:pointer"
+                                                       data-ct="@name.City" data-co="@name.Country" data-ad="@name.Address"
+                                                       data-st="@name.State" data-nm="@name.Name" data-zp="@name.Zip" data-id="@name.ID" @name.MarkChecked />
+
+                                                <label>
+                                                    @name.Name (@string.Format("{0}, {1}, {2}, {3}", name.Address, name.City, name.State, name.Country))
+                                                    <span class="tool-tip">@name.Name (@string.Format("{0}, {1}, {2}, {3}", name.Address, name.City, name.State, name.Country))</span>
+                                                </label>
+                                            </span>
+                                            <a href="javascript:" class="rec-edit-a" data-id="@name.ID" title="Edit"> <img src="~/Content/images/edit-icon1.png" alt="" /></a>
+                                            <a href="javascript:" class="rec-delete-a" data-id="@name.ID" title="Delete"> <img src="~/Content/images/delete-icon.png" alt="" /></a>
+                                            @*<span data-toggle="tooltip" title=>@name.Name</span>*@
+                                        </div>
+
+                                    }
+                                </div>
+                            }
+                            else
+                            {
+                                <span>No address Found</span>
+                            }
+                        }
+                        else
+                        {
+                            <span>No address Found</span>
+                        }
+                    </div>
+                </li>
+            }
+        }
+    }
+
+    else
+    {
+        <li>No Record Found</li>
+    }
+
+</ul>
+
+<div class="load-rec" style="display:none">
+    <img src="~/Content/images/bx_loader.gif" />
+</div>
+@section scripts{
+    <script>
+        $(".useradd").smk_Accordion({
+            closeAble: true, //boolean
+        });
+    </script>
+}

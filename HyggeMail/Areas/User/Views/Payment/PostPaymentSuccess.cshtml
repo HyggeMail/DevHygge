@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Payment Success!";
+    Layout = "~/Areas/User/Views/Shared/_Layout.cshtml";
+}
+
+<section class="middle-content">
+    <div class="faq-page">
+        <div class="top-heading-bar">
+            <h3 class="short-heading pacifico">Thank you for your Order </h3>
+        </div>
+
+        <div class="content-sec text-center" style="margin-top: -55px;margin-bottom:20px">
+            <h4>
+             You have successfully purchased @TempData["Message"] card HyggeMail Package. You have @TempData["AvailableTokens"] cards available.
+                Your transaction ID for this payment is @TempData["PaymentID"].
+                You will receive a confirmation email with the purchase details.
+            </h4>
+        </div>
+    </div>
+</section>

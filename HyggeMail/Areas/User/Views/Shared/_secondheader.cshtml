@@ -1,0 +1,38 @@
+﻿@{
+    UserDetails LOGGEDIN_USER = (UserDetails)ViewBag.LOGGEDIN_USER;
+}
+@model PayPalTransaction
+<div class="scnd-header">
+    <section class="middle-content wb-page">
+        <div class="wb-page">
+            <div class="top-links">
+                <div class="container1">
+                    <ul class="header-tab">
+                        <li><a href="@Url.Action("MyRecipient", "Recipient", new { area = "user" })"><i class="fa fa-address-card" aria-hidden="true"></i> Address Book </a></li>
+                        <li><a href="@Url.Action("PostCards", "PostCard", new { area = "user" })"><i class="fa fa-id-card-o" aria-hidden="true"></i> My Cards </a></li>
+                        <li><a href="@Url.Action("MyOrders", "PostCard", new { area = "user" })"><i class="fa fa-shopping-cart" aria-hidden="true"></i> My Orders </a></li>
+                        @*<li><a href="@Url.Action("MySetting", "Home", new { area = "user" })"><i class="fa fa-wrench" aria-hidden="true"></i> My Setting </a></li>
+                        <li><a href="@Url.Action("MyProfile", "Home", new { area = "user" })"><i class="fa fa-user" aria-hidden="true"></i> My Profile </a></li>*@
+                        <li><a href="@Url.Action("TransactionHistory", "Payment", new { area = "user" })"><i class="fa fa-exchange" aria-hidden="true"></i> Transaction History </a></li>
+						    @if (Model != null && !string.IsNullOrEmpty(Model.MembershipPlan))
+                    {
+                        <span class="balance">
+                            <h4>Last Purchased: <strong class="showtransmodel" style="cursor:pointer">@Model.PackageCardCount</strong>  Card Package.
+                           <br/> Current Balance: <span>@Model.PendingCardCount Card (s)</span></h4>
+                        </span>
+                    }
+                    @if (Model.IsBasic == true)
+                    {
+                        <span class="balance">
+                            <h4>Last Purchased: <B>NONE</B>.<br/> Current Balance: <span>@Model.PendingCardCount Card (s)</span></h4>
+                        </span>
+                    }
+                    </ul>
+                
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

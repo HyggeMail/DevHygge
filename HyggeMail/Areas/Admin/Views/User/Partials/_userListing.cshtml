@@ -1,0 +1,62 @@
+﻿@model PagingResult<UserListingModel>
+
+
+@if (Model.List != null && Model.List.Count() > 0)
+{
+    foreach (var item in Model.List)
+    {
+        <tr class="odd gradeX profilepictd">
+            <td>
+                @if (item.ImagePath != null)
+                {
+                    <img src="@item.ImagePath.Replace("~/", "../../")" height="30" width="30" />
+                }
+                else
+                {
+                    <img src="~/Content/images/avtar-profile-image.png" height="50" width="50" />
+                }
+                @item.FirstName
+            </td>
+            @*<td> @item.LastName</td>*@
+            <td>
+                @item.Email
+            </td>
+            <td>
+                @item.CardsCount
+            </td>
+            <td class="center">@item.CreatedOn.ToShortDateString()</td>
+            @*<td>
+                    <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-usd" aria-hidden="true"></i></a>
+                    <a href="#" class="btn btn-primary btn-danger btn-sm"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+                    <a href="#" class="btn btn-primary btn-info btn-sm"><img src="~/Content/images/history.png"alt="" /></a>
+
+                </td>*@
+            <td class="center">
+                <a class="btn btn-primary btn-xs" href="@Url.Action("EditUser", "user", new { area = "Admin", userId = @item.UserId })" data-original-title="Edit" data-toggle="tooltip"><i class="fa fa-pencil"></i></a>
+                <a class="btn btn-primary btn-xs btn-info" href="@Url.Action("ManageUserHistory", "user", new { area = "Admin", uid = @item.UserId })" data-original-title="History" data-toggle="tooltip"><img src="~/Content/images/rotate-leftt.png" alt="" /></a>
+                @if (item.IsDeleted)
+                {
+                    <a data-userid="@item.UserId" class="btn btn-danger btn-unblock btn-xs deleteUser" href="javascript:void(0);" data-original-title="UnBlock" data-toggle="tooltip"><i class="fa fa-ban"></i></a>
+                }
+                else
+                {
+                    <a data-userid="@item.UserId" class="btn btn-danger btn-xs deleteUser" href="javascript:void(0);" data-original-title="Block" data-toggle="tooltip"><i class="fa fa-ban"></i></a>
+                }
+
+                @if (item.IsActivated == false)
+                {
+                    <a data-userid="@item.UserId" class="btn btn-danger btn-unblock btn-xs ActivateUser" href="javascript:void(0);" data-original-title="Activate User" data-toggle="tooltip"><i class="fa fa-user"></i></a>
+                    <a data-userid="@item.UserId" class="btn btn-danger btn-unblock btn-xs SendAccountVerificationMail" href="javascript:void(0);" data-original-title="Account Verification Email" data-toggle="tooltip"><i class="fa fa-envelope"></i></a>
+                }
+            </td>
+        </tr>
+    }
+}
+else
+{
+    <tr class="odd gradeX">
+        <td colspan="4">No Record Found</td>
+    </tr>
+}
+
+

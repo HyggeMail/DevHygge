@@ -1,0 +1,170 @@
+﻿@{
+    ViewBag.Title = "PostCard Details";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayOut.cshtml";
+}
+@model ActionOutput<AddUpdateImageEditorModel>
+<div class="container-fluid" id="pcont">
+    <div class="page-head">
+        <h2>@ViewBag.Title</h2>
+    </div>
+    <div class="cl-mcont">
+        @Html.Partial("_FunctionCallMessage")
+        <div class="row">
+            <input type="hidden" id="hfCardBackJson" value="@Model.Object.CardBackJson" />
+            <input type="hidden" id="hfUserName" value="@Model.Object.UserName" />
+            <input type="hidden" id="hfUserAddress" value="@Model.Object.UserAddress" />
+            @Html.HiddenFor(x => x.Object.IncludeAddress)
+            <div class="col-md-12">
+                <div class="block-flat">
+                    <div class="content people-form-cs">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-6">
+                                        <div class="col-md-12">
+                                            <h4 class="text-center Bold">Front Card</h4>
+                                        </div>
+                                        <img src="@Model.Object.CardFrontPath.Replace("~/","../../../")" style="width:100%;background-color:#fff;" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="col-md-12">
+                                            <h4 class="text-center Bold">Back Card</h4>
+                                        </div>
+                                        <img src="@Model.Object.CardBackPath.Replace("~/","../../../")" style="width:100%;background-color:#fff;" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class=" col-md-12">
+                                    <label for="inputEmail3" class="col-md-2 control-label">Shipment Date</label>
+                                    <div class="col-md-8">
+                                        @if (Model.Object.ShippedOn != null)
+                                        {
+                                            <span>@Convert.ToDateTime(Model.Object.ShipmentDate).ToShortDateString()</span>
+                                        }
+                                        else
+                                        {
+                                            <span>Not Selected</span>
+                                        }
+                                    </div>
+                                </div>
+                                <br />
+                                <br />
+                                <div class=" col-md-12">
+                                    <label for="inputEmail3" class="col-md-2 control-label">Include Address</label>
+                                    <div class="col-md-8">
+                                        @if (Model.Object.IncludeAddress == true)
+                                        {
+                                            <span>Yes</span>
+                                        }
+                                        else
+                                        {
+                                            <span>No</span>
+                                        }
+                                    </div>
+                                </div>
+                                <br />
+                                <br />
+                                <div class=" col-md-12">
+                                    <label for="inputEmail3" class="col-md-2 control-label">Recipients</label>
+                                    <div class="col-md-8">
+                                        <table class="table table-bordered" id="datatable-icons">
+                                            <thead>
+                                                <tr>
+                                                    <th class="sorting" data-sortby="Name">Name</th>
+                                                    <th class="sorting" data-sortby="Address">Address</th>
+                                                    <th class="sorting" data-sortby="City">City</th>
+                                                    <th class="sorting" data-sortby="State">State</th>
+                                                    <th class="sorting" data-sortby="Country">Country</th>
+                                                    <th class="sorting" data-sortby="Zip">Zip</th>
+                                                    <th>Status</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @if (Model.Object.Recipients != null && Model.Object.Recipients.Count() > 0)
+                                                {
+                                                    foreach (var item in Model.Object.Recipients)
+                                                    {
+                                                        <tr class="odd gradeX">
+                                                            <td>@item.Name</td>
+                                                            <td>@item.Address</td>
+                                                            <td>@item.City</td>
+                                                            <td>@item.State</td>
+                                                            <td>@item.Country</td>
+                                                            <td>@item.Zip</td>
+                                                            <td>
+                                                                @if (item.IsApproved == true)
+                                                                {
+                                                                    <span>Approved</span>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <span>Disapproved</span>
+                                                                }
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-success btn-sm approveReciptent" data-rname="@item.Name" data-raddress="@item.Address" data-rcity="@item.City" data-rstate="@item.State" data-rcountry="@item.Country" data-rzip="@item.Zip" data-name="approve" data-id="@item.ID">
+                                                                    <i class="fa fa-thumbs-up" title="Approve"></i>
+                                                                </button>
+                                                                <button type="button" class="btn btn-danger btn-sm disapproveReciptent" data-rname="@item.Name" data-raddress="@item.Address" data-rcity="@item.City" data-rstate="@item.State" data-rcountry="@item.Country" data-rzip="@item.Zip" data-name="disapprove" data-id="@item.ID">
+                                                                    <i class="fa fa-thumbs-down" title="Dispprove"></i>
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+                                                    }
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <canvas id="cBack" width="900" height="500"></canvas>
+    </div>
+    <div class="modal fade bs-example-modal-lg previewModel" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title text-center">Card Preview</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="@Model.Object.CardFrontPath.Replace("~/","../../../")" id="cardFrontForEachRecipient" style="width:100%;background-color:#fff;" />
+                        </div>
+                        <div class="col-md-6">
+                            <img src="@Model.Object.CardBackPath.Replace("~/","../../../")" id="cardBackForEachRecipient" style="width:415px;background-color:#fff;" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default saveRequest">Submit</button>
+                    <button type="button" class="btn btn-default printAsPDF">Print as PDF</button>
+                    <a href="javascript:" class="btnBindRecipientDetails">Bind Recipient Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/Content/themes/fabric.js-1.7.18/dist/fabric.js"></script>
+    <script src="~/Scripts/AdminScripts/Postcard.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //initialize the javascript
+            App.init();
+        });
+        var siteURL = {
+
+            PrintPostCard: '@Url.Action("PrintPostCard", "PostCard", new { area = "Admin" })',
+        }
+    </script>
+}

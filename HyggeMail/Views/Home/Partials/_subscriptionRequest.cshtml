@@ -1,0 +1,26 @@
+﻿@model SubscriberModel
+@*<span> Subscribe to our newsletter: </span>
+<form id="Subscriber">
+    <div class="subscribe">
+        @Html.TextBoxFor(x => x.EmailID, new { @class = "textbox subs" })
+        <a href="javascript:" class="subs-btn" id="btnSubscripeSubmit">Subscribe</a>
+    </div>
+</form>*@
+
+
+<div id="mc_embed_signup">
+    <form action="https://hyggemail.us18.list-manage.com/subscribe/post?u=9d3ec567ee3ba335e68368dcb&amp;id=0dfa3ee37c" method="post" id="mc-embedded-subscribe-form2" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+        <div id="mc_embed_signup_scroll2">
+            @Html.TextBoxFor(x => x.EmailID, new { @class = "textbox subs email", @placeholder = "Enter Your Email" })
+            @* <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter Your Email" required>*@
+            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_9d3ec567ee3ba335e68368dcb_0dfa3ee37c" tabindex="-1" value=""></div>
+
+            <a href="javascript:" class="subs-btn btn" id="btnSubscripeSubmit">Join Now</a>
+			<p>We will send you an email every now and then with some great ways to make the most of Hyggemail, awesome exclusive offers, and tips on how to enjoy life's special little moments more !</p>
+
+            @*  <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn">*@
+            <div class="input-shadow"></div>
+        </div>
+    </form>
+</div>

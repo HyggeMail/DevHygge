@@ -1,0 +1,15 @@
+HyggeMail/Uploads
+HyggeMail/bin
+HyggeMail/obj
+HyggeMail.BLL/bin
+HyggeMail.BLL/obj
+HyggeMail.DAL/bin
+HyggeMail.DAL/obj
+HyggeMail.Framework/bin
+HyggeMail.Framework/obj
+HyggeMail.ImportExport/bin
+HyggeMail.ImportExport/obj
+HyggeMail.UnSplash/bin
+HyggeMail.UnSplash/obj
+packages
+/style.css

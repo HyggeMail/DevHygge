@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Thankyou";
+    Layout = "~/Areas/User/Views/Shared/_Layout.cshtml";
+}
+
+<div class="thanks-page text-center">
+<img src="~/content/images/tick-mark-icon-95228.png">
+<h3>Thank You !</h3>
+<p>Your Submission has been Received</p>
+<a href="@Url.Action("Dashboard", "Home", new {area="user" })">Cancel Order</a>
+</div>
+

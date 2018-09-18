@@ -1,0 +1,2140 @@
+<<<<<<< HEAD
+Object reference not set to an instance of an object.
+=======
+c:\Users\Harvinder\AppData\Local\Temp\Temporary ASP.NET Files\root\686ac6f6\61199e45\App_Web_login.cshtml.5f83eb8c.j2ie7bxo.0.cs(33): error CS0246: The type or namespace name 'Parking' could not be found (are you missing a using directive or an assembly reference?)
+>>>>>>> a258c078a5025ff2829cde09ae00c0af0d868946
+http://jsonformat.com/
+
+
+
+<<<<<<< HEAD
+Object reference not set to an instance of an object.
+=======
+c:\Users\Harvinder\AppData\Local\Temp\Temporary ASP.NET Files\root\686ac6f6\61199e45\App_Web_login.cshtml.5f83eb8c.j2ie7bxo.0.cs(33): error CS0246: The type or namespace name 'Parking' could not be found (are you missing a using directive or an assembly reference?)
+>>>>>>> a258c078a5025ff2829cde09ae00c0af0d868946
+http://jsonformat.com/
+
+
+
+<<<<<<< HEAD
+Object reference not set to an instance of an object.
+=======
+c:\Users\Harvinder\AppData\Local\Temp\Temporary ASP.NET Files\root\686ac6f6\61199e45\App_Web_login.cshtml.5f83eb8c.j2ie7bxo.0.cs(33): error CS0246: The type or namespace name 'Parking' could not be found (are you missing a using directive or an assembly reference?)
+http://jsonformat.com/
+
+
+
+c:\Users\Harvinder\AppData\Local\Temp\Temporary ASP.NET Files\root\686ac6f6\61199e45\App_Web_login.cshtml.5f83eb8c.i3eqynao.0.cs(33): error CS0246: The type or namespace name 'Parking' could not be found (are you missing a using directive or an assembly reference?)
+http://jsonformat.com/
+
+
+
+Expression expected
+>>>>>>> a258c078a5025ff2829cde09ae00c0af0d868946
+http://jsonformat.com/
+
+
+
+Expression expected
+http://jsonformat.com/
+
+
+
+Syntax error
+http://jsonformat.com/
+
+
+
+Expression expected
+http://jsonformat.com/
+
+
+
+Syntax error
+http://jsonformat.com/
+
+
+
+Syntax error
+http://jsonformat.com/
+
+
+
+Syntax error
+http://jsonformat.com/
+
+
+
+Object reference not set to an instance of an object.
+http://jsonformat.com/
+
+
+
+d:\Sunil\Projects\Hyggemail docs\Hugge\huggemail-net\HyggeMail\Views\Account\EmailVerification.cshtml(6): error CS0103: The name 'media' does not exist in the current context
+http://jsonformat.com/
+
+
+
+d:\Sunil\Projects\Hyggemail docs\Hugge\huggemail-net\HyggeMail\Views\Account\EmailVerification.cshtml(6): error CS0103: The name 'media' does not exist in the current context
+http://jsonformat.com/
+
+
+
+The parameters dictionary contains a null entry for parameter 'pageNumber' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetUnSplashImages(System.String, Int32)' in 'HyggeMail.Areas.User.Controllers.HomeController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+http://jsonformat.com/
+
+
+
+The parameters dictionary contains a null entry for parameter 'pageNumber' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetUnSplashImages(System.String, Int32)' in 'HyggeMail.Areas.User.Controllers.HomeController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+http://jsonformat.com/
+
+
+
+The parameters dictionary contains a null entry for parameter 'pageNumber' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetUnSplashImages(System.String, Int32)' in 'HyggeMail.Areas.User.Controllers.HomeController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+http://jsonformat.com/
+
+
+
+Unexpected character encountered while parsing value: [. Path 'results', line 1, position 43.
+http://jsonformat.com/
+
+
+
+Unexpected character encountered while parsing value: [. Path 'results', line 1, position 43.
+http://jsonformat.com/
+
+
+
+The model item passed into the dictionary is of type 'HyggeMail.BLL.Models.ActionOutput`1[HyggeMail.BLL.Models.UnSplashImagesListModel]', but this dictionary requires a model item of type 'HyggeMail.BLL.Models.UnSplashImagesListModel'.
+http://jsonformat.com/
+
+
+
+Object reference not set to an instance of an object.
+http://jsonformat.com/
+
+
+
+The parameters dictionary contains a null entry for parameter 'postCardID' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult ShowPostCard(Int32, Int32)' in 'HyggeMail.Areas.User.Controllers.PostCardController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+http://jsonformat.com/
+
+
+
+The model item passed into the dictionary is of type 'HyggeMail.BLL.Models.ActionOutput`1[HyggeMail.BLL.Models.AddUpdateImageEditorModel]', but this dictionary requires a model item of type 'HyggeMail.BLL.Models.AddUpdateImageEditorModel'.
+http://jsonformat.com/
+
+
+
+The model item passed into the dictionary is of type 'HyggeMail.BLL.Models.ActionOutput`1[HyggeMail.BLL.Models.AddUpdateImageEditorModel]', but this dictionary requires a model item of type 'HyggeMail.BLL.Models.AddUpdateImageEditorModel'.
+http://jsonformat.com/
+
+
+
+The model item passed into the dictionary is of type 'HyggeMail.BLL.Models.ActionOutput`1[HyggeMail.BLL.Models.AddUpdateImageEditorModel]', but this dictionary requires a model item of type 'HyggeMail.BLL.Models.AddUpdateImageEditorModel'.
+http://jsonformat.com/
+
+
+
+The model item passed into the dictionary is of type 'HyggeMail.BLL.Models.ActionOutput`1[HyggeMail.BLL.Models.AddUpdateImageEditorModel]', but this dictionary requires a model item of type 'HyggeMail.BLL.Models.AddUpdateImageEditorModel'.
+http://jsonformat.com/
+
+
+
+The model item passed into the dictionary is of type 'HyggeMail.BLL.Models.ActionOutput`1[HyggeMail.BLL.Models.AddUpdateImageEditorModel]', but this dictionary requires a model item of type 'HyggeMail.BLL.Models.AddUpdateImageEditorModel'.
+http://jsonformat.com/
+
+
+
+The model item passed into the dictionary is of type 'HyggeMail.BLL.Models.ActionOutput`1[HyggeMail.BLL.Models.AddUpdateImageEditorModel]', but this dictionary requires a model item of type 'HyggeMail.BLL.Models.AddUpdateImageEditorModel'.
+http://jsonformat.com/
+
+
+
+The model item passed into the dictionary is of type 'HyggeMail.BLL.Models.ActionOutput`1[HyggeMail.BLL.Models.AddUpdateImageEditorModel]', but this dictionary requires a model item of type 'HyggeMail.BLL.Models.AddUpdateImageEditorModel'.
+http://jsonformat.com/
+
+
+
+The model item passed into the dictionary is of type 'HyggeMail.BLL.Models.ActionOutput`1[HyggeMail.BLL.Models.AddUpdateImageEditorModel]', but this dictionary requires a model item of type 'HyggeMail.BLL.Models.AddUpdateImageEditorModel'.
+http://jsonformat.com/
+
+
+
+The model item passed into the dictionary is of type 'HyggeMail.BLL.Models.ActionOutput`1[HyggeMail.BLL.Models.AddUpdateImageEditorModel]', but this dictionary requires a model item of type 'HyggeMail.BLL.Models.AddUpdateImageEditorModel'.
+http://jsonformat.com/
+
+
+
+The model item passed into the dictionary is of type 'HyggeMail.BLL.Models.ActionOutput`1[HyggeMail.BLL.Models.AddUpdateImageEditorModel]', but this dictionary requires a model item of type 'HyggeMail.BLL.Models.AddUpdateImageEditorModel'.
+http://jsonformat.com/
+
+
+
+The model item passed into the dictionary is of type 'HyggeMail.BLL.Models.ActionOutput`1[HyggeMail.BLL.Models.AddUpdateImageEditorModel]', but this dictionary requires a model item of type 'HyggeMail.BLL.Models.AddUpdateImageEditorModel'.
+http://jsonformat.com/
+
+
+
+The model item passed into the dictionary is of type 'HyggeMail.BLL.Models.ActionOutput`1[HyggeMail.BLL.Models.AddUpdateImageEditorModel]', but this dictionary requires a model item of type 'HyggeMail.BLL.Models.AddUpdateImageEditorModel'.
+http://jsonformat.com/
+
+
+
+The model item passed into the dictionary is of type 'HyggeMail.BLL.Models.ActionOutput`1[HyggeMail.BLL.Models.AddUpdateImageEditorModel]', but this dictionary requires a model item of type 'HyggeMail.BLL.Models.AddUpdateImageEditorModel'.
+http://jsonformat.com/
+
+
+
+The model item passed into the dictionary is of type 'HyggeMail.BLL.Models.ActionOutput`1[HyggeMail.BLL.Models.AddUpdateImageEditorModel]', but this dictionary requires a model item of type 'HyggeMail.BLL.Models.AddUpdateImageEditorModel'.
+http://jsonformat.com/
+
+
+
+The model item passed into the dictionary is of type 'HyggeMail.BLL.Models.ActionOutput`1[HyggeMail.BLL.Models.AddUpdateImageEditorModel]', but this dictionary requires a model item of type 'HyggeMail.BLL.Models.AddUpdateImageEditorModel'.
+http://jsonformat.com/
+
+
+
+The model item passed into the dictionary is of type 'HyggeMail.BLL.Models.ActionOutput`1[HyggeMail.BLL.Models.AddUpdateImageEditorModel]', but this dictionary requires a model item of type 'HyggeMail.BLL.Models.AddUpdateImageEditorModel'.
+http://jsonformat.com/
+
+
+
+The model item passed into the dictionary is of type 'HyggeMail.BLL.Models.ActionOutput`1[HyggeMail.BLL.Models.AddUpdateImageEditorModel]', but this dictionary requires a model item of type 'HyggeMail.BLL.Models.AddUpdateImageEditorModel'.
+http://jsonformat.com/
+
+
+
+The model item passed into the dictionary is of type 'HyggeMail.BLL.Models.ActionOutput`1[HyggeMail.BLL.Models.AddUpdateImageEditorModel]', but this dictionary requires a model item of type 'HyggeMail.BLL.Models.AddUpdateImageEditorModel'.
+http://jsonformat.com/
+
+
+
+The model item passed into the dictionary is of type 'HyggeMail.BLL.Models.ActionOutput`1[HyggeMail.BLL.Models.AddUpdateImageEditorModel]', but this dictionary requires a model item of type 'HyggeMail.BLL.Models.AddUpdateImageEditorModel'.
+http://jsonformat.com/
+
+
+
+The model item passed into the dictionary is of type 'HyggeMail.BLL.Models.ActionOutput`1[HyggeMail.BLL.Models.AddUpdateImageEditorModel]', but this dictionary requires a model item of type 'HyggeMail.BLL.Models.AddUpdateImageEditorModel'.
+http://jsonformat.com/
+
+
+
+The model item passed into the dictionary is of type 'HyggeMail.BLL.Models.ActionOutput`1[HyggeMail.BLL.Models.AddUpdateImageEditorModel]', but this dictionary requires a model item of type 'HyggeMail.BLL.Models.AddUpdateImageEditorModel'.
+http://jsonformat.com/
+
+
+
+The model item passed into the dictionary is of type 'HyggeMail.BLL.Models.ActionOutput`1[HyggeMail.BLL.Models.AddUpdateImageEditorModel]', but this dictionary requires a model item of type 'HyggeMail.BLL.Models.AddUpdateImageEditorModel'.
+http://jsonformat.com/
+
+
+
+The model item passed into the dictionary is of type 'HyggeMail.BLL.Models.ActionOutput`1[HyggeMail.BLL.Models.AddUpdateImageEditorModel]', but this dictionary requires a model item of type 'HyggeMail.BLL.Models.AddUpdateImageEditorModel'.
+http://jsonformat.com/
+
+
+
+The model item passed into the dictionary is of type 'HyggeMail.BLL.Models.ActionOutput`1[HyggeMail.BLL.Models.AddUpdateImageEditorModel]', but this dictionary requires a model item of type 'HyggeMail.BLL.Models.AddUpdateImageEditorModel'.
+http://jsonformat.com/
+
+
+
+The model item passed into the dictionary is of type 'HyggeMail.BLL.Models.ActionOutput`1[HyggeMail.BLL.Models.AddUpdateImageEditorModel]', but this dictionary requires a model item of type 'HyggeMail.BLL.Models.AddUpdateImageEditorModel'.
+http://jsonformat.com/
+
+
+
+The model item passed into the dictionary is of type 'HyggeMail.BLL.Models.ActionOutput`1[HyggeMail.BLL.Models.AddUpdateImageEditorModel]', but this dictionary requires a model item of type 'HyggeMail.BLL.Models.AddUpdateImageEditorModel'.
+http://jsonformat.com/
+
+
+
+The model item passed into the dictionary is of type 'HyggeMail.BLL.Models.ActionOutput`1[HyggeMail.BLL.Models.AddUpdateImageEditorModel]', but this dictionary requires a model item of type 'HyggeMail.BLL.Models.AddUpdateImageEditorModel'.
+http://jsonformat.com/
+
+
+
+The underlying provider failed on Open.
+http://jsonformat.com/
+
+
+
+Value cannot be null.
+Parameter name: view
+http://jsonformat.com/
+
+
+
+Value cannot be null.
+Parameter name: view
+http://jsonformat.com/
+
+
+
+d:\Git_Projects\huggemail-net\HyggeMail\Views\Home\Partials\_demoPostCardsListing.cshtml(10): error CS1061: 'System.Collections.Generic.List<HyggeMail.BLL.Models.AddUpdateImageEditorModel>' does not contain a definition for 'CardFrontPath' and no extension method 'CardFrontPath' accepting a first argument of type 'System.Collections.Generic.List<HyggeMail.BLL.Models.AddUpdateImageEditorModel>' could be found (are you missing a using directive or an assembly reference?)
+http://jsonformat.com/
+
+
+
+An error occurred while updating the entries. See the inner exception for details.
+http://jsonformat.com/
+
+
+
+No property or field 'Asc' exists in type 'UserAddressBook'
+http://jsonformat.com/
+
+
+
+Object reference not set to an instance of an object.
+http://jsonformat.com/
+
+
+
+Object reference not set to an instance of an object.
+http://jsonformat.com/
+
+
+
+d:\Git_Projects\huggemail-net\HyggeMail\Areas\Admin\Views\AddressBook\Partials\_addressBookListing.cshtml(22): error CS1061: 'HyggeMail.BLL.Models.RecipientListingModel' does not contain a definition for 'UserId' and no extension method 'UserId' accepting a first argument of type 'HyggeMail.BLL.Models.RecipientListingModel' could be found (are you missing a using directive or an assembly reference?)
+http://jsonformat.com/
+
+
+
+The parameters dictionary contains a null entry for parameter 'addressId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult EditAddress(Int32)' in 'HyggeMail.Areas.Admin.Controllers.AddressBookController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+http://jsonformat.com/
+
+
+
+The parameters dictionary contains a null entry for parameter 'addressId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult EditAddress(Int32)' in 'HyggeMail.Areas.Admin.Controllers.AddressBookController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+http://jsonformat.com/
+
+
+
+The parameters dictionary contains a null entry for parameter 'addressId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult EditAddress(Int32)' in 'HyggeMail.Areas.Admin.Controllers.AddressBookController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+http://jsonformat.com/
+
+
+
+The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult DeleteBookAddress(Int32)' in 'HyggeMail.Areas.Admin.Controllers.AddressBookController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+http://jsonformat.com/
+
+
+
+The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult DeleteBookAddress(Int32)' in 'HyggeMail.Areas.Admin.Controllers.AddressBookController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+http://jsonformat.com/
+
+
+
+Nullable object must have a value.
+http://jsonformat.com/
+
+
+
+Templates can be used only with field access, property access, single-dimension array index, or single-parameter custom indexer expressions.
+http://jsonformat.com/
+
+
+
+Templates can be used only with field access, property access, single-dimension array index, or single-parameter custom indexer expressions.
+http://jsonformat.com/
+
+
+
+d:\Git_Projects\huggemail-net\HyggeMail\Areas\Admin\Views\AddressBook\EditAddress.cshtml(5): error CS1061: 'bool' does not contain a definition for 'HasValue' and no extension method 'HasValue' accepting a first argument of type 'bool' could be found (are you missing a using directive or an assembly reference?)
+http://jsonformat.com/
+
+
+
+d:\Git_Projects\huggemail-net\HyggeMail\Areas\Admin\Views\AddressBook\EditAddress.cshtml(5): error CS1061: 'bool' does not contain a definition for 'HasValue' and no extension method 'HasValue' accepting a first argument of type 'bool' could be found (are you missing a using directive or an assembly reference?)
+http://jsonformat.com/
+
+
+
+Value cannot be null.
+Parameter name: view
+http://jsonformat.com/
+
+
+
+Unexpected "if" keyword after "@" character.  Once inside code, you do not need to prefix constructs like "if" with "@".
+
+http://jsonformat.com/
+
+
+
+d:\Git_Projects\huggemail-net\HyggeMail\Areas\User\Views\Recipient\Partials\_adminAddressBookListing.cshtml(3): error CS0029: Cannot implicitly convert type 'int' to 'bool'
+http://jsonformat.com/
+
+
+
+Object reference not set to an instance of an object.
+http://jsonformat.com/
+
+
+
+An error occurred while executing the command definition. See the inner exception for details.
+http://jsonformat.com/
+
+
+
+Timeout expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+http://jsonformat.com/
+
+
+
+Timeout expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+http://jsonformat.com/
+
+
+
+Timeout expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+http://jsonformat.com/
+
+
+
+
+
+Mapping types:
+UserPostCardRecipien_24F0FAF3515ABA9E9BB5A6729909A2F1E86B06DE4896F2F61A1162049DDE48DD -> Int32
+System.Data.Entity.DynamicProxies.UserPostCardRecipien_24F0FAF3515ABA9E9BB5A6729909A2F1E86B06DE4896F2F61A1162049DDE48DD -> System.Int32
+
+Destination path:
+List`1[11].UserID11[11].UserID11[11]
+
+Source value:
+System.Data.Entity.DynamicProxies.UserPostCardRecipien_24F0FAF3515ABA9E9BB5A6729909A2F1E86B06DE4896F2F61A1162049DDE48DD
+http://jsonformat.com/
+
+
+
+Timeout expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+http://jsonformat.com/
+
+
+
+Timeout expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+http://jsonformat.com/
+
+
+
+Timeout expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+http://jsonformat.com/
+
+
+
+Timeout expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+http://jsonformat.com/
+
+
+
+Timeout expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+http://jsonformat.com/
+
+
+
+Object reference not set to an instance of an object.
+http://jsonformat.com/
+
+
+
+Object reference not set to an instance of an object.
+http://jsonformat.com/
+
+
+
+The underlying provider failed on Open.
+http://jsonformat.com/
+
+
+
+The parameters dictionary contains a null entry for parameter 'cardid' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult RejectionReason(Int32)' in 'HyggeMail.Areas.User.Controllers.RecipientController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+http://jsonformat.com/
+
+
+
+The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult RejectionReason(Int32)' in 'HyggeMail.Areas.User.Controllers.RecipientController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+http://jsonformat.com/
+
+
+
+The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult RejectionReason(Int32)' in 'HyggeMail.Controllers.HomeController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+http://jsonformat.com/
+
+
+
+The underlying provider failed on Open.
+http://jsonformat.com/
+
+
+
+Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+http://jsonformat.com/
+
+
+
+Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+http://jsonformat.com/
+
+
+
+Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+http://jsonformat.com/
+
+
+
+Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+http://jsonformat.com/
+
+
+
+Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+http://jsonformat.com/
+
+
+
+Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+http://jsonformat.com/
+
+
+
+Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+http://jsonformat.com/
+
+
+
+Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+http://jsonformat.com/
+
+
+
+Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+http://jsonformat.com/
+
+
+
+Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+http://jsonformat.com/
+
+
+
+The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult RejectionReason(Int32)' in 'HyggeMail.Controllers.HomeController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+http://jsonformat.com/
+
+
+
+Object reference not set to an instance of an object.
+http://jsonformat.com/
+
+
+
+
+
+Mapping types:
+UserPostCardRecipien_24F0FAF3515ABA9E9BB5A6729909A2F1E86B06DE4896F2F61A1162049DDE48DD -> Int32
+System.Data.Entity.DynamicProxies.UserPostCardRecipien_24F0FAF3515ABA9E9BB5A6729909A2F1E86B06DE4896F2F61A1162049DDE48DD -> System.Int32
+
+Destination path:
+List`1[7].UserID7[7].UserID7[7]
+
+Source value:
+System.Data.Entity.DynamicProxies.UserPostCardRecipien_24F0FAF3515ABA9E9BB5A6729909A2F1E86B06DE4896F2F61A1162049DDE48DD
+http://jsonformat.com/
+
+
+
+E:\Project\Hygge\huggemail-net\HyggeMail\Uploads\Users\Helen-262\PostCards\4f39e82c-b26f-411f-a56e-b3cc6e97638b-front.png
+http://jsonformat.com/
+
+
+
+An error occurred while executing the command definition. See the inner exception for details.
+http://jsonformat.com/
+
+
+
+The underlying provider failed on Open.
+http://jsonformat.com/
+
+
+
+Object reference not set to an instance of an object.
+http://jsonformat.com/
+
+
+
+e:\Project\Hygge\huggemail-net\HyggeMail\Areas\Admin\Views\PostCard\Partials\_postcardRecipientListing.cshtml(7): error CS1003: Syntax error, ':' expected
+http://jsonformat.com/
+
+
+
+Value cannot be null.
+Parameter name: g
+http://jsonformat.com/
+
+
+
+Cannot perform runtime binding on a null reference
+http://jsonformat.com/
+
+
+
+Cannot perform runtime binding on a null reference
+http://jsonformat.com/
+
+
+
+Value cannot be null.
+Parameter name: g
+http://jsonformat.com/
+
+
+
+'System.Collections.Generic.List<HyggeMail.BLL.Models.ImagesByCategoryViewModel>' does not contain a definition for 'Images'
+http://jsonformat.com/
+
+
+
+Guid should contain 32 digits with 4 dashes (xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx).
+http://jsonformat.com/
+
+
+
+Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+http://jsonformat.com/
+
+
+
+An error occurred while executing the command definition. See the inner exception for details.
+http://jsonformat.com/
+
+
+
+Index was outside the bounds of the array.
+http://jsonformat.com/
+
+
+
+Index was outside the bounds of the array.
+http://jsonformat.com/
+
+
+
+Object reference not set to an instance of an object.
+http://jsonformat.com/
+
+
+
+Object reference not set to an instance of an object.
+http://jsonformat.com/
+
+
+
+Object reference not set to an instance of an object.
+http://jsonformat.com/
+
+
+
+Object reference not set to an instance of an object.
+http://jsonformat.com/
+
+
+
+Object reference not set to an instance of an object.
+http://jsonformat.com/
+
+
+
+Object reference not set to an instance of an object.
+http://jsonformat.com/
+
+
+
+Object reference not set to an instance of an object.
+http://jsonformat.com/
+
+
+
+Object reference not set to an instance of an object.
+http://jsonformat.com/
+
+
+
+Object reference not set to an instance of an object.
+http://jsonformat.com/
+
+
+
+The parameters dictionary contains a null entry for parameter 'PageType' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult GetCMSForApp(Int32)' in 'HyggeMail.Areas.User.Controllers.HomeController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+http://jsonformat.com/
+
+
+
+Object reference not set to an instance of an object.
+http://jsonformat.com/
+
+
+
+Object reference not set to an instance of an object.
+http://jsonformat.com/
+
+
+
+Object reference not set to an instance of an object.
+http://jsonformat.com/
+
+
+
+Object reference not set to an instance of an object.
+http://jsonformat.com/
+
+
+
+The given header was not found.
+http://jsonformat.com/
+System.InvalidOperationException: The given header was not found.
+   at System.Net.Http.Headers.HttpHeaders.GetValues(String name)
+   at HyggeMail.Attributes.CheckAuthorizationAttribute.OnAuthorization(HttpActionContext actionContext) in e:\Project\Hygge\huggemail-net\HyggeMail\Attributes\Attribute.cs:line 168
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.OnAuthorizationAsync(HttpActionContext actionContext, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+<<<<<<< HEAD
+Could not load file or assembly 'ICSharpCode.SharpZipLib, Version=0.85.5.452, Culture=neutral, PublicKeyToken=null' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+http://jsonformat.com/
+
+
+
+The underlying provider failed on Open.
+http://jsonformat.com/
+
+
+
+Could not load file or assembly 'ICSharpCode.SharpZipLib, Version=0.85.5.452, Culture=neutral, PublicKeyToken=null' or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+http://jsonformat.com/
+
+
+
+The underlying provider failed on Open.
+http://jsonformat.com/
+
+
+
+The underlying provider failed on Open.
+http://jsonformat.com/
+
+
+
+The process cannot access the file 'sheet1.xml' because it is being used by another process.
+http://jsonformat.com/
+
+
+
+d:\Sunil\Projects\Hyggemail docs\Hugge\huggemail-net\HyggeMail\Areas\User\Views\Recipient\Partials\_FamousList.cshtml(5): error CS1061: 'System.Collections.Generic.List<HyggeMail.BLL.Models.RecipientGroupModel>' does not contain a definition for 'List' and no extension method 'List' accepting a first argument of type 'System.Collections.Generic.List<HyggeMail.BLL.Models.RecipientGroupModel>' could be found (are you missing a using directive or an assembly reference?)
+http://jsonformat.com/
+
+=======
+The given header was not found.
+http://jsonformat.com/
+System.InvalidOperationException: The given header was not found.
+   at System.Net.Http.Headers.HttpHeaders.GetValues(String name)
+   at HyggeMail.Attributes.CheckAuthorizationAttribute.OnAuthorization(HttpActionContext actionContext) in e:\Project\Hygge\huggemail-net\HyggeMail\Attributes\Attribute.cs:line 168
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.OnAuthorizationAsync(HttpActionContext actionContext, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+http://jsonformat.com/
+System.Web.Http.HttpResponseException: Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger, CancellationToken cancellationToken)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.HttpActionBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+http://jsonformat.com/
+System.Web.Http.HttpResponseException: Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger, CancellationToken cancellationToken)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.HttpActionBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+http://jsonformat.com/
+System.Web.Http.HttpResponseException: Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger, CancellationToken cancellationToken)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.HttpActionBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+http://jsonformat.com/
+System.Web.Http.HttpResponseException: Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger, CancellationToken cancellationToken)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.HttpActionBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+http://jsonformat.com/
+System.Web.Http.HttpResponseException: Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger, CancellationToken cancellationToken)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.HttpActionBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+http://jsonformat.com/
+System.Web.Http.HttpResponseException: Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger, CancellationToken cancellationToken)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.HttpActionBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+http://jsonformat.com/
+System.Web.Http.HttpResponseException: Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger, CancellationToken cancellationToken)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.HttpActionBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+http://jsonformat.com/
+System.Web.Http.HttpResponseException: Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger, CancellationToken cancellationToken)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.HttpActionBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+>>>>>>> 19b76dc85bb4426452393a4551a2001b0c63345c
+
+
+Input string was not in a correct format.
+http://jsonformat.com/
+System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at HyggeMail.BLL.Models.apiUserDetail..ctor(User userObj, List`1 allcountries, List`1 allstates, List`1 allcities, String sessionId) in e:\Project\Hygge\huggemail-net\HyggeMail.BLL\Common\Commons.cs:line 186
+   at HyggeMail.BLL.Managers.UserManager.PopulateUD(User user, String sessionId) in e:\Project\Hygge\huggemail-net\HyggeMail.BLL\Managers\User DashBoard\UserManager.cs:line 106
+   at HyggeMail.BLL.Managers.UserManager.BindUserDetailsWithSession(Int32 userID, Boolean IsUpdateProfile) in e:\Project\Hygge\huggemail-net\HyggeMail.BLL\Managers\User DashBoard\UserManager.cs:line 1036
+   at HyggeMail.BLL.Managers.UserManager.AuthenticateUserOnMobile(LoginModal model) in e:\Project\Hygge\huggemail-net\HyggeMail.BLL\Managers\User DashBoard\UserManager.cs:line 1006
+   at HyggeMail.Areas.API.AccountController.login(LoginModal model) in e:\Project\Hygge\huggemail-net\HyggeMail\Areas\API\AccountController.cs:line 89
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.ActionFilterAttribute.<ExecuteActionFilterAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+An error occurred while executing the command definition. See the inner exception for details.
+http://jsonformat.com/
+System.Data.Entity.Core.EntityCommandExecutionException: An error occurred while executing the command definition. See the inner exception for details. ---> System.InvalidOperationException: ExecuteReader requires an open and available Connection. The connection's current state is closed.
+   at System.Data.SqlClient.SqlCommand.ValidateCommand(String method, Boolean async)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<Reader>b__c(DbCommand t, DbCommandInterceptionContext`1 c)
+   at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   at System.Data.Entity.Internal.InterceptableDbCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   at System.Data.Entity.Core.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__1[TResult](IEnumerable`1 sequence)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   at HyggeMail.BLL.Managers.UserManager.BindUserDetailsWithSession(Int32 userID, Boolean IsUpdateProfile) in e:\Project\Hygge\huggemail-net\HyggeMail.BLL\Managers\User DashBoard\UserManager.cs:line 1021
+   at HyggeMail.BLL.Managers.UserManager.AuthenticateUserOnMobile(LoginModal model) in e:\Project\Hygge\huggemail-net\HyggeMail.BLL\Managers\User DashBoard\UserManager.cs:line 1006
+   at HyggeMail.Areas.API.AccountController.login(LoginModal model) in e:\Project\Hygge\huggemail-net\HyggeMail\Areas\API\AccountController.cs:line 89
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.ActionFilterAttribute.<ExecuteActionFilterAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+Input string was not in a correct format.
+http://jsonformat.com/
+System.FormatException: Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Convert.ToInt32(String value)
+   at HyggeMail.BLL.Models.apiUserDetail..ctor(User userObj, List`1 allcountries, List`1 allstates, List`1 allcities, String sessionId) in e:\Project\Hygge\huggemail-net\HyggeMail.BLL\Common\Commons.cs:line 186
+   at HyggeMail.BLL.Managers.UserManager.PopulateUD(User user, String sessionId) in e:\Project\Hygge\huggemail-net\HyggeMail.BLL\Managers\User DashBoard\UserManager.cs:line 106
+   at HyggeMail.BLL.Managers.UserManager.BindUserDetailsWithSession(Int32 userID, Boolean IsUpdateProfile) in e:\Project\Hygge\huggemail-net\HyggeMail.BLL\Managers\User DashBoard\UserManager.cs:line 1036
+   at HyggeMail.BLL.Managers.UserManager.AuthenticateUserOnMobile(LoginModal model) in e:\Project\Hygge\huggemail-net\HyggeMail.BLL\Managers\User DashBoard\UserManager.cs:line 1006
+   at HyggeMail.Areas.API.AccountController.login(LoginModal model) in e:\Project\Hygge\huggemail-net\HyggeMail\Areas\API\AccountController.cs:line 89
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.ActionFilterAttribute.<ExecuteActionFilterAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+A null value was returned where an instance of HttpResponseMessage was expected.
+http://jsonformat.com/
+System.InvalidOperationException: A null value was returned where an instance of HttpResponseMessage was expected.
+   at System.Web.Http.Controllers.ResponseMessageResultConverter.Convert(HttpControllerContext controllerContext, Object actionResult)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.ActionFilterAttribute.<ExecuteActionFilterAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+A null value was returned where an instance of HttpResponseMessage was expected.
+http://jsonformat.com/
+System.InvalidOperationException: A null value was returned where an instance of HttpResponseMessage was expected.
+   at System.Web.Http.Controllers.ResponseMessageResultConverter.Convert(HttpControllerContext controllerContext, Object actionResult)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.ActionFilterAttribute.<ExecuteActionFilterAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+A null value was returned where an instance of HttpResponseMessage was expected.
+http://jsonformat.com/
+System.InvalidOperationException: A null value was returned where an instance of HttpResponseMessage was expected.
+   at System.Web.Http.Controllers.ResponseMessageResultConverter.Convert(HttpControllerContext controllerContext, Object actionResult)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Web.Http.Filters.ActionFilterAttribute.<CallOnActionExecutedAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.ActionFilterAttribute.<ExecuteActionFilterAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+Object reference not set to an instance of an object.
+http://jsonformat.com/
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at HyggeMail.Attributes.CheckAuthorizationAttribute.OnAuthorization(HttpActionContext actionContext) in e:\Project\Hygge\huggemail-net\HyggeMail\Attributes\Attribute.cs:line 236
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.OnAuthorizationAsync(HttpActionContext actionContext, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+An error occurred while executing the command definition. See the inner exception for details.
+http://jsonformat.com/
+
+
+
+Value cannot be null.
+Parameter name: source
+http://jsonformat.com/
+
+
+
+Value cannot be null.
+Parameter name: source
+http://jsonformat.com/
+
+
+
+The model item passed into the dictionary is of type 'HyggeMail.BLL.Models.ActionOutput`1[HyggeMail.BLL.Models.RecipientGroupModel]', but this dictionary requires a model item of type 'System.Collections.Generic.List`1[HyggeMail.BLL.Models.RecipientGroupModel]'.
+http://jsonformat.com/
+
+
+
+Value cannot be null.
+http://jsonformat.com/
+
+
+
+The process cannot access the file 'sheet1.xml' because it is being used by another process.
+http://jsonformat.com/
+
+
+
+The process cannot access the file 'sheet1.xml' because it is being used by another process.
+http://jsonformat.com/
+
+
+
+The process cannot access the file 'sheet1.xml' because it is being used by another process.
+http://jsonformat.com/
+
+
+
+The process cannot access the file 'sheet1.xml' because it is being used by another process.
+http://jsonformat.com/
+
+
+
+Object reference not set to an instance of an object.
+http://jsonformat.com/
+
+
+
+An error occurred while executing the command definition. See the inner exception for details.
+http://jsonformat.com/
+
+
+
+An error occurred while reading from the store provider's data reader. See the inner exception for details.
+http://jsonformat.com/
+
+
+
+Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+http://jsonformat.com/
+
+
+
+Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+http://jsonformat.com/
+
+
+
+An error occurred while reading from the store provider's data reader. See the inner exception for details.
+http://jsonformat.com/
+
+
+
+Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+http://jsonformat.com/
+
+
+
+An exception has been raised that is likely due to a transient failure. If you are connecting to a SQL Azure database consider using SqlAzureExecutionStrategy.
+http://jsonformat.com/
+
+
+
+An exception has been raised that is likely due to a transient failure. If you are connecting to a SQL Azure database consider using SqlAzureExecutionStrategy.
+http://jsonformat.com/
+
+
+
+Object reference not set to an instance of an object.
+http://jsonformat.com/
+
+
+
+The underlying provider failed on Open.
+http://jsonformat.com/
+
+
+
+Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+http://jsonformat.com/
+
+
+
+An error occurred while executing the command definition. See the inner exception for details.
+http://jsonformat.com/
+
+
+
+Object reference not set to an instance of an object.
+http://jsonformat.com/
+
+
+
+The underlying provider failed on Open.
+http://jsonformat.com/
+
+
+
+The underlying provider failed on Open.
+http://jsonformat.com/
+
+
+
+Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+http://jsonformat.com/
+
+
+
+Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+http://jsonformat.com/
+
+
+
+Index was out of range. Must be non-negative and less than the size of the collection.
+Parameter name: index
+http://jsonformat.com/
+
+
+
+LINQ to Entities does not recognize the method 'System.String Replace(Char, Char)' method, and this method cannot be translated into a store expression.
+http://jsonformat.com/
+
+
+
+
+
+Mapping types:
+UserPostCardRecipien_24F0FAF3515ABA9E9BB5A6729909A2F1E86B06DE4896F2F61A1162049DDE48DD -> Int32
+System.Data.Entity.DynamicProxies.UserPostCardRecipien_24F0FAF3515ABA9E9BB5A6729909A2F1E86B06DE4896F2F61A1162049DDE48DD -> System.Int32
+
+Destination path:
+List`1[4].UserID4[4].UserID4[4]
+
+Source value:
+System.Data.Entity.DynamicProxies.UserPostCardRecipien_24F0FAF3515ABA9E9BB5A6729909A2F1E86B06DE4896F2F61A1162049DDE48DD
+http://jsonformat.com/
+
+
+
+Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+http://jsonformat.com/
+System.Web.Http.HttpResponseException: Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger, CancellationToken cancellationToken)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.HttpActionBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+http://jsonformat.com/
+System.Web.Http.HttpResponseException: Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger, CancellationToken cancellationToken)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.HttpActionBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+http://jsonformat.com/
+System.Web.Http.HttpResponseException: Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger, CancellationToken cancellationToken)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.HttpActionBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+http://jsonformat.com/
+System.Web.Http.HttpResponseException: Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger, CancellationToken cancellationToken)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.HttpActionBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+http://jsonformat.com/
+System.Web.Http.HttpResponseException: Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger, CancellationToken cancellationToken)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.HttpActionBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+http://jsonformat.com/
+System.Web.Http.HttpResponseException: Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger, CancellationToken cancellationToken)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.HttpActionBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+http://jsonformat.com/
+System.Web.Http.HttpResponseException: Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger, CancellationToken cancellationToken)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.HttpActionBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+http://jsonformat.com/
+System.Web.Http.HttpResponseException: Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger, CancellationToken cancellationToken)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.HttpActionBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+http://jsonformat.com/
+System.Web.Http.HttpResponseException: Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger, CancellationToken cancellationToken)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.HttpActionBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+http://jsonformat.com/
+System.Web.Http.HttpResponseException: Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger, CancellationToken cancellationToken)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.HttpActionBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+http://jsonformat.com/
+System.Web.Http.HttpResponseException: Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger, CancellationToken cancellationToken)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.HttpActionBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+http://jsonformat.com/
+System.Web.Http.HttpResponseException: Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger, CancellationToken cancellationToken)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.HttpActionBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+http://jsonformat.com/
+System.Web.Http.HttpResponseException: Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger, CancellationToken cancellationToken)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.HttpActionBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+http://jsonformat.com/
+System.Web.Http.HttpResponseException: Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger, CancellationToken cancellationToken)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.HttpActionBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+http://jsonformat.com/
+System.Web.Http.HttpResponseException: Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger, CancellationToken cancellationToken)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.HttpActionBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+http://jsonformat.com/
+System.Web.Http.HttpResponseException: Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger, CancellationToken cancellationToken)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.HttpActionBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+http://jsonformat.com/
+System.Web.Http.HttpResponseException: Processing of the HTTP request resulted in an exception. Please see the HTTP response returned by the 'Response' property of this exception for details.
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger, CancellationToken cancellationToken)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.ReadContentAsync(HttpRequestMessage request, Type type, IEnumerable`1 formatters, IFormatterLogger formatterLogger)
+   at System.Web.Http.ModelBinding.FormatterParameterBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.HttpActionBinding.<ExecuteBindingAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.GetResult()
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Filters.AuthorizationFilterAttribute.<ExecuteAuthorizationFilterAsyncCore>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+The parameters dictionary contains a null entry for parameter 'cardid' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult GetUserDashboardForApp(System.String, Int32)' in 'HyggeMail.Areas.User.Controllers.HomeController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+http://jsonformat.com/
+
+
+
+Unexpected character encountered while parsing value: R. Path '', line 0, position 0.
+http://jsonformat.com/
+
+
+
+The underlying provider failed on Open.
+http://jsonformat.com/
+
+
+
+The parameters dictionary contains a null entry for parameter 'cid' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetPostCardUserRecipients(Int32, System.String)' in 'HyggeMail.Areas.User.Controllers.RecipientController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+http://jsonformat.com/
+
+
+
+The parameters dictionary contains a null entry for parameter 'cid' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetPostCardUserRecipients(Int32, System.String)' in 'HyggeMail.Areas.User.Controllers.RecipientController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+http://jsonformat.com/
+
+
+
+The parameters dictionary contains a null entry for parameter 'cid' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.JsonResult GetPostCardUserRecipients(Int32, System.String)' in 'HyggeMail.Areas.User.Controllers.RecipientController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+http://jsonformat.com/
+
+
+
+Unexpected character encountered while parsing value: R. Path '', line 0, position 0.
+http://jsonformat.com/
+
+
+
+Unexpected character encountered while parsing value: R. Path '', line 0, position 0.
+http://jsonformat.com/
+
+
+
+e:\Project\huggemail-net\HyggeMail\Views\Home\Index1.cshtml(4): error CS0246: The type or namespace name 'testimonialmodel' could not be found (are you missing a using directive or an assembly reference?)
+http://jsonformat.com/
+
+
+
+e:\Project\huggemail-net\HyggeMail\Views\Home\Index1.cshtml(4): error CS0246: The type or namespace name 'testimonialmodel' could not be found (are you missing a using directive or an assembly reference?)
+http://jsonformat.com/
+
+
+
+The layout page "~/Views/Shared/_Layout.cshtml" could not be found at the following path: "~/Views/Shared/_Layout.cshtml".
+http://jsonformat.com/
+
+
+
+The following sections have been defined but have not been rendered for the layout page "~/Views/Shared/_Layout1.cshtml": "Styles; Scripts".
+http://jsonformat.com/
+
+
+
+The following sections have been defined but have not been rendered for the layout page "~/Views/Shared/_Layout1.cshtml": "Styles".
+http://jsonformat.com/
+
+
+
+The following sections have been defined but have not been rendered for the layout page "~/Views/Shared/_Layout.cshtml": "Styles".
+http://jsonformat.com/
+
+
+
+The following sections have been defined but have not been rendered for the layout page "~/Views/Shared/_Layout.cshtml": "Styles".
+http://jsonformat.com/
+
+
+
+The following sections have been defined but have not been rendered for the layout page "~/Views/Shared/_Layout.cshtml": "Styles".
+http://jsonformat.com/
+
+
+
+The following sections have been defined but have not been rendered for the layout page "~/Views/Shared/_Layout.cshtml": "Styles".
+http://jsonformat.com/
+
+
+
+The following sections have been defined but have not been rendered for the layout page "~/Views/Shared/_Layout.cshtml": "Styles".
+http://jsonformat.com/
+
+
+
+The following sections have been defined but have not been rendered for the layout page "~/Views/Shared/_Layout.cshtml": "Styles".
+http://jsonformat.com/
+
+
+
+The following sections have been defined but have not been rendered for the layout page "~/Views/Shared/_Layout.cshtml": "Styles".
+http://jsonformat.com/
+
+
+
+The layout page "~/Views/Shared/_LayoutOld.cshtml" could not be found at the following path: "~/Views/Shared/_LayoutOld.cshtml".
+http://jsonformat.com/
+
+
+
+Object reference not set to an instance of an object.
+http://jsonformat.com/
+
+
+
+The underlying provider failed on Open.
+http://jsonformat.com/
+
+
+
+Object reference not set to an instance of an object.
+http://jsonformat.com/
+
+
+
+Object reference not set to an instance of an object.
+http://jsonformat.com/
+
+
+
+The underlying provider failed on Open.
+http://jsonformat.com/
+
+
+
+
+
+Mapping types:
+UserPostCardRecipien_24F0FAF3515ABA9E9BB5A6729909A2F1E86B06DE4896F2F61A1162049DDE48DD -> Int32
+System.Data.Entity.DynamicProxies.UserPostCardRecipien_24F0FAF3515ABA9E9BB5A6729909A2F1E86B06DE4896F2F61A1162049DDE48DD -> System.Int32
+
+Destination path:
+List`1[4].UserID4[4].UserID4[4]
+
+Source value:
+System.Data.Entity.DynamicProxies.UserPostCardRecipien_24F0FAF3515ABA9E9BB5A6729909A2F1E86B06DE4896F2F61A1162049DDE48DD
+http://jsonformat.com/
+
+
+
+
+
+Mapping types:
+UserPostCardRecipien_24F0FAF3515ABA9E9BB5A6729909A2F1E86B06DE4896F2F61A1162049DDE48DD -> String
+System.Data.Entity.DynamicProxies.UserPostCardRecipien_24F0FAF3515ABA9E9BB5A6729909A2F1E86B06DE4896F2F61A1162049DDE48DD -> System.String
+
+Destination path:
+List`1[0].Username0[0].Username0[0]
+
+Source value:
+System.Data.Entity.DynamicProxies.UserPostCardRecipien_24F0FAF3515ABA9E9BB5A6729909A2F1E86B06DE4896F2F61A1162049DDE48DD
+http://jsonformat.com/
+
+
+
+The parameters dictionary contains a null entry for parameter 'cardid' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult GetUserDashboardForApp(System.String, Int32)' in 'HyggeMail.Areas.User.Controllers.HomeController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+http://jsonformat.com/
+
+
+
+The parameters dictionary contains a null entry for parameter 'cardid' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult GetUserDashboardForApp(System.String, Int32)' in 'HyggeMail.Areas.User.Controllers.HomeController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+http://jsonformat.com/
+
+
+
+An error occurred while executing the command definition. See the inner exception for details.
+http://jsonformat.com/
+
+
+
+An error occurred while executing the command definition. See the inner exception for details.
+http://jsonformat.com/
+
+
+
+An error occurred while executing the command definition. See the inner exception for details.
+http://jsonformat.com/
+
+
+
+Object reference not set to an instance of an object.
+http://jsonformat.com/
+
+
+
+Invalid length for a Base-64 char array or string.
+http://jsonformat.com/
+
+
+
+Invalid length for a Base-64 char array or string.
+http://jsonformat.com/
+
+
+

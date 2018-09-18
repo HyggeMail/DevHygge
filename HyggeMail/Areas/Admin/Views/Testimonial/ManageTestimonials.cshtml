@@ -1,0 +1,87 @@
+﻿@model PagingResult<TestimonialModel>
+
+@{
+    ViewBag.Title = "ManageTestimonials";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayOut.cshtml";
+}
+
+
+<div class="container-fluid" id="pcont">
+    <div class="page-head">
+        <h2>Manage Testimonials</h2>
+
+    </div>
+    <div class="cl-mcont">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block-flat">
+                    <div class="header">
+                        <h3>Manage Testimonials</h3>
+                    </div>
+                    <div class="content">
+                        <div class="table-responsive">
+                            @Html.Partial("_SearchFilter", new PagingModel { SortBy = "Title", SortOrder = "Asc" })
+                            <div class="AddDiv">
+                                <a href="@Url.Action("AddTestimonials", "Testimonial", new { area = "Admin" })">Add Testimonial </a>
+                            </div>
+
+                            <div id="divResult">
+                                <table class="table table-bordered" id="datatable-icons">
+                                    <thead>
+                                        <tr>
+                                            <th class="sorting" data-sortby="Image">Image</th>
+                                            <th class="sorting" data-sortby="Name">Name</th>
+                                            <th class="sorting" data-sortby="Description">Description</th>
+                                            <th class="sorting" data-sortby="AddedOn">Added On</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @Html.Partial("Partials/_testimonialListing", Model)
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                        @Html.Partial("_Paging")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+    <script src="~/Scripts/UserDefinedScripts/paging.js"></script>
+    <script type="text/javascript">
+        var totalCount = "@Model.TotalCount";
+    </script>
+ 
+<script src="~/Scripts/AdminScripts/testimonial.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            //initialize the javascript
+            App.init();
+            testimonials.Managetestimonials(totalCount);
+        });
+
+    </script>
+<script type="text/javascript">
+        var siteURL =
+        {
+            Testimonials: '@Url.Action("AddtestimonialDetails", "Testimonial", new { @area = "admin" })',
+            Managetestimonials: '@Url.Action("Managetestimonials", "Testimonial", new { @area = "admin" })',
+            Deletetestimonial: '@Url.Action("Deletetestimonial", "Testimonial", new { @area = "admin" })',
+            UpdatetestimonialDetails:'@Url.Action("UpdatetestimonialDetails", "Testimonial", new { @area = "admin" })'
+        }
+</script>
+
+}
+
+
+
+
+

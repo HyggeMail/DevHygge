@@ -1,0 +1,26 @@
+﻿@model BlogModel
+
+
+@if (Model != null)
+{
+    <section class="blog section text-center" style="background-image:url(/Uploads/Blog/Thumb/@Model.ImageName)">
+        <div class="container ">
+            <a href="@Url.Action("Description", "Blog", new { id = @Model.EncodeId })"><span class="featured-art">Featured Article</span></a>
+            <h1>
+                @Model.Title
+            </h1>
+            <p><img src="~/content/images/icon-hygee.png">HyggeMail  |  @Convert.ToDateTime(Model.AddedOn).ToString("MMM dd,   yyyy")</p>
+        </div>
+    </section>
+}
+else
+{
+    <tr class="odd gradeX">
+        <td colspan="10" style="text-align:center">Soon.......................</td>
+    </tr>
+}
+
+
+
+
+

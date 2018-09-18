@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "Manage Admin Image";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayOut.cshtml";
+}
+@model PagingResult<AdminImageListingModel>
+
+<div class="container-fluid" id="pcont">
+    <div class="cl-mcont">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block-flat">
+                    <div class="header">
+                        <h3>Admin Image</h3>
+                    </div>
+                    <div class="content">
+                        <div class="table-responsive">
+                            <a href="@Url.Action("AddAdminImage", "Image", new { area = "admin" })" class="">Add New Image</a>
+                            @Html.Partial("_SearchFilter", new PagingModel { SortBy = "AddedOn", SortOrder = "Desc" })
+                            <div id="divResult">
+                                <table class="table table-bordered" id="datatable-icons">
+                                    <thead>
+                                        <tr>
+                                            <th class="sorting" data-sortby="FileName">Name</th>
+                                            <th class="sorting" data-sortby="ImageCategory.CategoryName">Category</th>
+                                            <th>Image</th>
+                                            <th class="sorting" data-sortby="Description">Title</th>
+                                            <th class="sorting" data-sortby="AddedOn">Created On</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @Html.Partial("Partials/_AdminImageListing", Model)
+                                    </tbody>
+                                </table>
+
+
+                            </div>
+
+                        </div>
+                        @Html.Partial("_Paging")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+    <script src="~/Scripts/UserDefinedScripts/paging.js"></script>
+    <script type="text/javascript">
+        var totalCount = "@Model.TotalCount";
+    </script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            //initialize the javascript
+            App.init();
+            AdminImage.ManageAdminImage(totalCount);
+        });
+
+       var siteURL = {
+            AddUpdateAdminImage: '@Url.Action("AddUpdateAdminImage", "Image", new { area = "admin" })',
+            GetAdminImagePagingList: '@Url.Action("GetAdminImagePagingList", "Image", new { area = "admin" })',
+            DeleteAdminImage: '@Url.Action("DeleteAdminImage", "Image", new { area = "admin" })',
+            ManageAdminImage: '@Url.Action("ManageAdminImage", "Image", new { area = "admin" })',
+        };
+    </script>
+<script src="~/Scripts/AdminScripts/AdminImage.js"></script>
+}
+

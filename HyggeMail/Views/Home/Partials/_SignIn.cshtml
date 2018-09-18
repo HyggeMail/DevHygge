@@ -1,0 +1,81 @@
+﻿@model LoginModal
+
+<!-- Modal  SignIn-->
+<div class="modal modal-custom fade loginmodal" id="myModal-signin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="first-step">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Sign in to create card</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="form-login">
+                        <div class="alert alert-success alert-dismissible error-div1" style="display:none" role="alert">
+                            <span class="statusMessage"></span>
+                        </div>
+                        <div class="form-div">
+                            <div class="form-group">
+                                @Html.TextBoxFor(x => x.UserName, new { @class = "form-control", @placeholder = "E-mail", @type = "email" })
+                                @Html.ValidationMessageFor(x => x.UserName)
+                            </div>
+                            <div class="form-group">
+                                @Html.PasswordFor(x => x.Password, new { @class = "form-control", @placeholder = "Password" })
+                                @Html.ValidationMessageFor(x => x.Password)
+                            </div>
+                            <div class="terms-condition">
+                                <label for="RememberMe">
+                                    @Html.CheckBoxFor(x => x.RememberMe, new { @class = "form-control" })
+                                    <div class="checkbox"></div>
+                                    <span class="RememberMe-link"> Remember Me </span>
+                                </label>
+                                <div class="forgotpassword">
+                                    <span class="terms-link forgotpass" data-toggle="modal" data-target="#myModal-ForgotPassword"> Forgot Password</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="bottom-sec">
+                            <a href="javascript::" id="formLogin" class="submit btn btn-primary">Sign In</a>
+                            <div class="sigupbtn">
+                                <span class="donthaveaccount">Don’t have an account?</span>
+                                <span class="terms-link" data-toggle="modal" data-target="#myModal" id="show-SignUp">Sign Up</span>
+                                <span class="more">or</span>
+                            </div>
+                        </div>
+                        <a href="@Url.Action("FbSignIn","Account")" class="btn btn-primary btn-fb"><span><img src="~/content/images/fb-icon.png"></span>Sign Up with Facebook</a>
+                    </form>
+                </div>
+            </div>
+
+            <div class="second-step">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title forgotpass" id="myModalLabel"><span class="bk-btn"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></span> Forgot Password</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-div">
+
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Email ">
+                            </div>
+
+                        </div>
+                        <div class="bottom-sec">
+
+                            <input type="submit" class="submit btn btn-primary" value="Restore Password" />
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
