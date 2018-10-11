@@ -38,6 +38,7 @@ $(document).ready(function () {
 
 
 $(document).on('dblclick', '.img-p', function () {
+    debugger
     //fabric.Image.fromURL($(this).attr('src'), function (img) {
     //    img.scale(0.5).set({
     //        left: 150,

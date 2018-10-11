@@ -50,7 +50,7 @@
         <div class="container1">
             @if (Model.List.Count > 0 && Model.List != null)
             {
-                <div class="col-xs-12 sorttt">
+                <div class="col-xs-121 sorttt">
                     @Html.Partial("_SearchFilter", new PagingModel { SortBy = "AddedOn", SortOrder = "Desc" })
                 </div>
             }
@@ -99,8 +99,8 @@
         var totalCount = "@Model.TotalCount";
 
         $(document).ready(function () {
+            paging.pageSize = 12;
             PostCard.ManagePostCards(totalCount);
-
         });
         var siteURL = {
             DeletePostCard: '@Url.Action("DeletePostCard", "PostCard", new { area = "User" })',

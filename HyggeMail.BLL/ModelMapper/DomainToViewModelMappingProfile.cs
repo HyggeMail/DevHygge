@@ -58,7 +58,8 @@ namespace HyggeMail.BLL.Infrastructure
                 .ForMember(x => x.CardFrontPath, map => map.MapFrom(x => x.UserPostCard.CardFrontPath))
             .ForMember(x => x.Username, map => map.MapFrom(x => string.Format("{0} {1}", x.UserPostCard.User.FirstName, x.UserPostCard.User.LastName)))
             .ForMember(x => x.IncludeAddress, map => map.MapFrom(x => x.UserPostCard.IncludeAddress))
-            .ForMember(x => x.UserAddress, map => map.MapFrom(x => string.Format("{0}, {1}, {2}, {3},", x.UserPostCard.User.UserDetail.Address, x.UserPostCard.User.UserDetail.City, x.UserPostCard.User.UserDetail.State, x.UserPostCard.User.UserDetail.Country, x.UserPostCard.User.UserDetail.Zip)));
+            .ForMember(x => x.UserAddress, map => map.MapFrom(x => string.Format("{0}, {1}", x.UserPostCard.User.UserDetail.Address, x.UserPostCard.User.UserDetail.City)))
+            .ForMember(x => x.NewLineAdress, map => map.MapFrom(x => string.Format("{0}, {1}, {2}", x.UserPostCard.User.UserDetail.State, x.UserPostCard.User.UserDetail.Country, x.UserPostCard.User.UserDetail.Zip)));
 
             Mapper.CreateMap<ContactU, WebContactUsModel>();
             Mapper.CreateMap<UserPostCard, AddUpdateImageEditorModel>()

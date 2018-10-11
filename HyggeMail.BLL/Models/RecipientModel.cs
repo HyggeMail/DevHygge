@@ -13,6 +13,8 @@ namespace HyggeMail.BLL.Models
         public int ID { get; set; }
 
         public int? UserID { get; set; }
+
+        [RegularExpression("([A-Za-z])+( [A-Za-z]+)", ErrorMessage = "Enter valid full name.")]
         [Required, StringLength(25, ErrorMessage = "The Name cannot be more than 25 characters")]
         public string Name { get; set; }
         [Required]

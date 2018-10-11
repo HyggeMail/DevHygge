@@ -18,7 +18,7 @@
                 </td>
                 <td class="center">
                     @*<a data-postcardid="@item.ID"  class="btn btn-success btn-xs printPostCard" data-original-title="Print" data-toggle="tooltip" href="javascript:void(0);"><i class="fa fa-print" aria-hidden="true"></i></a>*@
-                    <button type="button" class="btn btn-success btn-sm approveReciptent" data-isrejected="@item.IsRejected" data-isapproved="@item.IsApproved" data-iscompleted="@item.IsCompleted" data-userid="@item.UserID" data-cardfrontpath="@item.CardFrontPath.Replace("~","../..")" data-cardbackpath="@CardBackPath.Replace("~", "../..")" data-rname="@item.Name" data-raddress="@item.Address" data-rcity="@item.City" data-rstate="@item.State" data-rcountry="@item.Country" data-rzip="@item.Zip" data-sender="@item.UserAddress" data-sendername="@item.Username" data-includeaddress="@item.IncludeAddress" data-name="approve" data-id="@item.ID">
+                    <button type="button" class="btn btn-success btn-sm approveReciptent" data-isrejected="@item.IsRejected" data-isapproved="@item.IsApproved" data-iscompleted="@item.IsCompleted" data-userid="@item.UserID" data-cardfrontpath="@item.CardFrontPath.Replace("~","../..")" data-cardbackpath="@CardBackPath.Replace("~", "../..")" data-rname="@item.Name" data-raddress="@item.Address" data-rcity="@item.City" data-rstate="@item.State" data-rcountry="@item.Country" data-rzip="@item.Zip" data-sender="@item.UserAddress" data-sendername="@item.Username" data-includeaddress="@item.IncludeAddress" data-name="approve" data-id="@item.ID" data-newline="@item.NewLineAdress">
                         <i class="fa fa-print" aria-hidden="true"></i>
                     </button>
                     @if (item.IsCompleted == true)

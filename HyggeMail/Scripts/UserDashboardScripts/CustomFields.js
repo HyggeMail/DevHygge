@@ -80,6 +80,46 @@ $('.input-number').change(function () {
 
 });
 $(".input-number").keydown(function (e) {
+    var ele = $(this);
+    if (e.keyCode == 38 || e.keyCode == 40) {
+        if (ele[0]) {
+            var incrementValue = parseFloat(0);
+            var isNumericValue = true;
+            var input = $("input[name='" + ele[0].name + "']");
+            var currentVal = parseFloat(input.val());
+            var step = $(input).attr('step');
+
+            if (!isNaN(step)) {
+                incrementValue = parseFloat(step);
+                isNumericValue = false;
+            }
+            else
+                incrementValue = parseInt(1);
+
+            if (e.keyCode == 38) {
+                if (currentVal < input.attr('max')) {
+                    if (isNumericValue)
+                        input.val(parseInt(currentVal + incrementValue).toFixed(0)).change();
+                    else
+                        input.val(parseFloat(currentVal + incrementValue).toFixed(1)).change();
+                }
+                if (parseInt(input.val()) == input.attr('max')) {
+                    // $(this).attr('disabled', true);
+                }
+            }
+            else {
+                if (currentVal > input.attr('min')) {
+                    if (isNumericValue)
+                        input.val(parseInt(currentVal - incrementValue).toFixed(0)).change();
+                    else
+                        input.val(parseFloat(currentVal - incrementValue).toFixed(1)).change();
+                }
+                if (parseInt(input.val()) == input.attr('min')) {
+                    // $(this).attr('disabled', true);
+                }
+            }
+        }
+    }
     // Allow: backspace, delete, tab, escape, enter and .
     if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 190]) !== -1 ||
         // Allow: Ctrl+A

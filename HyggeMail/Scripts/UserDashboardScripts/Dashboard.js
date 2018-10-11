@@ -375,7 +375,7 @@ var UserDashboard = {
         });
         topLeftBlockedSection = leftTop;
         var rightTop = new fabric.Rect({
-            width: 330, height: 55, left: -1, top: -1, angle: 0, fill: 'rgba(255,255,255,1)', strokeWidth: 1, strokeDashArray: [5, 5],
+            width: 330, height: 70, left: -1, top: -1, angle: 0, fill: 'rgba(255,255,255,1)', strokeWidth: 1, strokeDashArray: [5, 5],
             stroke: 'rgba(240,240,240)', id: "barCodeRect", selectable: true,
             lockMovementY: true,
             lockMovementX: true,
@@ -562,6 +562,7 @@ var UserDashboard = {
         if (step == 3) {
             $('#step-2').show();
             $('.top-section').hide();
+            $("#addressdiv").show();
             canvas = canvasBack;
             recDiv.show();
             topsection.hide();

@@ -135,6 +135,7 @@ $(document).ready(function () {
         $('.cardBackForEachRecipient').attr('src', $(this).attr('data-cardbackpath'));
         $('#hfSelectedUserID').val($(this).data('userid'));
         $('#hfSelectedSenderAddress').val($(this).data('sender'));
+        $('#hfSelectedSenderAddressNewLine').val($(this).data('newline'));
         $('#hfSelectedSenderName').val($(this).data('sendername'));
         $('#hfSelectedSenderInclude').val($(this).data('includeaddress'));
         $(".previewModel").modal("show");
@@ -250,7 +251,6 @@ var PostCards = {
     },
 
     FillRecipientDetails: function () {
-
         var addressSplit = currentRecipient.raddress.split(" ");
 
         var firstSplitAddress = "";
@@ -266,11 +266,12 @@ var PostCards = {
                 secondSplitAddress += " " + value;
             }
         });
-
+        firstSplitAddress = firstSplitAddress.replace(/(\r\n\t|\n|\r\t)/gm, "");
+        secondSplitAddress = secondSplitAddress.replace(/(\r\n\t|\n|\r\t)/gm, "");
         PostCards.AddTextOnCanvasOnParticularLocation(currentRecipient.rname, cTop, 24, 450, true);
-        PostCards.AddTextOnCanvasOnParticularLocation(firstSplitAddress, cTop, 24, 440, true);
+        PostCards.AddTextOnCanvasOnParticularLocation(firstSplitAddress, cTop, 24, 445, true);
         if (secondSplitAddress != "")
-            PostCards.AddTextOnCanvasOnParticularLocation(secondSplitAddress, cTop, 24, 440, true);
+            PostCards.AddTextOnCanvasOnParticularLocation(secondSplitAddress, cTop, 24, 450, true);
         PostCards.AddTextOnCanvasOnParticularLocation(currentRecipient.rcity, cTop, 24, 450, true);
         PostCards.AddTextOnCanvasOnParticularLocation(currentRecipient.rstate + ", " + currentRecipient.rzip, cTop, 24, 450, true);
         PostCards.AddTextOnCanvasOnParticularLocation(currentRecipient.rcountry, cTop, 24, 450, true);
@@ -278,6 +279,7 @@ var PostCards = {
         if ($('#hfSelectedSenderInclude').val() == "True") {
             PostCards.AddTextOnCanvasOnParticularLocation($('#hfSelectedSenderName').val(), 5, 15, 5);
             PostCards.AddTextOnCanvasOnParticularLocation($('#hfSelectedSenderAddress').val(), 30, 11, 5);
+            PostCards.AddTextOnCanvasOnParticularLocation($('#hfSelectedSenderAddressNewLine').val(), 50, 11, 5);
         }
         cTop = 145;
         $('.cardBackForEachRecipient').attr('crossorigin', "");

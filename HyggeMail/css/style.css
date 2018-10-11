@@ -2031,7 +2031,9 @@ a#mc-embedded-subscribe:after {
     left: 0;
     bottom: -20px;
     color: red;
-    padding-left: 50px;
+    padding-left: 0px;
+    width: 60%;
+    text-align: center;
 }
 .form-guide {
   float: right;
@@ -2306,8 +2308,14 @@ span.input-shadow1 {
     background-color: #fa8739;
     border-radius: 6px;
     overflow: hidden;
+    margin-top:20px;
 }
-
+#mc_embed_signup_scroll label.error {
+    padding-left: 0px;
+    width: 100%;
+    text-align: left;
+    top: 75px;
+}
 a#mc-embedded-subscribe {
     color: #fff;
 }
@@ -2353,6 +2361,8 @@ a#mc-embedded-subscribe:after {
     padding: 0 110px;
     margin-bottom: 30px;
 }
+
+
 }
 
 @media (max-width: 1200px) {
@@ -2446,6 +2456,9 @@ a#mc-embedded-subscribe:after {
 	#what {
     padding: 54px 0 80px;
 	}
+	#footer .subs-btn.btn {
+  padding: 11px 8px 8px;
+}
 }
 
 @media (min-width:1200px){
@@ -2669,8 +2682,34 @@ a#mc-embedded-subscribe:after {
     padding: 0 50px;
     margin-bottom: 30px;
 }
+section#why {
+  margin-bottom: 50px;
+}
+}
+@media (max-width: 1340px) and (min-width:1200px) {
+#footer .subs-btn.btn {
+  width: 105px;
+}
+}
+@media (max-width: 1199px) and (min-width:992px) {
+#features .row,#how-it-works .row,#testimonials .row,#cards .row,#footer .row{
+flex-wrap:nowrap;
+  -ms-flex-wrap: nowrap;
+}
 }
 
+@media (max-width: 991px) and (min-width:768px) {
+#features .col-md-6 ,#how-it-works .col-md-6{
+    max-width: 49%;
+}
+
+}
+@media (max-width: 991px) and (min-width:580px) {
+.row.footer__ul .col-sm-4 {
+  max-width: 33%;
+}
+
+}
 @media (max-width: 767px) {
     #cloud3 {
         -webkit-transform: scale(0);
@@ -2738,6 +2777,8 @@ a#mc-embedded-subscribe:after {
     padding-right: 20px;
 }
 }
+
+
 
 @media (max-width: 565px) {
     .footer__ul {

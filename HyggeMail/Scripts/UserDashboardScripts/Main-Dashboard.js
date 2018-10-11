@@ -58,6 +58,13 @@ fabric.util.addListener(document.body, 'keydown', function (options) {
             return;
         }
     }
+
+    if ($('#text-stroke-width').is(':focus') || $('#text-line-height').is(':focus')) {
+        if (canvas._activeObject.id = "AddTextSection") {
+            return;
+        }
+    }
+
     var key = options.which || options.keyCode; // key detection
     if (key === 37) { // handle Left key
         moveSelected(Direction.LEFT);
@@ -311,21 +318,21 @@ function Addtext() {
         top: 100,
         width: 300,
         height: 200,
-        fontFamily: fontStyle,
+        //fontFamily: fontStyle,
 
         fill: txtColor,
         fontSize: fontSize,
 
         fill: txtColor,
-        stroke: strokeColor,
-        strokeWidth: .1,
+        stroke: txtColor,
+        strokeWidth: .5,
         fontSize: 60,
         id: "AddTextSection",
         fixedWidth: 300,
         textAlign: 'left',
     });
-    text.setStrokeWidth(0.5);
-    text.setStroke(txtColor);
+    //text.setStrokeWidth(0.5);
+    //text.setStroke(txtColor);
 
 
 
@@ -521,7 +528,7 @@ function ChangeTextColorFromColorPicker(value) {
 function ChangeColorFromColorPicker(value) {
     shapeColor = '#' + value
     if (canvas.getActiveObject() != null) {
-        if (canvas.getActiveObject().id != "barCodeRect" && canvas.getActiveObject().id != "returnAddressRect") {
+        if (canvas.getActiveObject().id != "barCodeRect" && canvas.getActiveObject().id != "returnAddressRect" && canvas.getActiveObject().id != "AddTextSection") {
             canvas.getActiveObject().setFill(shapeColor);
             if (canvas.getActiveObject().stroke == null)
                 canvas.getActiveObject();
@@ -602,10 +609,13 @@ function ChangetxtStrokeColorFromColorPicker(value) {
 }
 
 document.getElementById('text-stroke-width').onchange = function () {
-    canvas.getActiveObject().setStrokeWidth(this.value);
-    canvas.renderAll();
-    updateModifications(true);
-    canvas.counter++;
+    if (canvas.getActiveObject().id == "AddTextSection") {
+        canvas.getActiveObject().setStrokeWidth(this.value);
+        canvas.renderAll();
+        updateModifications(true);
+        canvas.counter++;
+    }
+    return;
 };
 document.getElementById('font-family').onchange = function () {
     loadAndUse(this.value);

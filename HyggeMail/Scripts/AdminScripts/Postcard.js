@@ -63,7 +63,6 @@ $(document).ready(function () {
     });
 
     $(document).on('change', '.order-status', function () {
-        debugger
         var curStatus = $(this).val();
         var orderID = $(this).find(':selected').attr('data-id');
         PostCards.UpdateStatus(curStatus, orderID);
@@ -72,7 +71,6 @@ $(document).ready(function () {
     var action = "";
     var dataID = 0;
     $(document).on('click', '.approveReciptent', function () {
-        debugger
         $(".previewModel").modal("show");
         action = "approve";
         dataID = $(this).attr('data-id');
@@ -81,7 +79,6 @@ $(document).ready(function () {
         $("a.btnBindRecipientDetails").show();
     });
     $(document).on('click', '.disapproveReciptent', function () {
-        debugger
         $(".previewModel").modal("show");
         action = "disapprove";
         dataID = $(this).attr('data-id');

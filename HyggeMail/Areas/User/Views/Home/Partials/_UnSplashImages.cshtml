@@ -41,7 +41,7 @@
                                                         {
                                                             <button id="pagingLeftKey" disabled style="display:none"><i class="fa fa-arrow-left"></i></button>
                                                         }
-                                                        if (Model.PageNumber <= Model.TotalPages)
+                                                        if (Model.PageNumber < Model.TotalPages)
                                                         {
                                                             <button id="pagingRightKey" data-pagenumber="@Model.PageNumber"><i class="fa fa-arrow-right"></i></button>
                                                         }

@@ -139,6 +139,7 @@ namespace HyggeMail.BLL.Models
         public eOrderStatus orderStatus { get; set; }
         public string Username { get; set; }
         public string UserAddress { get; set; }
+        public string NewLineAdress { get; set; }
         public bool IncludeAddress { get; set; }
 
         public string CardFront { get; set; }

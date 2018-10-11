@@ -84,9 +84,16 @@ margin-top: 5px;
 width: 100%;
 }
 
-
-
-
+.footer__social img {
+    max-width: 80px !important;
+}
+.footer__social a {
+    vertical-align: top;
+}
+.footer__social a:nth-child(3) img {
+    height: 25px;
+    width: 25px;
+}
 
 
 
@@ -158,6 +165,9 @@ section.wb-myorder div#postcardList .col-lg-4.col-md-6:nth-child(3n+1) {
 @media(min-width:992px) and (max-width:1450px)	{
 .row.footer__ul .col-sm-4:nth-child(2) {
   padding-left: 30px;
+}
+.footer-content .subs-btn#btnSubscripeSubmit {
+  padding: 11px 8px 8px;
 }
 }
 @media(min-width:980px){
@@ -678,7 +688,7 @@ margin-bottom: 8px;
 }
 .top-links span.balance {
     padding-right: 0px;
-    padding-top: 0px;
+    padding-top: 20px;
     text-align: center;
     width: 100%;
     padding-bottom: 15px;
@@ -874,6 +884,38 @@ body .modal-custom .modal-header h4 {
 #footer h6 {
   font-size: 18px;
 }
+header {
+    min-height: 46px;
+}
+#footer .subs-btn.btn {
+    width: 30%;
+}
+
+.footer-content .textbox.subs {
+    width: 70% !important;
+} 
+.form-group.fonts-families .btn-group.bootstrap-select.select-box1.text.open .dropdown-menu.open ul {
+    max-width: 200px !important;
+    min-width: 170px !important;
+}
+.btnn-grps .btn.btn-info {
+    height: 80px;
+    width: 90px;
+}
+.col-sm-4.address-block {
+    max-width: 31%;
+}
+.wb-cards #postcardList .col-sm-3.card-det {
+    max-width: 33%;
+}
+section.wb-myorder .container1 > div#postcardList {
+    flex-wrap: wrap;
+    display: flex;
+}
+span.feature-inn label {
+  width: auto;
+}
+
 
 }
 
@@ -921,8 +963,12 @@ body .modal-custom .modal-header h4 {
 }
 
  .view-class  #Recipients  .filters.wb-filters .checkbox + label {
-    line-height: 22px;
+       line-height: 9px;
     font-size: 13px;
+    padding-top: 6px;
+}
+.view-class #Recipients .filters.wb-filters .checkbox + label span.tool-tip {
+    line-height: 18px;
 }
  .view-class #Recipients .filters .checkbox + label {
     background: url(../Content/images/unchecked.png) no-repeat 0px 0px / 22px;
@@ -952,7 +998,7 @@ body .modal-custom .modal-header h4 {
 
 .btnn-grps .btn.btn-info {
     height: 80px;
-    width: 94px;
+    width: 92px;
 }
 
 .color-full .draw-opt span.color-outer {
@@ -968,7 +1014,9 @@ body .modal-custom .modal-header h4 {
     text-decoration: none;
 }
 
-
+#footer .subs-btn.btn {
+    padding-top: 9px;
+}
 
 }
 @media screen and (max-width: 1024px){
@@ -1113,6 +1161,35 @@ span.images-outerr {
 	padding:0!important;
     height: auto;
 }
+#myModal-UploadImage.modal-custom .modal-body {
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+#myModal-UploadImage.modal-custom .modal-body .fileUpload.custom-input {
+    margin-bottom: 30px;
+}
+.modal-custom .modal-body form {
+    margin-top: 25px;
+}
+.modal-custom#myModal-signin .modal-body form {
+    margin-top: 11px;
+}
+.modal-custom#myModal-signin .modal-body form span.more {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.modal-custom form#form-login .submit.btn.btn-primary {
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+.modal-custom .form-div .next-div.btn.btn-primary {
+    margin: 6px auto 15px;
+}
+.modal-custom .donthaveaccount {
+    padding-bottom: 15px;
+}
+
+
 
 }
 @media (max-width: 991px){
@@ -1244,8 +1321,48 @@ body .modal-custom .modal-header h4 {
   text-align: center;
 }
 
+
 }
 
+@media (min-width:992px) and (max-width:1199px){
+.testimonials__box {
+  min-height: 710px;
+}
+}
+@media(min-width:768px) and (max-width:991px)	{
+
+#features .row ,#how-it-works .row{
+  display: inline-block;
+}
+body #features .col-md-6, body #how-it-works .col-md-6 {
+  display: inline-block;
+  float: left;
+  max-width: 49%;
+}
+#cards .row {
+  display: inline-block;
+  float: left;
+  text-align: center;
+  width: 100%;
+}
+#cards .row .col-lg-4 {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+}
+
+@media(min-width:980px) and (max-width:1050px)	{
+.round-btn {
+    padding: 12px 35px 12px 12px;
+}
+.prev.round-btn {
+    background-position: 6% 22px;
+    padding-left: 34px;
+    padding-right: 12px;
+}
+
+}
 @media screen and (max-width: 979px){
 	.logo-sec { width: 170px; padding: 0 15px;}
 	nav ul { display: none;}
@@ -1334,7 +1451,7 @@ width: auto;
   width: 50px;
 }
 .right-header .round-btn.next.step-next {
-  margin-top: -126px;
+  margin-top: -128px;
 }
 .right-header ul.steps {
   display: inline-block;
@@ -1443,8 +1560,7 @@ header.fixed .container ul.steps {
   width: 200px;
 }
 .wb-cards #postcardList .col-sm-3.card-det {
- float: left;
-width: 33.3%;
+    max-width: 33%;
 }
 
 .pricing-grids {
@@ -2010,6 +2126,24 @@ body .create-card p {
 .blog-single {
   margin-bottom: 50px;
   width: 50%;
+}
+#footer .col-lg-5.col-md-12 {
+    flex-wrap: nowrap;
+}
+}
+@media (max-width:1199px) and (min-width:992px){
+#footer .row {
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+}
+}
+@media (max-width:992px) and (min-width:550px){
+.row.footer__ul {
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+}
+.row.footer__ul .col-sm-4 {
+    max-width: 33%;
 }
 }
 
