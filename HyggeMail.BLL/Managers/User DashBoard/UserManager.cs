@@ -1044,7 +1044,16 @@ namespace HyggeMail.BLL.Managers
             // Expire old sessions
             if (!IsUpdateProfile)
             {
-                Context.Sessions.Where(p => p.UserId == user.UserID).ToList().ForEach(p => { p.IsExpired = true; });
+                if (Context.Sessions.Any(p => p.IsExpired == false || p.IsExpired == null))
+                {
+                    var items = Context.Sessions.Where(p => p.UserId == user.UserID && (p.IsExpired == false || p.IsExpired == null)).ToList();
+                    foreach (var item in items)
+                    {
+                        item.IsExpired = true;
+                        item.ExpiredOn = DateTime.Now;
+                    }
+                }
+
                 // Create new session
                 var newSession = new Session()
                 {
@@ -1072,7 +1081,15 @@ namespace HyggeMail.BLL.Managers
             var user = Context.Users.FirstOrDefault(x => x.UserID == userID);
             //Verification pending by user
             // Expire old sessions
-            Context.Sessions.Where(p => p.UserId == user.UserID).ToList().ForEach(p => { p.IsExpired = true; });
+            if (Context.Sessions.Any(p => p.IsExpired == false || p.IsExpired == null))
+            {
+                var items = Context.Sessions.Where(p => p.UserId == user.UserID && (p.IsExpired == false || p.IsExpired == null)).ToList();
+                foreach (var item in items)
+                {
+                    item.IsExpired = true;
+                    item.ExpiredOn = DateTime.Now;
+                }
+            }
             // Create new session
             var newSession = new Session()
             {
