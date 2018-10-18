@@ -138,19 +138,19 @@ $(document).ready(function () {
 
     var curStep = 1;
     $(document).on('click', '.step-num', function () {
-        $("#spell-check").hide();
-        // $('#myTextArea').val('');
-        //if (getObject != null) {
-        //    var objectText = getObject.text;
-        //    if (objectText != '' && objectText != null && objectText != undefined) {
-        //        $('#myTextArea').val(objectText);
-        //        o = $Spelling.SpellCheckInWindow('myTextArea');
-        //        o.onDialogComplete = function () {
-        //            getObject.text = $('#myTextArea').val();
-        //            canvas.setActiveObject(getObject);
-        //        }
-        //    }
-        //}
+        $('#myTextArea').val('');
+        var getObject = canvas.getActiveObject();
+        if (getObject != null) {
+            var objectText = getObject.text;
+            if (objectText != '' && objectText != null && objectText != undefined) {
+                $('#myTextArea').val(objectText);
+                o = $Spelling.SpellCheckInWindow('myTextArea');
+                o.onDialogComplete = function () {
+                    getObject.text = $('#myTextArea').val();
+                    canvas.setActiveObject(getObject);
+                }
+            }
+        }
         curStep = $(this).data('step');
         if (curStep == 3) {
             $("#step-2").addClass('step-3-canvas');
@@ -189,23 +189,21 @@ $(document).ready(function () {
 
     $(document).on('click', '.step-prev', function () {
         curStep = $('ul.steps li.active a').data('step');
-        // if (curStep == 1 || curStep == 2) {
-        //    $('#myTextArea').val('');
-        //    var getObject = canvas.getActiveObject();
-        //    if (getObject != null) {
-        //        var objectText = getObject.text;
-        //        if (objectText != '' && objectText != null && objectText != undefined) {
-        //            $('#myTextArea').val(objectText);
-        //            o = $Spelling.SpellCheckInWindow('myTextArea');
-        //            o.onDialogComplete = function () {
-        //                getObject.text = $('#myTextArea').val();
-        //                canvas.setActiveObject(getObject);
-        //            }
-        //        }
-        //    }
-        // }
-        $("#spell-check").hide();
-
+        if (curStep == 1 || curStep == 2) {
+            $('#myTextArea').val('');
+            var getObject = canvas.getActiveObject();
+            if (getObject != null) {
+                var objectText = getObject.text;
+                if (objectText != '' && objectText != null && objectText != undefined) {
+                    $('#myTextArea').val(objectText);
+                    o = $Spelling.SpellCheckInWindow('myTextArea');
+                    o.onDialogComplete = function () {
+                        getObject.text = $('#myTextArea').val();
+                        canvas.setActiveObject(getObject);
+                    }
+                }
+            }
+        }
         if (curStep > 1) {
             var prevStep = parseInt(curStep) - 1;
             $(this).parent().hasClass('active');
@@ -228,23 +226,21 @@ $(document).ready(function () {
 
     $(document).on('click', '.step-next', function () {
         var curStep = $('ul.steps li.active a').data('step');
-        //  if (curStep == 1 || curStep == 2) {
-        //    $('#myTextArea').val('');
-        //    var getObject = canvas.getActiveObject();
-        //    if (getObject != null) {
-        //        var objectText = getObject.text;
-        //        if (objectText != '' && objectText != null && objectText != undefined) {
-        //            $('#myTextArea').val(objectText);
-        //            o = $Spelling.SpellCheckInWindow('myTextArea');
-        //            o.onDialogComplete = function () {
-        //                getObject.text = $('#myTextArea').val();
-        //                canvas.setActiveObject(getObject);
-        //            }
-        //        }
-        //    }
-        //  }
-        $("#spell-check").hide();
-
+        if (curStep == 1 || curStep == 2) {
+            $('#myTextArea').val('');
+            var getObject = canvas.getActiveObject();
+            if (getObject != null) {
+                var objectText = getObject.text;
+                if (objectText != '' && objectText != null && objectText != undefined) {
+                    $('#myTextArea').val(objectText);
+                    o = $Spelling.SpellCheckInWindow('myTextArea');
+                    o.onDialogComplete = function () {
+                        getObject.text = $('#myTextArea').val();
+                        canvas.setActiveObject(getObject);
+                    }
+                }
+            }
+        }
         if (curStep < 4) {
             var nextStep = parseInt(curStep) + 1;
             $(this).parent().hasClass('active');
