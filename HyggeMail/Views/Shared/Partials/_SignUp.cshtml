@@ -90,20 +90,29 @@
                                 @Html.TextBoxFor(x => x.Step2.Zip, new { @class = "form-control", @placeholder = "ZIP", data_gfield = "postal_code" })
                                 @Html.ValidationMessageFor(X => X.Step2.Zip)
                             </div>
-                            <div class="terms-condition">
-                                <label>
+                            @*<div class="form-group">
+                                    @Html.CheckBoxFor(x => x.Step2.Terms)
+                                    I accept <span class="terms-link" data-toggle="modal" data-target="#myModal-terms"> Terms &amp; Conditions </span>
+                                    <span class="Termsloginerroemsg"></span>
+                                </div>
+                                <div class="form-group">
+                                    @Html.CheckBoxFor(x => x.Step2.ReceiveEmail)
+                                    <span>I want to receive an email every now and then with some great ways to make the most of HyggeMail, awesome exclusive offers, and tips on how to enjoy life’s special little moments more!</span>
+                                </div>*@
+                            <div class="terms-condition wb-terms">
+                                <span class="labb">
                                     @Html.CheckBoxFor(x => x.Step2.Terms, new { @class = "form-control" })
                                     <div class="checkbox"></div>I accept <span class="terms-link" data-toggle="modal" data-target="#myModal-terms"> Terms &amp; Conditions </span>
-                                </label>
+                                </span>
                                 <div class="form-group">
                                     <span class="Termsloginerroemsg"></span>
                                 </div>
                             </div>
-                            <div class="terms-condition descrpt-email">
-                                <label>
+                            <div class="terms-condition wb-terms descrpt-email">
+                                <span class="labb">
                                     @Html.CheckBoxFor(x => x.Step2.ReceiveEmail, new { @class = "form-control" })
                                     <div class="checkbox"></div>I want to receive an email every now and then with some great ways to make the most of HyggeMail, awesome exclusive offers, and tips on how to enjoy life’s special little moments more!
-                                </label>
+                                </span>
                             </div>
                         </div>
                         <div class="bottom-sec">

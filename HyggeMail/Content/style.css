@@ -69,6 +69,65 @@ div > div > div > canvas {
     margin: 0 !important;
 }
 
+.terms-condition.wb-terms {
+    clear: both;
+    padding-left: 100px !important;
+    margin-bottom: 10px;
+}
+.terms-condition.wb-terms.descrpt-email .checkbox {
+    margin-bottom: 60px;
+}
+span.labb {
+    font-size: 15px;
+    font-weight: 700;
+    position: relative;
+    display: block;
+}
+.terms-condition span.labb input.form-control {
+    height: 22px;
+    margin-top: -1px;
+    position: absolute;
+    width: 22px;
+    z-index: 99;
+    cursor: pointer;
+    left: 0px;
+    top: 0;
+    right: auto;
+    margin: 0;
+    opacity: 0;
+}
+
+
+.terms-condition .checkbox1 {
+    float: left;
+    width: 22px;
+    height: 22px;
+    border-radius: 2px;
+    border: 1px #c0c2ca solid;
+    background-color: #f5f4f3;
+    margin: 0;
+    margin-right: 0px;
+    margin-top: 0px;
+}
+.terms-condition.terms-wb input.form-control {
+    height: 22px;
+    margin-top: -1px;
+    position: absolute;
+    width: 20px;
+    z-index: 99;
+    cursor: pointer;
+    left: 16px;
+    top: 0;
+    opacity: 0;
+}
+.terms-condition input:checked + input + .checkbox1 {
+    background-color: #c5c7cd;
+    background-image: url(../Content/images/checkarrow.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
 .datas.acc_content div#images .pagination-sec {
     clear: both;
 }
@@ -1639,7 +1698,7 @@ body.modal-open .fullpage-wrapper {
 }
 
 #myModal .terms-condition {
-    margin-top: 30px;
+    margin-top: 0px;
     position: relative;
     clear: both;
     width: 230px;
@@ -7559,7 +7618,7 @@ header.fixed {
     font-size: 18px;
     font-weight: 600;
     height: 60px;
-    line-height: 50px;
+    line-height: 47px;
     margin: 0 auto 20px;
     padding: 6px 50px;
     width: auto;
