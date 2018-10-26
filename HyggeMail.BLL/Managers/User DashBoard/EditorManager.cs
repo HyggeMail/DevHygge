@@ -482,7 +482,7 @@ namespace HyggeMail.BLL.Managers
             var result = new ActionOutput<AddUpdateImageEditorModel>();
             if (!string.IsNullOrEmpty(emailId))
             {
-                var postcard = Context.UserPostCards.Where(x => x.IsDeleted != true && x.User.Email == emailId).OrderByDescending(x => Guid.NewGuid()).Take(8).ToList();
+                var postcard = Context.UserPostCards.Where(x => x.IsDeleted != true && x.User.Email == emailId).OrderByDescending(x => x.ID).Take(8).ToList();
                 if (postcard.Count > 0)
                 {
                     var model = new List<AddUpdateImageEditorModel>();

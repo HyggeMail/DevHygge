@@ -138,7 +138,6 @@ $(document).ready(function () {
 
     var curStep = 1;
     $(document).on('click', '.step-num', function () {
-        $("#spell-check").hide();
         // $('#myTextArea').val('');
         //if (getObject != null) {
         //    var objectText = getObject.text;
@@ -204,7 +203,6 @@ $(document).ready(function () {
         //        }
         //    }
         // }
-        $("#spell-check").hide();
 
         if (curStep > 1) {
             var prevStep = parseInt(curStep) - 1;
@@ -243,7 +241,6 @@ $(document).ready(function () {
         //        }
         //    }
         //  }
-        $("#spell-check").hide();
 
         if (curStep < 4) {
             var nextStep = parseInt(curStep) + 1;

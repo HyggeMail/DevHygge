@@ -61,7 +61,6 @@ fabric.util.addListener(document.body, 'keydown', function (options) {
 
     if ($('#text-stroke-width').is(':focus') || $('#text-line-height').is(':focus')) {
         if (canvas._activeObject.id = "AddTextSection") {
-            $("#spell-check").show();
             return;
         }
     }
@@ -361,7 +360,6 @@ function Addtext() {
     UserDashboard.SetBlockSectionToTop();
     updateModifications(true);
     canvas.counter++;
-    $("#spell-check").show();
 }
 
 
@@ -369,13 +367,20 @@ $("#spell-check").on('click', function () {
     var getObject = canvas.getActiveObject();
     if (getObject != null) {
         if (getObject.type == "i-text") {
+            $('#myModal').modal('show');
             var objectText = getObject.text;
             $("#myTextArea").val(objectText);
             $('#myTextArea').spellAsYouType();
         }
+        else {
+            $('#myModal').modal('hide');
+            $.ShowMessage($('div.messageAlert'), "Please select a valid section for spell check.", MessageType.Error);
+        }
     }
     else {
+        $('#myModal').modal('hide');
         $("#myTextArea").val("");
+        $.ShowMessage($('div.messageAlert'), "Please select a valid section for spell check.", MessageType.Error);
     }
 })
 
@@ -392,7 +397,6 @@ $("#closespellmodal").on('click', function () {
 })
 
 canvas.on('text:changed', function (opt) {
-    $("#spell-check").show();
     var t1 = opt.target;
 
     var getLastTextLine = t1._textLines.length;
@@ -461,7 +465,6 @@ canvas.on('text:changed', function (opt) {
 });
 
 canvasBack.on('text:changed', function (opt) {
-    $("#spell-check").show();
     var t1 = opt.target;
 
     var getLastTextLine = t1._textLines.length;

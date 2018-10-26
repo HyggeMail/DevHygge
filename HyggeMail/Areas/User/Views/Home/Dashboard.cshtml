@@ -395,7 +395,7 @@
 
                 <span class="bin m-l-25" id="delete-selected" data-toggle="tooltip" title="Trash"> </span>
 
-                <a class="m-l-25" style="display: none;" id="spell-check" data-toggle="modal" data-target="#myModal"><span class="spell-chk"> </span></a>
+                <a class="m-l-25" id="spell-check" data-toggle="tooltip" title="Spell Check"><span class="spell-chk"> </span></a>
             </div>
           @*  <textarea name="myTextArea" id="myTextArea" cols="30" rows="4" style='max-width:500px;width:100%;height:200px;margin-bottom:20px;display:none'></textarea>*@
             <div class="canvas-outer-div">
@@ -470,7 +470,7 @@
                 <h4 class="modal-title">Spell Check</h4>
             </div>
             <div class="modal-body">
-                <p><textarea name="myTextArea" id="myTextArea" cols="30" rows="4" style='max-width:500px;width:100%;height:200px;margin-bottom:20px;'></textarea></p>
+                <p><textarea name="myTextArea" id="myTextArea" style="margin: 0px; width: 567px; height: 226px; resize: none"></textarea></p>
             </div>
             <div class="modal-footer">
                 <button id="closespellmodal" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -643,19 +643,16 @@
                     $("#tab-1").show();
                     $("#tab-2").hide();
                     $("#tab-3").hide();
-                    $("#spell-check").hide();
                 }
                 if (this.id == "atab2") {
                     $("#tab-1").hide();
                     $("#tab-2").show();
                     $("#tab-3").hide();
-                    $("#spell-check").hide();
                 }
                 if (this.id == "atab3") {
                     $("#tab-1").hide();
                     $("#tab-2").hide();
                     $("#tab-3").show();
-                    $("#spell-check").hide();
                 }
             })
 

@@ -20,7 +20,7 @@ namespace HyggeMail.BLL.Managers
             errorObj.LoggedAt = DateTime.UtcNow;
             Context.ErrorLogs.Add(errorObj);
             // To do
-            // Context.SaveChanges();
+             Context.SaveChanges();
             return errorObj.ErrorLogID.ToString();
         }
 
