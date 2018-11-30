@@ -203,6 +203,7 @@
     <Compile Include="Models\UserHistoryModel.cs" />
     <Compile Include="Models\UserModels.cs" />
     <Compile Include="Notification\PushNotify.cs" />
+    <Compile Include="Notification\SendNotification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validator\IsTrueAttribute.cs" />
   </ItemGroup>

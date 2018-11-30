@@ -2,7 +2,8 @@
     ViewBag.Title = "Dashboard";
     Layout = "~/Areas/User/Views/Shared/_Layout.cshtml";
     AddUpdateAdminImageModel uploadModel = ViewBag.UploadModel as AddUpdateAdminImageModel;
-    List<ImagesByCategoryViewModel> recentUsedImage = ViewBag.RecentlyUsedImageList as List<ImagesByCategoryViewModel>;
+    //List<ImagesByCategoryViewModel> recentUsedImage = ViewBag.RecentlyUsedImageList as List<ImagesByCategoryViewModel>;
+    List<AddUpdateImageEditorModel> cards = ViewBag.AdminCards as List<AddUpdateImageEditorModel>;
     var id = Model.ID;
     <style>
         .customCursor {
@@ -38,7 +39,6 @@
         span.spell-chk {
             background: url(../../img/spellcheck.png) no-repeat center center;
         }
-
     </style>
 }
 @model AddUpdateImageEditorModel
@@ -95,7 +95,7 @@
     hr {
         text-align: left;
         margin: 30px auto 0 0;
-        width: 700px!;
+        width: 700px !;
     }
 
     a:visited {
@@ -397,7 +397,7 @@
 
                 <a class="m-l-25" id="spell-check" data-toggle="tooltip" title="Spell Check"><span class="spell-chk"> </span></a>
             </div>
-          @*  <textarea name="myTextArea" id="myTextArea" cols="30" rows="4" style='max-width:500px;width:100%;height:200px;margin-bottom:20px;display:none'></textarea>*@
+            @*  <textarea name="myTextArea" id="myTextArea" cols="30" rows="4" style='max-width:500px;width:100%;height:200px;margin-bottom:20px;display:none'></textarea>*@
             <div class="canvas-outer-div">
                 <div id="step-1" data-step="1" class="canvas-div" style="border:1.5px solid #f2eee7;    height: 532px;">
                     <div id="canvas-container" style="border:0px;">
@@ -446,10 +446,10 @@
             <br />
             <br />
             <div class="clear"></div>
-            @if (recentUsedImage.FirstOrDefault().Images.Count > 0 && recentUsedImage.FirstOrDefault().Images != null)
+            @if (cards.Count() > 0)
             {
                 <div class="bottom-sliders" id="recentlyUsed">
-                    @Html.Partial("Partials/_recentlyUsed", recentUsedImage)
+                    @Html.Partial("Partials/_demoPostCardsListing", cards)
                 </div>
             }
         </div>
@@ -589,6 +589,25 @@
     <script src="~/JavaScriptSpellCheck/include.js"></script>
     <script type="text/javascript">
         $(document).on('ready', function () {
+
+            $('.homePostCardClick').on("click", function () {
+                var cardfrontpath = $(this).attr("data-cardfrontpath");
+                var cardbackpath = $(this).attr("data-cardbackpath");
+
+                $('#srcCardfrontpath').attr("src", "");
+                $('#srcCardfrontpath').attr("src", cardfrontpath);
+                $('#srcCardbackpath').attr("src", "");
+                $('#srcCardbackpath').attr("src", cardbackpath);
+                var href = $(this).attr("data-href");
+                if (href != undefined) {
+                    $('#setPostCardEditHREF').attr("href", href);
+                }
+                var returnurl = $(this).attr("data-returnurl");
+                if (returnurl != undefined) {
+                    localStorage.setItem("EditCardReturnUrl", returnurl);
+                }
+            });
+
             if ('@Model.ID' > 0 && '@ViewBag.IsCopyCard' == 'False') {
                 Recipient.GetAddressBook('');
             }
@@ -662,3 +681,4 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=@HyggeMail.BLL.Common.Config.GooglePlaceKey&libraries=places&callback=GooglePlacesOnLoad&language=en"
             async defer></script>
 }
+

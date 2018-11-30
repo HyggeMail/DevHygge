@@ -61,6 +61,9 @@
     <Compile Include="BlogDetail.cs">
       <DependentUpon>HyggeMail.tt</DependentUpon>
     </Compile>
+    <Compile Include="ChroneLog.cs">
+      <DependentUpon>HyggeMail.tt</DependentUpon>
+    </Compile>
     <Compile Include="city.cs">
       <DependentUpon>HyggeMail.tt</DependentUpon>
     </Compile>

@@ -12,14 +12,18 @@ $('.homePostCardClick').live("click", function () {
     $('#srcCardfrontpath').attr("src", cardfrontpath);
     $('#srcCardbackpath').attr("src", "");
     $('#srcCardbackpath').attr("src", cardbackpath);
-    var href  =$(this).attr("data-href");
-    if (href != undefined)
-    {
+    var href = $(this).attr("data-href");
+    if (href != undefined && $('#setPostCardEditHREF').attr("data-type") == "copycard") {
         $('#setPostCardEditHREF').attr("href", href);
     }
     var returnurl = $(this).attr("data-returnurl");
     if (returnurl != undefined) {
-        localStorage.setItem("EditCardReturnUrl", returnurl);
+        if ($('#setPostCardEditHREF').attr("data-type") == "copycard") {
+            localStorage.setItem("EditCardReturnUrl", returnurl);
+        }
+        else {
+            $("#returnurl").val(returnurl);
+        }
     }
 });
 

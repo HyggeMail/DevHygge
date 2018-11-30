@@ -38,6 +38,15 @@
           <Property Name="Image" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="IsFeaturedArticle" Type="bit" Nullable="false" />
         </EntityType>
+        <EntityType Name="ChroneLogs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="TemplateSent" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MailFiredOn" Type="datetime" Nullable="false" />
+        </EntityType>
         <EntityType Name="cities">
           <Key>
             <PropertyRef Name="cityID" />
@@ -389,7 +398,7 @@
           <Property Name="AuthenticationType" Type="smallint" />
           <Property Name="DeviceType" Type="smallint" />
           <Property Name="DeviceToken" Type="varchar" MaxLength="500" />
-          <Property Name="Facebook_ID" Type="nvarchar" MaxLength="200" />
+          <Property Name="Facebook_ID" Type="varchar" MaxLength="200" />
           <Property Name="OrderPlacedNotification" Type="bit" />
           <Property Name="OrderStatusNotification" Type="bit" />
           <Property Name="CardsCount" Type="int" />
@@ -403,7 +412,7 @@
           <Property Name="TransactionID" Type="nvarchar" MaxLength="100" />
           <Property Name="Gateway" Type="nvarchar" MaxLength="100" />
           <Property Name="Status" Type="nvarchar" MaxLength="100" />
-          <Property Name="TransactionAmount" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="TransactionAmount" Type="decimal" Precision="18" Scale="2" />
           <Property Name="PlanID" Type="int" Nullable="false" />
           <Property Name="UserID" Type="int" Nullable="false" />
           <Property Name="TransactionDate" Type="datetime" />
@@ -600,18 +609,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_UserTransactions_MembershipPlans">
-          <End Role="MembershipPlans" Type="Self.MembershipPlans" Multiplicity="1" />
-          <End Role="UserTransactions" Type="Self.UserTransactions" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="MembershipPlans">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="UserTransactions">
-              <PropertyRef Name="PlanID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_UserTransactions_Users">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="UserTransactions" Type="Self.UserTransactions" Multiplicity="*" />
@@ -624,9 +621,22 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_UserTransactions_UserTransactions">
+          <End Role="MembershipPlans" Type="Self.MembershipPlans" Multiplicity="1" />
+          <End Role="UserTransactions" Type="Self.UserTransactions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MembershipPlans">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="UserTransactions">
+              <PropertyRef Name="PlanID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="HyggeMailModelStoreContainer">
           <EntitySet Name="AdminImages" EntityType="Self.AdminImages" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BlogDetails" EntityType="Self.BlogDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ChroneLogs" EntityType="Self.ChroneLogs" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="cities" EntityType="Self.cities" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CMSPages" EntityType="Self.CMSPages" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ContactUs" EntityType="Self.ContactUs" Schema="dbo" store:Type="Tables" />
@@ -715,12 +725,12 @@
             <End Role="MembershipPlans" EntitySet="MembershipPlans" />
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
-          <AssociationSet Name="FK_UserTransactions_MembershipPlans" Association="Self.FK_UserTransactions_MembershipPlans">
-            <End Role="MembershipPlans" EntitySet="MembershipPlans" />
-            <End Role="UserTransactions" EntitySet="UserTransactions" />
-          </AssociationSet>
           <AssociationSet Name="FK_UserTransactions_Users" Association="Self.FK_UserTransactions_Users">
             <End Role="Users" EntitySet="Users" />
+            <End Role="UserTransactions" EntitySet="UserTransactions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserTransactions_UserTransactions" Association="Self.FK_UserTransactions_UserTransactions">
+            <End Role="MembershipPlans" EntitySet="MembershipPlans" />
             <End Role="UserTransactions" EntitySet="UserTransactions" />
           </AssociationSet>
         </EntityContainer>
@@ -763,6 +773,15 @@
           <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="Image" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="IsFeaturedArticle" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ChroneLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="TemplateSent" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MailFiredOn" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityType Name="city">
           <Key>
@@ -885,7 +904,7 @@
           <Property Name="CreatedOn" Type="DateTime" Precision="0" />
           <Property Name="DeletedOn" Type="DateTime" Precision="0" />
           <NavigationProperty Name="Users" Relationship="Self.FK_Users_MembershipPlans" FromRole="MembershipPlans" ToRole="Users" />
-          <NavigationProperty Name="UserTransactions" Relationship="Self.FK_UserTransactions_MembershipPlans" FromRole="MembershipPlans" ToRole="UserTransactions" />
+          <NavigationProperty Name="UserTransactions" Relationship="Self.FK_UserTransactions_UserTransactions" FromRole="MembershipPlans" ToRole="UserTransactions" />
         </EntityType>
         <EntityType Name="NotificationStack">
           <Key>
@@ -1137,7 +1156,7 @@
           <Property Name="AuthenticationType" Type="Int16" />
           <Property Name="DeviceType" Type="Int16" />
           <Property Name="DeviceToken" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="Facebook_ID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Facebook_ID" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="OrderPlacedNotification" Type="Boolean" />
           <Property Name="OrderStatusNotification" Type="Boolean" />
           <Property Name="CardsCount" Type="Int32" />
@@ -1160,11 +1179,11 @@
           <Property Name="TransactionID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Gateway" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="Status" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="TransactionAmount" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="TransactionAmount" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="PlanID" Type="Int32" Nullable="false" />
           <Property Name="UserID" Type="Int32" Nullable="false" />
           <Property Name="TransactionDate" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="MembershipPlan" Relationship="Self.FK_UserTransactions_MembershipPlans" FromRole="UserTransactions" ToRole="MembershipPlans" />
+          <NavigationProperty Name="MembershipPlan" Relationship="Self.FK_UserTransactions_UserTransactions" FromRole="UserTransactions" ToRole="MembershipPlans" />
           <NavigationProperty Name="UserHistories" Relationship="Self.FK_UserHistory_UserTransactions" FromRole="UserTransactions" ToRole="UserHistory" />
           <NavigationProperty Name="User" Relationship="Self.FK_UserTransactions_Users" FromRole="UserTransactions" ToRole="Users" />
         </EntityType>
@@ -1204,7 +1223,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_UserTransactions_MembershipPlans">
+        <Association Name="FK_UserTransactions_UserTransactions">
           <End Role="MembershipPlans" Type="Self.MembershipPlan" Multiplicity="1" />
           <End Role="UserTransactions" Type="Self.UserTransaction" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1387,6 +1406,7 @@
         <EntityContainer Name="HyggeMailEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="AdminImages" EntityType="Self.AdminImage" />
           <EntitySet Name="BlogDetails" EntityType="Self.BlogDetail" />
+          <EntitySet Name="ChroneLogs" EntityType="Self.ChroneLog" />
           <EntitySet Name="cities" EntityType="Self.city" />
           <EntitySet Name="CMSPages" EntityType="Self.CMSPage" />
           <EntitySet Name="ContactUs" EntityType="Self.ContactU" />
@@ -1423,7 +1443,7 @@
             <End Role="MembershipPlans" EntitySet="MembershipPlans" />
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
-          <AssociationSet Name="FK_UserTransactions_MembershipPlans" Association="Self.FK_UserTransactions_MembershipPlans">
+          <AssociationSet Name="FK_UserTransactions_UserTransactions" Association="Self.FK_UserTransactions_UserTransactions">
             <End Role="MembershipPlans" EntitySet="MembershipPlans" />
             <End Role="UserTransactions" EntitySet="UserTransactions" />
           </AssociationSet>
@@ -1522,6 +1542,16 @@
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Image" ColumnName="Image" />
                 <ScalarProperty Name="IsFeaturedArticle" ColumnName="IsFeaturedArticle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ChroneLogs">
+            <EntityTypeMapping TypeName="HyggeMailModel.ChroneLog">
+              <MappingFragment StoreEntitySet="ChroneLogs">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="TemplateSent" ColumnName="TemplateSent" />
+                <ScalarProperty Name="MailFiredOn" ColumnName="MailFiredOn" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

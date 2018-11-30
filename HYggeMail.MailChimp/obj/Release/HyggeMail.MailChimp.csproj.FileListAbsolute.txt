@@ -3,6 +3,5 @@ E:\Project\huggemail-net\HYggeMail.MailChimp\bin\Release\HYggeMail.MailChimp.pdb
 E:\Project\huggemail-net\HYggeMail.MailChimp\bin\Release\MailChimp.Net.dll
 E:\Project\huggemail-net\HYggeMail.MailChimp\bin\Release\Newtonsoft.Json.dll
 E:\Project\huggemail-net\HYggeMail.MailChimp\bin\Release\Newtonsoft.Json.xml
-E:\Project\huggemail-net\HYggeMail.MailChimp\obj\Release\HyggeMail.MailChimp.csprojResolveAssemblyReference.cache
 E:\Project\huggemail-net\HYggeMail.MailChimp\obj\Release\HYggeMail.MailChimp.dll
 E:\Project\huggemail-net\HYggeMail.MailChimp\obj\Release\HYggeMail.MailChimp.pdb

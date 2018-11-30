@@ -54,6 +54,7 @@ var PostCard = {
         }
     },
     ManagePostCards: function (totalCount) {
+        debugger
         var totalRecords = 0;
         totalRecords = parseInt(totalCount);
         //alert(totalRecords);

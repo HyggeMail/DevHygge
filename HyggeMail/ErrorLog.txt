@@ -2173,3 +2173,64 @@ http://jsonformat.com/
 
 
 
+e:\Project\huggemail-net\HyggeMail\Views\Shared\_Layout.cshtml(122): error CS1502: The best overloaded method match for 'System.Tuple.Create<object,int>(object, int)' has some invalid arguments
+http://jsonformat.com/
+
+
+
+e:\Project\huggemail-net\HyggeMail\Views\Shared\_Layout.cshtml(122): error CS1502: The best overloaded method match for 'System.Tuple.Create<object,int>(object, int)' has some invalid arguments
+http://jsonformat.com/
+
+
+
+e:\Project\huggemail-net\HyggeMail\Views\Shared\_Layout.cshtml(125): error CS1502: The best overloaded method match for 'System.Tuple.Create<object,int>(object, int)' has some invalid arguments
+http://jsonformat.com/
+
+
+
+e:\Project\huggemail-net\HyggeMail\Views\Shared\_Layout.cshtml(125): error CS1502: The best overloaded method match for 'System.Tuple.Create<object,int>(object, int)' has some invalid arguments
+http://jsonformat.com/
+
+
+
+e:\Project\huggemail-net\HyggeMail\Views\Shared\_Layout.cshtml(125): error CS1502: The best overloaded method match for 'System.Tuple.Create<object,int>(object, int)' has some invalid arguments
+http://jsonformat.com/
+
+
+
+e:\Project\huggemail-net\HyggeMail\Views\Shared\_Layout.cshtml(125): error CS1502: The best overloaded method match for 'System.Tuple.Create<object,int>(object, int)' has some invalid arguments
+http://jsonformat.com/
+
+
+
+e:\Project\huggemail-net\HyggeMail\Views\Shared\_Layout.cshtml(124): error CS1502: The best overloaded method match for 'System.Tuple.Create<object,int>(object, int)' has some invalid arguments
+http://jsonformat.com/
+
+
+
+Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+http://jsonformat.com/
+
+
+
+An error occurred while reading from the store provider's data reader. See the inner exception for details.
+http://jsonformat.com/
+
+
+
+Object reference not set to an instance of an object.
+http://jsonformat.com/
+
+
+
+Value cannot be null.
+Parameter name: source
+http://jsonformat.com/
+
+
+
+e:\Project\huggemail-net\HyggeMail\Areas\User\Views\Home\Dashboard.cshtml(450): error CS1061: 'HyggeMail.BLL.Models.AddUpdateImageEditorModel' does not contain a definition for 'List' and no extension method 'List' accepting a first argument of type 'HyggeMail.BLL.Models.AddUpdateImageEditorModel' could be found (are you missing a using directive or an assembly reference?)
+http://jsonformat.com/
+
+
+

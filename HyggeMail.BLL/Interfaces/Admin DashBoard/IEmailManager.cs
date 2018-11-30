@@ -69,5 +69,7 @@ namespace HyggeMail.BLL.Interfaces
         void SendOrderStatusToAdmin(string Status,User model);
 
         ActionOutput GetTheGuideEmail(GetGuideModel GetGuideModel);
+
+        void SendNotificationEmail();
     }
 }

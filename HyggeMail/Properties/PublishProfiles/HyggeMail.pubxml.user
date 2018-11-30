@@ -67,7 +67,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/24/2018 16:32:10</publishTime>
     </File>
     <File Include="Areas/Admin/Views/ContactUs/ManageContactUs.cshtml">
-      <publishTime>05/24/2018 16:32:10</publishTime>
+      <publishTime>10/30/2018 11:41:45</publishTime>
     </File>
     <File Include="Areas/Admin/Views/ContactUs/Partials/_contactListing.cshtml">
       <publishTime>05/24/2018 16:32:10</publishTime>
@@ -306,7 +306,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Areas/User/Views/Home/Dashboard.cshtml">
       <publishTime>02/28/2018 17:01:46</publishTime>
       <publishTime>03/09/2018 11:36:43</publishTime>
-      <publishTime>10/25/2018 11:49:44</publishTime>
+      <publishTime>11/15/2018 17:07:07</publishTime>
     </File>
     <File Include="Areas/User/Views/Home/Dashboard1.cshtml">
       <publishTime>05/24/2018 16:32:10</publishTime>
@@ -339,6 +339,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Areas/User/Views/Home/Partials/_AddRecipient.cshtml">
       <publishTime>05/24/2018 16:32:10</publishTime>
     </File>
+    <File Include="Areas/User/Views/Home/Partials/_demoPostCardsListing.cshtml">
+      <publishTime>11/15/2018 16:45:38</publishTime>
+    </File>
     <File Include="Areas/User/Views/Home/Partials/_emojiPartial.cshtml">
       <publishTime>05/24/2018 16:32:10</publishTime>
     </File>
@@ -350,14 +353,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Areas/User/Views/Home/Partials/_Images.cshtml">
       <publishTime>02/28/2018 16:21:27</publishTime>
-      <publishTime>08/09/2018 10:51:18</publishTime>
+      <publishTime>11/15/2018 12:44:39</publishTime>
     </File>
     <File Include="Areas/User/Views/Home/Partials/_paintEditor.cshtml">
       <publishTime>03/08/2018 17:13:24</publishTime>
-      <publishTime>10/04/2018 15:35:50</publishTime>
+      <publishTime>11/06/2018 11:04:28</publishTime>
     </File>
     <File Include="Areas/User/Views/Home/Partials/_paintEditor.cshtml">
-      <publishTime>10/04/2018 15:35:50</publishTime>
+      <publishTime>11/06/2018 11:04:28</publishTime>
     </File>
     <File Include="Areas/User/Views/Home/Partials/_paintEditorForPad.cshtml">
       <publishTime>08/20/2018 10:29:44</publishTime>
@@ -435,7 +438,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/24/2018 16:32:10</publishTime>
     </File>
     <File Include="Areas/User/Views/PostCard/PostCards.cshtml">
-      <publishTime>09/26/2018 18:36:04</publishTime>
+      <publishTime>11/16/2018 17:55:27</publishTime>
     </File>
     <File Include="Areas/User/Views/Recipient/MyRecipient.cshtml">
       <publishTime>06/01/2018 16:45:36</publishTime>
@@ -461,10 +464,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Areas/User/Views/Shared/_Layout.cshtml">
       <publishTime>03/09/2018 17:19:21</publishTime>
-      <publishTime>09/27/2018 12:30:39</publishTime>
+      <publishTime>11/15/2018 11:22:53</publishTime>
     </File>
     <File Include="Areas/User/Views/Shared/_Layout.cshtml">
-      <publishTime>09/27/2018 12:30:39</publishTime>
+      <publishTime>11/15/2018 11:22:53</publishTime>
     </File>
     <File Include="Areas/User/Views/Shared/_LayoutOld.cshtml">
       <publishTime>08/14/2018 12:38:12</publishTime>
@@ -499,6 +502,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/ClosedXML.dll">
       <publishTime>05/24/2018 18:51:56</publishTime>
     </File>
+    <File Include="bin/Common.Logging.Core.dll">
+      <publishTime>05/24/2018 16:32:30</publishTime>
+    </File>
+    <File Include="bin/Common.Logging.dll">
+      <publishTime>05/24/2018 16:32:30</publishTime>
+    </File>
     <File Include="bin/CsvHelper.dll">
       <publishTime>05/24/2018 16:32:30</publishTime>
     </File>
@@ -524,45 +533,45 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/24/2018 18:51:56</publishTime>
     </File>
     <File Include="bin/HyggeMail.BLL.dll">
-      <publishTime>10/25/2018 12:00:15</publishTime>
+      <publishTime>11/20/2018 16:30:50</publishTime>
     </File>
     <File Include="bin/HyggeMail.DAL.dll">
-      <publishTime>08/21/2018 15:42:02</publishTime>
+      <publishTime>11/02/2018 13:30:09</publishTime>
     </File>
     <File Include="bin/HyggeMail.dll">
-      <publishTime>10/25/2018 12:00:20</publishTime>
+      <publishTime>11/20/2018 16:30:54</publishTime>
     </File>
     <File Include="bin/HyggeMail.Framework.dll">
       <publishTime>02/28/2018 17:02:16</publishTime>
-      <publishTime>10/25/2018 12:00:16</publishTime>
+      <publishTime>11/20/2018 16:30:51</publishTime>
     </File>
     <File Include="bin/HyggeMail.DAL.dll">
-      <publishTime>08/21/2018 15:42:02</publishTime>
+      <publishTime>11/02/2018 13:30:09</publishTime>
     </File>
     <File Include="bin/HyggeMail.dll">
-      <publishTime>10/25/2018 12:00:20</publishTime>
+      <publishTime>11/20/2018 16:30:54</publishTime>
     </File>
     <File Include="bin/HyggeMail.Framework.dll">
       <publishTime>03/09/2018 18:17:12</publishTime>
-      <publishTime>10/25/2018 12:00:16</publishTime>
+      <publishTime>11/20/2018 16:30:51</publishTime>
     </File>
     <File Include="bin/HyggeMail.DAL.dll">
-      <publishTime>08/21/2018 15:42:02</publishTime>
+      <publishTime>11/02/2018 13:30:09</publishTime>
     </File>
     <File Include="bin/HyggeMail.dll">
-      <publishTime>10/25/2018 12:00:20</publishTime>
+      <publishTime>11/20/2018 16:30:54</publishTime>
     </File>
     <File Include="bin/HyggeMail.Framework.dll">
-      <publishTime>10/25/2018 12:00:16</publishTime>
+      <publishTime>11/20/2018 16:30:51</publishTime>
     </File>
     <File Include="bin/HyggeMail.ImportExport.dll">
-      <publishTime>06/27/2018 19:06:40</publishTime>
+      <publishTime>11/02/2018 13:30:11</publishTime>
     </File>
     <File Include="bin/HYggeMail.MailChimp.dll">
-      <publishTime>09/05/2018 18:03:19</publishTime>
+      <publishTime>11/13/2018 16:51:29</publishTime>
     </File>
     <File Include="bin/HyggeMail.UnSplash.dll">
-      <publishTime>07/30/2018 18:47:59</publishTime>
+      <publishTime>11/02/2018 13:30:09</publishTime>
     </File>
     <File Include="bin/ICSharpCode.SharpZipLib.dll">
       <publishTime>06/26/2018 15:09:14</publishTime>
@@ -613,6 +622,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/24/2018 16:32:36</publishTime>
     </File>
     <File Include="bin/PushSharp.Core.dll">
+      <publishTime>05/24/2018 16:32:36</publishTime>
+    </File>
+    <File Include="bin/Quartz.dll">
       <publishTime>05/24/2018 16:32:36</publishTime>
     </File>
     <File Include="bin/RestClient.dll">
@@ -5704,15 +5716,15 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/24/2018 16:32:12</publishTime>
     </File>
     <File Include="Content/responsive.css">
-      <publishTime>10/15/2018 15:30:00</publishTime>
+      <publishTime>11/15/2018 16:44:24</publishTime>
     </File>
     <File Include="Content/style.css">
       <publishTime>02/28/2018 16:46:47</publishTime>
       <publishTime>03/09/2018 17:39:09</publishTime>
-      <publishTime>10/23/2018 11:20:02</publishTime>
+      <publishTime>11/15/2018 16:44:27</publishTime>
     </File>
     <File Include="Content/style.css">
-      <publishTime>10/23/2018 11:20:02</publishTime>
+      <publishTime>11/15/2018 16:44:27</publishTime>
     </File>
     <File Include="Content/style_bak.css">
       <publishTime>05/24/2018 16:32:12</publishTime>
@@ -14878,12 +14890,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/30/2018 05:08:52</publishTime>
     </File>
     <File Include="css/style.css">
-      <publishTime>10/23/2018 11:07:15</publishTime>
+      <publishTime>11/15/2018 11:21:12</publishTime>
     </File>
     <File Include="ErrorLog.txt">
       <publishTime>02/28/2018 16:46:47</publishTime>
       <publishTime>03/09/2018 17:34:11</publishTime>
-      <publishTime>10/01/2018 16:06:34</publishTime>
+      <publishTime>11/13/2018 11:17:02</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>05/24/2018 16:32:25</publishTime>
@@ -15687,7 +15699,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/22/2010 20:58:40</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>05/24/2018 16:32:30</publishTime>
+      <publishTime>10/31/2018 17:08:22</publishTime>
     </File>
     <File Include="Rotativa/help-wkhtmltoimage.txt">
       <publishTime>05/24/2018 16:32:16</publishTime>
@@ -15798,7 +15810,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Scripts/FrontEndScripts/registrations.js">
       <publishTime>02/28/2018 16:46:47</publishTime>
       <publishTime>03/09/2018 12:19:18</publishTime>
-      <publishTime>09/07/2018 18:29:10</publishTime>
+      <publishTime>11/15/2018 17:11:34</publishTime>
     </File>
     <File Include="Scripts/html5.js">
       <publishTime>05/24/2018 16:32:17</publishTime>
@@ -15867,36 +15879,36 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/04/2018 12:13:06</publishTime>
     </File>
     <File Include="Scripts/UserDashboardScripts/Dashboard.js">
-      <publishTime>10/25/2018 11:01:23</publishTime>
+      <publishTime>11/20/2018 16:29:53</publishTime>
     </File>
     <File Include="Scripts/UserDashboardScripts/HomePage.js">
-      <publishTime>10/01/2018 15:41:55</publishTime>
+      <publishTime>11/15/2018 18:14:56</publishTime>
     </File>
     <File Include="Scripts/UserDashboardScripts/ImageEditor.js">
       <publishTime>09/27/2018 13:04:09</publishTime>
     </File>
     <File Include="Scripts/UserDashboardScripts/Main-Dashboard.js">
       <publishTime>02/28/2018 15:08:57</publishTime>
-      <publishTime>10/25/2018 11:51:33</publishTime>
+      <publishTime>11/06/2018 10:37:55</publishTime>
     </File>
     <File Include="Scripts/UserDashboardScripts/ImageEditor.js">
       <publishTime>09/27/2018 13:04:09</publishTime>
     </File>
     <File Include="Scripts/UserDashboardScripts/Main-Dashboard.js">
       <publishTime>03/07/2018 16:55:47</publishTime>
-      <publishTime>10/25/2018 11:51:33</publishTime>
+      <publishTime>11/06/2018 10:37:55</publishTime>
     </File>
     <File Include="Scripts/UserDashboardScripts/ImageEditor.js">
       <publishTime>09/27/2018 13:04:09</publishTime>
     </File>
     <File Include="Scripts/UserDashboardScripts/Main-Dashboard.js">
-      <publishTime>10/25/2018 11:51:33</publishTime>
+      <publishTime>11/06/2018 10:37:55</publishTime>
     </File>
     <File Include="Scripts/UserDashboardScripts/MyOrders.js">
       <publishTime>05/24/2018 16:32:17</publishTime>
     </File>
     <File Include="Scripts/UserDashboardScripts/PostCard.js">
-      <publishTime>09/26/2018 18:17:08</publishTime>
+      <publishTime>11/16/2018 17:48:14</publishTime>
     </File>
     <File Include="Scripts/UserDashboardScripts/Profile.js">
       <publishTime>06/07/2018 18:52:26</publishTime>
@@ -15915,14 +15927,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/24/2018 16:32:17</publishTime>
     </File>
     <File Include="Scripts/UserDefinedScripts/paging.js">
-      <publishTime>06/04/2018 11:14:00</publishTime>
+      <publishTime>11/16/2018 17:55:21</publishTime>
     </File>
     <File Include="Scripts/UserDefinedScripts/requiredIf.js">
       <publishTime>05/24/2018 16:32:17</publishTime>
     </File>
     <File Include="Scripts/_references.js">
       <publishTime>02/28/2018 16:46:47</publishTime>
-      <publishTime>10/18/2018 12:37:17</publishTime>
+      <publishTime>11/15/2018 11:59:23</publishTime>
     </File>
     <File Include="Uploads/ExcelFormat/ExcelFormat.xls">
       <publishTime>06/28/2018 14:56:32</publishTime>
@@ -15972,13 +15984,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/17/2018 17:12:41</publishTime>
     </File>
     <File Include="Views/Home/About.cshtml">
-      <publishTime>08/13/2018 17:52:56</publishTime>
+      <publishTime>11/03/2018 12:15:51</publishTime>
     </File>
     <File Include="Views/Home/Contact.cshtml">
-      <publishTime>08/14/2018 11:50:10</publishTime>
+      <publishTime>11/03/2018 12:15:51</publishTime>
     </File>
     <File Include="Views/Home/Faq.cshtml">
-      <publishTime>08/13/2018 17:52:56</publishTime>
+      <publishTime>11/03/2018 12:15:49</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
       <publishTime>02/28/2018 16:32:41</publishTime>
@@ -15995,13 +16007,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/19/2018 12:37:49</publishTime>
     </File>
     <File Include="Views/Home/JoinProgramme.cshtml">
-      <publishTime>09/05/2018 13:02:21</publishTime>
+      <publishTime>10/29/2018 12:07:13</publishTime>
     </File>
     <File Include="Views/Home/MobileApp.cshtml">
-      <publishTime>08/13/2018 17:52:56</publishTime>
+      <publishTime>11/03/2018 12:15:50</publishTime>
     </File>
     <File Include="Views/Home/Partials/_demoPostCardsListing.cshtml">
-      <publishTime>06/19/2018 12:45:28</publishTime>
+      <publishTime>11/15/2018 18:15:14</publishTime>
     </File>
     <File Include="Views/Home/Partials/_faqListing.cshtml">
       <publishTime>05/24/2018 16:32:25</publishTime>
@@ -16023,14 +16035,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/08/2018 14:52:22</publishTime>
     </File>
     <File Include="Views/Home/PaymentPlans.cshtml">
-      <publishTime>08/14/2018 12:38:12</publishTime>
+      <publishTime>11/03/2018 12:15:49</publishTime>
     </File>
     <File Include="Views/Home/Privacy.cshtml">
       <publishTime>03/09/2018 17:21:29</publishTime>
-      <publishTime>08/13/2018 17:52:56</publishTime>
+      <publishTime>11/03/2018 12:15:50</publishTime>
     </File>
     <File Include="Views/Home/Privacy.cshtml">
-      <publishTime>08/13/2018 17:52:56</publishTime>
+      <publishTime>11/03/2018 12:15:50</publishTime>
     </File>
     <File Include="Views/Home/RejectionReason.cshtml">
       <publishTime>08/13/2018 17:52:56</publishTime>
@@ -16042,7 +16054,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/13/2018 17:52:56</publishTime>
     </File>
     <File Include="Views/Home/Terms.cshtml">
-      <publishTime>08/13/2018 17:52:55</publishTime>
+      <publishTime>11/12/2018 11:23:23</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>05/24/2018 16:32:25</publishTime>
@@ -16067,13 +16079,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/24/2018 16:32:25</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>09/28/2018 16:05:48</publishTime>
+      <publishTime>10/29/2018 13:09:57</publishTime>
     </File>
     <File Include="Views/Shared/_Layout1.cshtml">
       <publishTime>09/04/2018 15:44:51</publishTime>
     </File>
     <File Include="Views/Shared/_Layout2.cshtml">
-      <publishTime>09/27/2018 12:30:02</publishTime>
+      <publishTime>11/03/2018 12:16:10</publishTime>
     </File>
     <File Include="Views/Shared/_LayoutOld.cshtml">
       <publishTime>08/07/2018 12:50:00</publishTime>
@@ -16091,7 +16103,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Web.config">
       <publishTime>02/28/2018 17:02:25</publishTime>
       <publishTime>02/28/2018 17:02:25</publishTime>
-      <publishTime>10/25/2018 12:00:25</publishTime>
+      <publishTime>11/20/2018 16:30:58</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -540,7 +540,7 @@ canvasBack.on('text:changed', function (opt) {
 function ChangeTextColorFromColorPicker(value) {
     txtColor = "#" + value;
     if (canvas.getActiveObject() != null) {
-        if (canvas.getActiveObject().id != "barCodeRect" && canvas.getActiveObject().id != "returnAddressRect") {
+        if (canvas.getActiveObject().id != "barCodeRect" && canvas.getActiveObject().id != "returnAddressRect" && canvas.getActiveObject().id != null && canvas.getActiveObject().id != null && canvas.getActiveObject().id != "") {
             canvas.getActiveObject().setFill(txtColor);
             canvas.renderAll();
             updateModifications(true);

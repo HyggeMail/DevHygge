@@ -303,9 +303,9 @@ namespace HyggeMail.BLL.Managers
                 var gt = "%&gt;";
                 var Domain = Config.Link;
                 string Durl = string.Format("{0}/Home/DownloadGuide", Domain);
-                // string Jurl = string.Format("{0}/Home/JoinProgramme?q=" + Utilities.EncodeString(GetGuideModel.EMAIL), Domain);
+                string Jurl = "https://mailchi.mp/3a986420cc90/join-hyggemail-newsletter";
                 emaildata.TemplateContent = emaildata.TemplateContent.Replace(lt + "DURL" + gt, Durl);
-                //  emaildata.TemplateContent = emaildata.TemplateContent.Replace(lt + "JURL" + gt, Jurl);
+                emaildata.TemplateContent = emaildata.TemplateContent.Replace(lt + "JURL" + gt, Jurl);
                 // emaildata.TemplateContent = emaildata.TemplateContent.Replace(lt + "DATETIME" + gt, Convert.ToDateTime(DateTime.UtcNow).ToString("MMM dd yyyy hh:mm tt"));
                 var result = Utilities.SendEMail(email, emaildata.EmailSubject, emaildata.TemplateContent);
                 MailChimpService.AddOrUpdateListMember(subscriberEmail: GetGuideModel.EMAIL, listId: System.Configuration.ConfigurationManager.AppSettings["SubListId"]);
@@ -322,6 +322,27 @@ namespace HyggeMail.BLL.Managers
                     Status = ActionStatus.Error,
                     Message = ex.Message
                 };
+            }
+        }
+
+        public void SendNotificationEmail()
+        {
+            using (var Context = new HyggeMailEntities())
+            {
+                var template4Users = Context.Users.Where(p => p.CardsCount < 10 && !p.IsDeleted && p.Email != null && p.ActivatedUID != null && p.IsActivated != null).ToList();
+                var template5Users = Context.Users.Where(p => p.CardsCount == 10 && !p.IsDeleted && p.Email != null && p.ActivatedUID != null && p.IsActivated != null).ToList();
+                foreach (var item in template4Users)
+                {
+                    var emaildata = GetTemplate(Convert.ToInt32(TemplateTypes.LittleBitsOfHappiness));
+                    var Domain = Config.Link;
+                    var result = Utilities.SendEMail(item.Email, emaildata.EmailSubject, emaildata.TemplateContent);
+                }
+                foreach (var item in template5Users)
+                {
+                    var emaildata = GetTemplate(Convert.ToInt32(TemplateTypes.StepsToBuyingCards));
+                    var Domain = Config.Link;
+                    var result = Utilities.SendEMail(item.Email, emaildata.EmailSubject, emaildata.TemplateContent);
+                }
             }
         }
     }

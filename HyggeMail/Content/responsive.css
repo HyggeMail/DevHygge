@@ -124,7 +124,7 @@ width: 100%;
 
 /******fixed menu********/
 #wrapper > header {
-  position: fixed;
+  position: absolute;
 }
 #fullpage section.middle-content {
   padding-top: 78px;
@@ -139,10 +139,14 @@ width: 100%;
 /******fixed menu* end*******/
 @media(min-width:1601px){
 	section.sub-section.wb-payments-plans {
-    background-color: #edeae6;
+
     padding: 50px 0 60px;
     position: relative;
     min-height: 900px;
+}
+.footer-content .textbox.subs {
+  font-size: 16px;
+  padding: 0 8px;
 }
 }
 @media(min-width:768px){
@@ -196,7 +200,12 @@ footer {
   top: 205px;
 }
 
-.faltu-inner {max-height: 667px; height: auto;padding-bottom:20px!important;}
+.faltu-inner {
+  height: auto;
+  margin-bottom: 0 !important;
+  max-height: 780px;
+  padding-bottom: 0 !important;
+}
 .tab3-scrollbar.faltu-inner, .tab3-scrollbar.faltu-inner { max-height: 880px; height: auto;padding-bottom:15px!important;}
 .tab3-scrollbar.faltu-inner .accordion_example1 { float: left; width:100%; margin-bottom:20px;}
 }
@@ -895,7 +904,6 @@ header {
     width: 70% !important;
 } 
 .form-group.fonts-families .btn-group.bootstrap-select.select-box1.text.open .dropdown-menu.open ul {
-    max-width: 200px !important;
     min-width: 170px !important;
 }
 .btnn-grps .btn.btn-info {
@@ -1017,6 +1025,11 @@ body .modal-custom .modal-header h4 {
 #footer .subs-btn.btn {
     padding-top: 9px;
 }
+.contact-page .subscribes .filters {
+  margin: 0 auto 0 80px;
+  width: auto;
+}
+
 
 }
 @media screen and (max-width: 1024px){
@@ -1320,8 +1333,28 @@ body .modal-custom .modal-header h4 {
 #footer h6 {
   text-align: center;
 }
-
-
+.contact-page .subscribes .filters {
+  margin: 0 auto 0 28px;
+  width: auto;
+}
+.address .icons {
+  width: 32px;
+}
+.address span {
+  font-size: 14px;
+}
+.social-links .si {
+  margin-right: 5px;
+}
+.contact-page {
+  min-height: 300px;
+}
+section#cards .col-lg-32 ,section#cards  .col-lg-36{
+  max-width: 100% !important;
+}
+section#cards .card {
+  box-shadow: unset;
+}
 }
 
 @media (min-width:992px) and (max-width:1199px){
@@ -2119,6 +2152,9 @@ body .create-card p {
     .emoji-partial .accordion_in1 .images-p {
     width: auto;
     padding-right: 10px;
+}
+.card {
+  padding: 67px 15px 25px;
 }
 }
 

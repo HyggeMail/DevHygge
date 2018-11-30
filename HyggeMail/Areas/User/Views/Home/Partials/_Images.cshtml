@@ -5,7 +5,7 @@
     {
         if (Model.List.Count() > 0)
         {
-            foreach (var item in Model.List.Where(x => x.IsRecent != true))
+            foreach (var item in Model.List)
             {
                 <li class="@item.CatName">
                     <div class="listings">
@@ -21,16 +21,19 @@
                                         <div id="content-2" class="content1122  light scrollbar-inner2">
                                             @foreach (var image in item.Images)
                                             {
-                                                <div class="images-p">
-                                                    <span class="images-outerr">
-                                                        @*.Replace("/Attachments/", "/Attachments/Thumb/")*@
-                                                        <img draggable="true" data-id="@image.ImageID" data-org-img="@image.FilePath.Replace("~","../..")" src="@image.FilePath.Replace("~/Uploads/Attachments/", "/Uploads/Attachments/Thumb/")" width="200" class="img-p" alt="@image.FileName" title="@image.Description" />
-                                                    </span>
-                                                    @if (item.HasLoggedInUser == true)
-                                                    {
-                                                        <a style="" href="javascript:" class="img-delete-a" data-id="@image.ImageID" title="Delete"> <img class="del-img-dash" src="~/Content/images/delete-icon.png" alt="" /></a>
-                                                    }
-                                                </div>
+                                                if (image != null)
+                                                {
+                                                    <div class="images-p">
+                                                        <span class="images-outerr">
+                                                            @*.Replace("/Attachments/", "/Attachments/Thumb/")*@
+                                                            <img draggable="true" data-id="@image.ImageID" data-org-img="@image.FilePath.Replace("~","../..")" src="@image.FilePath.Replace("~/Uploads/Attachments/", "/Uploads/Attachments/Thumb/")" width="200" class="img-p" alt="@image.FileName" title="@image.Description" />
+                                                        </span>
+                                                        @if (item.HasLoggedInUser == true)
+                                                        {
+                                                            <a style="" href="javascript:" class="img-delete-a" data-id="@image.ImageID" title="Delete"> <img class="del-img-dash" src="~/Content/images/delete-icon.png" alt="" /></a>
+                                                        }
+                                                    </div>
+                                                }
                                             }
                                         </div>
                                     </div>

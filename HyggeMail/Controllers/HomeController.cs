@@ -280,7 +280,7 @@ namespace HyggeMail.Controllers
         {
             var modal = _editorManager.GetDemoPostCardListing();
 
-            if (modal.Status == ActionStatus.Successfull)
+            if (modal.Status == ActionStatus.Successfull && modal.List != null)
             {
                 List<string> resultString = new List<string>();
                 resultString.Add(RenderRazorViewToString("Partials/_demoPostCardsListing", modal.List));

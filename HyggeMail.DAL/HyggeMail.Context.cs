@@ -27,6 +27,7 @@ namespace HyggeMail.DAL
     
         public virtual DbSet<AdminImage> AdminImages { get; set; }
         public virtual DbSet<BlogDetail> BlogDetails { get; set; }
+        public virtual DbSet<ChroneLog> ChroneLogs { get; set; }
         public virtual DbSet<city> cities { get; set; }
         public virtual DbSet<CMSPage> CMSPages { get; set; }
         public virtual DbSet<ContactU> ContactUs { get; set; }

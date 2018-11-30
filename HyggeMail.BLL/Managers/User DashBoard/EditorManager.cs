@@ -284,7 +284,7 @@ namespace HyggeMail.BLL.Managers
                                 }
                             }
                         }
-                        PostCard.AddedOn = DateTime.UtcNow;
+                        PostCard.UpdatedOn = DateTime.UtcNow;
                         // Context.UserPostCards.Add(PostCard);
                         //       Context.UserPostCardRecipients.AddRange(PostCard.UserPostCardRecipients);
                         message = "Postcard details updated successfully.";

@@ -510,12 +510,13 @@ var UserDashboard = {
                 }, 2000);
 
             }, error: function (results, message) {
+                $("#myModal-UploadImage").modal('hide');
                 $('.alert').show();
                 $('.alert').addClass('alert-danger');
                 $(".statusMessage").html(results || message);
                 setTimeout(function () {
                     $(".alert").fadeOut();
-                    $('.alert').removeClass('alert-danger');
+                   // $('.alert').removeClass('alert-danger');
                     $(".statusMessage").html('');
                 }, 2000);
             }

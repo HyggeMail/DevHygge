@@ -41,7 +41,11 @@ namespace HyggeMail.BLL.Models
         [Description("Order Status Admin")]
         OrderStatusAdmin = 12,
         [Description("Get The Guide Email")]
-        GetTheGuideEmail = 13
+        GetTheGuideEmail = 13,
+        [Description("Thank you for sending 10 little bits of happiness!")]
+        LittleBitsOfHappiness = 14,
+        [Description("steps to buying and sending cards")]
+        StepsToBuyingCards = 15
     }
 
     public enum eFAQCategory

@@ -4,24 +4,25 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="c1953a72d75b4c0f80d606c28fe2a035" Name="Diagram1">
+      <Diagram DiagramId="e046e18e0af04187ba371b43842b51ec" Name="Diagram1">
         <EntityTypeShape EntityType="HyggeMailModel.AdminImage" Width="1.5" PointX="8.25" PointY="30.125" IsExpanded="true" />
         <EntityTypeShape EntityType="HyggeMailModel.BlogDetail" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HyggeMailModel.city" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HyggeMailModel.ChroneLog" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HyggeMailModel.city" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HyggeMailModel.CMSPage" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HyggeMailModel.ContactU" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HyggeMailModel.country" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HyggeMailModel.EmailTemplate" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HyggeMailModel.ErrorLog" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HyggeMailModel.country" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HyggeMailModel.EmailTemplate" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HyggeMailModel.ErrorLog" Width="1.5" PointX="7.75" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HyggeMailModel.FAQ" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HyggeMailModel.ImageCategory" Width="1.5" PointX="6" PointY="30.5" IsExpanded="true" />
         <EntityTypeShape EntityType="HyggeMailModel.MembershipPlan" Width="1.5" PointX="0.75" PointY="15" IsExpanded="true" />
         <EntityTypeShape EntityType="HyggeMailModel.NotificationStack" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
         <EntityTypeShape EntityType="HyggeMailModel.PushNotification" Width="1.5" PointX="9.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HyggeMailModel.Session" Width="1.5" PointX="5.25" PointY="7.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="HyggeMailModel.state" Width="1.5" PointX="7.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HyggeMailModel.Subscriber" Width="1.5" PointX="9.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HyggeMailModel.tblTestimonial" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HyggeMailModel.state" Width="1.5" PointX="9.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HyggeMailModel.Subscriber" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HyggeMailModel.tblTestimonial" Width="1.5" PointX="11.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="HyggeMailModel.UserAddressBook" Width="1.5" PointX="5.25" PointY="11.125" IsExpanded="true" />
         <EntityTypeShape EntityType="HyggeMailModel.UserDetail" Width="1.5" PointX="5.25" PointY="17.25" IsExpanded="true" />
         <EntityTypeShape EntityType="HyggeMailModel.UserHistory" Width="1.5" PointX="10.5" PointY="15.25" IsExpanded="true" />
@@ -34,7 +35,7 @@
         <AssociationConnector Association="HyggeMailModel.FK_AdminImages_ImageCategory" ManuallyRouted="false" />
         <AssociationConnector Association="HyggeMailModel.FK_UserPostCardImages_AdminImages" ManuallyRouted="false" />
         <AssociationConnector Association="HyggeMailModel.FK_Users_MembershipPlans" ManuallyRouted="false" />
-        <AssociationConnector Association="HyggeMailModel.FK_UserTransactions_MembershipPlans" ManuallyRouted="false" />
+        <AssociationConnector Association="HyggeMailModel.FK_UserTransactions_UserTransactions" ManuallyRouted="false" />
         <AssociationConnector Association="HyggeMailModel.FK_NotificationStacks_Users" ManuallyRouted="false" />
         <AssociationConnector Association="HyggeMailModel.FK_Sessions_Users" ManuallyRouted="false" />
         <AssociationConnector Association="HyggeMailModel.FK_UserAddressBook_Users" ManuallyRouted="false" />

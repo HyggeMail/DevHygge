@@ -97,8 +97,14 @@ namespace HyggeMail.Areas.User.Controllers
                 }
                 UploadModel.Categories = _imageManager.GetImageCategoryDDLList();
                 ViewBag.UploadModel = UploadModel;
-                ActionOutput<ImagesByCategoryViewModel> modal = _imageManager.GetImagesByCategoryWise(LOGGEDIN_USER.UserID);
-                ViewBag.RecentlyUsedImageList = _imageManager.GetImagesByCategoryWise(LOGGEDIN_USER.UserID, "").List.Where(x => x.IsRecent).ToList();
+                // ActionOutput<ImagesByCategoryViewModel> modal = _imageManager.GetImagesByCategoryWise(LOGGEDIN_USER.UserID);
+                //ViewBag.RecentlyUsedImageList = _imageManager.GetImagesByCategoryWise(LOGGEDIN_USER.UserID, "").List.Where(x => x.IsRecent).ToList();
+                var cardlList = _editorManager.GetDemoPostCardListing();
+                if (cardlList.List != null)
+                    ViewBag.AdminCards = _editorManager.GetDemoPostCardListing().List;
+                else
+                    ViewBag.AdminCards = new List<AddUpdateImageEditorModel>();
+
                 ViewBag.OrderID = cid;
                 if (cid > 0 && cid != null && IsCopy != true)
                     editorModel.ID = Convert.ToInt32(cid);

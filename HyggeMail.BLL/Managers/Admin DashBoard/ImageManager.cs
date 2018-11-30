@@ -149,6 +149,15 @@ namespace HyggeMail.BLL.Managers
                 newRecord = Mapper.Map<AddUpdateAdminImageModel, AdminImage>(model);
                 foreach (var item in model.Image)
                 {
+
+                    if (item.ContentLength > 524288)  // 500kb
+                    {
+                        return new ActionOutput
+                        {
+                            Status = ActionStatus.Error,
+                            Message = "Upload file of size up to 500kb only"
+                        };
+                    }
                     //  var fileUName = Utilities.SavePostedFile(AttacmentsPath.AdminImages + "/", item);
                     var saveFileWithThumb = Utilities.SaveImage(item, AttacmentsPath.AdminImages, AttacmentsPath.AdminImagesThumb);
                     newRecord.FilePath = AttacmentsPath.AdminImages + saveFileWithThumb;
@@ -176,6 +185,14 @@ namespace HyggeMail.BLL.Managers
                 {
                     foreach (var item in model.Image)
                     {
+                        if (item.ContentLength > 524288)  // 500kb
+                        {
+                            return new ActionOutput
+                            {
+                                Status = ActionStatus.Error,
+                                Message = "Upload file of size up to 500kb only"
+                            };
+                        }
                         //  var fileUName = Utilities.SavePostedFile(AttacmentsPath.AdminImages + "/", item);
                         var saveFileWithThumb = Utilities.SaveImage(item, AttacmentsPath.AdminImages, AttacmentsPath.AdminImagesThumb);
                         existingImage.FileName = Path.GetFileNameWithoutExtension(saveFileWithThumb);
@@ -276,7 +293,7 @@ namespace HyggeMail.BLL.Managers
                 var recentlyUsedList = new ImagesByCategoryViewModel();
                 recentlyUsedList.CatName = "Recently Used";
                 recentlyUsedList.IsRecent = true;
-                recentlyUsedList.ImagesCount = mostUsed.Count();
+                recentlyUsedList.ImagesCount = recentlyUsed.Count();
                 recentlyUsedList.Images = Mapper.Map<List<AdminImage>, List<ImagesViewModel>>(recentlyUsed.ToList(), recentlyUsedList.Images);
                 model.Add(recentlyUsedList);
             }

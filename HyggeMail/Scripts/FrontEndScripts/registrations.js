@@ -378,7 +378,7 @@ var User = {
             },
             data: $(sender).parents("form:first").serializeArray(),
             success: function (results, message) {
-
+                debugger
                 var returnUrl = localStorage.getItem("EditCardReturnUrl");
 
                 if (returnUrl != undefined) {

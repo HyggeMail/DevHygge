@@ -1,4 +1,5 @@
 ﻿using HyggeMail.BLL.Infrastructure;
+using HyggeMail.Scheduler;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,8 @@ namespace HyggeMail
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AutoMapperConfiguration.Configure();
+            JobScheduler.scheduler.Start();
+            JobScheduler.Email();
         }
     }
 }

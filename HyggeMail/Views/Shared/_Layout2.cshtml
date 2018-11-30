@@ -17,7 +17,7 @@
     <link href="~/css/fonts.css" rel="stylesheet" />
     <link rel="icon" href="/Content/images/favicon.png" type="image/x-icon" />
 </head>
-<body>
+<body class="inner-pages">
     <div id="app">
         <header class="fixed">
             <div class="container">
@@ -26,7 +26,7 @@
                         <img class="logo" src="~/img/logo@2x.png" alt="HyggeMail logo" srcset="~/img/logo@2x.png">
                     </a>
                 </div>
-                <nav>
+          <!--       <nav>
                     <div class="mob-nav">
                         <span class="menu1"> </span>
                         <span class="menu2"> </span>
@@ -54,46 +54,30 @@
                         @*   <li> <a href="@Url.Action("About", "Home")"> About Us </a> </li>
                             <li> <a href="@Url.Action("MobileApp", "Home")"> Mobile App </a> </li>*@
                     </ul>
-                </nav>
+                </nav> -->
 
-                <div class="header-profile">
+                <div class="header-profile lt-head">
                     @if (LOGGEDIN_USER != null && LOGGEDIN_USER.IsAuthenticated)
                     {
 
 
-                        <div class="dropdown">
-                            <span class="name" id="dLabel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                @if (LOGGEDIN_USER.FirstName.Length > 20)
-                                {
-                                    <span>@LOGGEDIN_USER.FirstName.Substring(0, 20)..     </span>
-                                }
-                                else
-                                {
-                                    @LOGGEDIN_USER.FirstName
-                                }
+                       <span class="button-right pull-right">
+                                        <a style="margin-top:-14px" class="btn btn-peach-pattern" href="/User/Home/Dashboard">
+                                            <img srcset="../img/send@2x.png" src="../img/send.png">
+                                            <span>Send a card</span>
+                                        </a>
                             </span>
-                            <ul class="dropdown-menu" aria-labelledby="dLabel">
-                                <li> <a href="@Url.Action("MyProfile", "Home", new { area = "user" })"><i class="fa fa-user"></i> Profile </a> </li>
-                                <li> <a href="@Url.Action("MySetting", "Home", new { area = "user" })"><i class="fa fa-gear"></i> Setting </a> </li>
-                                <li> <a href="@Url.Action("ChangePassword", "Home", new { area = "user" })"><i class="fa fa-lock" aria-hidden="true"></i> Change Password </a> </li>
-                                <li> <a href="@Url.Action("Signout", "Base",new {area=""})"><i class="fa fa-sign-out"></i> Logout</a> </li>
-                            </ul>
-                        </div>
-                        <figure class="profile">
-                            @if (!string.IsNullOrEmpty(LOGGEDIN_USER.ImageLink))
-                            {
-                                <img src="@LOGGEDIN_USER.ImageLink.Replace("~/","../../")" alt="@LOGGEDIN_USER.ImageName" />
-                            }
-                            else
-                            {
-                                <img src="~/Content/images/avtar-profile-image.png" alt="User" />
-                            }
-                        </figure>
                     }
                     else
                     {
-                        <button type="button" class="btns login-btn" data-toggle="modal" data-target="#myModal-signin"> Sign in </button>
-                        <button type="button" class="btns active-btn" data-toggle="modal" data-target="#myModal"> Sign up </button>
+                        <span class="button-right pull-right">
+                                    
+                                        <a style="margin-top:-14px" data-target="#myModal-signin" data-toggle="modal" class="btn btn-peach-pattern" href="#">
+                                            <img srcset="../img/send@2x.png" src="../img/send.png">
+                                            <span>Send a card</span>
+                                        </a>
+                             
+                            </span>
                     }
                 </div>
 

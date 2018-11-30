@@ -7,21 +7,24 @@
     if (Model != null && Model.Count > 0)
     {
         <div class="thumbs-sec">
+		<h2 class="wb-crd">Templates</h2>
+		<div class="product-slider">
             @foreach (var obj in Model)
             {
                 if (LOGGEDIN_USERInfo.IsAuthenticated)
                 {
-                    <div class="item homePostCardClick" data-toggle="modal" data-target="#popup-card" data-href="@Url.Action("EditDemoCard", "Home", new { cid = @obj.ID, userId = @obj.UserID })" data-cardfrontpath="@obj.CardFrontPath.Replace("~",string.Empty)" data-cardbackpath="@obj.CardBackPath.Replace("~",string.Empty)">
+                    <div class="item homePostCardClick" data-toggle="modal" data-target="#popup-card" data-href="@Url.Action("EditDemoCard", "Home", new { cid = @obj.ID, userId = @obj.UserID,area="" })" data-cardfrontpath="@obj.CardFrontPath.Replace("~",string.Empty)" data-cardbackpath="@obj.CardBackPath.Replace("~",string.Empty)">
                         <a href="javascript:void(0)">
                             <div class="bottom-cap">
                             </div>
                             <img class="" src="@obj.CardFrontPath.Replace("~", string.Empty)" alt="">
                         </a>
                     </div>
+					
                 }
                 else
                 {
-                    <div class="item homePostCardClick" data-toggle="modal" data-target="#popup-card" data-returnurl="@Url.Action("EditDemoCard", "Home", new { cid = @obj.ID, userId = @obj.UserID })" data-cardfrontpath="@obj.CardFrontPath.Replace("~",string.Empty)" data-cardbackpath="@obj.CardBackPath.Replace("~",string.Empty)">
+                    <div class="item homePostCardClick" data-toggle="modal" data-target="#popup-card" data-returnurl="@Url.Action("EditDemoCard", "Home", new { cid = @obj.ID, userId = @obj.UserID,area="" })" data-cardfrontpath="@obj.CardFrontPath.Replace("~",string.Empty)" data-cardbackpath="@obj.CardBackPath.Replace("~",string.Empty)">
                         <a href="javascript:void(0)">
                             <div class="bottom-cap">
                             </div>
@@ -30,6 +33,7 @@
                     </div>
                 }
             }
+			</div>
         </div>
     }
     else
@@ -59,7 +63,6 @@
             <div class="modal-body">
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
-                    <input type="hidden"  id="returnurl"/>
                     <ol class="carousel-indicators">
                         <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
                         <li data-target="#carousel-example-generic" data-slide-to="1"></li>
@@ -79,7 +82,7 @@
             <div class="modal-footer">
                 @if (LOGGEDIN_USERInfo != null && LOGGEDIN_USERInfo.IsAuthenticated)
                 {
-                    <a href="javascript:void(0)" id="setPostCardEditHREF" data-type="copycard">
+                    <a href="javascript:void(0)" id="setPostCardEditHREF">
                         <span class="edit-card" title="Edit Card">
                             <i class="fa fa-files-o" aria-hidden="true"></i>
                         </span>
@@ -87,7 +90,7 @@
                 }
                 else
                 {
-                    <a id="setPostCardEditHREF" data-type="openmodal" href="javascript:;" data-dismiss="modal" data-toggle="modal" data-target="#myModal-signin">
+                    <a href="javascript:;" data-dismiss="modal" data-toggle="modal" data-target="#myModal-signin">
                         <span class="edit-card" title="Edit Card">
                             <i class="fa fa-files-o" aria-hidden="true"></i>
                         </span>
@@ -97,10 +100,5 @@
         </div>
     </div>
 </div>
-<script>
-    $("#setPostCardEditHREF").click(function () {
-        if ($(this).attr("data-type") == "openmodal") {
-            localStorage.setItem("EditCardReturnUrl", $("#returnurl").val());
-        }
-    })
-</script>
+
+
